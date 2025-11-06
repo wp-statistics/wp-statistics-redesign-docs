@@ -6,6 +6,9 @@
 # Obsidian vault configuration
 .obsidian/
 
+# Claude Code personal settings
+.claude/settings.local.json
+
 # Thumbnails
 ._*
 
