@@ -9,7 +9,7 @@ used_in_widgets:
 
 # Visitor Informations Column
 
-Displays comprehensive information about a visitor including location, device, browser, and operating system in a single, consolidated column.
+Displays comprehensive visitor information through a series of icons and badges showing location, browser, operating system, user identity, and IP/hash.
 
 ## Column Configuration
 
@@ -23,69 +23,181 @@ This column is used in the following widgets:
 
 - [Latest Visitors](../widgets/latest-visitors.md)
 
-## Data Displayed
+## Display Elements
 
-This column combines multiple pieces of visitor information in a structured layout:
+This column displays up to 5 elements, with some shown conditionally based on settings:
 
-### Primary Information (Line 1)
-- **Visitor Identifier**:
-  - Logged-in user: Display username or name
-  - Anonymous visitor: Display IP address
-  - Hashed visitor: Display hash ID (if privacy mode enabled)
+### 1. Flag Icon
 
-### Location (Line 2)
-- **Country**: Country name with flag icon
-- **City**: City name (if available)
-- **Format**: "🇺🇸 United States, San Francisco"
+**Visibility:** Always show
 
-### Technical Details (Line 3)
-- **Browser**: Browser name and version
-  - Examples: "Chrome 120", "Firefox 118", "Safari 17"
-- **Operating System**: OS name and version
-  - Examples: "Windows 11", "macOS 14", "Android 13"
-- **Format**: "Chrome 120 • Windows 11"
+**Display:** Country flag icon
 
-### Device Type (Icon or Badge)
-- Desktop icon 💻
-- Mobile icon 📱
-- Tablet icon 📱 (different variant)
+**Hover Text:** "{Country}, {Region}, {City}"
+- Example: "United States, California, San Francisco"
 
-## Display Layout Example
+**Click Action:** Navigate to Single Country Report
 
-```
-John Doe
-🇺🇸 United States, San Francisco
-Chrome 120 • Windows 11 • 💻 Desktop
-```
+**Unknown State:** Show unknown icon with "Unknown Location" text
 
-Or for anonymous visitor:
+---
 
-```
-192.168.1.1
-🇩🇪 Germany, Berlin
-Firefox 118 • Linux • 💻 Desktop
-```
+### 2. OS Icon
+
+**Visibility:** Always show
+
+**Display:** Operating system icon
+
+**Hover Text:** Full OS name
+- Example: "Windows 11"
+
+**Click Action:** Navigate to Single OS Report
+
+**Unknown State:** Show unknown icon with "Unknown OS" text
+
+---
+
+### 3. Browser Icon
+
+**Visibility:** Always show
+
+**Display:** Browser icon
+
+**Hover Text:** "{Browser name} v{major}"
+- Example: "Google Chrome v107"
+
+**Click Action:** Navigate to Single Browser Report
+
+**Unknown State:** Show unknown icon with "Unknown Browser" text
+
+---
+
+### 4. Logged-in User Badge
+
+**Visibility:** Conditional - Only render when:
+- `track_logged_in_enabled = true` **AND**
+- `user_id` is not null
+
+**Display Label (visible):** "{username} #{user_id}"
+- Example: "navid #123"
+
+**Hover Text:** "{email} ({role})"
+- Example: "navid@x.com (administrator)"
+
+**Click Action:** Navigate to [Single Visitor Report](../reports/single-visitor-report.md)
+
+---
+
+### 5. IP or Hash
+
+**Visibility:** Conditional - Only show when logged-in user badge is NOT displayed
+
+**Display Logic:**
+- If `hash_enabled = true` → Show first 6 characters of hash
+  - Example: "abc123"
+- Else → Show full `ip_address`
+  - Example: "192.168.1.1"
+
+⚠️ **Important:**
+- Never show both hash and raw IP at the same time
+- Never show IP/hash when logged-in user badge is displayed
+
+**Click Action:** Navigate to [Single Visitor Report](../reports/single-visitor-report.md)
+
+## Display Logic & Conditions
+
+The visibility and format of elements is controlled by these settings:
+
+| Setting | Affects | Behavior |
+|---------|---------|----------|
+| `track_logged_in_enabled` | User Badge (Element 4) | When `true` AND `user_id` is not null, show logged-in user badge and hide IP/Hash |
+| `hash_enabled` | IP/Hash (Element 5) | When `true`, show first 6 chars of hash. When `false`, show full IP address |
+| `user_id` | User Badge (Element 4) & IP/Hash (Element 5) | When not null, show badge and hide IP/Hash. When null, hide badge and show IP/Hash |
+
+### Display Priority Rule
+- **Logged-in users:** Show user badge only (no IP/hash)
+- **Anonymous visitors:** Show IP or hash only (no user badge)
+
+## Display Layout Examples
+
+### Example 1: Logged-in User (4 Elements Visible)
+
+**Visual:** 🇺🇸 🪟 🌐 `[navid #123]`
+
+**Description:**
+- Flag: United States
+- OS: Windows
+- Browser: Chrome
+- User Badge: navid #123
+- No IP/Hash (hidden for logged-in users)
+
+---
+
+### Example 2: Anonymous Visitor with Hash
+
+**Visual:** 🇩🇪 🖥️ 🦊 `abc123`
+
+**Description:**
+- Flag: Germany
+- OS: macOS
+- Browser: Firefox
+- No User Badge (anonymous visitor)
+- Hash: abc123 (first 6 chars)
+
+---
+
+### Example 3: Unknown Data
+
+**Visual:** ❓ ❓ ❓ `192.168.1.1`
+
+**Description:**
+- Unknown Location
+- Unknown OS
+- Unknown Browser
+- No User Badge
+- IP: 192.168.1.1
 
 ## Interactive Elements
-- **Click visitor name/IP**: Navigate to [Single Visitor Report](../reports/single-visitor-report.md)
-- **Hover**: May show additional details in tooltip
 
-## Data Fallbacks
-- No city available: Show only country
-- No location data: Show "Unknown Location"
-- No user agent data: Show "Unknown Browser/OS"
+Each element in this column has specific interactive behavior:
 
-## Privacy Considerations
+### Flag Icon
+- **Hover:** Display "{Country}, {Region}, {City}" in tooltip
+- **Click:** Navigate to Single Country Report for this country
 
-### Anonymous Mode
-- When privacy features enabled, show hashed ID instead of IP
-- Location may be generalized (country only)
-- No personally identifiable information
+### OS Icon
+- **Hover:** Display full OS name (e.g., "Windows 11") in tooltip
+- **Click:** Navigate to Single OS Report for this operating system
 
-### GDPR Compliance
-- Respects data retention settings
-- IP anonymization support
-- User consent for detailed tracking
+### Browser Icon
+- **Hover:** Display "{Browser name} v{major}" (e.g., "Google Chrome v107") in tooltip
+- **Click:** Navigate to Single Browser Report for this browser
+
+### Logged-in User Badge
+- **Hover:** Display "{email} ({role})" (e.g., "navid@x.com (administrator)") in tooltip
+- **Click:** Navigate to [Single Visitor Report](../reports/single-visitor-report.md) for this user
+
+### IP or Hash
+- **Click:** Navigate to [Single Visitor Report](../reports/single-visitor-report.md) for this visitor
+
+## Unknown States
+
+When data is unavailable or cannot be determined:
+
+### Unknown Location
+- **Display:** Unknown icon (❓ or similar)
+- **Hover Text:** "Unknown Location"
+- **Click:** Still links to Single Country Report (may show "Unknown" country page)
+
+### Unknown OS
+- **Display:** Unknown icon (❓ or similar)
+- **Hover Text:** "Unknown OS"
+- **Click:** Still links to Single OS Report (may show "Unknown" OS page)
+
+### Unknown Browser
+- **Display:** Unknown icon (❓ or similar)
+- **Hover Text:** "Unknown Browser"
+- **Click:** Still links to Single Browser Report (may show "Unknown" browser page)
 
 ## Related Documentation
 
