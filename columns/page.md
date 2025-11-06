@@ -37,8 +37,8 @@ This column is used in the following widgets:
 Opens the [Single Content Report](../reports/single-content-report.md) for this page in the same tab
 
 ### Hover Tooltip
-Displays full URL with path and query string
-- Example: `/example-page?utm_source=google&utm_medium=cpc`
+Displays full URL path
+- Example: `/example-page`
 
 ## Display Examples
 
@@ -49,7 +49,7 @@ Displays full URL with path and query string
 **Description:**
 - Label: Page title "Getting Started Guide"
 - Click: Opens Single Content Report
-- Hover: Shows full URL with path
+- Hover: Shows full URL path (e.g., `/getting-started-guide`)
 
 ---
 
@@ -60,18 +60,7 @@ Displays full URL with path and query string
 **Description:**
 - Label: Page title truncated at 35 chars
 - Click: Opens Single Content Report
-- Hover: Shows full URL including path and query string
-
----
-
-### Example 3: Page with Query String
-
-**Visual:** `Product Features`
-
-**Description:**
-- Label: Page title "Product Features"
-- Click: Opens Single Content Report
-- Hover: Shows full URL with query string (e.g., `/product-features?utm_source=newsletter`)
+- Hover: Shows full URL path (e.g., `/complete-guide-to-wordpress-configuration`)
 
 ## Related Documentation
 
