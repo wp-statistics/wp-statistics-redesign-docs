@@ -84,10 +84,7 @@ Direct
 ## Behavior
 
 ### Sortable
-**Yes** - This column is sortable
-
-- **Alphabetical**: Sort by referrer name
-- **Grouped**: May group by referrer type (Search, Social, Direct, etc.)
+**No** - This column is not sortable
 
 ### Interactive Elements
 - **Click referrer**: Filter page to show only visitors from that source
@@ -106,23 +103,6 @@ Direct
 When referrer data not available:
 - Display: "Unknown" or "-"
 - May indicate privacy settings or tracking limitations
-
-## Responsive Behavior
-
-### Desktop
-- Full referrer name or domain
-- Icon visible
-- Hover tooltips active
-
-### Tablet
-- Abbreviated domain names
-- Icons remain
-- Touch-friendly
-
-### Mobile
-- Very short format or icon only
-- Tap to see full details
-- May show "See more" indicator
 
 ## Related Documentation
 

@@ -81,24 +81,6 @@ Firefox 118 • Linux • 💻 Desktop
 - No location data: Show "Unknown Location"
 - No user agent data: Show "Unknown Browser/OS"
 
-## Responsive Behavior
-
-### Desktop
-- Full information displayed across 3 lines
-- Icons and flags visible
-- Clear hierarchy
-
-### Tablet
-- Slightly condensed format
-- May abbreviate browser/OS versions
-- Icons remain visible
-
-### Mobile
-- Compact 2-line format:
-  - Line 1: Visitor identifier + country flag
-  - Line 2: Key tech details (browser + OS)
-- Device icon may be hidden to save space
-
 ## Privacy Considerations
 
 ### Anonymous Mode

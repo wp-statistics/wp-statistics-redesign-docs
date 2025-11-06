@@ -3,7 +3,7 @@ title: "Latest Visitors"
 type: "widget"
 component: "data-table"
 add_on: "Free"
-status: "Not Started"
+status: "Done"
 figma: ""
 default_sort: "last_view"
 row_limit: 50
@@ -19,7 +19,7 @@ Displays the most recent visitors to your website in a comprehensive data table.
 
 - **Component**: [Data Table](../components/data-table.md)
 - **Add-on**: Free (included in base plugin)
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Display Settings

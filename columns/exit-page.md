@@ -79,10 +79,7 @@ Home (same as entry)
 ## Behavior
 
 ### Sortable
-**Yes** - This column is sortable
-
-- **Alphabetical**: Sort by page title or URL
-- **By frequency**: Group common exit pages
+**No** - This column is not sortable
 
 ### Interactive Elements
 - **Click**: Open exit page in new tab (view the actual page)
@@ -94,23 +91,6 @@ Home (same as entry)
 When exit page data not available:
 - Display: "Unknown" or "-"
 - May occur for active sessions or incomplete data
-
-## Responsive Behavior
-
-### Desktop
-- Full page title or URL
-- Clear, readable format
-- Hover tooltips active
-
-### Tablet
-- Abbreviated titles
-- Truncate with ellipsis
-- Touch-friendly
-
-### Mobile
-- Very short format (max 25 characters)
-- Icon + truncated text
-- Tap to see full details
 
 ## Analytics Insights
 

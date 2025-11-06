@@ -72,10 +72,7 @@ Home (/)
 ## Behavior
 
 ### Sortable
-**Yes** - This column is sortable
-
-- **Alphabetical**: Sort by page title or URL
-- **By popularity**: Group frequently visited entry pages
+**No** - This column is not sortable
 
 ### Interactive Elements
 - **Click**: Open entry page in new tab (view the actual page)
@@ -87,23 +84,6 @@ Home (/)
 When entry page data not available:
 - Display: "Unknown" or "-"
 - May occur for very old data or incomplete tracking
-
-## Responsive Behavior
-
-### Desktop
-- Full page title or URL
-- Clear, readable format
-- Hover tooltips active
-
-### Tablet
-- Abbreviated titles
-- Truncate with ellipsis
-- Touch-friendly
-
-### Mobile
-- Very short format (max 25 characters)
-- Icon + truncated text
-- Tap to see full details
 
 ## Page Type Detection
 

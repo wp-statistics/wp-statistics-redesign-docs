@@ -68,10 +68,7 @@ This column is used in the following widgets:
 ## Behavior
 
 ### Sortable
-**Yes** - This column is sortable
-
-- **Ascending**: Least engaged visitors first (bounces)
-- **Descending**: Most engaged visitors first (default for engagement analysis)
+**No** - This column is not sortable
 
 ### Interactive Elements
 - **Click**: May drill down to see list of pages viewed
@@ -86,21 +83,6 @@ This column is used in the following widgets:
 When view data not available:
 - Display: "0" or "-"
 - Should be rare unless data collection issue
-
-## Responsive Behavior
-
-### Desktop
-- Full number display
-- Visual indicators visible
-- Clear numeric alignment
-
-### Tablet
-- Number display maintained
-- Compact indicators
-
-### Mobile
-- Number only (remove indicators to save space)
-- Clear, readable font size
 
 ## Analytics Insights
 
