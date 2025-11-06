@@ -5,6 +5,7 @@ status: "Done"
 figma: ""
 used_in_widgets:
   - "latest-visitors"
+  - "latest-views-table"
   - "visitor-list"
   - "top-pages"
   - "top-visitors-list"
@@ -28,6 +29,7 @@ A powerful, flexible data table component for displaying structured data with so
 This component is used by the following widgets:
 
 - [Latest Visitors](../widgets/latest-visitors.md)
+- [Latest Views Table](../widgets/latest-views-table.md)
 - [Visitor List](../widgets/visitor-list.md)
 - [Top Pages](../widgets/top-pages.md)
 - [Top Visitors List](../widgets/top-visitors-list.md)

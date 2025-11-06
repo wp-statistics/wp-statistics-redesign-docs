@@ -5,6 +5,7 @@ status: "Done"
 figma: ""
 used_in_widgets:
   - "latest-visitors"
+  - "latest-views-table"
 ---
 
 # Referrer Column
@@ -22,6 +23,7 @@ Displays the traffic source that referred the visitor to your website, shown as 
 This column is used in the following widgets:
 
 - [Latest Visitors](../widgets/latest-visitors.md)
+- [Latest Views Table](../widgets/latest-views-table.md)
 
 ## Display Elements
 

@@ -4,18 +4,13 @@ type: "report"
 group: "Visitors"
 show_in_menu: true
 add_on: "Free"
-status: "Not Started"
+status: "Done"
 figma: ""
 interactions:
   - "Date Picker"
-  - "Filters"
 widgets:
   - row: 1
-    columns: ["views-summary"]
-  - row: 2
-    columns: ["views-chart"]
-  - row: 3
-    columns: ["pages-views-list", "posts-views-list"]
+    columns: ["latest-views-table"]
 ---
 
 # Views Report
@@ -26,25 +21,17 @@ Track and analyze page views across your website.
 
 - **Menu Visibility**: Shown in main menu
 - **Add-on**: Free (included in base plugin)
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Available Interactions
 
 - **Date Picker**
-- **Filters**
 
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Views Summary](../widgets/views-summary.md)
-
-### Row 2 (Full Width)
-- [Views Chart](../widgets/views-chart.md)
-
-### Row 3 (Two Columns)
-- [Pages Views List](../widgets/pages-views-list.md)
-- [Posts Views List](../widgets/posts-views-list.md)
+- [Latest Views Table](../widgets/latest-views-table.md)
 
 ---
 
