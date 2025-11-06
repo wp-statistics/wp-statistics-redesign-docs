@@ -1,7 +1,7 @@
 ---
 title: "Exit Page Column"
 type: "column"
-status: "Not Started"
+status: "Done"
 figma: ""
 used_in_widgets:
   - "latest-visitors"
@@ -9,12 +9,12 @@ used_in_widgets:
 
 # Exit Page Column
 
-Displays the last page a visitor viewed before leaving your website.
+Shows the last page a visitor viewed in the current session.
 
 ## Column Configuration
 
 - **Type**: Column (Reusable table column)
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Used In Widgets
@@ -23,78 +23,67 @@ This column is used in the following widgets:
 
 - [Latest Visitors](../widgets/latest-visitors.md)
 
-## Data Displayed
+## Display
 
-### Content
-- **Page Title**: Display the page/post title (preferred)
-- **URL Path**: Show URL if title unavailable
-- **Format**: Clean, readable format
+**Label:** Page title
 
-### Display Examples
-
-**With Title:**
-```
-Contact Us
-Checkout
-Thank You Page
-Product Details
-```
-
-**With URL (fallback):**
-```
-/blog/article-name
-/cart
-/thank-you
-```
-
-**Same as Entry (Single Page Visit):**
-```
-Home (same as entry)
-```
-
-## Display Format
-
-### Standard Display
-- Show page title
-- Truncate long titles with ellipsis (max ~50 characters)
-- Full title available on hover
-
-### Special Cases
-
-**Single Page Visit:**
-- When entry and exit are the same
-- Optional indicator: "(same as entry)" or "=" icon
-- Helps identify bounced visitors
-
-**Active Session:**
-- For visitors still on site (Online Visitors)
-- Display: "Currently browsing" or "Active"
-- May show current page they're on
-
-### Icons/Indicators
-- 🚪 Exit icon (optional)
-- 📄 Page type indicator
-- ↪️ Same-page indicator (when entry = exit)
+**Truncation:**
+- Truncate longer than 35 characters with "…"
+- Truncation handled via CSS
 
 ## Interactive Elements
-- **Click**: Open exit page in new tab
-- **Hover**: Show full page title and complete URL in tooltip
-- Visual indicator when exit = entry (bounce)
 
-## Empty State
+### Click Action
+Opens the [Single Content Report](../reports/single-content-report.md) for this page in the same tab
 
-When exit page data not available:
-- Display: "Unknown" or "-"
-- May occur for active sessions or incomplete data
+### Hover Tooltip
+Displays full URL path
+- Example: `/blog/article-name`
 
-## Analytics Insights
+## Display Examples
 
-### Exit Page Analysis
-Exit pages help identify:
-- **Conversion Pages**: Where users complete goals
-- **Problem Pages**: High exit rates may indicate issues
-- **Natural Exits**: Contact, thank you, or completion pages
-- **Bounce Analysis**: When entry = exit on first page
+### Example 1: Standard Page
+
+**Visual:** `Contact Us`
+
+**Description:**
+- Label: Page title "Contact Us"
+- Click: Opens Single Content Report
+- Hover: Shows full URL path
+
+---
+
+### Example 2: Long Title Truncated
+
+**Visual:** `Complete Guide to WordPress Conf…`
+
+**Description:**
+- Label: Page title truncated at 35 chars
+- Click: Opens Single Content Report
+- Hover: Shows full URL path
+
+---
+
+### Example 3: Page with Query String
+
+**Visual:** `Thank You Page`
+
+**Description:**
+- Label: Page title "Thank You Page"
+- Click: Opens Single Content Report
+- Hover: Shows full URL path (e.g., `/thank-you`)
+
+---
+
+### Example 4: Same as Entry (Bounce)
+
+**Visual:** `Home Page`
+
+**Description:**
+- Label: Page title "Home Page"
+- This is a single-page visit (entry = exit)
+- Click: Opens Single Content Report
+- Hover: Shows full URL
 
 ## Related Documentation
 
