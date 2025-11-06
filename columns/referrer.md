@@ -81,17 +81,11 @@ Direct
 - Full URL shown on hover
 - Maximum display length: ~40 characters
 
-## Behavior
-
-### Sortable
-**No** - This column is not sortable
-
-### Interactive Elements
+## Interactive Elements
 - **Click referrer**: Filter page to show only visitors from that source
 - **Hover**: Show full URL in tooltip (for external referrals)
-- **Icon**: Visual indicator of referrer type
 
-### Source Detection Rules
+## Source Detection Rules
 - No referrer header: "Direct"
 - Known search engine: Show search engine name
 - Known social platform: Show platform name

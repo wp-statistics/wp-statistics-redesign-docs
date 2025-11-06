@@ -66,17 +66,11 @@ Or for anonymous visitor:
 Firefox 118 • Linux • 💻 Desktop
 ```
 
-## Behavior
-
-### Sortable
-**No** - This column is not sortable (it's a composite of multiple data points)
-
-### Interactive Elements
+## Interactive Elements
 - **Click visitor name/IP**: Navigate to [Single Visitor Report](../reports/single-visitor-report.md)
-- **Hover**: Highlight for emphasis
-- **Tooltips**: May show additional details on hover
+- **Hover**: May show additional details in tooltip
 
-### Data Fallbacks
+## Data Fallbacks
 - No city available: Show only country
 - No location data: Show "Unknown Location"
 - No user agent data: Show "Unknown Browser/OS"

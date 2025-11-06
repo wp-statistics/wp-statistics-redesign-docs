@@ -65,15 +65,9 @@ This column is used in the following widgets:
 - **6-10 views**: Good engagement
 - **11+ views**: High engagement (may show special indicator)
 
-## Behavior
-
-### Sortable
-**No** - This column is not sortable
-
-### Interactive Elements
-- **Click**: May drill down to see list of pages viewed
-- **Hover**: Show tooltip with engagement level or additional context
-- **Badge**: Visual indicator for single-page visits (bounces)
+## Interactive Elements
+- **Click**: Drill down to see list of pages viewed
+- **Hover**: Show tooltip with engagement level
 
 ## Alignment
 - **Right-aligned**: Numbers should be right-aligned for easier comparison

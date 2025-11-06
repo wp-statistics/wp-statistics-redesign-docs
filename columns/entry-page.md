@@ -69,15 +69,9 @@ Home (/)
 - Clean format without query parameters (unless significant)
 - Keep readable structure
 
-## Behavior
-
-### Sortable
-**No** - This column is not sortable
-
-### Interactive Elements
-- **Click**: Open entry page in new tab (view the actual page)
+## Interactive Elements
+- **Click**: Open entry page in new tab
 - **Hover**: Show full page title and complete URL in tooltip
-- **Right-click**: Copy URL option
 
 ## Empty State
 

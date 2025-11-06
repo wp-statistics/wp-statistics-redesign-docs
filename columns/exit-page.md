@@ -76,15 +76,10 @@ Home (same as entry)
 - 📄 Page type indicator
 - ↪️ Same-page indicator (when entry = exit)
 
-## Behavior
-
-### Sortable
-**No** - This column is not sortable
-
-### Interactive Elements
-- **Click**: Open exit page in new tab (view the actual page)
+## Interactive Elements
+- **Click**: Open exit page in new tab
 - **Hover**: Show full page title and complete URL in tooltip
-- **Compare**: Visual indicator when exit = entry (bounce)
+- Visual indicator when exit = entry (bounce)
 
 ## Empty State
 

@@ -41,12 +41,9 @@ The Data Table component is a versatile solution for displaying tabular data wit
 
 ## Features
 
-### Core Features
-- Column sorting (single column)
-- Pagination
+- Single column sorting
+- Pagination with navigation controls
 - Fixed header on scroll
-- Responsive column management
-- Custom cell rendering
 - Column visibility and reordering
 
 ## Column Management
@@ -54,43 +51,19 @@ The Data Table component is a versatile solution for displaying tabular data wit
 A button in the top-right corner of the table provides column management capabilities:
 - **Show/Hide Columns**: Toggle visibility of individual columns
 - **Reorder Columns**: Drag and drop to change column order
-- Changes apply immediately to the table view
-
-## Sorting
-
-### Single Column Sort
-- Click header to sort ascending
-- Click again for descending
-- Click third time to remove sort
-- Visual indicator shows sort direction
 
 ## Pagination
 
-### Controls
 - First/Previous/Next/Last page buttons
-- Page number buttons
-- Jump to specific page
-- Shows current range and total count
+- Current range and total count display
 
 ## States
 
-### Default
-- Data displayed in rows
-- Headers interactive (if sortable)
-- Pagination controls active
-
-### Loading
-- Skeleton rows with shimmer animation
-- Headers visible
-- Pagination disabled
-
 ### Empty
-- "No data available" message
-- Guidance for users
+- "No data available" message displayed when table has no data
 
 ### Error
-- Error message displayed
-- Retry button when applicable
+- Error message with retry option when data loading fails
 
 ## Accessibility
 
