@@ -1,0 +1,22 @@
+views:
+  - type: table
+    name: All
+    filters:
+      and:
+        - file.hasProperty("status")
+    order:
+      - file.name
+      - file.folder
+      - status
+    sort:
+      - property: status
+        direction: ASC
+  - type: table
+    name: Done
+    filters:
+      and:
+        - file.hasProperty("status")
+    order:
+      - file.name
+      - file.folder
+      - status
