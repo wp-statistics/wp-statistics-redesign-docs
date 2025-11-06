@@ -51,15 +51,6 @@ This column displays up to 2 lines of information:
 **Display Style:**
 - Upper-case pill style
 
-**Source Categories (Enum):**
-- **DIRECT TRAFFIC**
-- **REFERRAL**
-- **ORGANIC SEARCH**
-- **ORGANIC SOCIAL**
-- **PAID**
-- **EMAIL**
-- **OTHER**
-
 ## Display Logic
 
 ### Standard Case (Domain + Category)
