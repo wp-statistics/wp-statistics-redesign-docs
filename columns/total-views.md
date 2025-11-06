@@ -1,7 +1,7 @@
 ---
 title: "Total Views Column"
 type: "column"
-status: "Not Started"
+status: "Done"
 figma: ""
 used_in_widgets:
   - "latest-visitors"
@@ -9,12 +9,12 @@ used_in_widgets:
 
 # Total Views Column
 
-Displays the total number of page views by a visitor during their session or across all their visits (depending on context).
+Shows the count of page-views made by the visitor within the active date range.
 
 ## Column Configuration
 
 - **Type**: Column (Reusable table column)
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Used In Widgets
@@ -23,81 +23,52 @@ This column is used in the following widgets:
 
 - [Latest Visitors](../widgets/latest-visitors.md)
 
-## Data Displayed
+## Display
 
-### Value
-- **Number**: Total count of page views
-- **Format**: Integer (e.g., 1, 5, 23, 147)
-- **Large Numbers**: Formatted with commas (e.g., 1,234)
+**Value:** Positive integer (never 0)
 
-### Context Options
-
-**Per Session:**
-- Count page views in the current/latest session only
-- Session defined by 30-minute inactivity timeout
-- Useful for understanding current visit depth
-
-**Lifetime Total:**
-- Count all page views across all visits by this visitor
-- Useful for identifying returning visitors and engagement
-
-## Display Format
-
-### Standard Display
-```
-5
-12
-1
-147
-```
-
-### With Visual Indicators
-```
-5 pages
-12 📄
-1 (bounce)
-147 🔥 (highly engaged)
-```
-
-### Engagement Indicators
-- **1 view**: May mark as "bounce" or single-page visit
-- **2-5 views**: Standard engagement
-- **6-10 views**: Good engagement
-- **11+ views**: High engagement (may show special indicator)
+**Format:**
+- Right-aligned for easier comparison
+- Thousand separator with comma (e.g., 1,234, 12,567)
+- Examples: 5, 23, 147, 1,234
 
 ## Interactive Elements
-- **Click**: Drill down to see list of pages viewed
-- **Hover**: Show tooltip with engagement level
 
-## Alignment
-- **Right-aligned**: Numbers should be right-aligned for easier comparison
+### Click Action
+Opens the [Single Visitor Report](../reports/single-visitor-report.md) for this visitor in the same tab
 
-## Empty State
+### Hover Tooltip
+Displays: "{value} Page Views from this visitor"
+- Example: "5 Page Views from this visitor"
+- Example: "1,234 Page Views from this visitor"
 
-When view data not available:
-- Display: "0" or "-"
-- Should be rare unless data collection issue
+## Display Examples
 
-## Analytics Insights
+### Example 1: Standard Value
 
-### Engagement Metrics
-Total views help identify:
-- **Bounces**: 1 page view (high exit rate)
-- **Engaged Visitors**: Multiple page views (exploring content)
-- **Power Users**: Very high page views (highly interested)
-- **Session Depth**: Average pages per visit
+**Visual:** `23`
 
-### Benchmarks
-- **Bounce**: 1 view
-- **Low Engagement**: 2-3 views
-- **Medium Engagement**: 4-7 views
-- **High Engagement**: 8+ views
+**Description:**
+- Value: 23 Page Views
+- Click: Opens Single Visitor Report
+- Hover: "23 Page Views from this visitor"
+
+---
+
+### Example 2: Large Value with Separator
+
+**Visual:** `1,234`
+
+**Description:**
+- Value: 1,234 Page Views (formatted with comma separator)
+- Click: Opens Single Visitor Report
+- Hover: "1,234 Page Views from this visitor"
 
 ## Related Documentation
 
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
-- [Views Report](../reports/views.md)
 - [Single Visitor Report](../reports/single-visitor-report.md)
+- [Views Report](../reports/views.md)
 - [Data Table Component](../components/data-table.md)
 
 ---
