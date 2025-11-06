@@ -1,7 +1,7 @@
 ---
 title: "Data Table Component"
 type: "component"
-status: "Not Started"
+status: "Done"
 figma: ""
 used_in_widgets:
   - "latest-visitors"
@@ -20,7 +20,7 @@ A powerful, flexible data table component for displaying structured data with so
 ## Component Configuration
 
 - **Type**: Component (Base UI element)
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Used In Widgets
