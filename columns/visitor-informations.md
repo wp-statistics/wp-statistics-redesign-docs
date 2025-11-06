@@ -1,7 +1,7 @@
 ---
 title: "Visitor Informations Column"
 type: "column"
-status: "Not Started"
+status: "Done"
 figma: ""
 used_in_widgets:
   - "latest-visitors"
@@ -14,7 +14,7 @@ Displays comprehensive visitor information through a series of icons and badges 
 ## Column Configuration
 
 - **Type**: Column (Reusable table column)
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Used In Widgets
