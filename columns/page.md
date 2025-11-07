@@ -5,6 +5,7 @@ status: "Done"
 figma: ""
 used_in_widgets:
   - "latest-views-table"
+  - "online-visitors-table"
 ---
 
 # Page Column
@@ -22,6 +23,7 @@ Shows the page title for each view in the table.
 This column is used in the following widgets:
 
 - [Latest Views Table](../widgets/latest-views-table.md)
+- [Online Visitors Table](../widgets/online-visitors-table.md)
 
 ## Display
 

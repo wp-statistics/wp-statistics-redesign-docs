@@ -10,7 +10,7 @@ used_in_widgets:
   - "top-pages"
   - "top-visitors-list"
   - "logged-in-users-list"
-  - "online-visitors-list"
+  - "online-visitors-table"
   - "top-search-terms-list"
 ---
 
@@ -34,7 +34,7 @@ This component is used by the following widgets:
 - [Top Pages](../widgets/top-pages.md)
 - [Top Visitors List](../widgets/top-visitors-list.md)
 - [Logged-in Users List](../widgets/logged-in-users-list.md)
-- [Online Visitors List](../widgets/online-visitors-list.md)
+- [Online Visitors Table](../widgets/online-visitors-table.md)
 - [Top Search Terms List](../widgets/top-search-terms-list.md)
 
 ## Overview
