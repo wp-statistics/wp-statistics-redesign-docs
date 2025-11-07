@@ -16,6 +16,7 @@ views:
     filters:
       and:
         - file.hasProperty("status")
+        - status == "Done"
     order:
       - file.name
       - file.folder
