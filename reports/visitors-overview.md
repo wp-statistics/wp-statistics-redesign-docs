@@ -4,18 +4,16 @@ type: "report"
 group: "Visitors"
 show_in_menu: true
 add_on: "Free"
-status: "Not Started"
+status: "In Progress"
 figma: ""
 interactions:
   - "Date Picker"
   - "Filters"
 widgets:
   - row: 1
-    columns: ["traffic-summary"]
+    columns: ["overview-metrics"]
   - row: 2
-    columns: ["traffic-trends", "visitor-sources"]
-  - row: 3
-    columns: ["top-pages"]
+    columns: ["traffic-trends"]
 ---
 
 # Visitors Overview
@@ -26,7 +24,7 @@ Comprehensive snapshot of your website's traffic and visitor behavior.
 
 - **Menu Visibility**: Shown in main menu
 - **Add-on**: Free (included in base plugin)
-- **Status**: Not Started
+- **Status**: In Progress
 - **Figma Design**: [Add link when available]
 
 ## Available Interactions
@@ -36,16 +34,40 @@ Comprehensive snapshot of your website's traffic and visitor behavior.
 
 ## Widget Layout
 
-### Row 1 (Full Width)
-- [Traffic Summary](../widgets/traffic-summary.md)
+### Row 1 (Full Width) - Overview Metrics
 
-### Row 2 (Two Columns)
-- [Traffic Trends](../widgets/traffic-trends.md)
-- [Visitor Sources](../widgets/visitor-sources.md)
+Uses the [Metrics](../components/metrics.md) component to display 8 key performance indicators in a 4-column, 2-row grid layout.
 
-### Row 3 (Full Width)
-- [Top Pages](../widgets/top-pages.md)
+#### Component Configuration
+
+- **Component**: [Metrics](../components/metrics.md)
+- **Show Previous Period**: Enabled (for numeric metrics only)
+- **Show Source Icons**: Disabled (all metrics from WP Statistics)
+
+#### Metrics Display
+
+**First Row (4 metrics with previous period comparison):**
+
+| Metric | Value Format | Previous Period |
+|--------|--------------|-----------------|
+| **Visitors** | Number | ✅ Yes |
+| **Views** | Number | ✅ Yes |
+| **Session Duration** | Time (HH:MM:SS) | ✅ Yes |
+| **Views Per Session** | Decimal (e.g., 2.5) | ✅ Yes |
+
+**Second Row (4 metrics):**
+
+| Metric | Value Format | Previous Period |
+|--------|--------------|-----------------|
+| **Top Country** | Country name | ❌ No |
+| **Top Referrer** | Domain (e.g., google.com) | ❌ No |
+| **Top Search Term** | Search term text | ❌ No |
+| **Logged-in Share** | Percentage | ✅ Yes |
+
+### Row 2 (Full Width) - Traffic Trends
+
+- [Traffic Trends](../widgets/traffic-trends.md) - Line chart displaying visitor and view trends over time
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-08*

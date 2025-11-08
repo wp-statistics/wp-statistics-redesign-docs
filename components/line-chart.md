@@ -3,6 +3,8 @@ title: "Line Chart Component"
 type: "component"
 status: "Done"
 figma: ""
+used_in_widgets:
+  - "traffic-trends"
 ---
 
 # Line Chart Component
@@ -14,6 +16,12 @@ A versatile line chart component for displaying time-series data and trends acro
 - **Type**: Component (Base UI element)
 - **Status**: Done
 - **Figma Design**: [Add link when available]
+
+## Used In Widgets
+
+This component is used by the following widgets:
+
+- [Traffic Trends](../widgets/traffic-trends.md)
 
 ## Overview
 

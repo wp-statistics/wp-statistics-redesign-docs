@@ -3,69 +3,66 @@ title: "Traffic Trends"
 type: "widget"
 component: "line-chart"
 add_on: "Free"
-status: "Not Started"
+status: "Done"
 figma: ""
-default_sort: "date"
-row_limit: null
 used_in_reports:
   - "visitors-overview"
-  - "visitors"
 ---
 
 # Traffic Trends Widget
 
-Visual representation of traffic trends over the selected time period using a line chart.
+Displays visitor and view trends over time using an interactive line chart with period comparison and timeframe selection.
 
 ## Widget Configuration
 
 - **Component**: [Line Chart](../components/line-chart.md)
 - **Add-on**: Free (included in base plugin)
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
-## Display Settings
+## Component Configuration
 
-- **Default Sort**: By date (chronological)
-- **Row Limit**: N/A (displays all data points in date range)
+| Property | Value |
+|----------|-------|
+| **Title** | Traffic Trends |
+| **Primary Metric** | Visitors |
+| **Secondary Metric** | Views |
+| **Tertiary Metric** | null |
+| **Quaternary Metric** | null |
+| **Quinary Metric** | null |
+| **Previous Period** | ✅ Yes |
+| **Metric Toggle** | ✅ Yes |
+| **Timeframe Selector** | ✅ Yes |
+| **Legend Display** | ✅ Yes |
 
 ## Used In Reports
 
-This widget appears in the following report pages:
+This widget is used in the following reports:
 
-- [Visitors Overview](../reports/visitors-overview.md) - Row 2, left column
-- [Visitors](../reports/visitors.md) - Row 2, full width
+- [Visitors Overview](../reports/visitors-overview.md) - Row 2, full width
 
-## Data Displayed
+## Chart Behavior
 
-### Primary Metrics
-- **Visitors**: Number of unique visitors per time period
-- **Page Views**: Total page views per time period
+The Traffic Trends widget displays two primary metrics:
+- **Visitors** (solid blue line) - Total unique visitors over time
+- **Views** (solid green line) - Total page views over time
 
-### Time Granularity
-Based on selected date range:
-- **1-7 days**: Hourly data points
-- **8-31 days**: Daily data points
-- **32-90 days**: Daily data points
-- **91+ days**: Weekly or monthly data points
+Users can:
+- Toggle between Daily, Weekly, and Monthly views using the timeframe selector
+- Show/hide the previous period comparison using the toggle in the top-right
+- Click metric labels in the legend to show/hide individual metrics
+- Hover over any point to see exact values for all visible metrics
 
-## Features
+## Empty State
 
-### Chart Interactions
-- **Hover**: Show tooltip with exact values
-- **Legend**: Toggle metric visibility
-- **Zoom**: Zoom into specific time ranges (optional)
-- **Download**: Export chart as image
+When no data is available for the selected period:
+- "No data available"
 
-### Data Series
-- Multiple lines for different metrics
-- Smooth curve rendering
-- Responsive to container width
+## Related Documentation
 
-### Empty State
-When no data is available:
-- Show message: "No traffic data for selected period"
-- Suggest adjusting date range or filters
+- [Line Chart Component](../components/line-chart.md)
+- [Visitors Overview Report](../reports/visitors-overview.md)
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-08*
