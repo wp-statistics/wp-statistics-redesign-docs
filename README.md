@@ -61,6 +61,7 @@ Base UI components that power the widgets throughout the application.
 | Data Table | Done | Tabular data display with sorting, pagination, and column management | [View Docs](components/data-table.md) |
 | Line Chart | Done | Time-series data visualization with trend lines and comparison | [View Docs](components/line-chart.md) |
 | Metrics | Done | Grid layout displaying key performance indicators with period comparison | [View Docs](components/metrics.md) |
+| Horizontal Bar List | Done | Ranked list with proportional bars for top items comparison | [View Docs](components/horizontal-bar-list.md) |
 
 - Browse all components in the [components directory](components/)
 
