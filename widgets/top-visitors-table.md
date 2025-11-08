@@ -22,16 +22,21 @@ Displays the most frequent and engaged visitors during the selected date range i
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 
+## Component Configuration
+
+| Property | Value |
+|----------|-------|
+| **Title** | (Optional) |
+| **Default Sort** | total_views |
+| **Row Limit** | 50 |
+| **Column Management** | ✅ Yes |
+| **Pagination** | ✅ Yes |
+
 ## Used In Reports
 
 This widget is used in the following reports:
 
 - [Top Visitors](../reports/top-visitors.md)
-
-## Display Settings
-
-- **Default Sort**: Total Views
-- **Rows Per Page**: 50
 
 ## Table Structure
 

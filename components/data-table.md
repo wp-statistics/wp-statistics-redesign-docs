@@ -41,12 +41,17 @@ This component is used by the following widgets:
 
 The Data Table component is a versatile solution for displaying tabular data with sorting, pagination, and responsive behavior.
 
-## Features
+## Configuration Options
 
-- Single column sorting
-- Pagination with navigation controls
-- Fixed header on scroll
-- Column visibility and reordering
+Widgets using this component can configure the following options:
+
+| Option | Type | Description | Default |
+|--------|------|-------------|---------|
+| **Title** | String | Table title/heading displayed at the top | (Required) |
+| **Default Sort** | String | Column to sort by on initial load | null |
+| **Row Limit** | Number | Number of rows to display per page | 50 |
+| **Column Management** | Boolean | Show/hide column visibility and reordering button | true |
+| **Pagination** | Boolean | Enable/disable pagination controls | true |
 
 ## Column Management
 
@@ -59,13 +64,10 @@ A button in the top-right corner of the table provides column management capabil
 - First/Previous/Next/Last page buttons
 - Current range and total count display
 
-## States
+## Empty State
 
-### Empty
-- "No data available" message displayed when table has no data
-
-### Error
-- Error message with retry option when data loading fails
+When table has no data:
+- "No data available"
 
 ## Accessibility
 

@@ -22,10 +22,15 @@ Displays the most recent page views across your website in a comprehensive data 
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 
-## Display Settings
+## Component Configuration
 
-- **Default Sort**: Last View (descending - most recent first)
-- **Row Limit**: 50 views per page
+| Property | Value |
+|----------|-------|
+| **Title** | (Optional) |
+| **Default Sort** | last_view |
+| **Row Limit** | 50 |
+| **Column Management** | ✅ Yes |
+| **Pagination** | ✅ Yes |
 
 ## Used In Reports
 

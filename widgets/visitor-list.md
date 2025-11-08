@@ -22,10 +22,15 @@ Comprehensive data table showing detailed information about individual visitors.
 - **Status**: Not Started
 - **Figma Design**: [Add link when available]
 
-## Display Settings
+## Component Configuration
 
-- **Default Sort**: Last visit (most recent first)
-- **Row Limit**: 50 visitors per page
+| Property | Value |
+|----------|-------|
+| **Title** | (Optional) |
+| **Default Sort** | last_visit |
+| **Row Limit** | 50 |
+| **Column Management** | ✅ Yes |
+| **Pagination** | ✅ Yes |
 
 ## Used In Reports
 

@@ -22,10 +22,15 @@ Displays the most recent visitors to your website in a comprehensive data table.
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 
-## Display Settings
+## Component Configuration
 
-- **Default Sort**: Last View (descending - most recent first)
-- **Row Limit**: 50 visitors per page
+| Property | Value |
+|----------|-------|
+| **Title** | (Optional) |
+| **Default Sort** | last_view |
+| **Row Limit** | 50 |
+| **Column Management** | ✅ Yes |
+| **Pagination** | ✅ Yes |
 
 ## Used In Reports
 

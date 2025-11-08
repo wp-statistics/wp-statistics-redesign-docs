@@ -22,10 +22,15 @@ Displays a ranked list of the most visited pages on your website.
 - **Status**: Not Started
 - **Figma Design**: [Add link when available]
 
-## Display Settings
+## Component Configuration
 
-- **Default Sort**: Page views (descending)
-- **Row Limit**: 10 pages
+| Property | Value |
+|----------|-------|
+| **Title** | (Optional) |
+| **Default Sort** | views |
+| **Row Limit** | 10 |
+| **Column Management** | ✅ Yes |
+| **Pagination** | ✅ Yes |
 
 ## Used In Reports
 

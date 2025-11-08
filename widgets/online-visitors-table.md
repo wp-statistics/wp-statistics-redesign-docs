@@ -22,16 +22,21 @@ Displays visitors currently browsing your website in a comprehensive data table.
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 
+## Component Configuration
+
+| Property | Value |
+|----------|-------|
+| **Title** | (Optional) |
+| **Default Sort** | last_view |
+| **Row Limit** | 50 |
+| **Column Management** | ✅ Yes |
+| **Pagination** | ✅ Yes |
+
 ## Used In Reports
 
 This widget is used in the following reports:
 
 - [Online Visitors](../reports/online-visitors.md)
-
-## Display Settings
-
-- **Default Sort**: Last View
-- **Rows Per Page**: 50
 
 ## Table Structure
 
