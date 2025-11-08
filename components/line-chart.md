@@ -36,14 +36,20 @@ The Line Chart component provides a flexible charting solution for visualizing m
 
 ## Configuration Options
 
-Individual widgets using this component can enable or disable the following features:
+Widgets using this component can configure the following options:
 
-- **Previous Period Toggle**: Show/hide the comparison toggle button
-- **Metric Toggle**: Allow users to toggle individual metrics on/off
-- **Timeframe Selector**: Enable timeframe switching dropdown
-- **Legend Display**: Show/hide the legend with metric totals
-
-These options are configured at the widget level, allowing each implementation to customize the chart's functionality based on specific use cases.
+| Option | Type | Description | Default |
+|--------|------|-------------|---------|
+| **Title** | String | Chart title displayed at the top | (Required) |
+| **Primary Metric** | String | Main metric to display | (Required) |
+| **Secondary Metric** | String | Additional metric to display | null |
+| **Tertiary Metric** | String | Third metric to display | null |
+| **Quaternary Metric** | String | Fourth metric to display | null |
+| **Quinary Metric** | String | Fifth metric to display | null |
+| **Previous Period** | Boolean | Enable/disable previous period comparison toggle | true |
+| **Metric Toggle** | Boolean | Allow users to toggle individual metrics on/off | true |
+| **Timeframe Selector** | Boolean | Enable timeframe switching dropdown (Daily/Weekly/Monthly) | true |
+| **Legend Display** | Boolean | Show/hide the legend with metric totals | true |
 
 ## Global Behavior
 
