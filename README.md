@@ -48,6 +48,18 @@ A comprehensive set of reports for analyzing visitor behavior and traffic patter
 
 Reusable widgets used across multiple report pages. Each widget is based on a component and can be configured independently.
 
+### Available Widgets
+
+| Widget | Component | Add-on | Status | Documentation |
+|--------|-----------|--------|--------|---------------|
+| Latest Views Table | Data Table | Free | Done | [View Docs](widgets/latest-views-table.md) |
+| Latest Visitors | Data Table | Free | Done | [View Docs](widgets/latest-visitors.md) |
+| Online Visitors Table | Data Table | Free | Done | [View Docs](widgets/online-visitors-table.md) |
+| Top Entry Pages | Table | Data Plus | Done | [View Docs](widgets/top-entry-pages.md) |
+| Top Referrers | Horizontal Bar List | Free | Done | [View Docs](widgets/top-referrers.md) |
+| Top Visitors Table | Data Table | Free | Done | [View Docs](widgets/top-visitors-table.md) |
+| Traffic Trends | Line Chart | Free | Done | [View Docs](widgets/traffic-trends.md) |
+
 - Browse all widgets in the [widgets directory](widgets/)
 
 ---
@@ -87,6 +99,8 @@ Reusable table column definitions used across data table widgets. Each column ha
 | Views Per Session | Yes | Average page views per session | [View Docs](columns/views-per-session.md) |
 | Bounce Rate | Yes | Percentage of single-page sessions | [View Docs](columns/bounce-rate.md) |
 | New vs Returning | No | Visitor lifecycle classification badge | [View Docs](columns/new-vs-returning.md) |
+| Unique Entrances | No | Count of sessions that started on a specific page | [View Docs](columns/unique-entrances.md) |
+| View Page | No | Action button to view page content on website | [View Docs](columns/view-page.md) |
 
 - Browse all columns in the [columns directory](columns/)
 
