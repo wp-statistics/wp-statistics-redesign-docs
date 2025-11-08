@@ -26,7 +26,7 @@ Displays visitors currently browsing your website in a comprehensive data table.
 
 | Property | Value |
 |----------|-------|
-| **Title** | (Optional) |
+| **Title** | null |
 | **Default Sort** | last_view |
 | **Row Limit** | 50 |
 | **Column Management** | ✅ Yes |
@@ -49,12 +49,6 @@ This widget is used in the following reports:
 | [Visitor Informations](../columns/visitor-informations.md) | No | Shown |
 | [Referrer](../columns/referrer.md) | No | Shown |
 | [Page](../columns/page.md) | No | Shown |
-
-## Features
-
-- Real-time visitor tracking
-- Session duration display
-- Full visitor context (location, browser, OS)
 
 ## Empty State
 

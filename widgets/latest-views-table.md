@@ -26,7 +26,7 @@ Displays the most recent page views across your website in a comprehensive data 
 
 | Property | Value |
 |----------|-------|
-| **Title** | (Optional) |
+| **Title** | null |
 | **Default Sort** | last_view |
 | **Row Limit** | 50 |
 | **Column Management** | ✅ Yes |
@@ -47,16 +47,6 @@ Displays the most recent page views across your website in a comprehensive data 
 | [Referrer](../columns/referrer.md) | No | Shown |
 | [Page](../columns/page.md) | No | Shown |
 | [Total Views](../columns/total-views.md) | No | Shown |
-
-## Features
-
-### Sorting
-- Static default sort by "Last View" descending (most recent first)
-- Sorting is not user-changeable
-
-### Pagination
-- 50 views per page (default)
-- Page size options available
 
 ## Empty State
 

@@ -26,7 +26,7 @@ Displays the most frequent and engaged visitors during the selected date range i
 
 | Property | Value |
 |----------|-------|
-| **Title** | (Optional) |
+| **Title** | null |
 | **Default Sort** | total_views |
 | **Row Limit** | 50 |
 | **Column Management** | ✅ Yes |
