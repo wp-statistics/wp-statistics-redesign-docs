@@ -1,91 +1,98 @@
 ---
 title: "Line Chart Component"
 type: "component"
-status: "Not Started"
+status: "Done"
 figma: ""
-used_in_widgets:
-  - "traffic-trends"
-  - "logged-in-activity-chart"
-  - "search-trends-chart"
 ---
 
 # Line Chart Component
 
-A versatile line chart component for displaying time-series data and trends.
+A versatile line chart component for displaying time-series data and trends across your analytics.
 
 ## Component Configuration
 
 - **Type**: Component (Base UI element)
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
-
-## Used In Widgets
-
-This component is used by the following widgets:
-
-- [Traffic Trends](../widgets/traffic-trends.md)
-- [Logged-in Activity Chart](../widgets/logged-in-activity-chart.md)
-- [Search Trends Chart](../widgets/search-trends-chart.md)
 
 ## Overview
 
-The Line Chart component provides a flexible, responsive charting solution for visualizing trends over time. It supports multiple data series, interactive tooltips, and responsive behavior across devices.
+The Line Chart component provides a flexible charting solution for visualizing metrics over time. It supports multiple data series, period comparisons, interactive toggles, and responsive timeframe selection.
 
-## Features
+## Shared Behavior
 
-### Core Features
-- Multiple data series support
-- Smooth curve rendering
-- Interactive tooltips
-- Responsive design
-- Legend with toggle functionality
-- Zoom and pan capabilities
-- Grid lines and axis labels
-- Data point markers
+| Feature | Description |
+|---------|-------------|
+| **X-Axis** | Always represents time (Daily, Weekly, Monthly) |
+| **Y-Axis** | Represents metric values; auto-scaled and displays max 8 tick marks/labels for readability |
+| **Solid Line** | Displays current period data |
+| **Dashed Line** | Used in two cases: Previous period data, and the final (incomplete) day/week/month of the current range |
+| **Previous Period Toggle** | Clicking on "-- Previous period" in the top-right toggles comparison data visibility |
+| **Metric Toggle** | Clicking on any metric label in the legend shows/hides that metric on the chart |
+| **Hover Interaction** | Reveals exact values for each visible metric on that date/period |
+| **Timeframe Selector** | Dropdown to switch between Daily, Weekly, or Monthly views |
+| **Legend** | Displays color-coded metric labels with totals for current and previous periods |
+| **Max Data Points** | Chart displays up to 8 points for readability |
 
-### Interactive Features
-- **Hover**: Display tooltip with exact values
-- **Click Legend**: Toggle series visibility
-- **Drag**: Pan chart (when zoomed)
-- **Scroll**: Zoom in/out (optional)
-- **Touch**: Mobile-friendly gestures
+## Configuration Options
 
-## Chart Variants
+Individual widgets using this component can enable or disable the following features:
 
-### Line Chart (Default)
-Standard line chart showing trends over time with connected data points.
+- **Previous Period Toggle**: Show/hide the comparison toggle button
+- **Metric Toggle**: Allow users to toggle individual metrics on/off
+- **Timeframe Selector**: Enable timeframe switching dropdown
+- **Legend Display**: Show/hide the legend with metric totals
 
-### Area Chart
-Line chart with filled area under the curve for emphasis.
+These options are configured at the widget level, allowing each implementation to customize the chart's functionality based on specific use cases.
 
-## States
+## Global Behavior
 
-### Default
-- Chart rendered with data
-- Interactive elements enabled
-- Smooth animations on load
+### Previous Period Comparison
 
-### Loading
-- Skeleton/placeholder shown while data loads
-- Maintains chart structure
+Can be globally disabled from **WP Statistics Settings → Display**.
 
-### Empty
-- "No data available" message
-- Suggestion to adjust filters or date range
+When disabled, dashed comparison lines will not appear in any line chart.
 
-### Error
-- Error message displayed
-- Retry option when applicable
+**Default**: Enabled
 
-## Accessibility
+### Incomplete Final Period
 
-- Keyboard navigation support
-- Screen reader compatible with data table alternative
-- Proper ARIA labels for chart elements
+The most recent day/week/month is treated as incomplete and shown as a **dashed extension** of the solid line to indicate the partial nature of the data.
+
+## Visual Style Guide
+
+| Element | Appearance |
+|---------|------------|
+| **Current Metric** | Solid Line (Color-coded) |
+| **Previous Metric** | Dashed Line (Color-coded) |
+| **Incomplete Period** | Dashed extension of current metric |
+| **Max Data Points** | Chart displays up to 8 points for readability |
+
+## Color Codes
+
+Line charts use five preset colors to show different metrics. These colors are used in order:
+
+| Color Name | Order | Color Code |
+|------------|-------|------------|
+| **Primary** | 1st | #3B82F6 |
+| **Secondary** | 2nd | #10B981 |
+| **Tertiary** | 3rd | #F59E0B |
+| **Quaternary** | 4th | #EF4444 |
+| **Quinary** | 5th | #8B5CF6 |
+
+**Notes:**
+
+- Colors always follow this order, based on how many metrics are shown
+- These colors are used for both solid and dashed lines, depending on the data type (current, previous, incomplete)
+
+## Empty State
+
+When no data is available for the selected period:
+
+- "No data available"
 
 ## Related Documentation
 
-- [Traffic Trends Widget](../widgets/traffic-trends.md)
 - [Global Rules](../global/global-rules.md)
 
 ---
