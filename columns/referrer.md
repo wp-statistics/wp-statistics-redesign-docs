@@ -29,6 +29,15 @@ This column is used in the following widgets:
 - [Online Visitors Table](../widgets/online-visitors-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
 
+## Attribution Model Behavior
+
+When a visitor has multiple sessions within the selected date range, the referrer shown depends on the [Attribution Model](../global/attribution-settings.md) setting:
+
+- **First Touch Attribution**: Shows referrer from the visitor's first session in the date range
+- **Last Touch Attribution** (Default): Shows referrer from the visitor's most recent session in the date range
+
+See [Attribution Settings](../global/attribution-settings.md) for complete details.
+
 ## Display Elements
 
 This column displays up to 2 lines of information:
@@ -177,6 +186,8 @@ OTHER
 
 ## Related Documentation
 
+- [Attribution Settings](../global/attribution-settings.md)
+- [Data Model](../global/data-model.md)
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
 - [Visitor Sources Widget](../widgets/visitor-sources.md)
 - [Search Terms Report](../reports/search-terms.md)
@@ -184,4 +195,4 @@ OTHER
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-08*

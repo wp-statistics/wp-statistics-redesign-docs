@@ -20,6 +20,8 @@ Essential documentation covering global rules, patterns, and configurations:
 - [Global Rules](global/global-rules.md) - Design principles, patterns, and global UI rules
 - [Menu Structure](global/menu-structure.md) - Main navigation menu structure and organization
 - [Interactions](global/interactions.md) - Common interactions like Date Picker, Filters, etc.
+- [Data Model](global/data-model.md) - Definitions of visitors, sessions, views, and their relationships
+- [Attribution Settings](global/attribution-settings.md) - First Touch vs Last Touch attribution model
 
 ---
 
@@ -71,7 +73,12 @@ Reusable table column definitions used across data table widgets. Each column ha
 | Referrer | Yes | Source that referred the visitor | [View Docs](columns/referrer.md) |
 | Entry Page | Yes | First page visited in session | [View Docs](columns/entry-page.md) |
 | Exit Page | Yes | Last page before leaving | [View Docs](columns/exit-page.md) |
-| Total Views | Yes | Total page views by visitor | [View Docs](columns/total-views.md) |
+| Total Views | Yes | Total page views by visitor in date range | [View Docs](columns/total-views.md) |
+| Total Sessions | Yes | Count of distinct sessions in date range | [View Docs](columns/total-sessions.md) |
+| Session Duration | Yes | Average session duration (HH:MM:SS) | [View Docs](columns/session-duration.md) |
+| Views Per Session | Yes | Average page views per session | [View Docs](columns/views-per-session.md) |
+| Bounce Rate | Yes | Percentage of single-page sessions | [View Docs](columns/bounce-rate.md) |
+| New vs Returning | No | Visitor lifecycle classification badge | [View Docs](columns/new-vs-returning.md) |
 
 - Browse all columns in the [columns directory](columns/)
 
@@ -134,4 +141,4 @@ The guide includes:
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-08*

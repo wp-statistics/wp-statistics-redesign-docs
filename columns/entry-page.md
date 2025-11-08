@@ -10,7 +10,7 @@ used_in_widgets:
 
 # Entry Page Column
 
-Shows the first page a visitor landed on in the current session.
+Shows the first page a visitor landed on in a session.
 
 ## Column Configuration
 
@@ -24,6 +24,15 @@ This column is used in the following widgets:
 
 - [Latest Visitors](../widgets/latest-visitors.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
+
+## Attribution Model Behavior
+
+When a visitor has multiple sessions within the selected date range, the entry page shown depends on the [Attribution Model](../global/attribution-settings.md) setting:
+
+- **First Touch Attribution**: Shows entry page from the visitor's first session in the date range
+- **Last Touch Attribution** (Default): Shows entry page from the visitor's most recent session in the date range
+
+See [Attribution Settings](../global/attribution-settings.md) for complete details.
 
 ## Display
 
@@ -99,6 +108,8 @@ Opens the [Single Content Report](../reports/single-content-report.md) for this 
 
 ## Related Documentation
 
+- [Attribution Settings](../global/attribution-settings.md)
+- [Data Model](../global/data-model.md)
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
 - [Exit Page Column](exit-page.md)
 - [Views Report](../reports/views.md)
@@ -106,4 +117,4 @@ Opens the [Single Content Report](../reports/single-content-report.md) for this 
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-08*

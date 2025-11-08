@@ -42,9 +42,9 @@ This column is used in the following widgets:
 Opens the [Single Visitor Report](../reports/single-visitor-report.md) for this visitor in the same tab
 
 ### Hover Tooltip
-Displays: "{value} Page Views from this visitor"
-- Example: "5 Page Views from this visitor"
-- Example: "1,234 Page Views from this visitor"
+Displays: "{value} Page Views from this visitor in selected period"
+- Example: "5 Page Views from this visitor in selected period"
+- Example: "1,234 Page Views from this visitor in selected period"
 
 ## Display Examples
 
@@ -55,7 +55,7 @@ Displays: "{value} Page Views from this visitor"
 **Description:**
 - Value: 23 Page Views
 - Click: Opens Single Visitor Report
-- Hover: "23 Page Views from this visitor"
+- Hover: "23 Page Views from this visitor in selected period"
 
 ---
 
@@ -66,15 +66,18 @@ Displays: "{value} Page Views from this visitor"
 **Description:**
 - Value: 1,234 Page Views (formatted with comma separator)
 - Click: Opens Single Visitor Report
-- Hover: "1,234 Page Views from this visitor"
+- Hover: "1,234 Page Views from this visitor in selected period"
 
 ## Related Documentation
 
+- [Data Model](../global/data-model.md)
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
 - [Single Visitor Report](../reports/single-visitor-report.md)
 - [Views Report](../reports/views.md)
+- [Total Sessions Column](total-sessions.md)
+- [Views Per Session Column](views-per-session.md)
 - [Data Table Component](../components/data-table.md)
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-08*

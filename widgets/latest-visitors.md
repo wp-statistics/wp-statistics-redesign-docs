@@ -48,6 +48,11 @@ Displays the most recent visitors to your website in a comprehensive data table.
 | [Entry Page](../columns/entry-page.md) | No | Shown |
 | [Exit Page](../columns/exit-page.md) | No | Shown |
 | [Total Views](../columns/total-views.md) | No | Shown |
+| [Total Sessions](../columns/total-sessions.md) | No | Shown |
+| [Session Duration](../columns/session-duration.md) | No | Shown |
+| [Views Per Session](../columns/views-per-session.md) | No | Hidden |
+| [Bounce Rate](../columns/bounce-rate.md) | No | Hidden |
+| [New vs Returning](../columns/new-vs-returning.md) | No | Shown |
 
 ## Features
 
@@ -67,6 +72,13 @@ Displays the most recent visitors to your website in a comprehensive data table.
 When no visitors match criteria:
 - "No visitors found for the selected period"
 
+## Related Documentation
+
+- [Visitors Report](../reports/visitors.md)
+- [Data Table Component](../components/data-table.md)
+- [Data Model](../global/data-model.md)
+- [Attribution Settings](../global/attribution-settings.md)
+
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-08*

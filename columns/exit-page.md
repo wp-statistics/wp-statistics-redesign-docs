@@ -10,7 +10,7 @@ used_in_widgets:
 
 # Exit Page Column
 
-Shows the last page a visitor viewed in the current session.
+Shows the last page a visitor viewed in a session.
 
 ## Column Configuration
 
@@ -24,6 +24,15 @@ This column is used in the following widgets:
 
 - [Latest Visitors](../widgets/latest-visitors.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
+
+## Attribution Model Behavior
+
+When a visitor has multiple sessions within the selected date range, the exit page shown depends on the [Attribution Model](../global/attribution-settings.md) setting:
+
+- **First Touch Attribution**: Shows exit page from the visitor's first session in the date range
+- **Last Touch Attribution** (Default): Shows exit page from the visitor's most recent session in the date range
+
+See [Attribution Settings](../global/attribution-settings.md) for complete details.
 
 ## Display
 
@@ -89,6 +98,8 @@ Displays full URL path
 
 ## Related Documentation
 
+- [Attribution Settings](../global/attribution-settings.md)
+- [Data Model](../global/data-model.md)
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
 - [Entry Page Column](entry-page.md)
 - [Views Report](../reports/views.md)
@@ -96,4 +107,4 @@ Displays full URL path
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-08*

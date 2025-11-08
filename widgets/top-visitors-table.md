@@ -45,10 +45,15 @@ This widget is used in the following reports:
 | Column | Sortable | Default Visibility |
 |--------|----------|--------------------|
 | [Total Views](../columns/total-views.md) | No (default) | Shown |
+| [Total Sessions](../columns/total-sessions.md) | No | Shown |
+| [Session Duration](../columns/session-duration.md) | No | Shown |
+| [Views Per Session](../columns/views-per-session.md) | No | Shown |
+| [Bounce Rate](../columns/bounce-rate.md) | No | Shown |
 | [Visitor Informations](../columns/visitor-informations.md) | No | Shown |
 | [Referrer](../columns/referrer.md) | No | Shown |
 | [Entry Page](../columns/entry-page.md) | No | Shown |
 | [Exit Page](../columns/exit-page.md) | No | Shown |
+| [New vs Returning](../columns/new-vs-returning.md) | No | Shown |
 
 ## Empty State
 
@@ -59,7 +64,9 @@ When no visitors are found for the selected period:
 
 - [Top Visitors Report](../reports/top-visitors.md)
 - [Data Table Component](../components/data-table.md)
+- [Data Model](../global/data-model.md)
+- [Attribution Settings](../global/attribution-settings.md)
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-08*
