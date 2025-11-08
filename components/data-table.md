@@ -8,7 +8,7 @@ used_in_widgets:
   - "latest-views-table"
   - "visitor-list"
   - "top-pages"
-  - "top-visitors-list"
+  - "top-visitors-table"
   - "logged-in-users-list"
   - "online-visitors-table"
   - "top-search-terms-list"
@@ -32,7 +32,7 @@ This component is used by the following widgets:
 - [Latest Views Table](../widgets/latest-views-table.md)
 - [Visitor List](../widgets/visitor-list.md)
 - [Top Pages](../widgets/top-pages.md)
-- [Top Visitors List](../widgets/top-visitors-list.md)
+- [Top Visitors Table](../widgets/top-visitors-table.md)
 - [Logged-in Users List](../widgets/logged-in-users-list.md)
 - [Online Visitors Table](../widgets/online-visitors-table.md)
 - [Top Search Terms List](../widgets/top-search-terms-list.md)

@@ -7,6 +7,7 @@ used_in_widgets:
   - "latest-visitors"
   - "latest-views-table"
   - "online-visitors-table"
+  - "top-visitors-table"
 ---
 
 # Visitor Informations Column
@@ -26,6 +27,7 @@ This column is used in the following widgets:
 - [Latest Visitors](../widgets/latest-visitors.md)
 - [Latest Views Table](../widgets/latest-views-table.md)
 - [Online Visitors Table](../widgets/online-visitors-table.md)
+- [Top Visitors Table](../widgets/top-visitors-table.md)
 
 ## Display Elements
 

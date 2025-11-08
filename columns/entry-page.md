@@ -5,6 +5,7 @@ status: "Done"
 figma: ""
 used_in_widgets:
   - "latest-visitors"
+  - "top-visitors-table"
 ---
 
 # Entry Page Column
@@ -22,6 +23,7 @@ Shows the first page a visitor landed on in the current session.
 This column is used in the following widgets:
 
 - [Latest Visitors](../widgets/latest-visitors.md)
+- [Top Visitors Table](../widgets/top-visitors-table.md)
 
 ## Display
 
