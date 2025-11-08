@@ -48,16 +48,32 @@ Each individual metric box contains the following properties (configured at widg
 
 ## Layout Behavior
 
-The component uses a dynamic grid layout that optimizes the number of items per row based on total metrics:
+The component uses a dynamic grid layout that optimizes the presentation based on the total number of metrics:
 
-- **Maximum**: 4 metrics per row
-- **Distribution**: Automatically calculates optimal column count for balanced presentation
-  - 3 metrics → 3 columns (1 row)
-  - 4 metrics → 4 columns (1 row)
-  - 6 metrics → 3 columns (2 rows)
-  - 8 metrics → 4 columns (2 rows)
-  - 9 metrics → 3 columns (3 rows)
-  - And so on...
+- **Minimum**: 1 metric
+- **Maximum**: 12 metrics
+- **Row Constraints**: Each row can contain 1-4 metrics
+
+### Optimization Logic
+
+The layout algorithm prioritizes:
+1. **Minimize number of rows** - Reduce vertical space usage
+2. **Maximize metric box width** - Provide larger boxes within the row constraint
+
+### Distribution Examples
+
+- 1 metric → 1 column (1 row)
+- 2 metrics → 2 columns (1 row)
+- 3 metrics → 3 columns (1 row)
+- 4 metrics → 4 columns (1 row)
+- 5 metrics → 3 + 2 columns (2 rows)
+- 6 metrics → 3 columns (2 rows)
+- 7 metrics → 4 + 3 columns (2 rows)
+- 8 metrics → 4 columns (2 rows)
+- 9 metrics → 3 columns (3 rows)
+- 10 metrics → 4 + 3 + 3 columns (3 rows)
+- 11 metrics → 4 + 4 + 3 columns (3 rows)
+- 12 metrics → 4 columns (3 rows)
 
 ## Previous Period Comparison
 
