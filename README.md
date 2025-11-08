@@ -56,6 +56,12 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 
 Base UI components that power the widgets throughout the application.
 
+| Component | Status | Description | Documentation |
+|-----------|--------|-------------|---------------|
+| Data Table | Done | Tabular data display with sorting, pagination, and column management | [View Docs](components/data-table.md) |
+| Line Chart | Done | Time-series data visualization with trend lines and comparison | [View Docs](components/line-chart.md) |
+| Metrics | Done | Grid layout displaying key performance indicators with period comparison | [View Docs](components/metrics.md) |
+
 - Browse all components in the [components directory](components/)
 
 ---
