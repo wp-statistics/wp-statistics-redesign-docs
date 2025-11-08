@@ -14,6 +14,8 @@ widgets:
     columns: ["overview-metrics"]
   - row: 2
     columns: ["traffic-trends"]
+  - row: 3
+    columns: ["top-entry-pages", "top-referrers"]
 ---
 
 # Visitors Overview
@@ -67,6 +69,18 @@ Uses the [Metrics](../components/metrics.md) component to display 8 key performa
 ### Row 2 (Full Width) - Traffic Trends
 
 - [Traffic Trends](../widgets/traffic-trends.md) - Line chart displaying visitor and view trends over time
+
+### Row 3 (Two Columns) - Entry Pages & Referrers
+
+**Left Column (Data Plus Premium):**
+- [Top Entry Pages](../widgets/top-entry-pages.md) - Table showing top 5 entry pages with unique entrances count
+
+**Right Column (Free):**
+- [Top Referrers](../widgets/top-referrers.md) - Horizontal bar list showing top 5 referrer domains
+
+**Conditional Display:**
+- When Data Plus add-on is **activated**: Both widgets displayed side-by-side
+- When Data Plus add-on is **not activated**: Only Top Referrers widget displayed (full width)
 
 ---
 

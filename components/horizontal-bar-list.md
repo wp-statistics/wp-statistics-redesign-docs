@@ -3,7 +3,8 @@ title: "Horizontal Bar List"
 type: "component"
 status: "Done"
 figma: ""
-used_in_widgets: []
+used_in_widgets:
+  - "top-referrers"
 ---
 
 # Horizontal Bar List Component
@@ -18,7 +19,9 @@ Displays ranked data in a vertical list format with horizontal bars representing
 
 ## Used In Widgets
 
-This component is not yet used in any widgets.
+This component is used by the following widgets:
+
+- [Top Referrers](../widgets/top-referrers.md)
 
 ## Overview
 
