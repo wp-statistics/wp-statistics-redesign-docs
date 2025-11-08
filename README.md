@@ -34,10 +34,10 @@ A comprehensive set of reports for analyzing visitor behavior and traffic patter
 | Report Page | Menu Visibility | Add-on | Status | Documentation |
 |------------|----------------|--------|--------|---------------|
 | Overview | Yes | Free | In Progress | [View Docs](reports/visitors-overview.md) |
-| Visitors | Yes | Free | Not Started | [View Docs](reports/visitors.md) |
-| Views | Yes | Free | Not Started | [View Docs](reports/views.md) |
-| Online Visitors | Yes | Free | Not Started | [View Docs](reports/online-visitors.md) |
-| Top Visitors | Yes | Free | Not Started | [View Docs](reports/top-visitors.md) |
+| Visitors | Yes | Free | Done | [View Docs](reports/visitors.md) |
+| Views | Yes | Free | Done | [View Docs](reports/views.md) |
+| Online Visitors | Yes | Free | Done | [View Docs](reports/online-visitors.md) |
+| Top Visitors | Yes | Free | Done | [View Docs](reports/top-visitors.md) |
 | Logged-in Users | Yes | Free | Not Started | [View Docs](reports/logged-in-users.md) |
 | Search Terms | Yes | Free | Not Started | [View Docs](reports/search-terms.md) |
 | Single Visitor Report | No | Free | Not Started | [View Docs](reports/single-visitor-report.md) |
