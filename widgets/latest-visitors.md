@@ -26,7 +26,7 @@ Displays the most recent visitors to your website in a comprehensive data table.
 
 | Property | Value |
 |----------|-------|
-| **Title** | (Optional) |
+| **Title** | false |
 | **Default Sort** | last_view |
 | **Row Limit** | 50 |
 | **Column Management** | ✅ Yes |
@@ -52,20 +52,7 @@ Displays the most recent visitors to your website in a comprehensive data table.
 | [Session Duration](../columns/session-duration.md) | No | Shown |
 | [Views Per Session](../columns/views-per-session.md) | No | Hidden |
 | [Bounce Rate](../columns/bounce-rate.md) | No | Hidden |
-| [New vs Returning](../columns/new-vs-returning.md) | No | Shown |
-
-## Features
-
-### Row Actions
-- **Click Row**: Navigate to [Single Visitor Report](../reports/single-visitor-report.md)
-
-### Sorting
-- Static default sort by "Last View" descending (most recent first)
-- Sorting is not user-changeable
-
-### Pagination
-- 50 visitors per page (default)
-- Page size options available
+| [New vs Returning](../columns/new-vs-returning.md) | No | Hidden |
 
 ## Empty State
 
