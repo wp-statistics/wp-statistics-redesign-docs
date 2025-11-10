@@ -47,7 +47,7 @@ Widgets using this component can configure the following options:
 
 | Option | Type | Description | Default |
 |--------|------|-------------|---------|
-| **Title** | String | Table title/heading displayed at the top | (Required) |
+| **Title** | String | Table title/heading displayed at the top | (Optional) |
 | **Default Sort** | String | Column to sort by on initial load | null |
 | **Row Limit** | Number | Number of rows to display per page | 50 |
 | **Column Management** | Boolean | Show/hide column visibility and reordering button | true |
@@ -68,13 +68,6 @@ A button in the top-right corner of the table provides column management capabil
 
 When table has no data:
 - "No data available"
-
-## Accessibility
-
-- Full keyboard navigation support
-- Proper ARIA labels for table structure
-- Screen reader announcements for sort and pagination changes
-- High contrast mode support
 
 ## Related Documentation
 
