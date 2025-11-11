@@ -20,6 +20,8 @@ widgets:
     columns: ["top-countries", "top-operating-systems", "top-device-categories"]
   - row: 5
     columns: ["top-visitors"]
+  - row: 6
+    columns: ["global-visitor-distribution", "traffic-by-hour"]
 ---
 
 # Visitors Overview
@@ -100,6 +102,14 @@ Uses the [Metrics](../components/metrics.md) component to display 8 key performa
 ### Row 5 (Full Width) - Top Visitors
 
 - [Top Visitors](../widgets/top-visitors.md) - Simplified table showing top 10 most active visitors with engagement and journey metrics
+
+### Row 6 (Two Columns) - Geographic Distribution & Hourly Traffic
+
+**Left Column (Free):**
+- [Global Visitor Distribution](../widgets/global-visitor-distribution.md) - Interactive world map showing visitor distribution by country
+
+**Right Column (Free):**
+- [Traffic by Hour](../widgets/traffic-by-hour.md) - Vertical bar chart displaying hourly visitors and views
 
 ---
 

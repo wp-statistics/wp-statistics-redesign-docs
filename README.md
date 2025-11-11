@@ -52,6 +52,7 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 
 | Widget | Component | Add-on | Status | Documentation |
 |--------|-----------|--------|--------|---------------|
+| Global Visitor Distribution | Global Map | Free | Done | [View Docs](widgets/global-visitor-distribution.md) |
 | Latest Views Table | Data Table | Free | Done | [View Docs](widgets/latest-views-table.md) |
 | Latest Visitors | Data Table | Free | Done | [View Docs](widgets/latest-visitors.md) |
 | Online Visitors Table | Data Table | Free | Done | [View Docs](widgets/online-visitors-table.md) |
@@ -62,6 +63,7 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 | Top Referrers | Horizontal Bar List | Free | Done | [View Docs](widgets/top-referrers.md) |
 | Top Visitors | Table | Free | Done | [View Docs](widgets/top-visitors.md) |
 | Top Visitors Table | Data Table | Free | Done | [View Docs](widgets/top-visitors-table.md) |
+| Traffic by Hour | Vertical Bar Chart | Free | Done | [View Docs](widgets/traffic-by-hour.md) |
 | Traffic Trends | Line Chart | Free | Done | [View Docs](widgets/traffic-trends.md) |
 
 - Browse all widgets in the [widgets directory](widgets/)
@@ -75,10 +77,12 @@ Base UI components that power the widgets throughout the application.
 | Component | Status | Description | Documentation |
 |-----------|--------|-------------|---------------|
 | Data Table | Done | Tabular data display with sorting, pagination, and column management | [View Docs](components/data-table.md) |
+| Global Map | Done | Interactive world map visualizing country-level metric distribution | [View Docs](components/global-map.md) |
+| Horizontal Bar List | Done | Ranked list with proportional bars for top items comparison | [View Docs](components/horizontal-bar-list.md) |
 | Line Chart | Done | Time-series data visualization with trend lines and comparison | [View Docs](components/line-chart.md) |
 | Metrics | Done | Grid layout displaying key performance indicators with period comparison | [View Docs](components/metrics.md) |
-| Horizontal Bar List | Done | Ranked list with proportional bars for top items comparison | [View Docs](components/horizontal-bar-list.md) |
 | Table | Done | Simplified table for pre-sorted data without interactive features | [View Docs](components/table.md) |
+| Vertical Bar Chart | Done | Bar chart displaying metrics across categories with dual-metric support | [View Docs](components/vertical-bar-chart.md) |
 
 - Browse all components in the [components directory](components/)
 
