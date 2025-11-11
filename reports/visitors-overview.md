@@ -16,6 +16,8 @@ widgets:
     columns: ["traffic-trends"]
   - row: 3
     columns: ["top-entry-pages", "top-referrers"]
+  - row: 4
+    columns: ["top-countries", "top-operating-systems", "top-device-categories"]
 ---
 
 # Visitors Overview
@@ -82,6 +84,17 @@ Uses the [Metrics](../components/metrics.md) component to display 8 key performa
 - When Data Plus add-on is **activated**: Both widgets displayed side-by-side
 - When Data Plus add-on is **not activated**: Only Top Referrers widget displayed (full width)
 
+### Row 4 (Three Columns) - Geographic & Technical Analytics
+
+**Left Column (Free):**
+- [Top Countries](../widgets/top-countries.md) - Horizontal bar list showing top 5 countries with flags
+
+**Middle Column (Free):**
+- [Top Operating Systems](../widgets/top-operating-systems.md) - Horizontal bar list showing top 5 operating systems
+
+**Right Column (Free):**
+- [Top Device Categories](../widgets/top-device-categories.md) - Horizontal bar list showing top 5 device categories
+
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-11-11*

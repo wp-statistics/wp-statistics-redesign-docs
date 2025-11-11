@@ -5,6 +5,9 @@ status: "Done"
 figma: ""
 used_in_widgets:
   - "top-referrers"
+  - "top-countries"
+  - "top-operating-systems"
+  - "top-device-categories"
 ---
 
 # Horizontal Bar List Component
@@ -22,6 +25,9 @@ Displays ranked data in a vertical list format with horizontal bars representing
 This component is used by the following widgets:
 
 - [Top Referrers](../widgets/top-referrers.md)
+- [Top Countries](../widgets/top-countries.md)
+- [Top Operating Systems](../widgets/top-operating-systems.md)
+- [Top Device Categories](../widgets/top-device-categories.md)
 
 ## Overview
 

@@ -55,7 +55,10 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 | Latest Views Table | Data Table | Free | Done | [View Docs](widgets/latest-views-table.md) |
 | Latest Visitors | Data Table | Free | Done | [View Docs](widgets/latest-visitors.md) |
 | Online Visitors Table | Data Table | Free | Done | [View Docs](widgets/online-visitors-table.md) |
+| Top Countries | Horizontal Bar List | Free | Done | [View Docs](widgets/top-countries.md) |
+| Top Device Categories | Horizontal Bar List | Free | Done | [View Docs](widgets/top-device-categories.md) |
 | Top Entry Pages | Table | Data Plus | Done | [View Docs](widgets/top-entry-pages.md) |
+| Top Operating Systems | Horizontal Bar List | Free | Done | [View Docs](widgets/top-operating-systems.md) |
 | Top Referrers | Horizontal Bar List | Free | Done | [View Docs](widgets/top-referrers.md) |
 | Top Visitors Table | Data Table | Free | Done | [View Docs](widgets/top-visitors-table.md) |
 | Traffic Trends | Line Chart | Free | Done | [View Docs](widgets/traffic-trends.md) |
