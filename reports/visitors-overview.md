@@ -4,7 +4,7 @@ type: "report"
 group: "Visitors"
 show_in_menu: true
 add_on: "Free"
-status: "In Progress"
+status: "Done"
 figma: ""
 interactions:
   - "Date Picker"
@@ -32,7 +32,7 @@ Comprehensive snapshot of your website's traffic and visitor behavior.
 
 - **Menu Visibility**: Shown in main menu
 - **Add-on**: Free (included in base plugin)
-- **Status**: In Progress
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Available Interactions
@@ -110,6 +110,10 @@ Uses the [Metrics](../components/metrics.md) component to display 8 key performa
 
 **Right Column (Data Plus Premium):**
 - [Traffic by Hour](../widgets/traffic-by-hour.md) - Vertical bar chart displaying hourly visitors and views
+
+**Conditional Display:**
+- When Data Plus add-on is **activated**: Both widgets displayed side-by-side
+- When Data Plus add-on is **not activated**: Only Global Visitor Distribution widget displayed (full width)
 
 ---
 

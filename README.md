@@ -33,7 +33,7 @@ A comprehensive set of reports for analyzing visitor behavior and traffic patter
 
 | Report Page | Menu Visibility | Add-on | Status | Documentation |
 |------------|----------------|--------|--------|---------------|
-| Overview | Yes | Free | In Progress | [View Docs](reports/visitors-overview.md) |
+| Overview | Yes | Free | Done | [View Docs](reports/visitors-overview.md) |
 | Visitors | Yes | Free | Done | [View Docs](reports/visitors.md) |
 | Views | Yes | Free | Done | [View Docs](reports/views.md) |
 | Online Visitors | Yes | Free | Done | [View Docs](reports/online-visitors.md) |
