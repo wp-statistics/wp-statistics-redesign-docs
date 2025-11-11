@@ -5,6 +5,7 @@ status: "Done"
 figma: ""
 used_in_widgets:
   - "top-entry-pages"
+  - "top-visitors"
 ---
 
 # Table Component
@@ -22,6 +23,7 @@ A simplified table component for displaying pre-sorted structured data without i
 This component is used by the following widgets:
 
 - [Top Entry Pages](../widgets/top-entry-pages.md)
+- [Top Visitors](../widgets/top-visitors.md)
 
 ## Overview
 

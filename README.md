@@ -60,6 +60,7 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 | Top Entry Pages | Table | Data Plus | Done | [View Docs](widgets/top-entry-pages.md) |
 | Top Operating Systems | Horizontal Bar List | Free | Done | [View Docs](widgets/top-operating-systems.md) |
 | Top Referrers | Horizontal Bar List | Free | Done | [View Docs](widgets/top-referrers.md) |
+| Top Visitors | Table | Free | Done | [View Docs](widgets/top-visitors.md) |
 | Top Visitors Table | Data Table | Free | Done | [View Docs](widgets/top-visitors-table.md) |
 | Traffic Trends | Line Chart | Free | Done | [View Docs](widgets/traffic-trends.md) |
 

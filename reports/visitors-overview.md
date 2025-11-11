@@ -18,6 +18,8 @@ widgets:
     columns: ["top-entry-pages", "top-referrers"]
   - row: 4
     columns: ["top-countries", "top-operating-systems", "top-device-categories"]
+  - row: 5
+    columns: ["top-visitors"]
 ---
 
 # Visitors Overview
@@ -94,6 +96,10 @@ Uses the [Metrics](../components/metrics.md) component to display 8 key performa
 
 **Right Column (Free):**
 - [Top Device Categories](../widgets/top-device-categories.md) - Horizontal bar list showing top 5 device categories
+
+### Row 5 (Full Width) - Top Visitors
+
+- [Top Visitors](../widgets/top-visitors.md) - Simplified table showing top 10 most active visitors with engagement and journey metrics
 
 ---
 
