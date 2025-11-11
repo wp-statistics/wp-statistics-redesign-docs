@@ -12,15 +12,15 @@ The WP Statistics menu is organized into logical groups, with the Visitor Insigh
 
 ## Visitor Insights Menu Group
 
-| Menu Item | Add-on | Status | Notes |
-|-----------|--------|--------|-------|
-| [Visitors Overview](../reports/visitors-overview.md) | Free | Done | |
-| [Visitors](../reports/visitors.md) | Free | Done | |
-| [Views](../reports/views.md) | Free | Done | |
-| [Online Visitors](../reports/online-visitors.md) | Free | Done | |
-| [Top Visitors](../reports/top-visitors.md) | Free | Done | |
-| [Logged-in Users](../reports/logged-in-users.md) | Free | Done | Only shown when "Track Logged-in Users" setting is enabled |
-| [Search Terms](../reports/search-terms.md) | Data Plus | Done | |
+| Sort | Menu Item | Add-on | Status | Notes |
+|------|-----------|--------|--------|-------|
+| 1 | [Visitors Overview](../reports/visitors-overview.md) | Free | Done | High-level summary (entry point) |
+| 2 | [Visitors](../reports/visitors.md) | Free | Done | Detailed visitor list |
+| 3 | [Views](../reports/views.md) | Free | Done | Content performance |
+| 4 | [Online Visitors](../reports/online-visitors.md) | Free | Done | Real-time data |
+| 5 | [Top Visitors](../reports/top-visitors.md) | Free | Done | Power users |
+| 6 | [Logged-in Users](../reports/logged-in-users.md) | Free | Done | Registered users (only shown when "Track Logged-in Users" setting is enabled) |
+| 7 | [Search Terms](../reports/search-terms.md) | Data Plus | Done | SEO insights |
 
 ### Hidden Pages
 
@@ -32,15 +32,15 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 
 ## Page Insights Menu Group
 
-| Menu Item | Add-on | Status | Notes |
-|-----------|--------|--------|-------|
-| Overview | Free | Not Started | |
-| Top Pages | Free | Not Started | |
-| Entry Pages | Data Plus | Not Started | |
-| Exit Pages | Data Plus | Not Started | |
-| Category Pages | Free | Not Started | |
-| Author Pages | Free | Not Started | |
-| 404 Pages | Free | Not Started | |
+| Sort | Menu Item | Add-on | Status | Notes |
+|------|-----------|--------|--------|-------|
+| 1 | Overview | Free | Not Started | High-level summary (entry point) |
+| 2 | Top Pages | Free | Not Started | Most viewed content |
+| 3 | Entry Pages | Data Plus | Not Started | First pages visited |
+| 4 | Exit Pages | Data Plus | Not Started | Last pages before leaving |
+| 5 | Category Pages | Free | Not Started | Category performance |
+| 6 | Author Pages | Free | Not Started | Author performance |
+| 7 | 404 Pages | Free | Not Started | Broken links and errors |
 
 ---
 
@@ -90,19 +90,10 @@ add_on: "Free"      # or "Data Plus", etc.
 
 ---
 
-## Menu Item Ordering
+## Menu Item Ordering Principles
 
-The order of menu items is intentional and follows user workflow:
+The order of menu items within each group follows these principles:
 
-1. **Visitors Overview** - High-level summary (entry point)
-2. **Visitors** - Detailed visitor list
-3. **Views** - Content performance
-4. **Online Visitors** - Real-time data
-5. **Top Visitors** - Power users
-6. **Logged-in Users** - Registered users
-7. **Search Terms** - SEO insights
-
-### Ordering Principles
 - Most general to most specific
 - Most commonly used first
 - Premium features integrated logically
