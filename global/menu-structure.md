@@ -6,77 +6,41 @@ This document defines the navigation menu structure for WP Statistics, including
 
 ### Overview
 
-The WP Statistics menu is organized into logical groups, with the Visitors group being one of the primary sections.
-
-```
-WP Statistics
-├── Dashboard
-├── Visitors ▼
-│   ├── Overview
-│   ├── Visitors
-│   ├── Views
-│   ├── Online Visitors
-│   ├── Top Visitors (Premium)
-│   ├── Logged-in Users
-│   └── Search Terms
-├── Content
-├── Referrers
-├── Geographic
-├── Devices & Browsers
-└── Settings
-```
+The WP Statistics menu is organized into logical groups, with the Visitor Insights group being one of the primary sections.
 
 ---
 
-## Visitors Menu Group
+## Visitor Insights Menu Group
 
-### Menu Items
-
-| Menu Item | Link | Add-on | Show in Menu |
-|-----------|------|--------|--------------|
-| Overview | [visitors-overview](../reports/visitors-overview.md) | Free | ✓ Yes |
-| Visitors | [visitors](../reports/visitors.md) | Free | ✓ Yes |
-| Views | [views](../reports/views.md) | Free | ✓ Yes |
-| Online Visitors | [online-visitors](../reports/online-visitors.md) | Free | ✓ Yes |
-| Top Visitors | [top-visitors](../reports/top-visitors.md) | Data Plus | ✓ Yes |
-| Logged-in Users | [logged-in-users](../reports/logged-in-users.md) | Free | ✓ Yes |
-| Search Terms | [search-terms](../reports/search-terms.md) | Free | ✓ Yes |
-| Single Visitor Report | [single-visitor-report](../reports/single-visitor-report.md) | Free | ✗ No |
+| Menu Item | Add-on | Status | Notes |
+|-----------|--------|--------|-------|
+| [Visitors Overview](../reports/visitors-overview.md) | Free | Done | |
+| [Visitors](../reports/visitors.md) | Free | Done | |
+| [Views](../reports/views.md) | Free | Done | |
+| [Online Visitors](../reports/online-visitors.md) | Free | Done | |
+| [Top Visitors](../reports/top-visitors.md) | Free | Done | |
+| [Logged-in Users](../reports/logged-in-users.md) | Free | Done | Only shown when "Track Logged-in Users" setting is enabled |
+| [Search Terms](../reports/search-terms.md) | Data Plus | Done | |
 
 ### Hidden Pages
 
 Some pages are not shown in the menu because they are accessed via drill-down navigation:
 
-- **Single Visitor Report**: Accessed by clicking on individual visitor rows in the Visitors, Top Visitors, or Online Visitors reports
+- **[Single Visitor Report](../reports/single-visitor-report.md)**: Accessed by clicking on individual visitor rows in the Visitors, Top Visitors, or Online Visitors reports
 
 ---
 
-## Menu Behavior
+## Page Insights Menu Group
 
-### Desktop
-- Full menu visible in sidebar
-- Group items expandable/collapsible
-- Current page highlighted
-- Breadcrumb navigation at top
-
-### Mobile/Tablet
-- Hamburger menu
-- Off-canvas drawer
-- Tap to expand groups
-- Close after navigation
-
----
-
-## Premium Indicators
-
-Premium features (from add-ons like Data Plus) are indicated in the menu:
-
-- **Icon**: Crown or star icon next to menu item
-- **Badge**: "Premium" or add-on name badge
-- **Tooltip**: Hover shows "Requires Data Plus" message
-- **Click Behavior**:
-  - If unlocked: Navigate to page
-  - If locked: Show upgrade modal
+| Menu Item | Add-on | Status | Notes |
+|-----------|--------|--------|-------|
+| Overview | Free | Not Started | |
+| Top Pages | Free | Not Started | |
+| Entry Pages | Data Plus | Not Started | |
+| Exit Pages | Data Plus | Not Started | |
+| Category Pages | Free | Not Started | |
+| Author Pages | Free | Not Started | |
+| 404 Pages | Free | Not Started | |
 
 ---
 
@@ -130,11 +94,11 @@ add_on: "Free"      # or "Data Plus", etc.
 
 The order of menu items is intentional and follows user workflow:
 
-1. **Overview** - High-level summary (entry point)
+1. **Visitors Overview** - High-level summary (entry point)
 2. **Visitors** - Detailed visitor list
 3. **Views** - Content performance
 4. **Online Visitors** - Real-time data
-5. **Top Visitors** - Power users (premium)
+5. **Top Visitors** - Power users
 6. **Logged-in Users** - Registered users
 7. **Search Terms** - SEO insights
 
@@ -146,41 +110,10 @@ The order of menu items is intentional and follows user workflow:
 
 ---
 
-## Breadcrumb Navigation
-
-Pages include breadcrumb navigation for context:
-
-```
-WP Statistics > Visitors > Single Visitor Report
-```
-
-### Breadcrumb Rules
-- Always starts with "WP Statistics"
-- Shows group name (e.g., "Visitors")
-- Shows current page name
-- Each segment is clickable (except current page)
-- Hidden on mobile to save space
-
----
-
-## Menu Icons
-
-Each menu group has an associated icon:
-
-- **Visitors**: 👥 (users icon)
-- **Content**: 📄 (document icon)
-- **Referrers**: 🔗 (link icon)
-- **Geographic**: 🌍 (globe icon)
-- **Devices & Browsers**: 💻 (device icon)
-- **Settings**: ⚙️ (gear icon)
-
----
-
 ## Future Menu Groups
 
 As more report groups are documented, they will be added to this structure:
 
-- Content Reports
 - Referrer Reports
 - Geographic Reports
 - Device & Browser Reports
@@ -192,8 +125,8 @@ As more report groups are documented, they will be added to this structure:
 
 - [Global Rules](global-rules.md)
 - [Interactions Guide](interactions.md)
-- [All Visitors Reports](../reports/)
+- [All Visitor Insights Reports](../reports/)
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-11*
