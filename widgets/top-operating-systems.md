@@ -36,20 +36,6 @@ This widget is used in the following reports:
 
 - [Visitors Overview](../reports/visitors-overview.md) - Row 4
 
-## List Behavior
-
-The widget displays operating systems (e.g., Windows, macOS, Android) ranked by visitor count in descending order:
-- Each item shows the OS name with icon and visitor count
-- Horizontal bar represents relative traffic volume
-- Previous period comparison shows percentage change with direction indicator
-- Top item receives visual highlighting
-
-Users can:
-- View the visitor count for each operating system
-- See previous period comparison percentage
-- Hover to see detailed date range comparison tooltip
-- Click "View Full OS Report" link to view the full Operating Systems report
-
 ## Empty State
 
 When no operating system data is available for the selected period:

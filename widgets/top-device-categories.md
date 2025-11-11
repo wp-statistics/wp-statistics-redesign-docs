@@ -36,20 +36,6 @@ This widget is used in the following reports:
 
 - [Visitors Overview](../reports/visitors-overview.md) - Row 4
 
-## List Behavior
-
-The widget displays device categories (e.g., Desktop, Mobile, Tablet) ranked by visitor count in descending order:
-- Each item shows the device category name with icon and visitor count
-- Horizontal bar represents relative traffic volume
-- Previous period comparison shows percentage change with direction indicator
-- Top item receives visual highlighting
-
-Users can:
-- View the visitor count for each device category
-- See previous period comparison percentage
-- Hover to see detailed date range comparison tooltip
-- Click the link below to view the full Device Categories report
-
 ## Empty State
 
 When no device category data is available for the selected period:

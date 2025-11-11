@@ -50,21 +50,6 @@ The table displays 5 columns, all shown by default:
 | **Entry Page** | ❌ No | Done | [View Docs](../columns/entry-page.md) |
 | **Exit Page** | ❌ No | Done | [View Docs](../columns/exit-page.md) |
 
-## List Behavior
-
-The widget displays visitors ranked by total views in descending order:
-- Data is pre-sorted by total views (highest to lowest)
-- Shows visitor identification (flag, OS, browser, user badge or IP/hash)
-- Displays engagement level (total views)
-- Shows traffic source (referrer)
-- Reveals visitor journey (entry and exit pages)
-- No interactive sorting controls
-
-Users can:
-- View top 10 most active visitors at a glance
-- Click any row to open the Single Visitor Report for detailed analysis
-- Click "View Full Report" link to see all top visitors with complete metrics
-
 ## Empty State
 
 When no visitor data is available for the selected period:
