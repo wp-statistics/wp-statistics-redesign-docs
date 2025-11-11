@@ -108,7 +108,7 @@ Uses the [Metrics](../components/metrics.md) component to display 8 key performa
 **Left Column (Free):**
 - [Global Visitor Distribution](../widgets/global-visitor-distribution.md) - Interactive world map showing visitor distribution by country
 
-**Right Column (Free):**
+**Right Column (Data Plus Premium):**
 - [Traffic by Hour](../widgets/traffic-by-hour.md) - Vertical bar chart displaying hourly visitors and views
 
 ---

@@ -2,7 +2,7 @@
 title: "Traffic by Hour"
 type: "widget"
 component: "vertical-bar-chart"
-add_on: "Free"
+add_on: "Data Plus"
 status: "Done"
 figma: ""
 used_in_reports:
@@ -16,7 +16,7 @@ Displays hourly traffic patterns showing visitors and views throughout the day u
 ## Widget Configuration
 
 - **Component**: [Vertical Bar Chart](../components/vertical-bar-chart.md)
-- **Add-on**: Free (included in base plugin)
+- **Add-on**: Data Plus (premium add-on)
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 

@@ -63,7 +63,7 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 | Top Referrers | Horizontal Bar List | Free | Done | [View Docs](widgets/top-referrers.md) |
 | Top Visitors | Table | Free | Done | [View Docs](widgets/top-visitors.md) |
 | Top Visitors Table | Data Table | Free | Done | [View Docs](widgets/top-visitors-table.md) |
-| Traffic by Hour | Vertical Bar Chart | Free | Done | [View Docs](widgets/traffic-by-hour.md) |
+| Traffic by Hour | Vertical Bar Chart | Data Plus | Done | [View Docs](widgets/traffic-by-hour.md) |
 | Traffic Trends | Line Chart | Free | Done | [View Docs](widgets/traffic-trends.md) |
 
 - Browse all widgets in the [widgets directory](widgets/)

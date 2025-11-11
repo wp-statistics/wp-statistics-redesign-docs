@@ -25,7 +25,7 @@ This component is used by the following widgets:
 
 ## Overview
 
-Global maps in WP Statistics visualize country-level distribution for a selected metric. The map uses a color-coded system to represent metric values across countries, making it easy to identify geographical patterns and compare regional engagement at a glance.
+Global maps visualize country-level distribution for a selected metric. The map uses a color-coded system to represent metric values across countries, making it easy to identify geographical patterns and compare regional engagement at a glance.
 
 ## Configuration Options
 
