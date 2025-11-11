@@ -5,6 +5,7 @@ status: "Done"
 figma: ""
 used_in_widgets:
   - "traffic-trends"
+  - "logged-in-traffic-trends"
 ---
 
 # Line Chart Component
@@ -22,6 +23,7 @@ A versatile line chart component for displaying time-series data and trends acro
 This component is used by the following widgets:
 
 - [Traffic Trends](../widgets/traffic-trends.md)
+- [Logged-in Traffic Trends](../widgets/logged-in-traffic-trends.md)
 
 ## Overview
 

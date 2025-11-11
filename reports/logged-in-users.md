@@ -4,19 +4,16 @@ type: "report"
 group: "Visitors"
 show_in_menu: true
 add_on: "Free"
-status: "Not Started"
+status: "Done"
 figma: ""
 interactions:
   - "Date Picker"
-  - "Filters"
   - "User Role Filter"
 widgets:
   - row: 1
-    columns: ["logged-in-users-summary"]
+    columns: ["logged-in-traffic-trends"]
   - row: 2
-    columns: ["logged-in-activity-chart"]
-  - row: 3
-    columns: ["logged-in-users-list"]
+    columns: ["logged-in-users-views-table"]
 ---
 
 # Logged-in Users Report
@@ -25,28 +22,24 @@ Track and analyze activity of registered users on your WordPress site.
 
 ## Page Configuration
 
-- **Menu Visibility**: Shown in main menu
+- **Menu Visibility**: Shown in main menu (only when "Track Logged-In User Activity" is enabled in settings)
 - **Add-on**: Free (included in base plugin)
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Available Interactions
 
 - **Date Picker**
-- **Filters**
 - **User Role Filter**
 
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Logged-in Users Summary](../widgets/logged-in-users-summary.md)
+- [Logged-in Traffic Trends](../widgets/logged-in-traffic-trends.md)
 
 ### Row 2 (Full Width)
-- [Logged-in Activity Chart](../widgets/logged-in-activity-chart.md)
-
-### Row 3 (Full Width)
-- [Logged-in Users List](../widgets/logged-in-users-list.md)
+- [Logged-in Users Views Table](../widgets/logged-in-users-views-table.md)
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-11*

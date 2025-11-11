@@ -38,7 +38,7 @@ A comprehensive set of reports for analyzing visitor behavior and traffic patter
 | Views | Yes | Free | Done | [View Docs](reports/views.md) |
 | Online Visitors | Yes | Free | Done | [View Docs](reports/online-visitors.md) |
 | Top Visitors | Yes | Free | Done | [View Docs](reports/top-visitors.md) |
-| Logged-in Users | Yes | Free | Not Started | [View Docs](reports/logged-in-users.md) |
+| Logged-in Users | Yes | Free | Done | [View Docs](reports/logged-in-users.md) |
 | Search Terms | Yes | Data Plus | Done | [View Docs](reports/search-terms.md) |
 | Single Visitor Report | No | Free | Not Started | [View Docs](reports/single-visitor-report.md) |
 
@@ -55,6 +55,8 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 | Global Visitor Distribution | Global Map | Free | Done | [View Docs](widgets/global-visitor-distribution.md) |
 | Latest Views Table | Data Table | Free | Done | [View Docs](widgets/latest-views-table.md) |
 | Latest Visitors | Data Table | Free | Done | [View Docs](widgets/latest-visitors.md) |
+| Logged-in Traffic Trends | Line Chart | Free | Done | [View Docs](widgets/logged-in-traffic-trends.md) |
+| Logged-in Users Views Table | Data Table | Free | Done | [View Docs](widgets/logged-in-users-views-table.md) |
 | Online Visitors Table | Data Table | Free | Done | [View Docs](widgets/online-visitors-table.md) |
 | Search Terms Table | Table | Data Plus | Done | [View Docs](widgets/search-terms-table.md) |
 | Top Countries | Horizontal Bar List | Free | Done | [View Docs](widgets/top-countries.md) |
