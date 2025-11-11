@@ -39,7 +39,7 @@ A comprehensive set of reports for analyzing visitor behavior and traffic patter
 | Online Visitors | Yes | Free | Done | [View Docs](reports/online-visitors.md) |
 | Top Visitors | Yes | Free | Done | [View Docs](reports/top-visitors.md) |
 | Logged-in Users | Yes | Free | Not Started | [View Docs](reports/logged-in-users.md) |
-| Search Terms | Yes | Free | Not Started | [View Docs](reports/search-terms.md) |
+| Search Terms | Yes | Data Plus | Done | [View Docs](reports/search-terms.md) |
 | Single Visitor Report | No | Free | Not Started | [View Docs](reports/single-visitor-report.md) |
 
 ---
@@ -56,6 +56,7 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 | Latest Views Table | Data Table | Free | Done | [View Docs](widgets/latest-views-table.md) |
 | Latest Visitors | Data Table | Free | Done | [View Docs](widgets/latest-visitors.md) |
 | Online Visitors Table | Data Table | Free | Done | [View Docs](widgets/online-visitors-table.md) |
+| Search Terms Table | Table | Data Plus | Done | [View Docs](widgets/search-terms-table.md) |
 | Top Countries | Horizontal Bar List | Free | Done | [View Docs](widgets/top-countries.md) |
 | Top Device Categories | Horizontal Bar List | Free | Done | [View Docs](widgets/top-device-categories.md) |
 | Top Entry Pages | Table | Data Plus | Done | [View Docs](widgets/top-entry-pages.md) |
@@ -109,6 +110,8 @@ Reusable table column definitions used across data table widgets. Each column ha
 | New vs Returning | No | Visitor lifecycle classification badge | [View Docs](columns/new-vs-returning.md) |
 | Unique Entrances | No | Count of sessions that started on a specific page | [View Docs](columns/unique-entrances.md) |
 | View Page | No | Action button to view page content on website | [View Docs](columns/view-page.md) |
+| Search Term | No | Keyword or phrase entered in website search | [View Docs](columns/search-term.md) |
+| Searches | No | Count of times a term was searched on site | [View Docs](columns/searches.md) |
 
 - Browse all columns in the [columns directory](columns/)
 

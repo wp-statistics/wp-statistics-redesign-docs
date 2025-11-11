@@ -3,49 +3,36 @@ title: "Search Terms"
 type: "report"
 group: "Visitors"
 show_in_menu: true
-add_on: "Free"
-status: "Not Started"
+add_on: "Data Plus"
+status: "Done"
 figma: ""
 interactions:
   - "Date Picker"
-  - "Filters"
 widgets:
   - row: 1
-    columns: ["search-stats-summary"]
-  - row: 2
-    columns: ["search-trends-chart", "search-engines-breakdown"]
-  - row: 3
-    columns: ["top-search-terms-list"]
+    columns: ["search-terms-table"]
 ---
 
 # Search Terms Report
 
-Analyze search engine keywords and terms that bring visitors to your website.
+Track and analyze search terms that visitors use when searching within your website using the WordPress search functionality.
 
 ## Page Configuration
 
 - **Menu Visibility**: Shown in main menu
-- **Add-on**: Free (included in base plugin)
-- **Status**: Not Started
+- **Add-on**: Data Plus
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Available Interactions
 
 - **Date Picker**
-- **Filters**
 
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Search Stats Summary](../widgets/search-stats-summary.md)
-
-### Row 2 (Two Columns)
-- [Search Trends Chart](../widgets/search-trends-chart.md)
-- [Search Engines Breakdown](../widgets/search-engines-breakdown.md)
-
-### Row 3 (Full Width)
-- [Top Search Terms List](../widgets/top-search-terms-list.md)
+- [Search Terms Table](../widgets/search-terms-table.md)
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-11*

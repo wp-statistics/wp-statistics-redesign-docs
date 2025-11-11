@@ -6,6 +6,7 @@ figma: ""
 used_in_widgets:
   - "top-entry-pages"
   - "top-visitors"
+  - "search-terms-table"
 ---
 
 # Table Component
@@ -24,6 +25,7 @@ This component is used by the following widgets:
 
 - [Top Entry Pages](../widgets/top-entry-pages.md)
 - [Top Visitors](../widgets/top-visitors.md)
+- [Search Terms Table](../widgets/search-terms-table.md)
 
 ## Overview
 
