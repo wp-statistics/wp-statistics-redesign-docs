@@ -39,7 +39,7 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 | 3 | [Entry Pages](../reports/entry-pages.md) | Data Plus | Done | First pages visited |
 | 4 | [Exit Pages](../reports/exit-pages.md) | Data Plus | Done | Last pages before leaving |
 | 5 | [Category Pages](../reports/category-pages.md) | Free | Done | Category performance |
-| 6 | Author Pages | Free | Not Started | Author performance |
+| 6 | [Author Pages](../reports/author-pages.md) | Free | Done | Author performance |
 | 7 | 404 Pages | Free | Not Started | Broken links and errors |
 
 ---

@@ -4,6 +4,7 @@ type: "column"
 status: "Done"
 figma: ""
 used_in_widgets:
+  - "author-pages-table"
   - "category-pages-table"
   - "exit-pages-table"
   - "top-pages-full"
@@ -23,6 +24,7 @@ Shows the number of unique visitors for each page.
 
 This column is used in the following widgets:
 
+- [Author Pages Table](../widgets/author-pages-table.md)
 - [Category Pages Table](../widgets/category-pages-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)
 - [Top Pages Full](../widgets/top-pages-full.md)
@@ -44,6 +46,7 @@ This column is **sortable**.
 
 ## Related Documentation
 
+- [Author Pages Table Widget](../widgets/author-pages-table.md)
 - [Category Pages Table Widget](../widgets/category-pages-table.md)
 - [Exit Pages Table Widget](../widgets/exit-pages-table.md)
 - [Top Pages Full Widget](../widgets/top-pages-full.md)

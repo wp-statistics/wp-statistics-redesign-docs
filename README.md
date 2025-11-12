@@ -52,6 +52,7 @@ Reports focused on page-level content performance and analysis.
 | Entry Pages | Yes | Data Plus | Done | [View Docs](reports/entry-pages.md) |
 | Exit Pages | Yes | Data Plus | Done | [View Docs](reports/exit-pages.md) |
 | Category Pages | Yes | Free | Done | [View Docs](reports/category-pages.md) |
+| Author Pages | Yes | Free | Done | [View Docs](reports/author-pages.md) |
 
 ---
 
@@ -63,6 +64,7 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 
 | Widget | Component | Add-on | Status | Documentation |
 |--------|-----------|--------|--------|---------------|
+| Author Pages Table | Data Table | Free | Done | [View Docs](widgets/author-pages-table.md) |
 | Category Pages Table | Data Table | Free | Done | [View Docs](widgets/category-pages-table.md) |
 | Entry Pages Table | Data Table | Data Plus | Done | [View Docs](widgets/entry-pages-table.md) |
 | Exit Pages Table | Data Table | Data Plus | Done | [View Docs](widgets/exit-pages-table.md) |
@@ -114,6 +116,7 @@ Reusable table column definitions used across data table widgets. Each column ha
 
 | Column | Sortable | Description | Documentation |
 |--------|----------|-------------|---------------|
+| Author | Yes | Author name with link to Single Author Report | [View Docs](columns/author.md) |
 | Category | Yes | Category name with link to Single Category Report | [View Docs](columns/category.md) |
 | Visitor Last Visit | Yes | Date/time of visitor's last visit | [View Docs](columns/visitor-last-visit.md) |
 | Visitor Info | No | Comprehensive visitor details (location, device, browser, OS) | [View Docs](columns/visitor-info.md) |
@@ -136,6 +139,7 @@ Reusable table column definitions used across data table widgets. Each column ha
 | Content Published Date | Yes | Publication date of the page | [View Docs](columns/content-published-date.md) |
 | Content Unique Exits | Yes | Count of sessions that ended on this page | [View Docs](columns/content-unique-exits.md) |
 | Content Exit Rate | Yes | Percentage of page views that were the last in a session | [View Docs](columns/content-exit-rate.md) |
+| Published Contents | Yes | Number of content items published during selected date range | [View Docs](columns/published-contents.md) |
 | Total Published Content | Yes | Number of published content items in each category | [View Docs](columns/total-published-content.md) |
 | Search Term | No | Keyword or phrase entered in website search | [View Docs](columns/search-term.md) |
 | Searches | No | Count of times a term was searched on site | [View Docs](columns/searches.md) |

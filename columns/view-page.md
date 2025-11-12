@@ -4,6 +4,7 @@ type: "column"
 status: "Done"
 figma: ""
 used_in_widgets:
+  - "author-pages-table"
   - "category-pages-table"
   - "entry-pages-table"
   - "exit-pages-table"
@@ -24,6 +25,7 @@ Provides a button/link to view the actual page content on the website.
 
 This column is used in the following widgets:
 
+- [Author Pages Table](../widgets/author-pages-table.md)
 - [Category Pages Table](../widgets/category-pages-table.md)
 - [Entry Pages Table](../widgets/entry-pages-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)(../widgets/entry-pages-table.md)
@@ -56,10 +58,12 @@ Allows users to quickly navigate from analytics data to the actual page content 
 
 ## Related Documentation
 
+- [Author Pages Table Widget](../widgets/author-pages-table.md)
 - [Category Pages Table Widget](../widgets/category-pages-table.md)
 - [Entry Pages Table Widget](../widgets/entry-pages-table.md)
 - [Exit Pages Table Widget](../widgets/exit-pages-table.md)
 - [Top Entry Pages Widget](../widgets/top-entry-pages.md)
+- [Author Column](author.md)
 - [Category Column](category.md)
 - [Entry Page Column](entry-page.md)
 - [Data Table Component](../components/data-table.md)
