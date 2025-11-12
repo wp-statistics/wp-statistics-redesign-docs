@@ -1,17 +1,15 @@
 ---
-title: "Content Visitors Column"
+title: "Total Published Content Column"
 type: "column"
 status: "Done"
 figma: ""
 used_in_widgets:
   - "category-pages-table"
-  - "exit-pages-table"
-  - "top-pages-full"
 ---
 
-# Content Visitors Column
+# Total Published Content Column
 
-Shows the number of unique visitors for each page.
+Shows the number of published content items in each category.
 
 ## Column Configuration
 
@@ -24,30 +22,32 @@ Shows the number of unique visitors for each page.
 This column is used in the following widgets:
 
 - [Category Pages Table](../widgets/category-pages-table.md)
-- [Exit Pages Table](../widgets/exit-pages-table.md)
-- [Top Pages Full](../widgets/top-pages-full.md)
 
 ## Display
 
-**Label:** Visitors
+**Label:** Published Content
 
-**Format:** Number (e.g., 1,234)
+**Format:** Simple number (e.g., 42)
 
 **Alignment:** Right-aligned
+
+## Data Definition
+
+Counts the total number of published content items (posts, pages, custom post types) assigned to this category during the selected date range.
+
+Example: If a category has 42 published posts, the column displays "42".
 
 ## Sortable Behavior
 
 This column is **sortable**.
 
 - Default sort order: Descending (highest to lowest)
-- Shows pages with most unique visitors first
+- Shows categories with most published content first
 
 ## Related Documentation
 
 - [Category Pages Table Widget](../widgets/category-pages-table.md)
-- [Exit Pages Table Widget](../widgets/exit-pages-table.md)
-- [Top Pages Full Widget](../widgets/top-pages-full.md)
-- [Content Views Column](content-views.md)
+- [Category Column](category.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

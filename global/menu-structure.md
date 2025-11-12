@@ -38,7 +38,7 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 | 2 | [Top Pages](../reports/top-pages.md) | Free | Done | Most viewed content |
 | 3 | [Entry Pages](../reports/entry-pages.md) | Data Plus | Done | First pages visited |
 | 4 | [Exit Pages](../reports/exit-pages.md) | Data Plus | Done | Last pages before leaving |
-| 5 | Category Pages | Free | Not Started | Category performance |
+| 5 | [Category Pages](../reports/category-pages.md) | Free | Done | Category performance |
 | 6 | Author Pages | Free | Not Started | Author performance |
 | 7 | 404 Pages | Free | Not Started | Broken links and errors |
 
@@ -120,4 +120,4 @@ As more report groups are documented, they will be added to this structure:
 
 ---
 
-*Last Updated: 2025-11-11*
+*Last Updated: 2025-11-12*

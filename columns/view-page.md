@@ -4,9 +4,10 @@ type: "column"
 status: "Done"
 figma: ""
 used_in_widgets:
-  - "top-entry-pages"
+  - "category-pages-table"
   - "entry-pages-table"
   - "exit-pages-table"
+  - "top-entry-pages"
 ---
 
 # View Page Column
@@ -23,6 +24,7 @@ Provides a button/link to view the actual page content on the website.
 
 This column is used in the following widgets:
 
+- [Category Pages Table](../widgets/category-pages-table.md)
 - [Entry Pages Table](../widgets/entry-pages-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)(../widgets/entry-pages-table.md)
 - [Top Entry Pages](../widgets/top-entry-pages.md)
@@ -54,10 +56,14 @@ Allows users to quickly navigate from analytics data to the actual page content 
 
 ## Related Documentation
 
+- [Category Pages Table Widget](../widgets/category-pages-table.md)
+- [Entry Pages Table Widget](../widgets/entry-pages-table.md)
+- [Exit Pages Table Widget](../widgets/exit-pages-table.md)
 - [Top Entry Pages Widget](../widgets/top-entry-pages.md)
+- [Category Column](category.md)
 - [Entry Page Column](entry-page.md)
-- [Table Component](../components/table.md)
+- [Data Table Component](../components/data-table.md)
 
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-11-12*

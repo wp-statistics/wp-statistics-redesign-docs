@@ -4,6 +4,7 @@ type: "component"
 status: "Done"
 figma: ""
 used_in_widgets:
+  - "category-pages-table"
   - "entry-pages-table"
   - "exit-pages-table"
   - "latest-visitors"
@@ -32,6 +33,7 @@ A powerful, flexible data table component for displaying structured data with so
 
 This component is used by the following widgets:
 
+- [Category Pages Table](../widgets/category-pages-table.md)
 - [Entry Pages Table](../widgets/entry-pages-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)(../widgets/entry-pages-table.md)
 - [Latest Visitors](../widgets/latest-visitors.md)
@@ -86,4 +88,4 @@ When table has no data:
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-12*
