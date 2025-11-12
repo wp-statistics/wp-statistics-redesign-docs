@@ -9,7 +9,7 @@ used_in_widgets:
 
 # Total Published Content Column
 
-Shows the number of published content items in each category.
+Shows the number of published content items in a taxonomy term, tag, author, or other grouping.
 
 ## Column Configuration
 
@@ -33,16 +33,12 @@ This column is used in the following widgets:
 
 ## Data Definition
 
-Counts the total number of published content items (posts, pages, custom post types) assigned to this category during the selected date range.
+Counts the total number of published content items (posts, pages, custom post types) assigned to the grouping (category, tag, author, etc.) during the selected date range.
 
-Example: If a category has 42 published posts, the column displays "42".
-
-## Sortable Behavior
-
-This column is **sortable**.
-
-- Default sort order: Descending (highest to lowest)
-- Shows categories with most published content first
+**Example Usage:**
+- Categories: If a category has 42 published posts, displays "42"
+- Tags: If a tag is used on 18 posts, displays "18"
+- Authors: If an author has 156 published articles, displays "156"
 
 ## Related Documentation
 

@@ -16,7 +16,7 @@ widgets:
 
 # Category Pages
 
-Shows performance metrics for each category on your website with visitor counts and published content totals.
+Shows performance metrics for category archive pages (e.g., `/category/technology/`), not individual posts within categories.
 
 ## Report Configuration
 

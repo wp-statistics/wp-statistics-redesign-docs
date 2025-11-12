@@ -42,12 +42,14 @@ This widget appears in the following report pages:
 
 ### Columns
 
-| Column | Sortable | Default Visibility |
-|--------|----------|-------------------|
-| [Category](../columns/category.md) | Yes | Shown |
-| [Content Visitors](../columns/content-visitors.md) | Yes | Shown |
-| [Total Published Content](../columns/total-published-content.md) | Yes | Shown |
-| [View Page](../columns/view-page.md) | No | Shown |
+| Column | Label Override | Sortable | Default Visibility |
+|--------|----------------|----------|-------------------|
+| [Category](../columns/category.md) | - | Yes | Shown |
+| [Content Visitors](../columns/content-visitors.md) | Category Page Views | Yes | Shown |
+| [Total Published Content](../columns/total-published-content.md) | - | Yes | Shown |
+| [View Page](../columns/view-page.md) | - | No | Shown |
+
+**Note:** The Content Visitors column displays with the label "Category Page Views" in this widget to clarify it shows views of the category page itself, not content within the category.
 
 ## Empty State
 

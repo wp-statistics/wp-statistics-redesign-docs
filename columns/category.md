@@ -37,37 +37,44 @@ This column is used in the following widgets:
 Opens the Single Category Report for this category in the same tab
 
 ### Hover Tooltip
-Displays category slug
-- Example: `technology` or `news-updates`
+Displays full taxonomy path including taxonomy slug, parent category (if exists), and category slug
+- Format: `/taxonomy-slug/parent-category-slug/category-slug/`
+- Example with parent: `/category/news/technology/`
+- Example without parent: `/category/technology/`
+- Example custom taxonomy: `/product-category/electronics/laptops/`
 
 ## Display Examples
 
-### Example 1: Standard Category
+### Example 1: Standard Category (No Parent)
 
 **Visual:** `Technology`
 
 **Description:**
 - Label: Category name "Technology"
 - Click: Opens Single Category Report
-- Hover: Shows category slug (e.g., `technology`)
+- Hover: Shows taxonomy path `/category/technology/`
 
 ---
 
-### Example 2: Long Category Name Truncated
+### Example 2: Category with Parent
+
+**Visual:** `Laptops`
+
+**Description:**
+- Label: Category name "Laptops"
+- Click: Opens Single Category Report
+- Hover: Shows taxonomy path `/product-category/electronics/laptops/`
+
+---
+
+### Example 3: Long Category Name Truncated
 
 **Visual:** `WordPress Development Tips and T…`
 
 **Description:**
 - Label: Category name truncated at 35 chars
 - Click: Opens Single Category Report
-- Hover: Shows category slug (e.g., `wordpress-development-tips`)
-
-## Sortable Behavior
-
-This column is **sortable**.
-
-- Default sort order: Ascending (A-Z)
-- Sorts alphabetically by category name
+- Hover: Shows taxonomy path `/category/wordpress-development-tips/`
 
 ## Related Documentation
 
