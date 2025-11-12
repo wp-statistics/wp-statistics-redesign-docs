@@ -41,10 +41,10 @@ This widget appears in the following report pages:
 
 ### Columns
 
-| Column | Sortable | Default Visibility |
-|--------|----------|-------------------|
-| [URL](../columns/url.md) | No (pre-sorted) | Shown |
-| [Content Views](../columns/content-views.md) | No (pre-sorted) | Shown |
+| Column | Label Override | Sortable | Default Visibility |
+|--------|----------------|----------|-------------------|
+| [URL](../columns/url.md) | - | No (pre-sorted) | Shown |
+| [Content Views](../columns/content-views.md) | Views | No (pre-sorted) | Shown |
 
 **Note:** This table uses the Table component (not Data Table), so columns are pre-sorted by Content Views and not interactively sortable.
 
