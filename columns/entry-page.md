@@ -6,6 +6,7 @@ used_in_widgets:
   - "latest-visitors"
   - "top-visitors-table"
   - "top-entry-pages"
+  - "top-entry-pages-preview"
   - "top-visitors"
 ---
 
@@ -26,6 +27,7 @@ This column is used in the following widgets:
 - [Latest Visitors](../widgets/latest-visitors.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
 - [Top Entry Pages](../widgets/top-entry-pages.md)
+- [Top Entry Pages Preview](../widgets/top-entry-pages-preview.md)
 - [Top Visitors](../widgets/top-visitors.md)
 
 ## Attribution Model Behavior

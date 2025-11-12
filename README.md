@@ -48,6 +48,7 @@ Reports focused on page-level content performance and analysis.
 
 | Report Page | Menu Visibility | Add-on | Status | Documentation |
 |------------|----------------|--------|--------|---------------|
+| Overview | Yes | Free | Done | [View Docs](reports/page-insights-overview.md) |
 | Top Pages | Yes | Free | Done | [View Docs](reports/top-pages.md) |
 | Entry Pages | Yes | Data Plus | Done | [View Docs](reports/entry-pages.md) |
 | Exit Pages | Yes | Data Plus | Done | [View Docs](reports/exit-pages.md) |
@@ -65,7 +66,9 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 
 | Widget | Component | Add-on | Status | Documentation |
 |--------|-----------|--------|--------|---------------|
+| 404 Pages Preview | Table | Free | Done | [View Docs](widgets/404-pages-preview.md) |
 | 404 Pages Table | Table | Free | Done | [View Docs](widgets/404-pages-table.md) |
+| Author Pages Preview | Table | Free | Done | [View Docs](widgets/author-pages-preview.md) |
 | Author Pages Table | Data Table | Free | Done | [View Docs](widgets/author-pages-table.md) |
 | Category Pages Table | Data Table | Free | Done | [View Docs](widgets/category-pages-table.md) |
 | Entry Pages Table | Data Table | Data Plus | Done | [View Docs](widgets/entry-pages-table.md) |
@@ -76,12 +79,16 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 | Logged-in Traffic Trends | Line Chart | Free | Done | [View Docs](widgets/logged-in-traffic-trends.md) |
 | Logged-in Users Views Table | Data Table | Free | Done | [View Docs](widgets/logged-in-users-views-table.md) |
 | Online Visitors Table | Data Table | Free | Done | [View Docs](widgets/online-visitors-table.md) |
+| Recent Pages Preview | Table | Free | Done | [View Docs](widgets/recent-pages-preview.md) |
 | Search Terms Table | Table | Data Plus | Done | [View Docs](widgets/search-terms-table.md) |
 | Top Countries | Horizontal Bar List | Free | Done | [View Docs](widgets/top-countries.md) |
 | Top Device Categories | Horizontal Bar List | Free | Done | [View Docs](widgets/top-device-categories.md) |
 | Top Entry Pages | Table | Data Plus | Done | [View Docs](widgets/top-entry-pages.md) |
+| Top Entry Pages Preview | Table | Data Plus | Done | [View Docs](widgets/top-entry-pages-preview.md) |
+| Top Exit Pages Preview | Table | Data Plus | Done | [View Docs](widgets/top-exit-pages-preview.md) |
 | Top Operating Systems | Horizontal Bar List | Free | Done | [View Docs](widgets/top-operating-systems.md) |
 | Top Pages Full | Data Table | Free | Done | [View Docs](widgets/top-pages-full.md) |
+| Top Pages Preview | Table | Free | Done | [View Docs](widgets/top-pages-preview.md) |
 | Top Referrers | Horizontal Bar List | Free | Done | [View Docs](widgets/top-referrers.md) |
 | Top Visitors | Table | Free | Done | [View Docs](widgets/top-visitors.md) |
 | Top Visitors Table | Data Table | Free | Done | [View Docs](widgets/top-visitors-table.md) |

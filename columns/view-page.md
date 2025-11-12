@@ -3,11 +3,16 @@ title: "View Page Column"
 type: "column"
 status: "Done"
 used_in_widgets:
+  - "author-pages-preview"
   - "author-pages-table"
   - "category-pages-table"
   - "entry-pages-table"
   - "exit-pages-table"
+  - "recent-pages-preview"
   - "top-entry-pages"
+  - "top-entry-pages-preview"
+  - "top-exit-pages-preview"
+  - "top-pages-preview"
 ---
 
 # View Page Column
@@ -24,11 +29,16 @@ Provides a button/link to view the actual page content on the website.
 
 This column is used in the following widgets:
 
+- [Author Pages Preview](../widgets/author-pages-preview.md)
 - [Author Pages Table](../widgets/author-pages-table.md)
 - [Category Pages Table](../widgets/category-pages-table.md)
 - [Entry Pages Table](../widgets/entry-pages-table.md)
-- [Exit Pages Table](../widgets/exit-pages-table.md)(../widgets/entry-pages-table.md)
+- [Exit Pages Table](../widgets/exit-pages-table.md)
+- [Recent Pages Preview](../widgets/recent-pages-preview.md)
 - [Top Entry Pages](../widgets/top-entry-pages.md)
+- [Top Entry Pages Preview](../widgets/top-entry-pages-preview.md)
+- [Top Exit Pages Preview](../widgets/top-exit-pages-preview.md)
+- [Top Pages Preview](../widgets/top-pages-preview.md)
 
 ## Display
 

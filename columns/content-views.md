@@ -3,8 +3,11 @@ title: "Content Views Column"
 type: "column"
 status: "Done"
 used_in_widgets:
+  - "404-pages-preview"
   - "404-pages-table"
+  - "recent-pages-preview"
   - "top-pages-full"
+  - "top-pages-preview"
 ---
 
 # Content Views Column
@@ -21,8 +24,11 @@ Shows the total number of views for each page.
 
 This column is used in the following widgets:
 
+- [404 Pages Preview](../widgets/404-pages-preview.md)
 - [404 Pages Table](../widgets/404-pages-table.md)
+- [Recent Pages Preview](../widgets/recent-pages-preview.md)
 - [Top Pages Full](../widgets/top-pages-full.md)
+- [Top Pages Preview](../widgets/top-pages-preview.md)
 
 ## Display
 

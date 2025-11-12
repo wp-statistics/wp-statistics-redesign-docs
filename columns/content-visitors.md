@@ -3,6 +3,7 @@ title: "Content Visitors Column"
 type: "column"
 status: "Done"
 used_in_widgets:
+  - "author-pages-preview"
   - "author-pages-table"
   - "category-pages-table"
   - "exit-pages-table"
@@ -23,6 +24,7 @@ Shows the number of unique visitors for each page.
 
 This column is used in the following widgets:
 
+- [Author Pages Preview](../widgets/author-pages-preview.md)
 - [Author Pages Table](../widgets/author-pages-table.md)
 - [Category Pages Table](../widgets/category-pages-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)

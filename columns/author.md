@@ -3,6 +3,7 @@ title: "Author Column"
 type: "column"
 status: "Done"
 used_in_widgets:
+  - "author-pages-preview"
   - "author-pages-table"
 ---
 
@@ -20,6 +21,7 @@ Shows the author name with a link to detailed analytics for that author.
 
 This column is used in the following widgets:
 
+- [Author Pages Preview](../widgets/author-pages-preview.md)
 - [Author Pages Table](../widgets/author-pages-table.md)
 
 ## Display

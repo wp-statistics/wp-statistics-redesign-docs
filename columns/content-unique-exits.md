@@ -4,6 +4,7 @@ type: "column"
 status: "Done"
 used_in_widgets:
   - "exit-pages-table"
+  - "top-exit-pages-preview"
 ---
 
 # Content Unique Exits Column
@@ -21,6 +22,7 @@ Shows the count of unique sessions that ended on a specific page.
 This column is used in the following widgets:
 
 - [Exit Pages Table](../widgets/exit-pages-table.md)
+- [Top Exit Pages Preview](../widgets/top-exit-pages-preview.md)
 
 ## Display
 

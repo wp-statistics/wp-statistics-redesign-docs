@@ -3,6 +3,7 @@ title: "URL Column"
 type: "column"
 status: "Done"
 used_in_widgets:
+  - "404-pages-preview"
   - "404-pages-table"
 ---
 
@@ -20,6 +21,7 @@ Shows the URL path with a link to detailed analytics for that URL.
 
 This column is used in the following widgets:
 
+- [404 Pages Preview](../widgets/404-pages-preview.md)
 - [404 Pages Table](../widgets/404-pages-table.md)
 
 ## Display

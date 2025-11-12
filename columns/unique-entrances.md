@@ -5,6 +5,7 @@ status: "Done"
 used_in_widgets:
   - "entry-pages-table"
   - "top-entry-pages"
+  - "top-entry-pages-preview"
 ---
 
 # Unique Entrances Column
@@ -23,6 +24,7 @@ This column is used in the following widgets:
 
 - [Entry Pages Table](../widgets/entry-pages-table.md)
 - [Top Entry Pages](../widgets/top-entry-pages.md)
+- [Top Entry Pages Preview](../widgets/top-entry-pages-preview.md)
 
 ## Display
 

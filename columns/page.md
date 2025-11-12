@@ -7,6 +7,8 @@ used_in_widgets:
   - "latest-views-table"
   - "exit-pages-table"
   - "online-visitors-table"
+  - "recent-pages-preview"
+  - "top-pages-preview"
 ---
 
 # Page Column
@@ -24,9 +26,11 @@ Shows the page title for each view in the table.
 This column is used in the following widgets:
 
 - [Entry Pages Table](../widgets/entry-pages-table.md)
-- [Exit Pages Table](../widgets/exit-pages-table.md)(../widgets/entry-pages-table.md)
+- [Exit Pages Table](../widgets/exit-pages-table.md)
 - [Latest Views Table](../widgets/latest-views-table.md)
 - [Online Visitors Table](../widgets/online-visitors-table.md)
+- [Recent Pages Preview](../widgets/recent-pages-preview.md)
+- [Top Pages Preview](../widgets/top-pages-preview.md)
 
 ## Display
 

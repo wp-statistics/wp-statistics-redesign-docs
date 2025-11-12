@@ -4,6 +4,7 @@ type: "column"
 status: "Done"
 used_in_widgets:
   - "latest-visitors"
+  - "top-exit-pages-preview"
   - "top-visitors-table"
   - "top-visitors"
 ---
@@ -23,6 +24,7 @@ Shows the last page a visitor viewed in a session.
 This column is used in the following widgets:
 
 - [Latest Visitors](../widgets/latest-visitors.md)
+- [Top Exit Pages Preview](../widgets/top-exit-pages-preview.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
 - [Top Visitors](../widgets/top-visitors.md)
 
