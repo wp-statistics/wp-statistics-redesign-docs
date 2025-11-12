@@ -50,6 +50,7 @@ Reports focused on page-level content performance and analysis.
 |------------|----------------|--------|--------|---------------|
 | Top Pages | Yes | Free | Done | [View Docs](reports/top-pages.md) |
 | Entry Pages | Yes | Data Plus | Done | [View Docs](reports/entry-pages.md) |
+| Exit Pages | Yes | Data Plus | Done | [View Docs](reports/exit-pages.md) |
 
 ---
 
@@ -62,6 +63,7 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 | Widget | Component | Add-on | Status | Documentation |
 |--------|-----------|--------|--------|---------------|
 | Entry Pages Table | Data Table | Data Plus | Done | [View Docs](widgets/entry-pages-table.md) |
+| Exit Pages Table | Data Table | Data Plus | Done | [View Docs](widgets/exit-pages-table.md) |
 | Global Visitor Distribution | Global Map | Free | Done | [View Docs](widgets/global-visitor-distribution.md) |
 | Latest Views Table | Data Table | Free | Done | [View Docs](widgets/latest-views-table.md) |
 | Latest Visitors | Data Table | Free | Done | [View Docs](widgets/latest-visitors.md) |
@@ -129,6 +131,8 @@ Reusable table column definitions used across data table widgets. Each column ha
 | Content Bounce Rate | Yes | Bounce rate specific to each page | [View Docs](columns/content-bounce-rate.md) |
 | Content Session Duration | Yes | Average session duration for sessions including this page | [View Docs](columns/content-session-duration.md) |
 | Content Published Date | Yes | Publication date of the page | [View Docs](columns/content-published-date.md) |
+| Content Unique Exits | Yes | Count of sessions that ended on this page | [View Docs](columns/content-unique-exits.md) |
+| Content Exit Rate | Yes | Percentage of page views that were the last in a session | [View Docs](columns/content-exit-rate.md) |
 | Search Term | No | Keyword or phrase entered in website search | [View Docs](columns/search-term.md) |
 | Searches | No | Count of times a term was searched on site | [View Docs](columns/searches.md) |
 

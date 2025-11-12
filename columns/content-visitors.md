@@ -6,6 +6,7 @@ figma: ""
 used_in_widgets:
   - "top-pages-full"
 ---
+  - "exit-pages-table"
 
 # Content Visitors Column
 
@@ -40,6 +41,7 @@ This column is **sortable**.
 
 ## Related Documentation
 
+- [Exit Pages Table Widget](../widgets/exit-pages-table.md)
 - [Top Pages Full Widget](../widgets/top-pages-full.md)
 - [Views Column](views.md)
 - [Data Table Component](../components/data-table.md)
