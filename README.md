@@ -42,6 +42,14 @@ A comprehensive set of reports for analyzing visitor behavior and traffic patter
 | Search Terms | Yes | Data Plus | Done | [View Docs](reports/search-terms.md) |
 | Single Visitor Report | No | Free | Not Started | [View Docs](reports/single-visitor-report.md) |
 
+### Page Insights Reports
+
+Reports focused on page-level content performance and analysis.
+
+| Report Page | Menu Visibility | Add-on | Status | Documentation |
+|------------|----------------|--------|--------|---------------|
+| Top Pages | Yes | Free | Done | [View Docs](reports/top-pages.md) |
+
 ---
 
 ## Widgets
@@ -63,6 +71,7 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 | Top Device Categories | Horizontal Bar List | Free | Done | [View Docs](widgets/top-device-categories.md) |
 | Top Entry Pages | Table | Data Plus | Done | [View Docs](widgets/top-entry-pages.md) |
 | Top Operating Systems | Horizontal Bar List | Free | Done | [View Docs](widgets/top-operating-systems.md) |
+| Top Pages Full | Data Table | Free | Done | [View Docs](widgets/top-pages-full.md) |
 | Top Referrers | Horizontal Bar List | Free | Done | [View Docs](widgets/top-referrers.md) |
 | Top Visitors | Table | Free | Done | [View Docs](widgets/top-visitors.md) |
 | Top Visitors Table | Data Table | Free | Done | [View Docs](widgets/top-visitors-table.md) |
@@ -112,6 +121,12 @@ Reusable table column definitions used across data table widgets. Each column ha
 | New vs Returning | No | Visitor lifecycle classification badge | [View Docs](columns/new-vs-returning.md) |
 | Unique Entrances | No | Count of sessions that started on a specific page | [View Docs](columns/unique-entrances.md) |
 | View Page | No | Action button to view page content on website | [View Docs](columns/view-page.md) |
+| Page | Yes | Page title with link to Single Content Report | [View Docs](columns/page.md) |
+| Visitors | Yes | Number of unique visitors for each page | [View Docs](columns/visitors.md) |
+| Views | Yes | Total number of views for each page | [View Docs](columns/views.md) |
+| Page Bounce Rate | Yes | Bounce rate specific to each page | [View Docs](columns/page-bounce-rate.md) |
+| Page Session Duration | Yes | Average session duration for sessions including this page | [View Docs](columns/page-session-duration.md) |
+| Published Date | Yes | Publication date of the page | [View Docs](columns/published-date.md) |
 | Search Term | No | Keyword or phrase entered in website search | [View Docs](columns/search-term.md) |
 | Searches | No | Count of times a term was searched on site | [View Docs](columns/searches.md) |
 
