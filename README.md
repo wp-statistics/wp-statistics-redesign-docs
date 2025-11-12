@@ -49,6 +49,7 @@ Reports focused on page-level content performance and analysis.
 | Report Page | Menu Visibility | Add-on | Status | Documentation |
 |------------|----------------|--------|--------|---------------|
 | Top Pages | Yes | Free | Done | [View Docs](reports/top-pages.md) |
+| Entry Pages | Yes | Data Plus | Done | [View Docs](reports/entry-pages.md) |
 
 ---
 
@@ -60,6 +61,7 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 
 | Widget | Component | Add-on | Status | Documentation |
 |--------|-----------|--------|--------|---------------|
+| Entry Pages Table | Data Table | Data Plus | Done | [View Docs](widgets/entry-pages-table.md) |
 | Global Visitor Distribution | Global Map | Free | Done | [View Docs](widgets/global-visitor-distribution.md) |
 | Latest Views Table | Data Table | Free | Done | [View Docs](widgets/latest-views-table.md) |
 | Latest Visitors | Data Table | Free | Done | [View Docs](widgets/latest-visitors.md) |

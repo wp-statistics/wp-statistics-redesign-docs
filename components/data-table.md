@@ -4,6 +4,7 @@ type: "component"
 status: "Done"
 figma: ""
 used_in_widgets:
+  - "entry-pages-table"
   - "latest-visitors"
   - "latest-views-table"
   - "visitor-list"
@@ -30,6 +31,7 @@ A powerful, flexible data table component for displaying structured data with so
 
 This component is used by the following widgets:
 
+- [Entry Pages Table](../widgets/entry-pages-table.md)
 - [Latest Visitors](../widgets/latest-visitors.md)
 - [Latest Views Table](../widgets/latest-views-table.md)
 - [Visitor List](../widgets/visitor-list.md)

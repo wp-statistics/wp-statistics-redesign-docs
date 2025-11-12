@@ -4,6 +4,7 @@ type: "column"
 status: "Done"
 figma: ""
 used_in_widgets:
+  - "entry-pages-table"
   - "top-entry-pages"
 ---
 
@@ -21,6 +22,7 @@ Shows the count of unique sessions that started on a specific page.
 
 This column is used in the following widgets:
 
+- [Entry Pages Table](../widgets/entry-pages-table.md)
 - [Top Entry Pages](../widgets/top-entry-pages.md)
 
 ## Display

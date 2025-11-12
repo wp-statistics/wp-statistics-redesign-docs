@@ -5,6 +5,7 @@ status: "Done"
 figma: ""
 used_in_widgets:
   - "top-entry-pages"
+  - "entry-pages-table"
 ---
 
 # View Page Column
@@ -21,6 +22,7 @@ Provides a button/link to view the actual page content on the website.
 
 This column is used in the following widgets:
 
+- [Entry Pages Table](../widgets/entry-pages-table.md)
 - [Top Entry Pages](../widgets/top-entry-pages.md)
 
 ## Display

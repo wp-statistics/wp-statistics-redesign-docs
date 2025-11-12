@@ -36,7 +36,7 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 |------|-----------|--------|--------|-------|
 | 1 | Overview | Free | Not Started | High-level summary (entry point) |
 | 2 | [Top Pages](../reports/top-pages.md) | Free | Done | Most viewed content |
-| 3 | Entry Pages | Data Plus | Not Started | First pages visited |
+| 3 | [Entry Pages](../reports/entry-pages.md) | Data Plus | Done | First pages visited |
 | 4 | Exit Pages | Data Plus | Not Started | Last pages before leaving |
 | 5 | Category Pages | Free | Not Started | Category performance |
 | 6 | Author Pages | Free | Not Started | Author performance |

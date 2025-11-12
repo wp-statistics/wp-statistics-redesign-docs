@@ -5,6 +5,7 @@ status: "Done"
 figma: ""
 used_in_widgets:
   - "top-pages-full"
+  - "entry-pages-table"
 ---
 
 # Content Published Date Column
@@ -21,6 +22,7 @@ Shows the publication date for each page.
 
 This column is used in the following widgets:
 
+- [Entry Pages Table](../widgets/entry-pages-table.md)
 - [Top Pages Full](../widgets/top-pages-full.md)
 
 ## Display
