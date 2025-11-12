@@ -2,7 +2,6 @@
 title: "Metrics"
 type: "component"
 status: "Done"
-figma: ""
 used_in_widgets: []
 ---
 

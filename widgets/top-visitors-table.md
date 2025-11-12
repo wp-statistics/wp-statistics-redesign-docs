@@ -4,7 +4,6 @@ type: "widget"
 component: "data-table"
 add_on: "Free"
 status: "Done"
-figma: ""
 default_sort: "total_views"
 row_limit: 50
 used_in_reports:

@@ -2,7 +2,6 @@
 title: "Page Column"
 type: "column"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "entry-pages-table"
   - "latest-views-table"

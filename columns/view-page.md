@@ -2,7 +2,6 @@
 title: "View Page Column"
 type: "column"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "author-pages-table"
   - "category-pages-table"

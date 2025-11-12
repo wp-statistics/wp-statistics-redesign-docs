@@ -2,7 +2,6 @@
 title: "Line Chart Component"
 type: "component"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "traffic-trends"
   - "logged-in-traffic-trends"

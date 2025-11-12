@@ -283,7 +283,6 @@ group: "Group Name"
 show_in_menu: true
 add_on: "Free"
 status: "Not Started"
-figma: ""
 interactions:
   - "Date Picker"
 widgets:
@@ -326,7 +325,6 @@ type: "widget"
 component: "component-id"
 add_on: "Free"
 status: "Not Started"
-figma: ""
 default_sort: null
 row_limit: null
 used_in_reports:
@@ -374,7 +372,6 @@ Brief description.
 title: "Column Name"
 type: "column"
 status: "Not Started"
-figma: ""
 used_in_widgets:
   - "widget-id"
 ---

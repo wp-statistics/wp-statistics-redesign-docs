@@ -2,7 +2,6 @@
 title: "Vertical Bar Chart"
 type: "component"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "traffic-by-hour"
 ---

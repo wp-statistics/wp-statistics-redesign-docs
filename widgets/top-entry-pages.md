@@ -4,7 +4,6 @@ type: "widget"
 component: "table"
 add_on: "Data Plus"
 status: "Done"
-figma: ""
 used_in_reports:
   - "visitors-overview"
 ---

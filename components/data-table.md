@@ -2,7 +2,6 @@
 title: "Data Table Component"
 type: "component"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "author-pages-table"
   - "category-pages-table"

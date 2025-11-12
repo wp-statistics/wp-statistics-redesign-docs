@@ -4,7 +4,6 @@ type: "widget"
 component: "line-chart"
 add_on: "Free"
 status: "Done"
-figma: ""
 used_in_reports:
   - "visitors-overview"
 ---

@@ -5,7 +5,6 @@ group: "Visitors"
 show_in_menu: true
 add_on: "Data Plus"
 status: "Done"
-figma: ""
 interactions:
   - "Date Picker"
 widgets:

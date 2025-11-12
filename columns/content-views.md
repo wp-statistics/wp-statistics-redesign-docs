@@ -2,7 +2,6 @@
 title: "Content Views Column"
 type: "column"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "top-pages-full"
 ---

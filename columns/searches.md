@@ -2,7 +2,6 @@
 title: "Searches Column"
 type: "column"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "search-terms-table"
 ---

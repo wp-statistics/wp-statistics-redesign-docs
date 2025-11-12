@@ -2,7 +2,6 @@
 title: "Content Exit Rate Column"
 type: "column"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "exit-pages-table"
 ---

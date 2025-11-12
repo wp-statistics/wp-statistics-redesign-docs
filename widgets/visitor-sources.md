@@ -4,7 +4,6 @@ type: "widget"
 component: "pie-chart"
 add_on: "Free"
 status: "Not Started"
-figma: ""
 default_sort: null
 row_limit: null
 used_in_reports:

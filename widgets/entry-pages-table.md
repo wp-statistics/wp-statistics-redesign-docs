@@ -4,7 +4,6 @@ type: "widget"
 component: "data-table"
 add_on: "Data Plus"
 status: "Done"
-figma: ""
 default_sort: "unique_entrances"
 row_limit: 20
 used_in_reports:

@@ -2,7 +2,6 @@
 title: "Category Column"
 type: "column"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "category-pages-table"
 ---

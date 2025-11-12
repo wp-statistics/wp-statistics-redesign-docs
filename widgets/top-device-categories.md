@@ -4,7 +4,6 @@ type: "widget"
 component: "horizontal-bar-list"
 add_on: "Free"
 status: "Done"
-figma: ""
 used_in_reports:
   - "visitors-overview"
 ---

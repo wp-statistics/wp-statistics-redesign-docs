@@ -2,7 +2,6 @@
 title: "Total Views Column"
 type: "column"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "latest-visitors"
   - "latest-views-table"

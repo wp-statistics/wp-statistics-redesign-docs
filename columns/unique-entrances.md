@@ -2,7 +2,6 @@
 title: "Unique Entrances Column"
 type: "column"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "entry-pages-table"
   - "top-entry-pages"

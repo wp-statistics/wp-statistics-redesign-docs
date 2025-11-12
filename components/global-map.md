@@ -2,7 +2,6 @@
 title: "Global Map"
 type: "component"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "global-visitor-distribution"
 ---

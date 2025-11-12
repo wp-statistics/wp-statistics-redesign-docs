@@ -2,7 +2,6 @@
 title: "Bounce Rate Column"
 type: "column"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "latest-visitors"
   - "top-visitors-table"

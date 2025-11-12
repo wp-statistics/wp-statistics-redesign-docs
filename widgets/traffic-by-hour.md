@@ -4,7 +4,6 @@ type: "widget"
 component: "vertical-bar-chart"
 add_on: "Data Plus"
 status: "Done"
-figma: ""
 used_in_reports:
   - "visitors-overview"
 ---

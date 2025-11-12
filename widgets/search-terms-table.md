@@ -4,7 +4,6 @@ type: "widget"
 component: "table"
 add_on: "Data Plus"
 status: "Done"
-figma: ""
 default_sort: "searches"
 row_limit: 20
 used_in_reports:

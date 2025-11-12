@@ -5,7 +5,6 @@ group: "Visitors"
 show_in_menu: true
 add_on: "Free"
 status: "Done"
-figma: ""
 interactions:
   - "Date Picker"
   - "User Role Filter"

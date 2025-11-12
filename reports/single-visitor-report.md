@@ -5,7 +5,6 @@ group: "Visitors"
 show_in_menu: false
 add_on: "Free"
 status: "Not Started"
-figma: ""
 interactions:
   - "Back Navigation"
   - "Export"

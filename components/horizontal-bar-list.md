@@ -2,7 +2,6 @@
 title: "Horizontal Bar List"
 type: "component"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "top-referrers"
   - "top-countries"

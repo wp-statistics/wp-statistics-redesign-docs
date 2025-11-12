@@ -2,7 +2,6 @@
 title: "Total Published Content Column"
 type: "column"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "category-pages-table"
 ---

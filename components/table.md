@@ -2,7 +2,6 @@
 title: "Table"
 type: "component"
 status: "Done"
-figma: ""
 used_in_widgets:
   - "top-entry-pages"
   - "top-visitors"
