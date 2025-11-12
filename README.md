@@ -53,6 +53,7 @@ Reports focused on page-level content performance and analysis.
 | Exit Pages | Yes | Data Plus | Done | [View Docs](reports/exit-pages.md) |
 | Category Pages | Yes | Free | Done | [View Docs](reports/category-pages.md) |
 | Author Pages | Yes | Free | Done | [View Docs](reports/author-pages.md) |
+| 404 Pages | Yes | Free | Done | [View Docs](reports/404-pages.md) |
 
 ---
 
@@ -64,6 +65,7 @@ Reusable widgets used across multiple report pages. Each widget is based on a co
 
 | Widget | Component | Add-on | Status | Documentation |
 |--------|-----------|--------|--------|---------------|
+| 404 Pages Table | Table | Free | Done | [View Docs](widgets/404-pages-table.md) |
 | Author Pages Table | Data Table | Free | Done | [View Docs](widgets/author-pages-table.md) |
 | Category Pages Table | Data Table | Free | Done | [View Docs](widgets/category-pages-table.md) |
 | Entry Pages Table | Data Table | Data Plus | Done | [View Docs](widgets/entry-pages-table.md) |
@@ -143,6 +145,7 @@ Reusable table column definitions used across data table widgets. Each column ha
 | Total Published Content | Yes | Number of published content items in each category | [View Docs](columns/total-published-content.md) |
 | Search Term | No | Keyword or phrase entered in website search | [View Docs](columns/search-term.md) |
 | Searches | No | Count of times a term was searched on site | [View Docs](columns/searches.md) |
+| URL | No | URL path with link to detailed analytics | [View Docs](columns/url.md) |
 
 - Browse all columns in the [columns directory](columns/)
 

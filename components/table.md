@@ -3,6 +3,7 @@ title: "Table"
 type: "component"
 status: "Done"
 used_in_widgets:
+  - "404-pages-table"
   - "top-entry-pages"
   - "top-visitors"
   - "search-terms-table"
@@ -22,6 +23,7 @@ A simplified table component for displaying pre-sorted structured data without i
 
 This component is used by the following widgets:
 
+- [404 Pages Table](../widgets/404-pages-table.md)
 - [Top Entry Pages](../widgets/top-entry-pages.md)
 - [Top Visitors](../widgets/top-visitors.md)
 - [Search Terms Table](../widgets/search-terms-table.md)
