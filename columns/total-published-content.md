@@ -33,12 +33,16 @@ This column is used in the following widgets:
 
 ## Data Definition
 
-Counts the total number of published content items (posts, pages, custom post types) assigned to the grouping (category, tag, author, etc.) during the selected date range.
+Counts the **total** number of published content items (posts, pages, custom post types) assigned to the grouping (category, tag, author, etc.).
+
+**Important:** This count is **not filtered by the date range**. It shows the total published content in the grouping, regardless of when they were published or viewed.
 
 **Example Usage:**
-- Categories: If a category has 42 published posts, displays "42"
-- Tags: If a tag is used on 18 posts, displays "18"
-- Authors: If an author has 156 published articles, displays "156"
+- Categories: If a category has 42 total published posts, displays "42"
+- Tags: If a tag is used on 18 total posts, displays "18"
+- Authors: If an author has 156 total published articles, displays "156"
+
+The date range filter affects other metrics (like visitors, views) but not this total count.
 
 ## Related Documentation
 
