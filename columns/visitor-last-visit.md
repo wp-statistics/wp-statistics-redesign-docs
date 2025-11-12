@@ -1,5 +1,5 @@
 ---
-title: "Last View Column"
+title: "Visitor Last Visit Column"
 type: "column"
 status: "Done"
 figma: ""
@@ -9,7 +9,7 @@ used_in_widgets:
   - "online-visitors-table"
 ---
 
-# Last View Column
+# Visitor Last Visit Column
 
 Displays the date and time of a visitor's most recent visit to the website.
 

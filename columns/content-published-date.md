@@ -1,5 +1,5 @@
 ---
-title: "Views Column"
+title: "Content Published Date Column"
 type: "column"
 status: "Done"
 figma: ""
@@ -7,9 +7,9 @@ used_in_widgets:
   - "top-pages-full"
 ---
 
-# Views Column
+# Content Published Date Column
 
-Shows the total number of views for each page.
+Shows the publication date for each page.
 
 ## Column Configuration
 
@@ -25,23 +25,22 @@ This column is used in the following widgets:
 
 ## Display
 
-**Label:** Views
+**Label:** Published Date
 
-**Format:** Number (e.g., 2,456)
+**Format:** Date format based on WordPress settings (e.g., "Nov 12, 2025" or "2025-11-12")
 
-**Alignment:** Right-aligned
+**Alignment:** Left-aligned
 
 ## Sortable Behavior
 
 This column is **sortable**.
 
-- Default sort order: Descending (highest to lowest)
-- Shows pages with most total views first
+- Default sort order: Descending (newest to oldest)
+- Allows sorting by publication date to see newest or oldest content
 
 ## Related Documentation
 
 - [Top Pages Full Widget](../widgets/top-pages-full.md)
-- [Visitors Column](visitors.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

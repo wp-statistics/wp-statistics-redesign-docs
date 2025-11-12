@@ -44,7 +44,7 @@ The table displays 5 columns, all shown by default:
 
 | Column | Sortable | Status | Documentation |
 |--------|----------|--------|---------------|
-| **Visitor Informations** | ❌ No | Done | [View Docs](../columns/visitor-informations.md) |
+| **Visitor Informations** | ❌ No | Done | [View Docs](../columns/visitor-info.md) |
 | **Total Views** | ❌ No | Done | [View Docs](../columns/total-views.md) |
 | **Referrer** | ❌ No | Done | [View Docs](../columns/referrer.md) |
 | **Entry Page** | ❌ No | Done | [View Docs](../columns/entry-page.md) |

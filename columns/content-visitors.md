@@ -1,5 +1,5 @@
 ---
-title: "Visitors Column"
+title: "Content Visitors Column"
 type: "column"
 status: "Done"
 figma: ""
@@ -7,7 +7,7 @@ used_in_widgets:
   - "top-pages-full"
 ---
 
-# Visitors Column
+# Content Visitors Column
 
 Shows the number of unique visitors for each page.
 

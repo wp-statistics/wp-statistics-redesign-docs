@@ -42,8 +42,8 @@ Displays the most recent visitors to your website in a comprehensive data table.
 
 | Column | Sortable | Default Visibility |
 |--------|----------|--------------------|
-| [Last View](../columns/last-view.md) | No (default) | Shown |
-| [Visitor Informations](../columns/visitor-informations.md) | No | Shown |
+| [Visitor Last Visit](../columns/visitor-last-visit.md) | No (default) | Shown |
+| [Visitor Info](../columns/visitor-info.md) | No | Shown |
 | [Referrer](../columns/referrer.md) | No | Shown |
 | [Entry Page](../columns/entry-page.md) | No | Shown |
 | [Exit Page](../columns/exit-page.md) | No | Shown |
@@ -52,7 +52,7 @@ Displays the most recent visitors to your website in a comprehensive data table.
 | [Session Duration](../columns/session-duration.md) | No | Shown |
 | [Views Per Session](../columns/views-per-session.md) | No | Hidden |
 | [Bounce Rate](../columns/bounce-rate.md) | No | Hidden |
-| [New vs Returning](../columns/new-vs-returning.md) | No | Hidden |
+| [Visitor Status](../columns/visitor-status.md) | No | Hidden |
 
 ## Empty State
 

@@ -1,5 +1,5 @@
 ---
-title: "Page Bounce Rate Column"
+title: "Content Bounce Rate Column"
 type: "column"
 status: "Done"
 figma: ""
@@ -46,7 +46,7 @@ This column is **sortable**.
 ## Related Documentation
 
 - [Top Pages Full Widget](../widgets/top-pages-full.md)
-- [Page Session Duration Column](page-session-duration.md)
+- [Content Session Duration Column](content-session-duration.md)
 - [Bounce Rate Column](bounce-rate.md) (visitor-level bounce rate)
 
 ---

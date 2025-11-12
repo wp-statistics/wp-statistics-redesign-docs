@@ -108,8 +108,9 @@ Reusable table column definitions used across data table widgets. Each column ha
 
 | Column | Sortable | Description | Documentation |
 |--------|----------|-------------|---------------|
-| Last View | Yes | Date/time of visitor's last visit | [View Docs](columns/last-view.md) |
-| Visitor Informations | No | Comprehensive visitor details (location, device, browser, OS) | [View Docs](columns/visitor-informations.md) |
+| Visitor Last Visit | Yes | Date/time of visitor's last visit | [View Docs](columns/visitor-last-visit.md) |
+| Visitor Info | No | Comprehensive visitor details (location, device, browser, OS) | [View Docs](columns/visitor-info.md) |
+| Visitor Status | No | Visitor lifecycle classification badge (New vs Returning) | [View Docs](columns/visitor-status.md) |
 | Referrer | Yes | Source that referred the visitor | [View Docs](columns/referrer.md) |
 | Entry Page | Yes | First page visited in session | [View Docs](columns/entry-page.md) |
 | Exit Page | Yes | Last page before leaving | [View Docs](columns/exit-page.md) |
@@ -118,15 +119,14 @@ Reusable table column definitions used across data table widgets. Each column ha
 | Session Duration | Yes | Average session duration (HH:MM:SS) | [View Docs](columns/session-duration.md) |
 | Views Per Session | Yes | Average page views per session | [View Docs](columns/views-per-session.md) |
 | Bounce Rate | Yes | Percentage of single-page sessions | [View Docs](columns/bounce-rate.md) |
-| New vs Returning | No | Visitor lifecycle classification badge | [View Docs](columns/new-vs-returning.md) |
 | Unique Entrances | No | Count of sessions that started on a specific page | [View Docs](columns/unique-entrances.md) |
 | View Page | No | Action button to view page content on website | [View Docs](columns/view-page.md) |
 | Page | Yes | Page title with link to Single Content Report | [View Docs](columns/page.md) |
-| Visitors | Yes | Number of unique visitors for each page | [View Docs](columns/visitors.md) |
-| Views | Yes | Total number of views for each page | [View Docs](columns/views.md) |
-| Page Bounce Rate | Yes | Bounce rate specific to each page | [View Docs](columns/page-bounce-rate.md) |
-| Page Session Duration | Yes | Average session duration for sessions including this page | [View Docs](columns/page-session-duration.md) |
-| Published Date | Yes | Publication date of the page | [View Docs](columns/published-date.md) |
+| Content Visitors | Yes | Number of unique visitors for each page | [View Docs](columns/content-visitors.md) |
+| Content Views | Yes | Total number of views for each page | [View Docs](columns/content-views.md) |
+| Content Bounce Rate | Yes | Bounce rate specific to each page | [View Docs](columns/content-bounce-rate.md) |
+| Content Session Duration | Yes | Average session duration for sessions including this page | [View Docs](columns/content-session-duration.md) |
+| Content Published Date | Yes | Publication date of the page | [View Docs](columns/content-published-date.md) |
 | Search Term | No | Keyword or phrase entered in website search | [View Docs](columns/search-term.md) |
 | Searches | No | Count of times a term was searched on site | [View Docs](columns/searches.md) |
 

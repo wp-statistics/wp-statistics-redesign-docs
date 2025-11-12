@@ -240,7 +240,7 @@ Attribution model does NOT affect aggregate metrics:
 - [Session Duration Column](../columns/session-duration.md)
 - [Views Per Session Column](../columns/views-per-session.md)
 - [Bounce Rate Column](../columns/bounce-rate.md)
-- [New vs Returning Column](../columns/new-vs-returning.md)
+- [New vs Returning Column](../columns/visitor-status.md)
 - [Entry Page Column](../columns/entry-page.md)
 - [Exit Page Column](../columns/exit-page.md)
 - [Global Rules](global-rules.md)

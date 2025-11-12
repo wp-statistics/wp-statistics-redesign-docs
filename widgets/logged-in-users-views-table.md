@@ -42,8 +42,8 @@ Displays the most recent page views from logged-in users in a comprehensive data
 
 | Column | Sortable | Default Visibility |
 |--------|----------|-------------------|
-| [Last View](../columns/last-view.md) | No (default) | Shown |
-| [Visitor Informations](../columns/visitor-informations.md) | No | Shown |
+| [Visitor Last Visit](../columns/visitor-last-visit.md) | No (default) | Shown |
+| [Visitor Info](../columns/visitor-info.md) | No | Shown |
 | [Referrer](../columns/referrer.md) | No | Shown |
 | [Page](../columns/page.md) | No | Shown |
 | [Total Views](../columns/total-views.md) | No | Shown |

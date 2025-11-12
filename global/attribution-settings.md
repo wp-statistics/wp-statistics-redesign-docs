@@ -94,9 +94,9 @@ The following columns show aggregate data across ALL sessions and are NOT affect
 - [Session Duration](../columns/session-duration.md) - Average across all sessions
 - [Views Per Session](../columns/views-per-session.md) - Calculated from totals
 - [Bounce Rate](../columns/bounce-rate.md) - Calculated from all sessions
-- [New vs Returning](../columns/new-vs-returning.md) - Based on all-time history
-- [Last View](../columns/last-view.md) - Most recent view timestamp
-- [Visitor Informations](../columns/visitor-informations.md) - Visitor attributes
+- [Visitor Status](../columns/visitor-status.md) - Based on all-time history
+- [Visitor Last Visit](../columns/visitor-last-visit.md) - Most recent view timestamp
+- [Visitor Info](../columns/visitor-info.md) - Visitor attributes
 
 ---
 

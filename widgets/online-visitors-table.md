@@ -44,9 +44,9 @@ This widget is used in the following reports:
 
 | Column | Sortable | Default Visibility |
 |--------|----------|--------------------|
-| [Last View](../columns/last-view.md) | No (default) | Shown |
+| [Visitor Last Visit](../columns/visitor-last-visit.md) | No (default) | Shown |
 | [Online For](../columns/online-for.md) | No | Shown |
-| [Visitor Informations](../columns/visitor-informations.md) | No | Shown |
+| [Visitor Info](../columns/visitor-info.md) | No | Shown |
 | [Referrer](../columns/referrer.md) | No | Shown |
 | [Page](../columns/page.md) | No | Shown |
 

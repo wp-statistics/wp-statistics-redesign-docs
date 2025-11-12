@@ -1,5 +1,5 @@
 ---
-title: "New vs Returning Column"
+title: "Visitor Status Column"
 type: "column"
 status: "Done"
 figma: ""
@@ -8,7 +8,7 @@ used_in_widgets:
   - "top-visitors-table"
 ---
 
-# New vs Returning Column
+# Visitor Status Column
 
 Shows whether a visitor is new (first-ever session) or returning (has prior sessions) based on their complete visit history.
 

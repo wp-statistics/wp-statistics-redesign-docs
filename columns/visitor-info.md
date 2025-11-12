@@ -1,5 +1,5 @@
 ---
-title: "Visitor Informations Column"
+title: "Visitor Info Column"
 type: "column"
 status: "Done"
 figma: ""
@@ -11,7 +11,7 @@ used_in_widgets:
   - "top-visitors"
 ---
 
-# Visitor Informations Column
+# Visitor Info Column
 
 Displays comprehensive visitor information through a series of icons and badges showing location, browser, operating system, user identity, and IP/hash.
 
