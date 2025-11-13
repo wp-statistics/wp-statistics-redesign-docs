@@ -4,7 +4,7 @@ This repository contains the product documentation for WP Statistics WordPress p
 
 ## 📚 Documentation Site
 
-View the live documentation at: **https://wp-statistics-docs.pages.dev** (update with your actual Cloudflare Pages URL)
+View the live documentation at: **https://wp-statistics-15-design.pages.dev**
 
 ## 🚀 Quick Start
 
