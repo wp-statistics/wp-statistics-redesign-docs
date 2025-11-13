@@ -1,0 +1,93 @@
+/* WidgetLayout Container */
+.widgetLayout {
+  margin: 1.5rem 0;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-border-radius);
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+}
+
+/* Widget Row */
+.widgetRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.widgetRow:last-child {
+  border-bottom: none;
+}
+
+/* Widget Cell */
+.widgetCell {
+  position: relative;
+  padding: 1rem;
+  border-right: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.widgetCell:last-child {
+  border-right: none;
+}
+
+.widgetCell__fullWidth {
+  grid-column: 1 / -1;
+}
+
+.widgetCell__content {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-900);
+  text-align: center;
+}
+
+.widgetCell__addon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.4rem;
+}
+
+/* Add visual distinction for cells with add-ons */
+.widgetCell__withAddon {
+  background: var(--ifm-color-emphasis-100);
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .widgetRow {
+    grid-template-columns: 1fr;
+  }
+
+  .widgetCell {
+    border-right: none;
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  }
+
+  .widgetCell:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .widgetLayout {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .widgetCell {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .widgetRow {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .widgetCell__withAddon {
+  background: var(--ifm-color-emphasis-200);
+}

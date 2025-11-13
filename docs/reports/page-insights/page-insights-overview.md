@@ -34,6 +34,23 @@ Overview of key page performance metrics including top performing pages, recent 
 
 ## Widget Layout
 
+### Page Structure
+
+<WidgetLayout>
+  <WidgetRow>
+    <WidgetCell>Top Pages Preview</WidgetCell>
+    <WidgetCell>Recent Pages Preview</WidgetCell>
+  </WidgetRow>
+  <WidgetRow>
+    <WidgetCell addon="Data Plus">Top Entry Pages Preview</WidgetCell>
+    <WidgetCell addon="Data Plus">Top Exit Pages Preview</WidgetCell>
+  </WidgetRow>
+  <WidgetRow>
+    <WidgetCell>404 Pages Preview</WidgetCell>
+    <WidgetCell>Author Pages Preview</WidgetCell>
+  </WidgetRow>
+</WidgetLayout>
+
 ### Row 1 (Two Columns)
 
 - [Top Pages Preview](../../widgets/top-pages-preview.md) - Left Column

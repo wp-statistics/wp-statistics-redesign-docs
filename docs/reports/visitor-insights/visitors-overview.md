@@ -41,6 +41,33 @@ Comprehensive snapshot of your website's traffic and visitor behavior.
 
 ## Widget Layout
 
+### Page Structure
+
+<WidgetLayout>
+  <WidgetRow>
+    <WidgetCell fullWidth>Overview Metrics</WidgetCell>
+  </WidgetRow>
+  <WidgetRow>
+    <WidgetCell fullWidth>Traffic Trends</WidgetCell>
+  </WidgetRow>
+  <WidgetRow>
+    <WidgetCell addon="Data Plus">Top Entry Pages</WidgetCell>
+    <WidgetCell>Top Referrers</WidgetCell>
+  </WidgetRow>
+  <WidgetRow>
+    <WidgetCell>Top Countries</WidgetCell>
+    <WidgetCell>Top Operating Systems</WidgetCell>
+    <WidgetCell>Top Device Categories</WidgetCell>
+  </WidgetRow>
+  <WidgetRow>
+    <WidgetCell fullWidth>Top Visitors</WidgetCell>
+  </WidgetRow>
+  <WidgetRow>
+    <WidgetCell>Global Visitor Distribution</WidgetCell>
+    <WidgetCell>Traffic by Hour</WidgetCell>
+  </WidgetRow>
+</WidgetLayout>
+
 ### Row 1 (Full Width) - Overview Metrics
 
 Uses the [Metrics](../../components/metrics.md) component to display 8 key performance indicators in a 4-column, 2-row grid layout.
