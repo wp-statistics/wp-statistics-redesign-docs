@@ -23,7 +23,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'wp-statistics', // Usually your GitHub org/user name.
-  projectName: 'wp-statistics-new-design', // Usually your repo name.
+  projectName: 'wp-statistics-redesign-docs', // Usually your repo name.
 
   onBrokenLinks: 'warn', // Changed to warn during migration
 
@@ -42,7 +42,7 @@ const config: Config = {
         docs: {
           routeBasePath: '/', // Serve docs at root
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/wp-statistics/wp-statistics-new-design/edit/main/',
+          editUrl: 'https://github.com/wp-statistics/wp-statistics-redesign-docs/edit/main/',
         },
         blog: false, // Disable blog
         theme: {
@@ -72,7 +72,7 @@ const config: Config = {
           label: 'Documentation',
         },
         {
-          href: 'https://github.com/wp-statistics/wp-statistics-new-design',
+          href: 'https://github.com/wp-statistics/wp-statistics-redesign-docs',
           label: 'GitHub',
           position: 'right',
         },
@@ -107,7 +107,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/wp-statistics/wp-statistics-new-design',
+              href: 'https://github.com/wp-statistics/wp-statistics-redesign-docs',
             },
           ],
         },
