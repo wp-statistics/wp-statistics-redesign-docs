@@ -30,7 +30,7 @@ Track and analyze page views across your website.
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Latest Views Table](../widgets/latest-views-table.md)
+- [Latest Views Table](../../widgets/latest-views-table.md)
 
 ---
 

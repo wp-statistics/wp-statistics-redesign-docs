@@ -31,13 +31,13 @@ Shows 404 error pages with their view counts to identify broken links and missin
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [404 Pages Table](../widgets/404-pages-table.md) - Table showing 404 error pages sorted by views
+- [404 Pages Table](../../widgets/404-pages-table.md) - Table showing 404 error pages sorted by views
 
 ## Related Documentation
 
-- [404 Pages Table Widget](../widgets/404-pages-table.md)
-- [Page Insights Menu Group](../global/menu-structure.md)
-- [Table Component](../components/table.md)
+- [404 Pages Table Widget](../../widgets/404-pages-table.md)
+- [Page Insights Menu Group](../../global/menu-structure.md)
+- [Table Component](../../components/table.md)
 
 ---
 

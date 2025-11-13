@@ -38,17 +38,17 @@ Detailed drill-down view for analyzing individual visitor behavior and activity.
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Visitor Info Card](../widgets/visitor-info-card.md)
+- [Visitor Info Card](../../widgets/visitor-info-card.md)
 
 ### Row 2 (Full Width)
-- [Visitor Activity Timeline](../widgets/visitor-activity-timeline.md)
+- [Visitor Activity Timeline](../../widgets/visitor-activity-timeline.md)
 
 ### Row 3 (Two Columns)
-- [Visitor Page Views](../widgets/visitor-page-views.md)
-- [Visitor Tech Info](../widgets/visitor-tech-info.md)
+- [Visitor Page Views](../../widgets/visitor-page-views.md)
+- [Visitor Tech Info](../../widgets/visitor-tech-info.md)
 
 ### Row 4 (Full Width)
-- [Visitor Location Map](../widgets/visitor-location-map.md)
+- [Visitor Location Map](../../widgets/visitor-location-map.md)
 
 ---
 

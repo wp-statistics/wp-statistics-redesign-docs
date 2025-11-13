@@ -43,11 +43,11 @@ Comprehensive snapshot of your website's traffic and visitor behavior.
 
 ### Row 1 (Full Width) - Overview Metrics
 
-Uses the [Metrics](../components/metrics.md) component to display 8 key performance indicators in a 4-column, 2-row grid layout.
+Uses the [Metrics](../../components/metrics.md) component to display 8 key performance indicators in a 4-column, 2-row grid layout.
 
 #### Component Configuration
 
-- **Component**: [Metrics](../components/metrics.md)
+- **Component**: [Metrics](../../components/metrics.md)
 - **Show Previous Period**: Enabled (for numeric metrics only)
 - **Show Source Icons**: Disabled (all metrics from WP Statistics)
 
@@ -73,15 +73,15 @@ Uses the [Metrics](../components/metrics.md) component to display 8 key performa
 
 ### Row 2 (Full Width) - Traffic Trends
 
-- [Traffic Trends](../widgets/traffic-trends.md) - Line chart displaying visitor and view trends over time
+- [Traffic Trends](../../widgets/traffic-trends.md) - Line chart displaying visitor and view trends over time
 
 ### Row 3 (Two Columns) - Entry Pages & Referrers
 
 **Left Column (Data Plus Premium):**
-- [Top Entry Pages](../widgets/top-entry-pages.md) - Table showing top 5 entry pages with unique entrances count
+- [Top Entry Pages](../../widgets/top-entry-pages.md) - Table showing top 5 entry pages with unique entrances count
 
 **Right Column (Free):**
-- [Top Referrers](../widgets/top-referrers.md) - Horizontal bar list showing top 5 referrer domains
+- [Top Referrers](../../widgets/top-referrers.md) - Horizontal bar list showing top 5 referrer domains
 
 **Conditional Display:**
 - When Data Plus add-on is **activated**: Both widgets displayed side-by-side
@@ -90,25 +90,25 @@ Uses the [Metrics](../components/metrics.md) component to display 8 key performa
 ### Row 4 (Three Columns) - Geographic & Technical Analytics
 
 **Left Column (Free):**
-- [Top Countries](../widgets/top-countries.md) - Horizontal bar list showing top 5 countries with flags
+- [Top Countries](../../widgets/top-countries.md) - Horizontal bar list showing top 5 countries with flags
 
 **Middle Column (Free):**
-- [Top Operating Systems](../widgets/top-operating-systems.md) - Horizontal bar list showing top 5 operating systems
+- [Top Operating Systems](../../widgets/top-operating-systems.md) - Horizontal bar list showing top 5 operating systems
 
 **Right Column (Free):**
-- [Top Device Categories](../widgets/top-device-categories.md) - Horizontal bar list showing top 5 device categories
+- [Top Device Categories](../../widgets/top-device-categories.md) - Horizontal bar list showing top 5 device categories
 
 ### Row 5 (Full Width) - Top Visitors
 
-- [Top Visitors](../widgets/top-visitors.md) - Simplified table showing top 10 most active visitors with engagement and journey metrics
+- [Top Visitors](../../widgets/top-visitors.md) - Simplified table showing top 10 most active visitors with engagement and journey metrics
 
 ### Row 6 (Two Columns) - Geographic Distribution & Hourly Traffic
 
 **Left Column (Free):**
-- [Global Visitor Distribution](../widgets/global-visitor-distribution.md) - Interactive world map showing visitor distribution by country
+- [Global Visitor Distribution](../../widgets/global-visitor-distribution.md) - Interactive world map showing visitor distribution by country
 
 **Right Column (Data Plus Premium):**
-- [Traffic by Hour](../widgets/traffic-by-hour.md) - Vertical bar chart displaying hourly visitors and views
+- [Traffic by Hour](../../widgets/traffic-by-hour.md) - Vertical bar chart displaying hourly visitors and views
 
 **Conditional Display:**
 - When Data Plus add-on is **activated**: Both widgets displayed side-by-side

@@ -38,13 +38,13 @@ Shows the most viewed pages on your website with detailed performance metrics.
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Top Pages Full](../widgets/top-pages-full.md) - Comprehensive data table with page performance metrics
+- [Top Pages Full](../../widgets/top-pages-full.md) - Comprehensive data table with page performance metrics
 
 ## Related Documentation
 
-- [Top Pages Full Widget](../widgets/top-pages-full.md)
-- [Page Insights Menu Group](../global/menu-structure.md)
-- [Data Table Component](../components/data-table.md)
+- [Top Pages Full Widget](../../widgets/top-pages-full.md)
+- [Page Insights Menu Group](../../global/menu-structure.md)
+- [Data Table Component](../../components/data-table.md)
 
 ---
 

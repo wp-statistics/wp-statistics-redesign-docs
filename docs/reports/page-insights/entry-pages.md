@@ -38,13 +38,13 @@ Shows which pages visitors land on when they first arrive at your website.
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Entry Pages Table](../widgets/entry-pages-table.md) - Data table showing pages where sessions begin with entrance counts
+- [Entry Pages Table](../../widgets/entry-pages-table.md) - Data table showing pages where sessions begin with entrance counts
 
 ## Related Documentation
 
-- [Entry Pages Table Widget](../widgets/entry-pages-table.md)
-- [Page Insights Menu Group](../global/menu-structure.md)
-- [Data Table Component](../components/data-table.md)
+- [Entry Pages Table Widget](../../widgets/entry-pages-table.md)
+- [Page Insights Menu Group](../../global/menu-structure.md)
+- [Data Table Component](../../components/data-table.md)
 
 ---
 

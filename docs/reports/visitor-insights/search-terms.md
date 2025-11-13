@@ -30,7 +30,7 @@ Track and analyze search terms that visitors use when searching within your webs
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Search Terms Table](../widgets/search-terms-table.md)
+- [Search Terms Table](../../widgets/search-terms-table.md)
 
 ---
 

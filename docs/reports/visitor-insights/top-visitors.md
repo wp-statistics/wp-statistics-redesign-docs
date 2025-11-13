@@ -30,7 +30,7 @@ Identify and analyze your most frequent and engaged visitors during the selected
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Top Visitors Table](../widgets/top-visitors-table.md)
+- [Top Visitors Table](../../widgets/top-visitors-table.md)
 
 ---
 

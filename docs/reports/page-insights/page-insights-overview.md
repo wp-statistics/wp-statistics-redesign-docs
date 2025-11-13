@@ -36,20 +36,20 @@ Overview of key page performance metrics including top performing pages, recent 
 
 ### Row 1 (Two Columns)
 
-- [Top Pages Preview](../widgets/top-pages-preview.md) - Left Column
-- [Recent Pages Preview](../widgets/recent-pages-preview.md) - Right Column
+- [Top Pages Preview](../../widgets/top-pages-preview.md) - Left Column
+- [Recent Pages Preview](../../widgets/recent-pages-preview.md) - Right Column
 
 ### Row 2 (Two Columns) - Data Plus Required
 
 These widgets are only available when the Data Plus add-on is activated.
 
-- [Top Entry Pages Preview](../widgets/top-entry-pages-preview.md) - Left Column
-- [Top Exit Pages Preview](../widgets/top-exit-pages-preview.md) - Right Column
+- [Top Entry Pages Preview](../../widgets/top-entry-pages-preview.md) - Left Column
+- [Top Exit Pages Preview](../../widgets/top-exit-pages-preview.md) - Right Column
 
 ### Row 3 (Two Columns)
 
-- [404 Pages Preview](../widgets/404-pages-preview.md) - Left Column
-- [Author Pages Preview](../widgets/author-pages-preview.md) - Right Column
+- [404 Pages Preview](../../widgets/404-pages-preview.md) - Left Column
+- [Author Pages Preview](../../widgets/author-pages-preview.md) - Right Column
 
 ---
 

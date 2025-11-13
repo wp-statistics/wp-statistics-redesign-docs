@@ -32,7 +32,7 @@ Displays the latest visitors to your website with detailed information about the
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Latest Visitors](../widgets/latest-visitors.md)
+- [Latest Visitors](../../widgets/latest-visitors.md)
 
 ---
 

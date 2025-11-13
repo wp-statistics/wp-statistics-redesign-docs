@@ -25,7 +25,7 @@ Real-time view of visitors currently browsing your website.
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Online Visitors Table](../widgets/online-visitors-table.md)
+- [Online Visitors Table](../../widgets/online-visitors-table.md)
 
 ---
 

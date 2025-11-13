@@ -34,10 +34,10 @@ Track and analyze activity of registered users on your WordPress site.
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Logged-in Traffic Trends](../widgets/logged-in-traffic-trends.md)
+- [Logged-in Traffic Trends](../../widgets/logged-in-traffic-trends.md)
 
 ### Row 2 (Full Width)
-- [Logged-in Users Views Table](../widgets/logged-in-users-views-table.md)
+- [Logged-in Users Views Table](../../widgets/logged-in-users-views-table.md)
 
 ---
 

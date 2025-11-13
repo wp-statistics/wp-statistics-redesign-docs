@@ -38,13 +38,13 @@ Shows which pages visitors view last before leaving your website.
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Exit Pages Table](../widgets/exit-pages-table.md) - Data table showing pages where sessions end with exit metrics
+- [Exit Pages Table](../../widgets/exit-pages-table.md) - Data table showing pages where sessions end with exit metrics
 
 ## Related Documentation
 
-- [Exit Pages Table Widget](../widgets/exit-pages-table.md)
-- [Page Insights Menu Group](../global/menu-structure.md)
-- [Data Table Component](../components/data-table.md)
+- [Exit Pages Table Widget](../../widgets/exit-pages-table.md)
+- [Page Insights Menu Group](../../global/menu-structure.md)
+- [Data Table Component](../../components/data-table.md)
 
 ---
 

@@ -34,13 +34,13 @@ Shows performance metrics for category archive pages (e.g., `/category/technolog
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Category Pages Table](../widgets/category-pages-table.md) - Data table showing category performance with visitor metrics
+- [Category Pages Table](../../widgets/category-pages-table.md) - Data table showing category performance with visitor metrics
 
 ## Related Documentation
 
-- [Category Pages Table Widget](../widgets/category-pages-table.md)
-- [Page Insights Menu Group](../global/menu-structure.md)
-- [Data Table Component](../components/data-table.md)
+- [Category Pages Table Widget](../../widgets/category-pages-table.md)
+- [Page Insights Menu Group](../../global/menu-structure.md)
+- [Data Table Component](../../components/data-table.md)
 
 ---
 

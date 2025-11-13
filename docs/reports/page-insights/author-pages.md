@@ -32,13 +32,13 @@ Shows performance metrics for author archive pages (e.g., `/author/john-doe/`), 
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Author Pages Table](../widgets/author-pages-table.md) - Data table showing author performance with visitor metrics
+- [Author Pages Table](../../widgets/author-pages-table.md) - Data table showing author performance with visitor metrics
 
 ## Related Documentation
 
-- [Author Pages Table Widget](../widgets/author-pages-table.md)
-- [Page Insights Menu Group](../global/menu-structure.md)
-- [Data Table Component](../components/data-table.md)
+- [Author Pages Table Widget](../../widgets/author-pages-table.md)
+- [Page Insights Menu Group](../../global/menu-structure.md)
+- [Data Table Component](../../components/data-table.md)
 
 ---
 
