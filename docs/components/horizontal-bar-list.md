@@ -124,7 +124,7 @@ When no data is available for the selected period:
 
 ## Related Documentation
 
-- [Components Overview](../README.md#components)
+- [Components Overview](../intro.md)
 
 ---
 

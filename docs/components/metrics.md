@@ -97,7 +97,7 @@ When no metrics are configured, the component is not displayed.
 
 ## Related Documentation
 
-- [Components Overview](../README.md#components)
+- [Components Overview](../intro.md)
 
 ---
 

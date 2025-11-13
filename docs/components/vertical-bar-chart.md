@@ -119,7 +119,7 @@ When no data is available for the selected period:
 ## Related Documentation
 
 - [Line Chart Component](../components/line-chart.md) - For trend visualization over time
-- [Components Overview](../README.md#components)
+- [Components Overview](../intro.md)
 
 ---
 

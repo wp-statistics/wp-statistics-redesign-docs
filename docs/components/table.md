@@ -99,7 +99,7 @@ When no data is available for the selected period:
 ## Related Documentation
 
 - [Data Table Component](../components/data-table.md) - For tables requiring sorting and column management
-- [Components Overview](../README.md#components)
+- [Components Overview](../intro.md)
 
 ---
 
