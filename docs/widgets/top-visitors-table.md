@@ -35,7 +35,7 @@ Displays the most frequent and engaged visitors during the selected date range i
 
 This widget is used in the following reports:
 
-- [Top Visitors](../reports/top-visitors.md)
+- [Top Visitors](../reports/visitor-insights/top-visitors.md)
 
 ## Table Structure
 
@@ -61,7 +61,7 @@ When no visitors are found for the selected period:
 
 ## Related Documentation
 
-- [Top Visitors Report](../reports/top-visitors.md)
+- [Top Visitors Report](../reports/visitor-insights/top-visitors.md)
 - [Data Table Component](../components/data-table.md)
 - [Data Model](../global/data-model.md)
 - [Attribution Settings](../global/attribution-settings.md)

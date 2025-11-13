@@ -33,7 +33,7 @@ Visualizes visitor distribution across countries using an interactive global map
 
 This widget is used in the following reports:
 
-- [Visitors Overview](../reports/visitors-overview.md) - Row 6
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 6
 
 ## Map Behavior
 
@@ -62,7 +62,7 @@ When no visitor data is available for the selected period:
 ## Related Documentation
 
 - [Global Map Component](../components/global-map.md)
-- [Visitors Overview Report](../reports/visitors-overview.md)
+- [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
 
 ---
 

@@ -35,7 +35,7 @@ Comprehensive data table showing detailed information about individual visitors.
 
 This widget appears in the following report pages:
 
-- [Visitors](../reports/visitors.md) - Row 3, full width
+- [Visitors](../reports/visitor-insights/visitors.md) - Row 3, full width
 
 ## Columns Displayed
 
@@ -63,7 +63,7 @@ This widget appears in the following report pages:
 ## Features
 
 ### Row Actions
-- **Click Row**: Navigate to [Single Visitor Report](../reports/single-visitor-report.md)
+- **Click Row**: Navigate to [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 - **Hover**: Highlight row and show quick actions
 
 ### Quick Actions Menu

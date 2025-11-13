@@ -35,7 +35,7 @@ Displays the top 10 most active visitors in a simplified table format showing ke
 
 This widget is used in the following reports:
 
-- [Visitors Overview](../reports/visitors-overview.md) - Row 5
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 5
 
 ## Table Structure
 
@@ -58,7 +58,7 @@ When no visitor data is available for the selected period:
 
 - [Table Component](../components/table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md) - Full detailed version with 10 columns
-- [Visitors Overview Report](../reports/visitors-overview.md)
+- [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
 
 ---
 

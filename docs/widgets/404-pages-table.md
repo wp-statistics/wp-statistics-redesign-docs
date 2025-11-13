@@ -35,7 +35,7 @@ A table showing 404 error pages with their view counts.
 
 This widget appears in the following report pages:
 
-- [404 Pages](../reports/404-pages.md) - Row 1, full width
+- [404 Pages](../reports/page-insights/404-pages.md) - Row 1, full width
 
 ## Table Structure
 
@@ -55,7 +55,7 @@ When no data available:
 
 ## Related Documentation
 
-- [404 Pages Report](../reports/404-pages.md)
+- [404 Pages Report](../reports/page-insights/404-pages.md)
 - [Table Component](../components/table.md)
 - [URL Column](../columns/url.md)
 

@@ -33,7 +33,7 @@ Displays the top 5 referrer domains in a horizontal bar list format with previou
 
 This widget is used in the following reports:
 
-- [Visitors Overview](../reports/visitors-overview.md) - Row 3, right column (expands to full width when Data Plus is not activated)
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 3, right column (expands to full width when Data Plus is not activated)
 
 ## Empty State
 
@@ -43,7 +43,7 @@ When no referrer data is available for the selected period:
 ## Related Documentation
 
 - [Horizontal Bar List Component](../components/horizontal-bar-list.md)
-- [Visitors Overview Report](../reports/visitors-overview.md)
+- [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
 
 ---
 

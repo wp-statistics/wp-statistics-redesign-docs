@@ -29,7 +29,7 @@ Preview of the top 5 pages where visitors most commonly end their sessions, with
 
 ## Used In Reports
 
-- [Page Insights Overview](../reports/page-insights-overview.md) - Row 2, Right Column
+- [Page Insights Overview](../reports/page-insights/page-insights-overview.md) - Row 2, Right Column
 
 ## Table Structure
 
@@ -42,7 +42,7 @@ Preview of the top 5 pages where visitors most commonly end their sessions, with
 ## Features
 
 ### Link to Full Report
-- Links to [Exit Pages](../reports/exit-pages.md) report for complete data
+- Links to [Exit Pages](../reports/page-insights/exit-pages.md) report for complete data
 
 ### Pre-sorted Data
 - Shows top 5 exit pages by Content Unique Exits

@@ -40,7 +40,7 @@ This column is used in the following widgets:
 ## Interactive Elements
 
 ### Click Action
-Opens the [Single Visitor Report](../reports/single-visitor-report.md) for this visitor in the same tab
+Opens the [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md) for this visitor in the same tab
 
 ### Hover Tooltip
 Displays: "\{value\} Page Views from this visitor in selected period"
@@ -73,8 +73,8 @@ Displays: "\{value\} Page Views from this visitor in selected period"
 
 - [Data Model](../global/data-model.md)
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
-- [Single Visitor Report](../reports/single-visitor-report.md)
-- [Views Report](../reports/views.md)
+- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
+- [Views Report](../reports/visitor-insights/views.md)
 - [Total Sessions Column](total-sessions.md)
 - [Views Per Session Column](views-per-session.md)
 - [Data Table Component](../components/data-table.md)

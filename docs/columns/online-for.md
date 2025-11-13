@@ -64,7 +64,7 @@ This column is used in the following widgets:
 ## Related Documentation
 
 - [Online Visitors Table Widget](../widgets/online-visitors-table.md)
-- [Online Visitors Report](../reports/online-visitors.md)
+- [Online Visitors Report](../reports/visitor-insights/online-visitors.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

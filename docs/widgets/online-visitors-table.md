@@ -35,7 +35,7 @@ Displays visitors currently browsing your website in a comprehensive data table.
 
 This widget is used in the following reports:
 
-- [Online Visitors](../reports/online-visitors.md)
+- [Online Visitors](../reports/visitor-insights/online-visitors.md)
 
 ## Table Structure
 
@@ -56,7 +56,7 @@ When no visitors are currently online:
 
 ## Related Documentation
 
-- [Online Visitors Report](../reports/online-visitors.md)
+- [Online Visitors Report](../reports/visitor-insights/online-visitors.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

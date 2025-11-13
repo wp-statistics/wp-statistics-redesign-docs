@@ -33,7 +33,7 @@ Displays the most recent page views across your website in a comprehensive data 
 
 ## Used In Reports
 
-- [Views](../reports/views.md) - Row 1, full width
+- [Views](../reports/visitor-insights/views.md) - Row 1, full width
 
 ## Table Structure
 

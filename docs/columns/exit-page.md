@@ -105,7 +105,7 @@ Displays full URL path
 - [Data Model](../global/data-model.md)
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
 - [Entry Page Column](entry-page.md)
-- [Views Report](../reports/views.md)
+- [Views Report](../reports/visitor-insights/views.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

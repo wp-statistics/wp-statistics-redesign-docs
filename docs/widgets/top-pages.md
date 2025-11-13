@@ -35,7 +35,7 @@ Displays a ranked list of the most visited pages on your website.
 
 This widget appears in the following report pages:
 
-- [Visitors Overview](../reports/visitors-overview.md) - Row 3, full width
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 3, full width
 
 ## Columns Displayed
 

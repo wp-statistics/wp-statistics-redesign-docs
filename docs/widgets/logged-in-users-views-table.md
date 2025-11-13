@@ -33,7 +33,7 @@ Displays the most recent page views from logged-in users in a comprehensive data
 
 ## Used In Reports
 
-- [Logged-in Users](../reports/logged-in-users.md) - Row 2, full width
+- [Logged-in Users](../reports/visitor-insights/logged-in-users.md) - Row 2, full width
 
 ## Table Structure
 
@@ -56,7 +56,7 @@ When no views match criteria:
 
 - [Data Table Component](../components/data-table.md)
 - [Latest Views Table](../widgets/latest-views-table.md) - Similar widget with 50 rows for Views report
-- [Logged-in Users Report](../reports/logged-in-users.md)
+- [Logged-in Users Report](../reports/visitor-insights/logged-in-users.md)
 
 ---
 

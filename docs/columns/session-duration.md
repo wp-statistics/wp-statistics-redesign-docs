@@ -40,7 +40,7 @@ This column is used in the following widgets:
 ## Interactive Elements
 
 ### Click Action
-Opens the [Single Visitor Report](../reports/single-visitor-report.md) for this visitor in the same tab
+Opens the [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md) for this visitor in the same tab
 
 ### Hover Tooltip
 Displays: "Average session duration: \{value\}"
@@ -62,7 +62,7 @@ Displays: "Average session duration: \{value\}"
 
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
 - [Top Visitors Table Widget](../widgets/top-visitors-table.md)
-- [Single Visitor Report](../reports/single-visitor-report.md)
+- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 - [Online For Column](online-for.md) - Shows current session duration for online visitors
 - [Data Model](../global/data-model.md)
 - [Data Table Component](../components/data-table.md)

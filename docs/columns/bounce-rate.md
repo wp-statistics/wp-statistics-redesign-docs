@@ -42,7 +42,7 @@ This column is used in the following widgets:
 ## Interactive Elements
 
 ### Click Action
-Opens the [Single Visitor Report](../reports/single-visitor-report.md) for this visitor in the same tab
+Opens the [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md) for this visitor in the same tab
 
 ### Hover Tooltip
 Displays: "\{value\}% of sessions viewed only one page"
@@ -68,7 +68,7 @@ Displays: "\{value\}% of sessions viewed only one page"
 - [Total Sessions Column](total-sessions.md)
 - [Entry Page Column](entry-page.md)
 - [Exit Page Column](exit-page.md)
-- [Single Visitor Report](../reports/single-visitor-report.md)
+- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

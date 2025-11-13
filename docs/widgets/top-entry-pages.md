@@ -33,7 +33,7 @@ Displays the top 5 entry pages based on unique entrances count in a simplified t
 
 This widget is used in the following reports:
 
-- [Visitors Overview](../reports/visitors-overview.md) - Row 3, left column (only shown when Data Plus add-on is activated)
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 3, left column (only shown when Data Plus add-on is activated)
 
 ## Table Structure
 
@@ -61,7 +61,7 @@ When no entry page data is available for the selected period:
 ## Related Documentation
 
 - [Table Component](../components/table.md)
-- [Visitors Overview Report](../reports/visitors-overview.md)
+- [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
 - [Entry Page Column](../columns/entry-page.md)
 - [Unique Entrances Column](../columns/unique-entrances.md)
 - [View Page Column](../columns/view-page.md)

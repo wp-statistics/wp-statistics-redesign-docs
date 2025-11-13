@@ -35,7 +35,7 @@ A data table showing author performance with visitor metrics and published conte
 
 This widget appears in the following report pages:
 
-- [Author Pages](../reports/author-pages.md) - Row 1, full width
+- [Author Pages](../reports/page-insights/author-pages.md) - Row 1, full width
 
 ## Table Structure
 
@@ -57,7 +57,7 @@ When no data available:
 
 ## Related Documentation
 
-- [Author Pages Report](../reports/author-pages.md)
+- [Author Pages Report](../reports/page-insights/author-pages.md)
 - [Data Table Component](../components/data-table.md)
 - [Author Column](../columns/author.md)
 

@@ -38,7 +38,7 @@ Displays user visitor and anonymous visitor trends over time using an interactiv
 
 This widget is used in the following reports:
 
-- [Logged-in Users](../reports/logged-in-users.md) - Row 1, full width
+- [Logged-in Users](../reports/visitor-insights/logged-in-users.md) - Row 1, full width
 
 ## Empty State
 
@@ -48,7 +48,7 @@ When no data is available for the selected period:
 ## Related Documentation
 
 - [Line Chart Component](../components/line-chart.md)
-- [Logged-in Users Report](../reports/logged-in-users.md)
+- [Logged-in Users Report](../reports/visitor-insights/logged-in-users.md)
 
 ---
 

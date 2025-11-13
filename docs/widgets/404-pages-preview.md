@@ -29,7 +29,7 @@ Preview of the top 5 pages generating 404 errors with a link to the full 404 Pag
 
 ## Used In Reports
 
-- [Page Insights Overview](../reports/page-insights-overview.md) - Row 3, Left Column
+- [Page Insights Overview](../reports/page-insights/page-insights-overview.md) - Row 3, Left Column
 
 ## Table Structure
 
@@ -41,7 +41,7 @@ Preview of the top 5 pages generating 404 errors with a link to the full 404 Pag
 ## Features
 
 ### Link to Full Report
-- Links to [404 Pages](../reports/404-pages.md) report for complete data
+- Links to [404 Pages](../reports/page-insights/404-pages.md) report for complete data
 
 ### Pre-sorted Data
 - Shows top 5 URLs with most 404 errors

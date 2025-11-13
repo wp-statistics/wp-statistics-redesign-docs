@@ -101,7 +101,7 @@ This column works with the [Behavior Filters](../global/interactions.md) option 
 - [Top Visitors Table Widget](../widgets/top-visitors-table.md)
 - [Behavior Filters](../global/interactions.md)
 - [Data Model](../global/data-model.md)
-- [Single Visitor Report](../reports/single-visitor-report.md)
+- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 - [Visitor Informations Column](visitor-informations.md)
 - [Data Table Component](../components/data-table.md)
 

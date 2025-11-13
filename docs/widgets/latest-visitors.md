@@ -33,7 +33,7 @@ Displays the most recent visitors to your website in a comprehensive data table.
 
 ## Used In Reports
 
-- [Visitors](../reports/visitors.md) - Row 1, full width
+- [Visitors](../reports/visitor-insights/visitors.md) - Row 1, full width
 
 ## Table Structure
 
@@ -60,7 +60,7 @@ When no visitors match criteria:
 
 ## Related Documentation
 
-- [Visitors Report](../reports/visitors.md)
+- [Visitors Report](../reports/visitor-insights/visitors.md)
 - [Data Table Component](../components/data-table.md)
 - [Data Model](../global/data-model.md)
 - [Attribution Settings](../global/attribution-settings.md)

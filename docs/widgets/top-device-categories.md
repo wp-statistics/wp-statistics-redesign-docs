@@ -33,7 +33,7 @@ Displays the top 5 device categories by visitor count in a horizontal bar list f
 
 This widget is used in the following reports:
 
-- [Visitors Overview](../reports/visitors-overview.md) - Row 4
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 4
 
 ## Empty State
 
@@ -43,7 +43,7 @@ When no device category data is available for the selected period:
 ## Related Documentation
 
 - [Horizontal Bar List Component](../components/horizontal-bar-list.md)
-- [Visitors Overview Report](../reports/visitors-overview.md)
+- [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
 
 ---
 

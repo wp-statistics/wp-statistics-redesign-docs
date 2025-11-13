@@ -91,7 +91,7 @@ This column displays up to 5 elements, with some shown conditionally based on se
 **Hover Text:** "\{email\} (\{role\})"
 - Example: "navid@x.com (administrator)"
 
-**Click Action:** Navigate to [Single Visitor Report](../reports/single-visitor-report.md)
+**Click Action:** Navigate to [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 
 ---
 
@@ -109,7 +109,7 @@ This column displays up to 5 elements, with some shown conditionally based on se
 - Never show both hash and raw IP at the same time
 - Never show IP/hash when logged-in user badge is displayed
 
-**Click Action:** Navigate to [Single Visitor Report](../reports/single-visitor-report.md)
+**Click Action:** Navigate to [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 
 ## Display Logic & Conditions
 
@@ -182,10 +182,10 @@ Each element in this column has specific interactive behavior:
 
 ### Logged-in User Badge
 - **Hover:** Display "\{email\} (\{role\})" (e.g., "navid@x.com (administrator)") in tooltip
-- **Click:** Navigate to [Single Visitor Report](../reports/single-visitor-report.md) for this user
+- **Click:** Navigate to [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md) for this user
 
 ### IP or Hash
-- **Click:** Navigate to [Single Visitor Report](../reports/single-visitor-report.md) for this visitor
+- **Click:** Navigate to [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md) for this visitor
 
 ## Unknown States
 
@@ -209,7 +209,7 @@ When data is unavailable or cannot be determined:
 ## Related Documentation
 
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
-- [Single Visitor Report](../reports/single-visitor-report.md)
+- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

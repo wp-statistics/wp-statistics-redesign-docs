@@ -117,7 +117,7 @@ Opens the [Single Content Report](../reports/single-content-report.md) for this 
 - [Data Model](../global/data-model.md)
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
 - [Exit Page Column](exit-page.md)
-- [Views Report](../reports/views.md)
+- [Views Report](../reports/visitor-insights/views.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

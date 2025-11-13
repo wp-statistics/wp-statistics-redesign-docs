@@ -239,7 +239,7 @@ The Attribution Model setting is configured in WP Statistics plugin settings (im
 - [Exit Page Column](../columns/exit-page.md)
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
 - [Top Visitors Table Widget](../widgets/top-visitors-table.md)
-- [Single Visitor Report](../reports/single-visitor-report.md)
+- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 
 ---
 

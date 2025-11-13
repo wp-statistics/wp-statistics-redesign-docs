@@ -191,7 +191,7 @@ OTHER
 - [Data Model](../global/data-model.md)
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
 - [Visitor Sources Widget](../widgets/visitor-sources.md)
-- [Search Terms Report](../reports/search-terms.md)
+- [Search Terms Report](../reports/visitor-insights/search-terms.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

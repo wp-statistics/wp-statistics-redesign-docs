@@ -42,7 +42,7 @@ This column is used in the following widgets:
 ## Interactive Elements
 
 ### Click Action
-Opens the [Single Visitor Report](../reports/single-visitor-report.md) for this visitor in the same tab
+Opens the [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md) for this visitor in the same tab
 
 ### Hover Tooltip
 Displays: "\{value\} average page views per session"
@@ -66,7 +66,7 @@ Displays: "\{value\} average page views per session"
 - [Top Visitors Table Widget](../widgets/top-visitors-table.md)
 - [Total Views Column](total-views.md)
 - [Total Sessions Column](total-sessions.md)
-- [Single Visitor Report](../reports/single-visitor-report.md)
+- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

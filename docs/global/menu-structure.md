@@ -14,19 +14,19 @@ The WP Statistics menu is organized into logical groups, with the Visitor Insigh
 
 | Sort | Menu Item | Add-on | Status | Notes |
 |------|-----------|--------|--------|-------|
-| 1 | [Visitors Overview](../reports/visitors-overview.md) | Free | Done | High-level summary (entry point) |
-| 2 | [Visitors](../reports/visitors.md) | Free | Done | Detailed visitor list |
-| 3 | [Views](../reports/views.md) | Free | Done | Content performance |
-| 4 | [Online Visitors](../reports/online-visitors.md) | Free | Done | Real-time data |
-| 5 | [Top Visitors](../reports/top-visitors.md) | Free | Done | Power users |
-| 6 | [Logged-in Users](../reports/logged-in-users.md) | Free | Done | Registered users (only shown when "Track Logged-in Users" setting is enabled) |
-| 7 | [Search Terms](../reports/search-terms.md) | Data Plus | Done | SEO insights |
+| 1 | [Visitors Overview](../reports/visitor-insights/visitors-overview.md) | Free | Done | High-level summary (entry point) |
+| 2 | [Visitors](../reports/visitor-insights/visitors.md) | Free | Done | Detailed visitor list |
+| 3 | [Views](../reports/visitor-insights/views.md) | Free | Done | Content performance |
+| 4 | [Online Visitors](../reports/visitor-insights/online-visitors.md) | Free | Done | Real-time data |
+| 5 | [Top Visitors](../reports/visitor-insights/top-visitors.md) | Free | Done | Power users |
+| 6 | [Logged-in Users](../reports/visitor-insights/logged-in-users.md) | Free | Done | Registered users (only shown when "Track Logged-in Users" setting is enabled) |
+| 7 | [Search Terms](../reports/visitor-insights/search-terms.md) | Data Plus | Done | SEO insights |
 
 ### Hidden Pages
 
 Some pages are not shown in the menu because they are accessed via drill-down navigation:
 
-- **[Single Visitor Report](../reports/single-visitor-report.md)**: Accessed by clicking on individual visitor rows in the Visitors, Top Visitors, or Online Visitors reports
+- **[Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)**: Accessed by clicking on individual visitor rows in the Visitors, Top Visitors, or Online Visitors reports
 
 ---
 
@@ -35,12 +35,12 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 | Sort | Menu Item | Add-on | Status | Notes |
 |------|-----------|--------|--------|-------|
 | 1 | Overview | Free | Not Started | High-level summary (entry point) |
-| 2 | [Top Pages](../reports/top-pages.md) | Free | Done | Most viewed content |
-| 3 | [Entry Pages](../reports/entry-pages.md) | Data Plus | Done | First pages visited |
-| 4 | [Exit Pages](../reports/exit-pages.md) | Data Plus | Done | Last pages before leaving |
-| 5 | [Category Pages](../reports/category-pages.md) | Free | Done | Category performance |
-| 6 | [Author Pages](../reports/author-pages.md) | Free | Done | Author performance |
-| 7 | [404 Pages](../reports/404-pages.md) | Free | Done | Broken links and errors |
+| 2 | [Top Pages](../reports/page-insights/top-pages.md) | Free | Done | Most viewed content |
+| 3 | [Entry Pages](../reports/page-insights/entry-pages.md) | Data Plus | Done | First pages visited |
+| 4 | [Exit Pages](../reports/page-insights/exit-pages.md) | Data Plus | Done | Last pages before leaving |
+| 5 | [Category Pages](../reports/page-insights/category-pages.md) | Free | Done | Category performance |
+| 6 | [Author Pages](../reports/page-insights/author-pages.md) | Free | Done | Author performance |
+| 7 | [404 Pages](../reports/page-insights/404-pages.md) | Free | Done | Broken links and errors |
 
 ---
 

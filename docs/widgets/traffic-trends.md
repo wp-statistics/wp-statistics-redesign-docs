@@ -38,7 +38,7 @@ Displays visitor and view trends over time using an interactive line chart with 
 
 This widget is used in the following reports:
 
-- [Visitors Overview](../reports/visitors-overview.md) - Row 2, full width
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 2, full width
 
 ## Chart Behavior
 
@@ -60,7 +60,7 @@ When no data is available for the selected period:
 ## Related Documentation
 
 - [Line Chart Component](../components/line-chart.md)
-- [Visitors Overview Report](../reports/visitors-overview.md)
+- [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
 
 ---
 

@@ -30,7 +30,7 @@ Visual breakdown of traffic sources showing where visitors are coming from.
 
 This widget appears in the following report pages:
 
-- [Visitors Overview](../reports/visitors-overview.md) - Row 2, right column
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 2, right column
 
 ## Data Categories
 

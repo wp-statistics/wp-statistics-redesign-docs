@@ -35,7 +35,7 @@ Displays search terms entered by visitors using the site search functionality, r
 
 This widget is used in the following reports:
 
-- [Search Terms](../reports/search-terms.md) - Row 1
+- [Search Terms](../reports/visitor-insights/search-terms.md) - Row 1
 
 ## Table Structure
 
@@ -54,7 +54,7 @@ When no search term data is available for the selected period:
 ## Related Documentation
 
 - [Table Component](../components/table.md)
-- [Search Terms Report](../reports/search-terms.md)
+- [Search Terms Report](../reports/visitor-insights/search-terms.md)
 
 ---
 

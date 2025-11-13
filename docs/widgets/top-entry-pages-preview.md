@@ -29,7 +29,7 @@ Preview of the top 5 pages where visitors most commonly start their sessions, wi
 
 ## Used In Reports
 
-- [Page Insights Overview](../reports/page-insights-overview.md) - Row 2, Left Column
+- [Page Insights Overview](../reports/page-insights/page-insights-overview.md) - Row 2, Left Column
 
 ## Table Structure
 
@@ -42,7 +42,7 @@ Preview of the top 5 pages where visitors most commonly start their sessions, wi
 ## Features
 
 ### Link to Full Report
-- Links to [Entry Pages](../reports/entry-pages.md) report for complete data
+- Links to [Entry Pages](../reports/page-insights/entry-pages.md) report for complete data
 
 ### Pre-sorted Data
 - Shows top 5 entry pages by Unique Entrances

@@ -35,7 +35,7 @@ A data table showing pages where visitor sessions begin, with entrance counts an
 
 This widget appears in the following report pages:
 
-- [Entry Pages](../reports/entry-pages.md) - Row 1, full width
+- [Entry Pages](../reports/page-insights/entry-pages.md) - Row 1, full width
 
 ## Table Structure
 
@@ -55,7 +55,7 @@ When no data available:
 
 ## Related Documentation
 
-- [Entry Pages Report](../reports/entry-pages.md)
+- [Entry Pages Report](../reports/page-insights/entry-pages.md)
 - [Data Table Component](../components/data-table.md)
 - [Page Column](../columns/page.md)
 

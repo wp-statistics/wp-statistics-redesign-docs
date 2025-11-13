@@ -29,7 +29,7 @@ Preview of the top 5 most viewed pages with a link to the full Top Pages report.
 
 ## Used In Reports
 
-- [Page Insights Overview](../reports/page-insights-overview.md) - Row 1, Left Column
+- [Page Insights Overview](../reports/page-insights/page-insights-overview.md) - Row 1, Left Column
 
 ## Table Structure
 
@@ -42,7 +42,7 @@ Preview of the top 5 most viewed pages with a link to the full Top Pages report.
 ## Features
 
 ### Link to Full Report
-- Links to [Top Pages](../reports/top-pages.md) report for complete data
+- Links to [Top Pages](../reports/page-insights/top-pages.md) report for complete data
 
 ### Pre-sorted Data
 - Shows top 5 pages by Content Views

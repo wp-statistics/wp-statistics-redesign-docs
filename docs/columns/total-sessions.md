@@ -40,7 +40,7 @@ A session is a group of page views by a visitor that occur within a continuous p
 ## Interactive Elements
 
 ### Click Action
-Opens the [Single Visitor Report](../reports/single-visitor-report.md) for this visitor in the same tab
+Opens the [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md) for this visitor in the same tab
 
 ### Hover Tooltip
 Displays: "\{value\} sessions in selected period"
@@ -63,7 +63,7 @@ Displays: "\{value\} sessions in selected period"
 
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
 - [Top Visitors Table Widget](../widgets/top-visitors-table.md)
-- [Single Visitor Report](../reports/single-visitor-report.md)
+- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 - [Data Model](../global/data-model.md)
 - [Data Table Component](../components/data-table.md)
 
