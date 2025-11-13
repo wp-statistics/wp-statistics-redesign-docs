@@ -36,7 +36,7 @@ This component is used by the following widgets:
 - [Author Pages Table](../widgets/author-pages-table.md)
 - [Category Pages Table](../widgets/category-pages-table.md)
 - [Entry Pages Table](../widgets/entry-pages-table.md)
-- [Exit Pages Table](../widgets/exit-pages-table.md)(../widgets/entry-pages-table.md)
+- [Exit Pages Table](../widgets/exit-pages-table.md)
 - [Latest Visitors](../widgets/latest-visitors.md)
 - [Latest Views Table](../widgets/latest-views-table.md)
 - [Visitor List](../widgets/visitor-list.md)
