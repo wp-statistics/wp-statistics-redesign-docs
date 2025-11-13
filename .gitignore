@@ -27,3 +27,22 @@
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Docusaurus
+node_modules/
+.docusaurus/
+.cache-loader/
+build/
+.yarn/
+
+# npm
+package-lock.json
+yarn.lock
+
+# IDE
+.vscode/
+.idea/
+
+# Env files
+.env
+.env.local

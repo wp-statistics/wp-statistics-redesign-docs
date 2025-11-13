@@ -48,11 +48,11 @@ This column is used in the following widgets:
 ### Hover Tooltip
 
 **For New Visitors:**
-Displays: "First visit: {date}"
+Displays: "First visit: \{date\}"
 - Example: "First visit: Nov 8, 2025"
 
 **For Returning Visitors:**
-Displays: "Returning visitor since {date}"
+Displays: "Returning visitor since \{date\}"
 - Example: "Returning visitor since Oct 15, 2025"
 
 ## Display Examples

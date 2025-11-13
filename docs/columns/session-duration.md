@@ -1,5 +1,5 @@
 ---
-title: "Views Per Session Column"
+title: "Session Duration Column"
 type: "column"
 status: "Done"
 used_in_widgets:
@@ -7,9 +7,9 @@ used_in_widgets:
   - "top-visitors-table"
 ---
 
-# Views Per Session Column
+# Session Duration Column
 
-Shows the average number of page views per session for each visitor within the active date range.
+Shows the average time visitors spend during their sessions within the active date range.
 
 ## Column Configuration
 
@@ -26,18 +26,16 @@ This column is used in the following widgets:
 
 ## Display
 
-**Value:** Decimal number showing average pages per session
+**Value:** Time duration in HH:MM:SS format
 
 **Format:**
-- Right-aligned for easier comparison
-- 1 decimal place precision (e.g., 3.5, 12.8)
-- No thousand separators (typically small values)
-- Examples: 1.0, 3.5, 12.8, 45.3
+- Hours:Minutes:Seconds with zero-padding
+- Examples: 00:02:34, 00:15:42, 01:08:15, 12:45:30
 
 **Calculation:**
-- Total Views ÷ Total Sessions
-- Calculated using data within the selected date range
-- Minimum value: 1.0 (at least 1 view per session)
+- Average of all session durations for this visitor within the selected date range
+- If visitor has only 1 session: shows that session's duration
+- If visitor has multiple sessions: shows mean duration across all sessions
 
 ## Interactive Elements
 
@@ -45,28 +43,28 @@ This column is used in the following widgets:
 Opens the [Single Visitor Report](../reports/single-visitor-report.md) for this visitor in the same tab
 
 ### Hover Tooltip
-Displays: "{value} average page views per session"
-- Example: "3.5 average page views per session"
-- Example: "12.8 average page views per session"
+Displays: "Average session duration: \{value\}"
+- Example: "Average session duration: 00:02:34"
+- Example: "Average session duration: 01:08:15"
 
 ## Display Examples
 
-### Example: Moderate Engagement
+### Example: Medium Engagement
 
-**Visual:** `3.5`
+**Visual:** `00:15:42`
 
 **Description:**
-- Value: 3.5 pages per session average
+- Value: 15 minutes and 42 seconds average
 - Click: Opens Single Visitor Report
-- Hover: "3.5 average page views per session"
+- Hover: "Average session duration: 00:15:42"
 
 ## Related Documentation
 
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
 - [Top Visitors Table Widget](../widgets/top-visitors-table.md)
-- [Total Views Column](total-views.md)
-- [Total Sessions Column](total-sessions.md)
 - [Single Visitor Report](../reports/single-visitor-report.md)
+- [Online For Column](online-for.md) - Shows current session duration for online visitors
+- [Data Model](../global/data-model.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

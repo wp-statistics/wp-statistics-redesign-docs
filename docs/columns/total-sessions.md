@@ -43,7 +43,7 @@ A session is a group of page views by a visitor that occur within a continuous p
 Opens the [Single Visitor Report](../reports/single-visitor-report.md) for this visitor in the same tab
 
 ### Hover Tooltip
-Displays: "{value} sessions in selected period"
+Displays: "\{value\} sessions in selected period"
 - Example: "1 session in selected period"
 - Example: "23 sessions in selected period"
 - Example: "1,234 sessions in selected period"

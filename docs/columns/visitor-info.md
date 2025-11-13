@@ -40,7 +40,7 @@ This column displays up to 5 elements, with some shown conditionally based on se
 
 **Display:** Country flag icon
 
-**Hover Text:** "{Country}, {Region}, {City}"
+**Hover Text:** "\{Country\}, \{Region\}, \{City\}"
 - Example: "United States, California, San Francisco"
 
 **Click Action:** Navigate to Single Country Report
@@ -70,7 +70,7 @@ This column displays up to 5 elements, with some shown conditionally based on se
 
 **Display:** Browser icon
 
-**Hover Text:** "{Browser name} v{major}"
+**Hover Text:** "\{Browser name\} v\{major\}"
 - Example: "Google Chrome v107"
 
 **Click Action:** Navigate to Single Browser Report
@@ -85,10 +85,10 @@ This column displays up to 5 elements, with some shown conditionally based on se
 - `track_logged_in_enabled = true` **AND**
 - `user_id` is not null
 
-**Display Label (visible):** "{username} #{user_id}"
+**Display Label (visible):** "\{username\} #\{user_id\}"
 - Example: "navid #123"
 
-**Hover Text:** "{email} ({role})"
+**Hover Text:** "\{email\} (\{role\})"
 - Example: "navid@x.com (administrator)"
 
 **Click Action:** Navigate to [Single Visitor Report](../reports/single-visitor-report.md)
@@ -169,7 +169,7 @@ The visibility and format of elements is controlled by these settings:
 Each element in this column has specific interactive behavior:
 
 ### Flag Icon
-- **Hover:** Display "{Country}, {Region}, {City}" in tooltip
+- **Hover:** Display "\{Country\}, \{Region\}, \{City\}" in tooltip
 - **Click:** Navigate to Single Country Report for this country
 
 ### OS Icon
@@ -177,11 +177,11 @@ Each element in this column has specific interactive behavior:
 - **Click:** Navigate to Single OS Report for this operating system
 
 ### Browser Icon
-- **Hover:** Display "{Browser name} v{major}" (e.g., "Google Chrome v107") in tooltip
+- **Hover:** Display "\{Browser name\} v\{major\}" (e.g., "Google Chrome v107") in tooltip
 - **Click:** Navigate to Single Browser Report for this browser
 
 ### Logged-in User Badge
-- **Hover:** Display "{email} ({role})" (e.g., "navid@x.com (administrator)") in tooltip
+- **Hover:** Display "\{email\} (\{role\})" (e.g., "navid@x.com (administrator)") in tooltip
 - **Click:** Navigate to [Single Visitor Report](../reports/single-visitor-report.md) for this user
 
 ### IP or Hash

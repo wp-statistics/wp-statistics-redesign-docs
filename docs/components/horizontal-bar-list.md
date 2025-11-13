@@ -42,7 +42,7 @@ Widgets using this component can configure the following options:
 | **Show Previous Period** | Boolean | Enable/disable previous period comparison display | true |
 | **Show Icons** | Boolean | Display optional icons next to labels (e.g., flags, browser icons) | false |
 | **Enable Other Item** | Boolean | Group remaining items beyond max visible as "Other" | false |
-| **Link to Full Report** | Object/Boolean | Link configuration {text, url} or true for default pattern | null |
+| **Link to Full Report** | Object/Boolean | Link configuration \{text, url\} or true for default pattern | null |
 
 ## List Item Properties
 

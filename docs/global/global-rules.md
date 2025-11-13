@@ -62,7 +62,7 @@ Every report page follows this structure:
 ### Responsive Breakpoints
 - **Desktop**: 1200px+
 - **Tablet**: 768px - 1199px
-- **Mobile**: < 768px
+- **Mobile**: &lt; 768px
 
 ---
 
@@ -84,7 +84,7 @@ Widgets are arranged in rows with 1-4 columns:
   - 4-column rows become 2-column
   - 3-column rows become 2-column
   - 2-column rows remain 2-column
-- **Mobile (<768px)**: All widgets stack vertically (single column)
+- **Mobile (&lt;768px)**: All widgets stack vertically (single column)
 
 ---
 

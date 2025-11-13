@@ -1,5 +1,5 @@
 ---
-title: "Bounce Rate Column"
+title: "Views Per Session Column"
 type: "column"
 status: "Done"
 used_in_widgets:
@@ -7,9 +7,9 @@ used_in_widgets:
   - "top-visitors-table"
 ---
 
-# Bounce Rate Column
+# Views Per Session Column
 
-Shows the percentage of sessions where the visitor viewed only one page within the active date range.
+Shows the average number of page views per session for each visitor within the active date range.
 
 ## Column Configuration
 
@@ -26,18 +26,18 @@ This column is used in the following widgets:
 
 ## Display
 
-**Value:** Percentage (0-100%)
+**Value:** Decimal number showing average pages per session
 
 **Format:**
 - Right-aligned for easier comparison
-- Whole number with % symbol
-- Examples: 0%, 25%, 45%, 100%
+- 1 decimal place precision (e.g., 3.5, 12.8)
+- No thousand separators (typically small values)
+- Examples: 1.0, 3.5, 12.8, 45.3
 
 **Calculation:**
-- (Single-page sessions ÷ Total Sessions) × 100
-- Single-page session defined as: Entry Page = Exit Page AND Total Views = 1 in that session
-- Calculated using sessions within the selected date range
-- Rounded to nearest whole percentage
+- Total Views ÷ Total Sessions
+- Calculated using data within the selected date range
+- Minimum value: 1.0 (at least 1 view per session)
 
 ## Interactive Elements
 
@@ -45,29 +45,27 @@ This column is used in the following widgets:
 Opens the [Single Visitor Report](../reports/single-visitor-report.md) for this visitor in the same tab
 
 ### Hover Tooltip
-Displays: "{value}% of sessions viewed only one page"
-- Example: "0% of sessions viewed only one page"
-- Example: "45% of sessions viewed only one page"
-- Example: "100% of sessions viewed only one page"
+Displays: "\{value\} average page views per session"
+- Example: "3.5 average page views per session"
+- Example: "12.8 average page views per session"
 
 ## Display Examples
 
-### Example: Moderate Bounce Rate
+### Example: Moderate Engagement
 
-**Visual:** `45%`
+**Visual:** `3.5`
 
 **Description:**
-- Value: 45% bounce rate - nearly half of sessions were single-page visits
+- Value: 3.5 pages per session average
 - Click: Opens Single Visitor Report
-- Hover: "45% of sessions viewed only one page"
+- Hover: "3.5 average page views per session"
 
 ## Related Documentation
 
 - [Latest Visitors Widget](../widgets/latest-visitors.md)
 - [Top Visitors Table Widget](../widgets/top-visitors-table.md)
+- [Total Views Column](total-views.md)
 - [Total Sessions Column](total-sessions.md)
-- [Entry Page Column](entry-page.md)
-- [Exit Page Column](exit-page.md)
 - [Single Visitor Report](../reports/single-visitor-report.md)
 - [Data Table Component](../components/data-table.md)
 

@@ -43,7 +43,7 @@ This column is used in the following widgets:
 Opens the [Single Visitor Report](../reports/single-visitor-report.md) for this visitor in the same tab
 
 ### Hover Tooltip
-Displays: "{value} Page Views from this visitor in selected period"
+Displays: "\{value\} Page Views from this visitor in selected period"
 - Example: "5 Page Views from this visitor in selected period"
 - Example: "1,234 Page Views from this visitor in selected period"
 

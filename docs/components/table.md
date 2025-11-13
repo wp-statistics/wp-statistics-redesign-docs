@@ -54,7 +54,7 @@ Widgets using this component can configure the following options:
 | **Default Sort** | String | Column that data is pre-sorted by | (Required) |
 | **Row Limit** | Number | Number of rows to display per page | 10 |
 | **Pagination** | Boolean | Enable/disable pagination controls | false |
-| **Link to Full Report** | Object/Boolean | Link configuration {text, url} or true for default pattern | null |
+| **Link to Full Report** | Object/Boolean | Link configuration \{text, url\} or true for default pattern | null |
 
 ## Default Sort
 

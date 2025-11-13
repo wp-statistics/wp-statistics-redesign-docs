@@ -56,7 +56,7 @@ This column displays up to 2 lines of information:
 - Example: "verylongdomainname123456.com" → "verylongdomainnam….com"
 
 **Interactive:**
-- **Clickable:** Opens `https://{domain}` in new tab
+- **Clickable:** Opens `https://\{domain\}` in new tab
 
 ---
 
@@ -177,7 +177,7 @@ OTHER
 ## Interactive Elements
 
 ### Domain Link (Line 1)
-- **Click:** Opens `https://{domain}` in new tab
+- **Click:** Opens `https://\{domain\}` in new tab
 - **Hover:** Browser shows full URL (if truncated) or link preview
 - **Not shown:** When domain is null (direct traffic)
 

@@ -1,218 +1,234 @@
-# WP Statistics - Redesign Documentation
+# WP Statistics v15 Documentation
 
-Welcome to the WP Statistics interface redesign documentation. This comprehensive guide covers all report pages, widgets, components, and global design rules.
+This repository contains the product documentation for WP Statistics WordPress plugin version 15 interface redesign, built with [Docusaurus](https://docusaurus.io/).
 
-## Table of Contents
+## 📚 Documentation Site
 
-- [Global Documentation](#global-documentation)
-- [Report Groups](#report-groups)
-  - [Visitors Reports](#visitors-reports)
-- [Widgets](#widgets)
-- [Components](#components)
-- [Columns](#columns)
+View the live documentation at: **https://wp-statistics-docs.pages.dev** (update with your actual Cloudflare Pages URL)
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+npm install
+```
+
+### Local Development
+
+```bash
+npm start
+```
+
+This command starts a local development server and opens up a browser window at http://localhost:3000. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```bash
+npm run build
+```
+
+This command generates static content into the `build` directory that can be deployed to any static hosting service.
+
+### Test Production Build Locally
+
+```bash
+npm run serve
+```
+
+This command serves the built website locally to test the production build.
+
+## 📂 Project Structure
+
+```
+wp-statistics-new-design/
+├── docs/                   # Documentation markdown files
+│   ├── intro.md           # Main introduction page
+│   ├── global/            # Global rules and patterns (5 files)
+│   ├── reports/           # Report pages (15 files)
+│   ├── widgets/           # Reusable widgets (31 files)
+│   ├── components/        # Base UI components (7 files)
+│   └── columns/           # Table column definitions (29 files)
+├── src/
+│   ├── components/        # Custom React components
+│   │   ├── StatusBadge.tsx
+│   │   ├── FigmaLink.tsx
+│   │   └── MetadataDisplay.tsx
+│   ├── theme/             # Theme customizations
+│   │   └── MDXComponents.tsx
+│   └── css/               # Custom styling
+├── static/                # Static assets (images, icons)
+├── docusaurus.config.ts   # Docusaurus configuration
+├── sidebars.ts           # Sidebar structure
+├── package.json          # Dependencies and scripts
+├── DOCUMENTATION-GUIDE.md # Writing guidelines
+└── CLAUDE.md             # Project instructions for Claude Code
+```
+
+## 🎨 Custom Components
+
+This documentation site includes custom React components for enhanced metadata display:
+
+### StatusBadge
+
+Displays implementation status with color-coded badges:
+- 🔴 Not Started (gray)
+- 🟡 In Progress (yellow)
+- 🟢 Done (green)
+
+**Usage in MDX:**
+```mdx
+<StatusBadge status="Done" />
+```
+
+### FigmaLink
+
+Displays a button to view Figma designs when available.
+
+**Usage in MDX:**
+```mdx
+<FigmaLink url="https://figma.com/file/..." />
+```
+
+### MetadataDisplay
+
+Automatically displays all relevant frontmatter metadata (status, type, add-on, component, etc.) in a formatted card.
+
+**Usage in MDX:**
+```mdx
+<MetadataDisplay frontMatter={frontMatter} />
+```
+
+## 📝 Documentation Standards
+
+All documentation follows consistent patterns:
+
+### YAML Frontmatter
+
+Each document includes structured metadata:
+
+```yaml
+---
+title: "Document Name"
+type: "report" | "widget" | "component" | "column"
+status: "Not Started" | "In Progress" | "Done"
+add_on: "Free" | "Data Plus" | "MiniChart"
+# Additional type-specific fields...
+---
+```
+
+### Cross-References
+
+Documentation maintains bidirectional links between related documents for easy navigation.
+
+### Status Tracking
+
+Track implementation progress with status fields in frontmatter.
+
+## 🌐 Deployment to Cloudflare Pages
+
+### Via GitHub Integration (Recommended)
+
+1. **Push to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Set up Docusaurus documentation site"
+   git push origin main
+   ```
+
+2. **Connect to Cloudflare Pages:**
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
+   - Navigate to **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**
+   - Select your repository: `wp-statistics/wp-statistics-new-design`
+   - Configure build settings:
+     - **Framework preset:** Docusaurus
+     - **Build command:** `npm run build`
+     - **Build output directory:** `build`
+     - **Root directory:** `/`
+   - Add environment variable:
+     - `NODE_VERSION` = `18`
+   - Click **Save and Deploy**
+
+3. **Automatic Deployments:**
+   - Every push to `main` branch triggers automatic deployment
+   - Preview deployments created for pull requests
+
+### Via Direct Upload (Alternative)
+
+```bash
+# Install Wrangler CLI
+npm install -g wrangler
+
+# Build the site
+npm run build
+
+# Deploy to Cloudflare Pages
+wrangler pages deploy build
+```
+
+## 📖 Content Guidelines
+
+For detailed writing guidelines, templates, and best practices, see:
+- [DOCUMENTATION-GUIDE.md](DOCUMENTATION-GUIDE.md) - Comprehensive writing guide
+- [CLAUDE.md](CLAUDE.md) - Project instructions for AI assistance
+
+### Key Principles
+
+- **Product-focused:** Describe features, not implementation
+- **Concise:** One-sentence descriptions
+- **Cross-referenced:** Bidirectional links between related docs
+- **No code:** This is product documentation, not technical specs
+- **No design specs:** Visual specifications belong in Figma
+
+## 🛠️ Development
+
+### Adding New Documentation
+
+1. Create markdown file in appropriate directory
+2. Add YAML frontmatter with required fields
+3. Update cross-references in related files
+4. Update README.md if adding new categories
+
+### Updating Configuration
+
+- **Site config:** Edit `docusaurus.config.ts`
+- **Sidebar:** Edit `sidebars.ts`
+- **Styling:** Edit `src/css/custom.css`
+- **Components:** Add to `src/components/`
+
+### Testing Changes
+
+Always test locally before pushing:
+
+```bash
+npm start          # Test in development mode
+npm run build      # Test production build
+npm run serve      # Serve production build locally
+```
+
+## 📊 Documentation Stats
+
+- **Total Documents:** 90+ markdown files
+- **Reports:** 15 pages
+- **Widgets:** 31 reusable components
+- **UI Components:** 7 base components
+- **Table Columns:** 29 column definitions
+- **Global Docs:** 5 essential guides
+
+## 🤝 Contributing
+
+When contributing documentation:
+
+1. Follow the templates in DOCUMENTATION-GUIDE.md
+2. Maintain bidirectional cross-references
+3. Update status fields as features are implemented
+4. Test locally before pushing
+5. Keep documentation product-focused (no code)
+
+## 📄 License
+
+Copyright © 2025 WP Statistics. All rights reserved.
 
 ---
 
-## Global Documentation
-
-Essential documentation covering global rules, patterns, and configurations:
-
-- [Global Rules](global/global-rules.md) - Design principles, patterns, and global UI rules
-- [Menu Structure](global/menu-structure.md) - Main navigation menu structure and organization
-- [Interactions](global/interactions.md) - Common interactions like Date Picker, Filters, etc.
-- [Data Model](global/data-model.md) - Definitions of visitors, sessions, views, and their relationships
-- [Attribution Settings](global/attribution-settings.md) - First Touch vs Last Touch attribution model
-
----
-
-## Report Groups
-
-### Visitors Reports
-
-A comprehensive set of reports for analyzing visitor behavior and traffic patterns.
-
-| Report Page | Menu Visibility | Add-on | Status | Documentation |
-|------------|----------------|--------|--------|---------------|
-| Overview | Yes | Free | Done | [View Docs](reports/visitors-overview.md) |
-| Visitors | Yes | Free | Done | [View Docs](reports/visitors.md) |
-| Views | Yes | Free | Done | [View Docs](reports/views.md) |
-| Online Visitors | Yes | Free | Done | [View Docs](reports/online-visitors.md) |
-| Top Visitors | Yes | Free | Done | [View Docs](reports/top-visitors.md) |
-| Logged-in Users | Yes | Free | Done | [View Docs](reports/logged-in-users.md) |
-| Search Terms | Yes | Data Plus | Done | [View Docs](reports/search-terms.md) |
-| Single Visitor Report | No | Free | Not Started | [View Docs](reports/single-visitor-report.md) |
-
-### Page Insights Reports
-
-Reports focused on page-level content performance and analysis.
-
-| Report Page | Menu Visibility | Add-on | Status | Documentation |
-|------------|----------------|--------|--------|---------------|
-| Overview | Yes | Free | Done | [View Docs](reports/page-insights-overview.md) |
-| Top Pages | Yes | Free | Done | [View Docs](reports/top-pages.md) |
-| Entry Pages | Yes | Data Plus | Done | [View Docs](reports/entry-pages.md) |
-| Exit Pages | Yes | Data Plus | Done | [View Docs](reports/exit-pages.md) |
-| Category Pages | Yes | Free | Done | [View Docs](reports/category-pages.md) |
-| Author Pages | Yes | Free | Done | [View Docs](reports/author-pages.md) |
-| 404 Pages | Yes | Free | Done | [View Docs](reports/404-pages.md) |
-
----
-
-## Widgets
-
-Reusable widgets used across multiple report pages. Each widget is based on a component and can be configured independently.
-
-### Available Widgets
-
-| Widget | Component | Add-on | Status | Documentation |
-|--------|-----------|--------|--------|---------------|
-| 404 Pages Preview | Table | Free | Done | [View Docs](widgets/404-pages-preview.md) |
-| 404 Pages Table | Table | Free | Done | [View Docs](widgets/404-pages-table.md) |
-| Author Pages Preview | Table | Free | Done | [View Docs](widgets/author-pages-preview.md) |
-| Author Pages Table | Data Table | Free | Done | [View Docs](widgets/author-pages-table.md) |
-| Category Pages Table | Data Table | Free | Done | [View Docs](widgets/category-pages-table.md) |
-| Entry Pages Table | Data Table | Data Plus | Done | [View Docs](widgets/entry-pages-table.md) |
-| Exit Pages Table | Data Table | Data Plus | Done | [View Docs](widgets/exit-pages-table.md) |
-| Global Visitor Distribution | Global Map | Free | Done | [View Docs](widgets/global-visitor-distribution.md) |
-| Latest Views Table | Data Table | Free | Done | [View Docs](widgets/latest-views-table.md) |
-| Latest Visitors | Data Table | Free | Done | [View Docs](widgets/latest-visitors.md) |
-| Logged-in Traffic Trends | Line Chart | Free | Done | [View Docs](widgets/logged-in-traffic-trends.md) |
-| Logged-in Users Views Table | Data Table | Free | Done | [View Docs](widgets/logged-in-users-views-table.md) |
-| Online Visitors Table | Data Table | Free | Done | [View Docs](widgets/online-visitors-table.md) |
-| Recent Pages Preview | Table | Free | Done | [View Docs](widgets/recent-pages-preview.md) |
-| Search Terms Table | Table | Data Plus | Done | [View Docs](widgets/search-terms-table.md) |
-| Top Countries | Horizontal Bar List | Free | Done | [View Docs](widgets/top-countries.md) |
-| Top Device Categories | Horizontal Bar List | Free | Done | [View Docs](widgets/top-device-categories.md) |
-| Top Entry Pages | Table | Data Plus | Done | [View Docs](widgets/top-entry-pages.md) |
-| Top Entry Pages Preview | Table | Data Plus | Done | [View Docs](widgets/top-entry-pages-preview.md) |
-| Top Exit Pages Preview | Table | Data Plus | Done | [View Docs](widgets/top-exit-pages-preview.md) |
-| Top Operating Systems | Horizontal Bar List | Free | Done | [View Docs](widgets/top-operating-systems.md) |
-| Top Pages Full | Data Table | Free | Done | [View Docs](widgets/top-pages-full.md) |
-| Top Pages Preview | Table | Free | Done | [View Docs](widgets/top-pages-preview.md) |
-| Top Referrers | Horizontal Bar List | Free | Done | [View Docs](widgets/top-referrers.md) |
-| Top Visitors | Table | Free | Done | [View Docs](widgets/top-visitors.md) |
-| Top Visitors Table | Data Table | Free | Done | [View Docs](widgets/top-visitors-table.md) |
-| Traffic by Hour | Vertical Bar Chart | Data Plus | Done | [View Docs](widgets/traffic-by-hour.md) |
-| Traffic Trends | Line Chart | Free | Done | [View Docs](widgets/traffic-trends.md) |
-
-- Browse all widgets in the [widgets directory](widgets/)
-
----
-
-## Components
-
-Base UI components that power the widgets throughout the application.
-
-| Component | Status | Description | Documentation |
-|-----------|--------|-------------|---------------|
-| Data Table | Done | Tabular data display with sorting, pagination, and column management | [View Docs](components/data-table.md) |
-| Global Map | Done | Interactive world map visualizing country-level metric distribution | [View Docs](components/global-map.md) |
-| Horizontal Bar List | Done | Ranked list with proportional bars for top items comparison | [View Docs](components/horizontal-bar-list.md) |
-| Line Chart | Done | Time-series data visualization with trend lines and comparison | [View Docs](components/line-chart.md) |
-| Metrics | Done | Grid layout displaying key performance indicators with period comparison | [View Docs](components/metrics.md) |
-| Table | Done | Simplified table for pre-sorted data without interactive features | [View Docs](components/table.md) |
-| Vertical Bar Chart | Done | Bar chart displaying metrics across categories with dual-metric support | [View Docs](components/vertical-bar-chart.md) |
-
-- Browse all components in the [components directory](components/)
-
----
-
-## Columns
-
-Reusable table column definitions used across data table widgets. Each column has standardized display rules and behavior.
-
-### Available Columns
-
-| Column | Sortable | Description | Documentation |
-|--------|----------|-------------|---------------|
-| Author | Yes | Author name with link to Single Author Report | [View Docs](columns/author.md) |
-| Category | Yes | Category name with link to Single Category Report | [View Docs](columns/category.md) |
-| Visitor Last Visit | Yes | Date/time of visitor's last visit | [View Docs](columns/visitor-last-visit.md) |
-| Visitor Info | No | Comprehensive visitor details (location, device, browser, OS) | [View Docs](columns/visitor-info.md) |
-| Visitor Status | No | Visitor lifecycle classification badge (New vs Returning) | [View Docs](columns/visitor-status.md) |
-| Referrer | Yes | Source that referred the visitor | [View Docs](columns/referrer.md) |
-| Entry Page | Yes | First page visited in session | [View Docs](columns/entry-page.md) |
-| Exit Page | Yes | Last page before leaving | [View Docs](columns/exit-page.md) |
-| Total Views | Yes | Total page views by visitor in date range | [View Docs](columns/total-views.md) |
-| Total Sessions | Yes | Count of distinct sessions in date range | [View Docs](columns/total-sessions.md) |
-| Session Duration | Yes | Average session duration (HH:MM:SS) | [View Docs](columns/session-duration.md) |
-| Views Per Session | Yes | Average page views per session | [View Docs](columns/views-per-session.md) |
-| Bounce Rate | Yes | Percentage of single-page sessions | [View Docs](columns/bounce-rate.md) |
-| Unique Entrances | No | Count of sessions that started on a specific page | [View Docs](columns/unique-entrances.md) |
-| View Page | No | Action button to view page content on website | [View Docs](columns/view-page.md) |
-| Page | Yes | Page title with link to Single Content Report | [View Docs](columns/page.md) |
-| Content Visitors | Yes | Number of unique visitors for each page | [View Docs](columns/content-visitors.md) |
-| Content Views | Yes | Total number of views for each page | [View Docs](columns/content-views.md) |
-| Content Bounce Rate | Yes | Bounce rate specific to each page | [View Docs](columns/content-bounce-rate.md) |
-| Content Session Duration | Yes | Average session duration for sessions including this page | [View Docs](columns/content-session-duration.md) |
-| Content Published Date | Yes | Publication date of the page | [View Docs](columns/content-published-date.md) |
-| Content Unique Exits | Yes | Count of sessions that ended on this page | [View Docs](columns/content-unique-exits.md) |
-| Content Exit Rate | Yes | Percentage of page views that were the last in a session | [View Docs](columns/content-exit-rate.md) |
-| Published Contents | Yes | Number of content items published during selected date range | [View Docs](columns/published-contents.md) |
-| Total Published Content | Yes | Number of published content items in each category | [View Docs](columns/total-published-content.md) |
-| Search Term | No | Keyword or phrase entered in website search | [View Docs](columns/search-term.md) |
-| Searches | No | Count of times a term was searched on site | [View Docs](columns/searches.md) |
-| URL | No | URL path with link to detailed analytics | [View Docs](columns/url.md) |
-
-- Browse all columns in the [columns directory](columns/)
-
----
-
-## Documentation Structure
-
-Each documentation type follows a specific structure:
-
-### Report Pages
-- Page configuration (menu visibility, add-on, status, Figma link)
-- Interactions available (Date Picker, Filters, etc.)
-- Widget layout (rows and columns)
-- Links to all widgets and components used
-
-### Widgets
-- Widget configuration (add-on, status, Figma link)
-- Associated component
-- Default sort and row limit settings
-- List of reports using this widget
-
-### Components
-- Component configuration (status, Figma link)
-- Features and behavior
-- List of widgets using this component
-
-### Columns
-- Column configuration (status, Figma link)
-- Data displayed and format
-- Sortable behavior
-- List of widgets using this column
-
----
-
-## Quick Start
-
-1. Start with the [Global Rules](global/global-rules.md) to understand design principles
-2. Review the [Menu Structure](global/menu-structure.md) for navigation organization
-3. Explore individual report pages to see detailed widget layouts
-4. Check widget and component documentation for specifications
-
-## Contributing to Documentation
-
-**Before creating or updating documentation**, please read the [Documentation Writing Guide](DOCUMENTATION-GUIDE.md).
-
-The guide includes:
-- Documentation templates for all types
-- YAML frontmatter rules
-- Content guidelines and best practices
-- Cross-referencing rules
-- Checklist before publishing
-
----
-
-## Status Legend
-
-- **Not Started**: Documentation or feature not yet begun
-- **In Progress**: Currently being worked on
-- **Done**: Completed and ready for implementation
-
----
-
-*Last Updated: 2025-11-12*
+**Built with** [Docusaurus](https://docusaurus.io/) • **Hosted on** [Cloudflare Pages](https://pages.cloudflare.com/)
