@@ -64,7 +64,7 @@ Comprehensive snapshot of your website's traffic and visitor behavior.
   </WidgetRow>
   <WidgetRow>
     <WidgetCell>Global Visitor Distribution</WidgetCell>
-    <WidgetCell>Traffic by Hour</WidgetCell>
+    <WidgetCell addon="Data Plus">Traffic by Hour</WidgetCell>
   </WidgetRow>
 </WidgetLayout>
 
