@@ -8,6 +8,7 @@ default_sort: "last_view"
 row_limit: 50
 used_in_reports:
   - "visitors"
+  - "referred-visitors"
 ---
 
 # Latest Visitors Widget
@@ -34,6 +35,7 @@ Displays the most recent visitors to your website in a comprehensive data table.
 ## Used In Reports
 
 - [Visitors](../reports/visitor-insights/visitors.md) - Row 1, full width
+- [Referred Visitors](../reports/referrals/referred-visitors.md) - Row 1, full width
 
 ## Table Structure
 
@@ -67,4 +69,4 @@ When no visitors match criteria:
 
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-11-15*

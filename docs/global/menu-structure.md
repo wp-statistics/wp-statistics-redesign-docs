@@ -34,13 +34,28 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 
 | Sort | Menu Item | Add-on | Status | Notes |
 |------|-----------|--------|--------|-------|
-| 1 | Overview | Free | Not Started | High-level summary (entry point) |
+| 1 | [Overview](../reports/page-insights/page-insights-overview.md) | Free | Done | High-level summary (entry point) |
 | 2 | [Top Pages](../reports/page-insights/top-pages.md) | Free | Done | Most viewed content |
 | 3 | [Entry Pages](../reports/page-insights/entry-pages.md) | Data Plus | Done | First pages visited |
 | 4 | [Exit Pages](../reports/page-insights/exit-pages.md) | Data Plus | Done | Last pages before leaving |
 | 5 | [Category Pages](../reports/page-insights/category-pages.md) | Free | Done | Category performance |
 | 6 | [Author Pages](../reports/page-insights/author-pages.md) | Free | Done | Author performance |
 | 7 | [404 Pages](../reports/page-insights/404-pages.md) | Free | Done | Broken links and errors |
+
+---
+
+## Referrals Menu Group
+
+| Sort | Menu Item | Add-on | Status | Notes |
+|------|-----------|--------|--------|-------|
+| 1 | [Overview](../reports/referrals/referrals-overview.md) | Free | Not Started | High-level summary (entry point) |
+| 2 | [Referred Visitors](../reports/referrals/referred-visitors.md) | Free | Not Started | Visitors from referral sources |
+| 3 | [Referrers](../reports/referrals/referrers.md) | Free | Not Started | Top referring websites |
+| 4 | [Search Engines](../reports/referrals/search-engines.md) | Free | Not Started | Search engine traffic |
+| 5 | [Social Media](../reports/referrals/social-media.md) | Free | Not Started | Social platform traffic |
+| 6 | [Source Categories](../reports/referrals/source-categories.md) | Free | Not Started | Traffic by source category |
+| 7 | [Campaigns](../reports/referrals/campaigns.md) | Marketing | Not Started | Marketing campaign performance |
+| 8 | [UTM Performance](../reports/referrals/utm-performance.md) | Marketing | Not Started | UTM parameter tracking |
 
 ---
 
@@ -105,7 +120,6 @@ The order of menu items within each group follows these principles:
 
 As more report groups are documented, they will be added to this structure:
 
-- Referrer Reports
 - Geographic Reports
 - Device & Browser Reports
 - Custom Reports
@@ -120,4 +134,4 @@ As more report groups are documented, they will be added to this structure:
 
 ---
 
-*Last Updated: 2025-11-12*
+*Last Updated: 2025-11-15*
