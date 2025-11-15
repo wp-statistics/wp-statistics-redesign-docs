@@ -6,6 +6,7 @@ used_in_widgets:
   - "traffic-trends"
   - "logged-in-traffic-trends"
   - "search-engines-chart"
+  - "social-media-chart"
 ---
 
 # Line Chart Component
@@ -25,6 +26,7 @@ This component is used by the following widgets:
 - [Traffic Trends](../widgets/traffic-trends.md)
 - [Logged-in Traffic Trends](../widgets/logged-in-traffic-trends.md)
 - [Search Engines Chart](../widgets/search-engines-chart.md)
+- [Social Media Chart](../widgets/social-media-chart.md)
 
 ## Overview
 
