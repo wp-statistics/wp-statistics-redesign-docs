@@ -12,6 +12,7 @@ used_in_widgets:
   - "top-pages-preview"
   - "top-visitors"
   - "recent-pages-preview"
+  - "referrers-table"
   - "search-terms-table"
 ---
 
@@ -33,6 +34,7 @@ This component is used by the following widgets:
 - [404 Pages Table](../widgets/404-pages-table.md)
 - [Author Pages Preview](../widgets/author-pages-preview.md)
 - [Recent Pages Preview](../widgets/recent-pages-preview.md)
+- [Referrers Table](../widgets/referrers-table.md)
 - [Search Terms Table](../widgets/search-terms-table.md)
 - [Top Entry Pages](../widgets/top-entry-pages.md)
 - [Top Entry Pages Preview](../widgets/top-entry-pages-preview.md)
@@ -103,4 +105,4 @@ When no data is available for the selected period:
 
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-11-15*
