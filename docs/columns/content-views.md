@@ -5,6 +5,7 @@ status: "Done"
 used_in_widgets:
   - "404-pages-preview"
   - "404-pages-table"
+  - "campaigns-table"
   - "recent-pages-preview"
   - "referrers-table"
   - "top-pages-full"
@@ -27,6 +28,7 @@ This column is used in the following widgets:
 
 - [404 Pages Preview](../widgets/404-pages-preview.md)
 - [404 Pages Table](../widgets/404-pages-table.md)
+- [Campaigns Table](../widgets/campaigns-table.md)
 - [Recent Pages Preview](../widgets/recent-pages-preview.md)
 - [Referrers Table](../widgets/referrers-table.md)
 - [Top Pages Full](../widgets/top-pages-full.md)

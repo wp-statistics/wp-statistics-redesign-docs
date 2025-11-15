@@ -3,6 +3,7 @@ title: "Entry Page Column"
 type: "column"
 status: "Done"
 used_in_widgets:
+  - "campaigns-table"
   - "latest-visitors"
   - "top-visitors-table"
   - "top-entry-pages"
@@ -24,6 +25,7 @@ Shows the first page a visitor landed on in a session.
 
 This column is used in the following widgets:
 
+- [Campaigns Table](../widgets/campaigns-table.md)
 - [Latest Visitors](../widgets/latest-visitors.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
 - [Top Entry Pages](../widgets/top-entry-pages.md)

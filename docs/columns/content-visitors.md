@@ -5,6 +5,7 @@ status: "Done"
 used_in_widgets:
   - "author-pages-preview"
   - "author-pages-table"
+  - "campaigns-table"
   - "category-pages-table"
   - "exit-pages-table"
   - "top-pages-full"
@@ -26,6 +27,7 @@ This column is used in the following widgets:
 
 - [Author Pages Preview](../widgets/author-pages-preview.md)
 - [Author Pages Table](../widgets/author-pages-table.md)
+- [Campaigns Table](../widgets/campaigns-table.md)
 - [Category Pages Table](../widgets/category-pages-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)
 - [Top Pages Full](../widgets/top-pages-full.md)

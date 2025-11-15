@@ -54,7 +54,7 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 | 4 | [Search Engines](../reports/referrals/search-engines.md) | Free | Done | Search engine traffic |
 | 5 | [Social Media](../reports/referrals/social-media.md) | Free | Done | Social platform traffic |
 | 6 | [Source Categories](../reports/referrals/source-categories.md) | Free | Done | Traffic by source category |
-| 7 | [Campaigns](../reports/referrals/campaigns.md) | Marketing | Not Started | Marketing campaign performance |
+| 7 | [Campaigns](../reports/referrals/campaigns.md) | Marketing | Done | Marketing campaign performance |
 | 8 | [UTM Performance](../reports/referrals/utm-performance.md) | Marketing | Not Started | UTM parameter tracking |
 
 ---

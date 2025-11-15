@@ -8,6 +8,7 @@ used_in_widgets:
   - "search-engines-chart"
   - "social-media-chart"
   - "source-categories-chart"
+  - "campaigns-traffic-trends"
 ---
 
 # Line Chart Component
@@ -29,6 +30,7 @@ This component is used by the following widgets:
 - [Search Engines Chart](../widgets/search-engines-chart.md)
 - [Social Media Chart](../widgets/social-media-chart.md)
 - [Source Categories Chart](../widgets/source-categories-chart.md)
+- [Campaigns Traffic Trends](../widgets/campaigns-traffic-trends.md)
 
 ## Overview
 

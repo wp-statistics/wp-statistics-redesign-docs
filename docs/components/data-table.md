@@ -4,6 +4,7 @@ type: "component"
 status: "Done"
 used_in_widgets:
   - "author-pages-table"
+  - "campaigns-table"
   - "category-pages-table"
   - "entry-pages-table"
   - "exit-pages-table"
@@ -36,6 +37,7 @@ A powerful, flexible data table component for displaying structured data with so
 This component is used by the following widgets:
 
 - [Author Pages Table](../widgets/author-pages-table.md)
+- [Campaigns Table](../widgets/campaigns-table.md)
 - [Category Pages Table](../widgets/category-pages-table.md)
 - [Entry Pages Table](../widgets/entry-pages-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)

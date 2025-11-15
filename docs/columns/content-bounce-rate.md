@@ -3,6 +3,7 @@ title: "Bounce Rate Column"
 type: "column"
 status: "Done"
 used_in_widgets:
+  - "campaigns-table"
   - "top-pages-full"
   - "referrers-table"
   - "source-categories-table"
@@ -22,6 +23,7 @@ Shows the bounce rate as a percentage - the rate of sessions with only one page 
 
 This column is used in the following widgets:
 
+- [Campaigns Table](../widgets/campaigns-table.md)
 - [Top Pages Full](../widgets/top-pages-full.md)
 - [Referrers Table](../widgets/referrers-table.md)
 - [Source Categories Table](../widgets/source-categories-table.md)
@@ -44,6 +46,9 @@ Bounce rate = (Sessions from this referrer with only 1 view / Total sessions fro
 
 **For Source Categories:**
 Bounce rate = (Sessions from this source category with only 1 view / Total sessions from this source category) × 100
+
+**For Campaigns:**
+Bounce rate = (Sessions from this campaign with only 1 view / Total sessions from this campaign) × 100
 
 ## Sortable Behavior
 
