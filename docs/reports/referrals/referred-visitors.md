@@ -4,7 +4,7 @@ type: "report"
 group: "Referrals"
 show_in_menu: true
 add_on: "Free"
-status: "Not Started"
+status: "Done"
 figma: ""
 interactions:
   - "Date Picker"
@@ -22,7 +22,7 @@ Displays only visitors who have a referrer, excluding direct traffic.
 
 - **Menu Visibility**: Shown in main menu
 - **Add-on**: Free
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Available Interactions
