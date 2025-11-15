@@ -5,6 +5,7 @@ status: "Done"
 used_in_widgets:
   - "traffic-trends"
   - "logged-in-traffic-trends"
+  - "search-engines-chart"
 ---
 
 # Line Chart Component
@@ -23,6 +24,7 @@ This component is used by the following widgets:
 
 - [Traffic Trends](../widgets/traffic-trends.md)
 - [Logged-in Traffic Trends](../widgets/logged-in-traffic-trends.md)
+- [Search Engines Chart](../widgets/search-engines-chart.md)
 
 ## Overview
 
@@ -112,4 +114,4 @@ When no data is available for the selected period:
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-15*

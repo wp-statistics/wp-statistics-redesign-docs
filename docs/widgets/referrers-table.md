@@ -8,6 +8,7 @@ default_sort: "referrals"
 row_limit: 20
 used_in_reports:
   - "referrers"
+  - "search-engines"
 ---
 
 # Referrers Table Widget
@@ -34,6 +35,7 @@ Displays the top referring domains in a paginated table sorted by referral count
 ## Used In Reports
 
 - [Referrers](../reports/referrals/referrers.md) - Row 1, full width
+- [Search Engines](../reports/referrals/search-engines.md) - Row 2, full width (filtered to show only search engine referrers)
 
 ## Table Structure
 
