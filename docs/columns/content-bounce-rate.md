@@ -1,14 +1,15 @@
 ---
-title: "Content Bounce Rate Column"
+title: "Bounce Rate Column"
 type: "column"
 status: "Done"
 used_in_widgets:
   - "top-pages-full"
+  - "referrers-table"
 ---
 
-# Page Bounce Rate Column
+# Bounce Rate Column
 
-Shows the bounce rate specific to each page - the percentage of sessions that started on this page and had no further interaction.
+Shows the bounce rate as a percentage - the rate of sessions with only one page view and no further interaction.
 
 ## Column Configuration
 
@@ -21,6 +22,7 @@ Shows the bounce rate specific to each page - the percentage of sessions that st
 This column is used in the following widgets:
 
 - [Top Pages Full](../widgets/top-pages-full.md)
+- [Referrers Table](../widgets/referrers-table.md)
 
 ## Display
 
@@ -32,7 +34,11 @@ This column is used in the following widgets:
 
 ## Calculation
 
-Bounce rate for a page = (Sessions that started on this page with only 1 page view / Total sessions that started on this page) × 100
+**For Pages:**
+Bounce rate = (Sessions starting on this page with only 1 view / Total sessions starting on this page) × 100
+
+**For Referrers:**
+Bounce rate = (Sessions from this referrer with only 1 view / Total sessions from this referrer) × 100
 
 ## Sortable Behavior
 
@@ -50,4 +56,4 @@ This column is **sortable**.
 
 ---
 
-*Last Updated: 2025-11-12*
+*Last Updated: 2025-11-15*

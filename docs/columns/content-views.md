@@ -6,13 +6,14 @@ used_in_widgets:
   - "404-pages-preview"
   - "404-pages-table"
   - "recent-pages-preview"
+  - "referrers-table"
   - "top-pages-full"
   - "top-pages-preview"
 ---
 
 # Content Views Column
 
-Shows the total number of views for each page.
+Shows the total number of page views.
 
 ## Column Configuration
 
@@ -27,6 +28,7 @@ This column is used in the following widgets:
 - [404 Pages Preview](../widgets/404-pages-preview.md)
 - [404 Pages Table](../widgets/404-pages-table.md)
 - [Recent Pages Preview](../widgets/recent-pages-preview.md)
+- [Referrers Table](../widgets/referrers-table.md)
 - [Top Pages Full](../widgets/top-pages-full.md)
 - [Top Pages Preview](../widgets/top-pages-preview.md)
 
@@ -43,7 +45,7 @@ This column is used in the following widgets:
 This column is **sortable**.
 
 - Default sort order: Descending (highest to lowest)
-- Shows pages with most total views first
+- Shows items with most views first
 
 ## Related Documentation
 
@@ -53,4 +55,4 @@ This column is **sortable**.
 
 ---
 
-*Last Updated: 2025-11-12*
+*Last Updated: 2025-11-15*

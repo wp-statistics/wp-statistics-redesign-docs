@@ -10,6 +10,7 @@ used_in_widgets:
   - "latest-visitors"
   - "latest-views-table"
   - "visitor-list"
+  - "referrers-table"
   - "top-pages"
   - "top-pages-full"
   - "top-visitors-table"
@@ -39,14 +40,15 @@ This component is used by the following widgets:
 - [Exit Pages Table](../widgets/exit-pages-table.md)
 - [Latest Visitors](../widgets/latest-visitors.md)
 - [Latest Views Table](../widgets/latest-views-table.md)
-- [Visitor List](../widgets/visitor-list.md)
+- [Logged-in Users List](../widgets/logged-in-users-list.md)
+- [Logged-in Users Views Table](../widgets/logged-in-users-views-table.md)
+- [Online Visitors Table](../widgets/online-visitors-table.md)
+- [Referrers Table](../widgets/referrers-table.md)
 - [Top Pages](../widgets/top-pages.md)
 - [Top Pages Full](../widgets/top-pages-full.md)
-- [Top Visitors Table](../widgets/top-visitors-table.md)
-- [Logged-in Users Views Table](../widgets/logged-in-users-views-table.md)
-- [Logged-in Users List](../widgets/logged-in-users-list.md)
-- [Online Visitors Table](../widgets/online-visitors-table.md)
 - [Top Search Terms List](../widgets/top-search-terms-list.md)
+- [Top Visitors Table](../widgets/top-visitors-table.md)
+- [Visitor List](../widgets/visitor-list.md)
 
 ## Overview
 
@@ -89,4 +91,4 @@ When table has no data:
 
 ---
 
-*Last Updated: 2025-11-12*
+*Last Updated: 2025-11-15*

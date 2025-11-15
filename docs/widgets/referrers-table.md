@@ -1,7 +1,7 @@
 ---
 title: "Referrers Table"
 type: "widget"
-component: "table"
+component: "data-table"
 add_on: "Free"
 status: "Done"
 default_sort: "referrals"
@@ -16,7 +16,7 @@ Displays the top referring domains in a paginated table sorted by referral count
 
 ## Widget Configuration
 
-- **Component**: [Table](../components/table.md)
+- **Component**: [Data Table](../components/data-table.md)
 - **Add-on**: Free
 - **Status**: Done
 - **Figma Design**: [Add link when available]
@@ -28,6 +28,7 @@ Displays the top referring domains in a paginated table sorted by referral count
 | **Title** | false |
 | **Default Sort** | referrals (descending) |
 | **Row Limit** | 20 |
+| **Column Management** | ✅ Yes |
 | **Pagination** | ✅ Yes |
 
 ## Used In Reports
@@ -42,12 +43,16 @@ Displays the top referring domains in a paginated table sorted by referral count
 |--------|----------|--------------------|
 | [Domain](../columns/domain.md) | No | Shown |
 | [Source Name](../columns/source-name.md) | No | Shown |
-| [Referrals](../columns/referrals.md) | No (default) | Shown |
+| [Referrals](../columns/referrals.md) | Yes (default) | Shown |
+| [Content Views](../columns/content-views.md) | Yes | Shown |
+| [Bounce Rate](../columns/content-bounce-rate.md) | Yes | Shown |
 
 ### Notes
 
-- Pre-sorted by referral count (highest to lowest)
+- Default sorted by referral count (highest to lowest)
+- Users can sort by any column
 - 20 items per page with pagination controls
+- Column management available for show/hide and reordering
 - Domain column links to external website
 - Referrals column links to filtered Referred Visitors report
 
