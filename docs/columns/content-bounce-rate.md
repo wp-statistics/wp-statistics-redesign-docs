@@ -5,6 +5,7 @@ status: "Done"
 used_in_widgets:
   - "top-pages-full"
   - "referrers-table"
+  - "source-categories-table"
 ---
 
 # Bounce Rate Column
@@ -23,6 +24,7 @@ This column is used in the following widgets:
 
 - [Top Pages Full](../widgets/top-pages-full.md)
 - [Referrers Table](../widgets/referrers-table.md)
+- [Source Categories Table](../widgets/source-categories-table.md)
 
 ## Display
 
@@ -39,6 +41,9 @@ Bounce rate = (Sessions starting on this page with only 1 view / Total sessions 
 
 **For Referrers:**
 Bounce rate = (Sessions from this referrer with only 1 view / Total sessions from this referrer) × 100
+
+**For Source Categories:**
+Bounce rate = (Sessions from this source category with only 1 view / Total sessions from this source category) × 100
 
 ## Sortable Behavior
 

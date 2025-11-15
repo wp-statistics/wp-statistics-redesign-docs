@@ -4,6 +4,7 @@ type: "column"
 status: "Done"
 used_in_widgets:
   - "referrers-table"
+  - "source-categories-table"
 ---
 
 # Referrals Column
@@ -21,6 +22,7 @@ Shows the number of referrals from a specific domain.
 This column is used in the following widgets:
 
 - [Referrers Table](../widgets/referrers-table.md)
+- [Source Categories Table](../widgets/source-categories-table.md)
 
 ## Display
 
