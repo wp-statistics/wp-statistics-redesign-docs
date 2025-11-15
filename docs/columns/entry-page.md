@@ -50,6 +50,12 @@ See [Attribution Settings](../global/attribution-settings.md) for complete detai
 **Query String Indicator:**
 - Show tiny "i" icon after the label whenever a query string exists in the URL
 
+**UTM Campaign Display:**
+- When entry page URL contains a `utm_campaign` parameter, show campaign name below the page title
+- Display campaign name only (without "Campaign:" prefix)
+- Displayed in secondary/gray text style
+- Campaign label appears on a second line under the main page title
+
 ## Interactive Elements
 
 ### Click Action
@@ -64,6 +70,10 @@ Opens the [Single Content Report](../reports/single-content-report.md) for this 
 **When Title is Long/Truncated:**
 - Shows full page title + page path
 - Example: `Complete Guide to WordPress Configuration - /blog/wordpress-guide`
+
+**When UTM Campaign Exists:**
+- Hover over campaign name shows full format with label
+- Example: `Campaign: install-addon`
 
 ## Display Examples
 
@@ -111,6 +121,23 @@ Opens the [Single Content Report](../reports/single-content-report.md) for this 
 - Hover: Shows query string only (e.g., `/?utm_campaign=newsletter&utm_source=email`)
 - Click: Opens Single Content Report
 
+---
+
+### Example 5: Entry Page with UTM Campaign
+
+**Visual:**
+```
+How to Monitor Which D…
+install-addon
+```
+
+**Description:**
+- Line 1: Page title truncated at 35 chars
+- Line 2: Campaign name in secondary/gray text (e.g., "install-addon")
+- Campaign name extracted from `utm_campaign` parameter
+- Hover over campaign: Shows "Campaign: install-addon"
+- Click: Opens Single Content Report
+
 ## Related Documentation
 
 - [Attribution Settings](../global/attribution-settings.md)
@@ -122,4 +149,4 @@ Opens the [Single Content Report](../reports/single-content-report.md) for this 
 
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-11-15*
