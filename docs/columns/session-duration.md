@@ -3,7 +3,6 @@ title: "Session Duration Column"
 type: "column"
 status: "Done"
 used_in_widgets:
-  - "campaigns-table"
   - "latest-visitors"
   - "top-visitors-table"
 ---
@@ -15,14 +14,13 @@ Shows the average time visitors spend during their sessions within the active da
 ## Column Configuration
 
 - **Type**: Column (Reusable table column)
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Used In Widgets
 
 This column is used in the following widgets:
 
-- [Campaigns Table](../widgets/campaigns-table.md)
 - [Latest Visitors](../widgets/latest-visitors.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
 
@@ -71,4 +69,4 @@ Displays: "Average session duration: \{value\}"
 
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-11-15*
