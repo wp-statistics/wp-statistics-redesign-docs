@@ -50,7 +50,7 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 |------|-----------|--------|--------|-------|
 | 1 | [Overview](../reports/referrals/referrals-overview.md) | Free | Not Started | High-level summary (entry point) |
 | 2 | [Referred Visitors](../reports/referrals/referred-visitors.md) | Free | Done | Visitors from referral sources |
-| 3 | [Referrers](../reports/referrals/referrers.md) | Free | Not Started | Top referring websites |
+| 3 | [Referrers](../reports/referrals/referrers.md) | Free | Done | Top referring websites |
 | 4 | [Search Engines](../reports/referrals/search-engines.md) | Free | Not Started | Search engine traffic |
 | 5 | [Social Media](../reports/referrals/social-media.md) | Free | Not Started | Social platform traffic |
 | 6 | [Source Categories](../reports/referrals/source-categories.md) | Free | Not Started | Traffic by source category |
