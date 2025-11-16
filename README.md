@@ -49,7 +49,13 @@ wp-statistics-new-design/
 │   ├── widgets/           # Reusable widgets (31 files)
 │   ├── components/        # Base UI components (7 files)
 │   ├── columns/           # Table column definitions (29 files)
-│   └── settings/          # Settings pages and configuration options
+│   ├── settings/          # Settings pages and configuration options
+│   └── technical/         # Technical documentation (database, API, architecture)
+│       ├── intro.md       # Technical documentation overview
+│       ├── database/      # Database schema and tables
+│       ├── api/           # API specifications
+│       ├── architecture/  # System architecture
+│       └── data-flow/     # Data flow diagrams
 ├── src/
 │   ├── components/        # Custom React components
 │   │   ├── StatusBadge.tsx
@@ -62,7 +68,8 @@ wp-statistics-new-design/
 ├── docusaurus.config.ts   # Docusaurus configuration
 ├── sidebars.ts           # Sidebar structure
 ├── package.json          # Dependencies and scripts
-├── DOCUMENTATION-GUIDE.md # Writing guidelines
+├── DOCUMENTATION-GUIDE.md # Product documentation writing guidelines
+├── TECHNICAL-GUIDE.md    # Technical documentation writing guidelines
 └── CLAUDE.md             # Project instructions for Claude Code
 ```
 
@@ -111,9 +118,10 @@ Each document includes structured metadata:
 ```yaml
 ---
 title: "Document Name"
-type: "report" | "widget" | "component" | "column" | "settings"
+type: "report" | "widget" | "component" | "column" | "settings" | "technical"
 status: "Not Started" | "In Progress" | "Done"
-add_on: "Free" | "Data Plus" | "MiniChart"
+add_on: "Free" | "Data Plus" | "MiniChart"  # For product docs
+category: "database" | "api" | "architecture" | "data-flow"  # For technical docs
 # Additional type-specific fields...
 ---
 ```
@@ -170,16 +178,24 @@ wrangler pages deploy build
 ## 📖 Content Guidelines
 
 For detailed writing guidelines, templates, and best practices, see:
-- [DOCUMENTATION-GUIDE.md](DOCUMENTATION-GUIDE.md) - Comprehensive writing guide
+- [DOCUMENTATION-GUIDE.md](DOCUMENTATION-GUIDE.md) - Product documentation writing guide
+- [TECHNICAL-GUIDE.md](TECHNICAL-GUIDE.md) - Technical documentation writing guide
 - [CLAUDE.md](CLAUDE.md) - Project instructions for AI assistance
 
-### Key Principles
+### Product Documentation Principles
 
 - **Product-focused:** Describe features, not implementation
 - **Concise:** One-sentence descriptions
 - **Cross-referenced:** Bidirectional links between related docs
 - **No code:** This is product documentation, not technical specs
 - **No design specs:** Visual specifications belong in Figma
+
+### Technical Documentation Principles
+
+- **Technical and precise:** Use accurate technical terminology
+- **Comprehensive:** Include schemas, specifications, and implementation details
+- **Code examples:** Include relevant code samples and API examples
+- **Independent:** Complementary to product docs, not duplicative
 
 ## 🛠️ Development
 
