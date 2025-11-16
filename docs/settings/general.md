@@ -3,7 +3,7 @@ title: "General Settings"
 type: "settings"
 add_on: "Free"
 status: "Not Started"
-settings_count: 6
+settings_count: 7
 ---
 
 # General Settings
@@ -15,7 +15,7 @@ Core tracking configuration including online visitor monitoring, user activity t
 - **Add-on**: Free
 - **Status**: Not Started
 - **Figma Design**: [Add link when available]
-- **Settings Count**: 6
+- **Settings Count**: 7
 
 ## Tracking Options
 
@@ -43,9 +43,9 @@ Core tracking configuration including online visitor monitoring, user activity t
 
 **Default Value**: `false`
 
-**Description**: Tracks the activities of logged-in users, including page views, and records them with their WordPress User IDs for detailed insights into user behavior. If disabled, logged-in users are tracked anonymously, similar to other visitors. Note: Compliance with GDPR and other privacy regulations is essential.
+**Description**: Tracks the activities of logged-in users, including page views, and records them with their WordPress User IDs for detailed insights into user behavior. If disabled, logged-in users are tracked anonymously, similar to other visitors.
 
-**Privacy Impact**: This setting affects user privacy and requires compliance with privacy standards.
+**Privacy Impact**: This setting affects user privacy. Compliance with GDPR and other privacy regulations is essential. Inform users about data collection and usage through your privacy policy.
 
 ---
 
@@ -116,6 +116,22 @@ Core tracking configuration including online visitor monitoring, user activity t
 **Default Value**: `false`
 
 **Description**: Dynamically load the tracking script with a unique name and address to bypass ad blockers.
+
+**Dependencies**: Only visible when Tracking Method is set to Client Side Tracking (value = 1)
+
+---
+
+### Tracker Debugger
+
+**Display Label**: Tracker Debugger
+
+**Setting Key**: N/A (button/link, not a stored setting)
+
+**Type**: Button/Link
+
+**Default Value**: N/A
+
+**Description**: Use the Tracker Debugger to inspect and troubleshoot your tracking script, ensuring accurate data collection. Opens the Tracker Debugger page.
 
 **Dependencies**: Only visible when Tracking Method is set to Client Side Tracking (value = 1)
 

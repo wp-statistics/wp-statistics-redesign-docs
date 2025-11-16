@@ -51,6 +51,8 @@ Controls data protection, IP anonymization, hashing, privacy compliance auditing
 
 ---
 
+## Privacy Compliance
+
 ### Privacy Audit
 
 **Display Label**: Privacy Audit
@@ -59,13 +61,13 @@ Controls data protection, IP anonymization, hashing, privacy compliance auditing
 
 **Type**: Checkbox
 
-**Default Value**: `true`
+**Default Value**: `false`
 
 **Description**: Checking WP Statistics settings for privacy compliance. When enabled, displays privacy impact warnings throughout the plugin settings.
 
 ---
 
-## Privacy Compliance
+## User Preferences
 
 ### Consent Plugin Integration
 
@@ -78,12 +80,12 @@ Controls data protection, IP anonymization, hashing, privacy compliance auditing
 **Default Value**: `` (None)
 
 **Options**:
-- (empty): No consent management integration
-- wp_consent_api: Integrate with WP Consent API compatible plugins
-- borlabs_cookie: Direct integration with Borlabs Cookie
-- complianz: Integration with Complianz
+- (empty): None
+- wp_consent_api: Via WP Consent API
+- borlabs_cookie: Borlabs Cookie
+- complianz: Real Cookie Banner (Complianz)
 
-**Description**: Enable integration with supported consent management plugins to ensure WP Statistics respects user privacy preferences. When enabled, WP Statistics will only track data based on the consent settings provided by your active consent management plugin.
+**Description**: Enable integration with supported consent management plugins, such as WP Consent API and Real Cookie Banner, to ensure WP Statistics respects user privacy preferences. When enabled, WP Statistics will only track data based on the consent settings provided by your active consent management plugin.
 
 ---
 
@@ -98,10 +100,10 @@ Controls data protection, IP anonymization, hashing, privacy compliance auditing
 **Default Value**: `functional`
 
 **Options**:
-- functional: Basic website functionality tracking
-- statistics-anonymous: Anonymous statistical tracking
-- statistics: Full statistical tracking with PII
-- marketing: Marketing and analytics tracking
+- functional: Functional
+- statistics-anonymous: Statistics-Anonymous
+- statistics: Statistics
+- marketing: Marketing
 
 **Description**: When using WP Consent API, select the consent category that WP Statistics should track. Only visitors who have consented to the selected category will be tracked.
 
@@ -119,15 +121,13 @@ Controls data protection, IP anonymization, hashing, privacy compliance auditing
 
 **Default Value**: `false`
 
-**Description**: When enabled, all users will be tracked anonymously by default, without recording any Personally Identifiable Information (PII), regardless of consent. This anonymous tracking data is classified as "Functional" to align with privacy regulations. PII data will only be collected when explicit consent is provided by the website visitor.
+**Description**: When this option is enabled, all users will be tracked anonymously by default, without recording any Personally Identifiable Information (PII), regardless of consent. This anonymous tracking data is classified as "Functional" to align with privacy regulations. PII data will only be collected when explicit consent is provided by the website visitor.
 
-**Dependencies**: Only visible when a Consent Plugin Integration is selected
+**Dependencies**: Only visible when a Consent Plugin Integration is selected (not "None")
 
 **Status Badge**: Beta
 
 ---
-
-## User Preferences
 
 ### Do Not Track (DNT)
 
