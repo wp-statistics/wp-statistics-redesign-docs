@@ -3,7 +3,7 @@ title: "Filtering & Exceptions Settings"
 type: "settings"
 add_on: "Free"
 status: "Not Started"
-settings_count: 16
+settings_count: 17
 ---
 
 # Filtering & Exceptions Settings
@@ -15,7 +15,7 @@ Configure exclusions for user roles, IP addresses, robots, countries, and URLs t
 - **Add-on**: Free
 - **Status**: Not Started
 - **Figma Design**: [Add link when available]
-- **Settings Count**: 16
+- **Settings Count**: 17
 
 ## Filtering & Exceptions
 
@@ -139,6 +139,20 @@ Configure exclusions for user roles, IP addresses, robots, countries, and URLs t
 
 ---
 
+### Excluded 404 Pages
+
+**Display Label**: Excluded 404 Pages
+
+**Setting Key**: `wps_exclude_404s`
+
+**Type**: Checkbox
+
+**Default Value**: `false`
+
+**Description**: Exclude 404 error page visits from being tracked in statistics.
+
+---
+
 ### Excluded URLs
 
 **Display Label**: Excluded URLs
@@ -155,9 +169,9 @@ Configure exclusions for user roles, IP addresses, robots, countries, and URLs t
 
 ## URL Query Parameters
 
-### Query Parameters Allow List
+### Allowed Query Parameters
 
-**Display Label**: Query Parameters Allow List
+**Display Label**: Allowed Query Parameters
 
 **Setting Key**: `wps_query_params_allow_list`
 
@@ -171,33 +185,51 @@ Configure exclusions for user roles, IP addresses, robots, countries, and URLs t
 
 ## Matomo Referrer Spam Blacklist
 
-### Use Matomo Referrer Spam Blacklist
+### Referrer Spam Blacklist
 
-**Display Label**: Use Matomo Referrer Spam Blacklist
+**Display Label**: Referrer Spam Blacklist
 
-**Setting Key**: `wps_use_matomo_spam_list`
-
-**Type**: Checkbox
-
-**Default Value**: `true`
-
-**Description**: Automatically exclude referrers identified as spam by the Matomo referrer spam blacklist to maintain data quality.
-
----
-
-### Update Spam Blacklist
-
-**Display Label**: Update Spam Blacklist
-
-**Setting Key**: `wps_update_spam_list`
+**Setting Key**: `wps_referrerspam`
 
 **Type**: Checkbox
 
 **Default Value**: `false`
 
-**Description**: Automatically update the Matomo referrer spam blacklist monthly to stay current with new spam sources.
+**Description**: Use Matomo's referrer spam blacklist to automatically filter spam referrers from statistics.
 
-**Dependencies**: Only visible when "Use Matomo Referrer Spam Blacklist" is enabled
+**Status Badge**: Deprecated
+
+---
+
+### Refresh Blacklist Data
+
+**Display Label**: Refresh Blacklist Data
+
+**Setting Key**: N/A (button action: `update-referrer-spam`)
+
+**Type**: Button
+
+**Default Value**: N/A
+
+**Description**: Manually update the Matomo referrer spam blacklist to the latest version.
+
+**Dependencies**: Only visible when "Referrer Spam Blacklist" is enabled
+
+---
+
+### Automate Blacklist Updates
+
+**Display Label**: Automate Blacklist Updates
+
+**Setting Key**: `wps_schedule_referrerspam`
+
+**Type**: Checkbox
+
+**Default Value**: `false`
+
+**Description**: Automatically update the referrer spam blacklist on a monthly schedule to keep spam filtering current.
+
+**Dependencies**: Only visible when "Referrer Spam Blacklist" is enabled
 
 ---
 
@@ -219,17 +251,17 @@ Configure exclusions for user roles, IP addresses, robots, countries, and URLs t
 
 ## General Exclusions
 
-### Exclude 404 Pages
+### Log Record Exclusions
 
-**Display Label**: Exclude 404 Pages
+**Display Label**: Log Record Exclusions
 
-**Setting Key**: `wps_exclude_404s`
+**Setting Key**: `wps_record_exclusions`
 
 **Type**: Checkbox
 
 **Default Value**: `false`
 
-**Description**: Exclude 404 error page visits from being tracked in statistics.
+**Description**: Maintain a log of all excluded visits for insight into exclusions.
 
 ---
 

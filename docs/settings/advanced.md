@@ -3,7 +3,7 @@ title: "Advanced Options Settings"
 type: "settings"
 add_on: "Free"
 status: "Not Started"
-settings_count: 13
+settings_count: 15
 ---
 
 # Advanced Options Settings
@@ -15,21 +15,37 @@ Technical configuration including IP detection methods, geolocation providers, c
 - **Add-on**: Free
 - **Status**: Not Started
 - **Figma Design**: [Add link when available]
-- **Settings Count**: 13
+- **Settings Count**: 15
 
 ## Your IP Information
 
-### Current IP Address Display
+### Ipify.org IP
 
-**Display Label**: Your IP Address
+**Display Label**: Ipify.org IP
 
 **Setting Key**: N/A (Display only)
 
 **Type**: Information Display
 
-**Default Value**: Detected IP address
+**Default Value**: IP from ipify.org service
 
-**Description**: Displays your current detected IP address for verification and troubleshooting purposes.
+**Description**: Displays the IP address detected by the ipify.org service for comparison and verification purposes.
+
+**Dependencies**: Only shown when ipify.org service is available
+
+---
+
+### WP Statistics Detected IP
+
+**Display Label**: WP Statistics
+
+**Setting Key**: N/A (Display only)
+
+**Type**: Information Display
+
+**Default Value**: IP detected by WP Statistics
+
+**Description**: Displays the IP address detected by WP Statistics using the configured detection method. Use this to verify your IP detection settings are working correctly.
 
 ---
 
@@ -139,6 +155,22 @@ Technical configuration including IP detection methods, geolocation providers, c
 **Description**: Enter your DB-IP license key to enable the premium DB-IP database, replacing the free version with a more detailed dataset. The premium DB-IP database is 1.1GB in size. Make sure your server has enough storage space before enabling it.
 
 **Dependencies**: Only visible when Location Detection Method is "dbip" AND Database Update Source is "user-license"
+
+---
+
+### Manual Update of Geolocation Database
+
+**Display Label**: Manual Update of Geolocation Database
+
+**Setting Key**: N/A (Action button: `update-geoip-database`)
+
+**Type**: Button/Action
+
+**Default Value**: N/A
+
+**Description**: Manually trigger an immediate update of the geolocation database to get the latest geographical data without waiting for the scheduled update.
+
+**Dependencies**: Only visible when Location Detection Method is "maxmind" or "dbip"
 
 ---
 
@@ -264,7 +296,7 @@ Technical configuration including IP detection methods, geolocation providers, c
 
 **Default Value**: `false`
 
-**Description**: When enabled, all WP Statistics data including visitor logs, page views, and settings will be permanently deleted when the plugin is uninstalled. Use with caution.
+**Description**: When enabled, all WP Statistics data (including visitor logs, statistics, and all plugin settings) will be permanently removed from your database when you uninstall the plugin. This action is irreversible.
 
 ---
 

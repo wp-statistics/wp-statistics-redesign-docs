@@ -233,7 +233,7 @@ Email report scheduling, components, branding, and distribution configuration.
 
 **Display Label**: Email Header Customization
 
-**Setting Key**: `wps_addon_settings[advanced_reporting][email_header]`
+**Setting Key**: `wps_addon_settings[advanced_reporting][email_content_header]`
 
 **Type**: Rich Text Editor
 
@@ -247,7 +247,7 @@ Email report scheduling, components, branding, and distribution configuration.
 
 **Display Label**: Email Footer Customization
 
-**Setting Key**: `wps_addon_settings[advanced_reporting][email_footer]`
+**Setting Key**: `wps_addon_settings[advanced_reporting][email_content_footer]`
 
 **Type**: Rich Text Editor
 
@@ -287,17 +287,17 @@ Email report scheduling, components, branding, and distribution configuration.
 
 ---
 
-### Auto-Generated Notice
+### Disable Copyright Notice
 
-**Display Label**: Auto-Generated Notice
+**Display Label**: Disable Copyright Notice
 
-**Setting Key**: `wps_addon_settings[advanced_reporting][email_auto_generated_notice]`
+**Setting Key**: `wps_addon_settings[advanced_reporting][email_disable_copyright]`
 
 **Type**: Checkbox
 
-**Default Value**: `true`
+**Default Value**: `false`
 
-**Description**: Include a notice in the email footer indicating that the report was automatically generated.
+**Description**: Remove the WP Statistics branding and copyright notice from the email footer for a fully white-labeled report.
 
 ---
 
