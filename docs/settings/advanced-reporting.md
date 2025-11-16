@@ -3,7 +3,7 @@ title: "Advanced Reporting Settings"
 type: "settings"
 add_on: "Advanced Reporting"
 status: "Not Started"
-settings_count: 17
+settings_count: 19
 ---
 
 # Advanced Reporting Settings
@@ -15,9 +15,9 @@ Email report scheduling, components, branding, and distribution configuration.
 - **Add-on**: Advanced Reporting
 - **Status**: Not Started
 - **Figma Design**: [Add link when available]
-- **Settings Count**: 17
+- **Settings Count**: 19
 
-## Settings
+## Report Scheduling
 
 ### Choose Your Report Timing
 
@@ -70,6 +70,8 @@ Email report scheduling, components, branding, and distribution configuration.
 **Dependencies**: Only visible when Report Timing is set to "time_range"
 
 ---
+
+## Report Components
 
 ### Top Metrics
 
@@ -197,6 +199,8 @@ Email report scheduling, components, branding, and distribution configuration.
 
 ---
 
+## Branding Your Reports
+
 ### Report Logo Upload
 
 **Display Label**: Report Logo Upload
@@ -222,6 +226,34 @@ Email report scheduling, components, branding, and distribution configuration.
 **Default Value**: Empty
 
 **Description**: Provide the URL that the header logo should link to, such as your company homepage or a custom landing page.
+
+---
+
+### Email Header Customization
+
+**Display Label**: Email Header Customization
+
+**Setting Key**: `wps_addon_settings[advanced_reporting][email_header]`
+
+**Type**: Rich Text Editor
+
+**Default Value**: Empty
+
+**Description**: Personalize the header of your email reports with custom text, images, or HTML.
+
+---
+
+### Email Footer Customization
+
+**Display Label**: Email Footer Customization
+
+**Setting Key**: `wps_addon_settings[advanced_reporting][email_footer]`
+
+**Type**: Rich Text Editor
+
+**Default Value**: Empty
+
+**Description**: Add custom content to the footer of your email reports, such as contact information or disclaimers.
 
 ---
 
@@ -255,6 +287,22 @@ Email report scheduling, components, branding, and distribution configuration.
 
 ---
 
+### Auto-Generated Notice
+
+**Display Label**: Auto-Generated Notice
+
+**Setting Key**: `wps_addon_settings[advanced_reporting][email_auto_generated_notice]`
+
+**Type**: Checkbox
+
+**Default Value**: `true`
+
+**Description**: Include a notice in the email footer indicating that the report was automatically generated.
+
+---
+
+## Additional Features
+
 ### Email PDF Report Attachments
 
 **Display Label**: Email PDF Report Attachments
@@ -280,6 +328,20 @@ Email report scheduling, components, branding, and distribution configuration.
 **Default Value**: `false`
 
 **Description**: Keep a record of all reports sent via email for future reference.
+
+---
+
+## Preview and Send
+
+### Test Your Report
+
+**Display Label**: Test Your Report
+
+**Setting Key**: N/A (UI action button)
+
+**Type**: Button
+
+**Description**: Send a test email report to verify settings and preview how the report will appear to recipients.
 
 ---
 

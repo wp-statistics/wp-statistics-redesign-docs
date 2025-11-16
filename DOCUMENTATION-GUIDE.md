@@ -279,6 +279,8 @@ Only if column has specific responsive rules.
 ### Settings Pages
 
 **Structure:**
+Settings pages are organized by UI boxes/sections that users see. Each box groups related settings.
+
 ```markdown
 # Settings Page Name
 
@@ -289,9 +291,9 @@ Brief description of what this settings page controls.
 - **Add-on**: Free | Data Plus | etc.
 - **Status**: Not Started | In Progress | Done
 - **Figma Design**: [Add link when available]
-- **Settings Count**: Number of settings in this group
+- **Settings Count**: Total number of settings in this page
 
-## Settings
+## Box/Section Name 1
 
 ### Setting Name 1
 
@@ -322,12 +324,25 @@ Brief explanation of how this affects user privacy
 
 ### Setting Name 2
 
-[Same structure]
+[Same structure within this box]
+
+---
+
+## Box/Section Name 2
+
+### Setting Name 3
+
+[Same structure for settings in next box]
 
 ---
 
 *Last Updated: YYYY-MM-DD*
 ```
+
+**Important:**
+- Use box/section names exactly as they appear in the plugin UI (e.g., "Tracking Options", "Danger Zone")
+- Group settings under the box they belong to
+- Box headings use ## level, settings use ### level
 
 **Don't Include:**
 - ❌ Cross-references to affected reports/widgets
@@ -492,7 +507,7 @@ Brief description of what this settings page controls.
 - **Figma Design**: [Add link when available]
 - **Settings Count**: 0
 
-## Settings
+## Box/Section Name 1
 
 ### Setting Name 1
 
@@ -521,6 +536,14 @@ Brief explanation of privacy implications
 ---
 
 ### Setting Name 2
+
+[Same structure]
+
+---
+
+## Box/Section Name 2
+
+### Setting Name 3
 
 [Same structure]
 

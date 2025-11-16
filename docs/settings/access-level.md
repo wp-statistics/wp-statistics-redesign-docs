@@ -17,7 +17,7 @@ Controls which user roles and capabilities can view statistics and manage plugin
 - **Figma Design**: [Add link when available]
 - **Settings Count**: 2
 
-## Settings
+## Roles & Permissions
 
 ### Minimum Role to View Statistics
 

@@ -17,7 +17,7 @@ Controls data protection, IP anonymization, hashing, privacy compliance auditing
 - **Figma Design**: [Add link when available]
 - **Settings Count**: 7
 
-## Settings
+## Data Protection
 
 ### Anonymize IP Addresses
 
@@ -64,6 +64,8 @@ Controls data protection, IP anonymization, hashing, privacy compliance auditing
 **Description**: Checking WP Statistics settings for privacy compliance. When enabled, displays privacy impact warnings throughout the plugin settings.
 
 ---
+
+## Privacy Compliance
 
 ### Consent Plugin Integration
 
@@ -124,6 +126,8 @@ Controls data protection, IP anonymization, hashing, privacy compliance auditing
 **Status Badge**: Beta
 
 ---
+
+## User Preferences
 
 ### Do Not Track (DNT)
 

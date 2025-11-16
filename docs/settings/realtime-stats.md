@@ -17,7 +17,7 @@ Configuration for real-time data visualization refresh intervals.
 - **Figma Design**: [Add link when available]
 - **Settings Count**: 1
 
-## Settings
+## Update Interval
 
 ### Chart & Map Refresh Rate (seconds)
 

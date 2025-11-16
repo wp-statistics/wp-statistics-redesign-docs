@@ -17,7 +17,7 @@ Widget cache and styling configuration for Gutenberg blocks and theme widgets.
 - **Figma Design**: [Add link when available]
 - **Settings Count**: 2
 
-## Settings
+## Widget Cache Duration
 
 ### Refresh Every
 
@@ -38,6 +38,8 @@ Widget cache and styling configuration for Gutenberg blocks and theme widgets.
 **Description**: Set the time interval for refreshing the statistics displayed in widgets. After the chosen period, fresh data will be fetched and displayed.
 
 ---
+
+## Widget Design Customization
 
 ### Use Default Widget Styling
 

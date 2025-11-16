@@ -3,7 +3,7 @@ title: "Advanced Options Settings"
 type: "settings"
 add_on: "Free"
 status: "Not Started"
-settings_count: 11
+settings_count: 13
 ---
 
 # Advanced Options Settings
@@ -15,9 +15,25 @@ Technical configuration including IP detection methods, geolocation providers, c
 - **Add-on**: Free
 - **Status**: Not Started
 - **Figma Design**: [Add link when available]
-- **Settings Count**: 11
+- **Settings Count**: 13
 
-## Settings
+## Your IP Information
+
+### Current IP Address Display
+
+**Display Label**: Your IP Address
+
+**Setting Key**: N/A (Display only)
+
+**Type**: Information Display
+
+**Default Value**: Detected IP address
+
+**Description**: Displays your current detected IP address for verification and troubleshooting purposes.
+
+---
+
+## Main IP Detection Method
 
 ### IP Detection Method
 
@@ -52,6 +68,8 @@ Technical configuration including IP detection methods, geolocation providers, c
 **Dependencies**: Only visible when IP Detection Method is set to "CUSTOM_HEADER"
 
 ---
+
+## Geolocation Settings
 
 ### Location Detection Method
 
@@ -170,6 +188,8 @@ Technical configuration including IP detection methods, geolocation providers, c
 
 ---
 
+## Content Analytics
+
 ### Word Count Analytics
 
 **Display Label**: Word Count Analytics
@@ -184,6 +204,24 @@ Technical configuration including IP detection methods, geolocation providers, c
 
 ---
 
+## Purge Old Data Daily
+
+### Automatically Aggregate Old Data
+
+**Display Label**: Automatically Aggregate Old Data
+
+**Setting Key**: `wps_auto_aggregate_old_data`
+
+**Type**: Checkbox
+
+**Default Value**: `false`
+
+**Description**: Automatically aggregates historical data older than a specified threshold to optimize database performance while preserving statistical summaries.
+
+---
+
+## Anonymous Usage Data
+
 ### Share Anonymous Data
 
 **Display Label**: Share Anonymous Data
@@ -195,6 +233,38 @@ Technical configuration including IP detection methods, geolocation providers, c
 **Default Value**: `false`
 
 **Description**: Sends non-personal, anonymized data to help us improve WP Statistics. No personal or identifying information is collected or shared.
+
+---
+
+## Restore Default Settings
+
+### Reset Options
+
+**Display Label**: Reset to Default Settings
+
+**Setting Key**: N/A (Action button)
+
+**Type**: Button/Action
+
+**Default Value**: N/A
+
+**Description**: Restores all WP Statistics settings to their default values. This action cannot be undone.
+
+---
+
+## Danger Zone
+
+### Delete All Data on Plugin Deletion
+
+**Display Label**: Delete All Data on Uninstall
+
+**Setting Key**: `wps_delete_on_uninstall`
+
+**Type**: Checkbox
+
+**Default Value**: `false`
+
+**Description**: When enabled, all WP Statistics data including visitor logs, page views, and settings will be permanently deleted when the plugin is uninstalled. Use with caution.
 
 ---
 

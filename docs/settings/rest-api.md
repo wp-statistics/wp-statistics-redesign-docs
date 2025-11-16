@@ -17,7 +17,7 @@ WordPress REST API integration settings for enabling WP Statistics API endpoints
 - **Figma Design**: [Add link when available]
 - **Settings Count**: 2
 
-## Settings
+## WordPress REST API Integration
 
 ### API Service Status
 

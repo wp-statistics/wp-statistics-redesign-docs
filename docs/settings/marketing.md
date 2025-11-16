@@ -17,7 +17,7 @@ Google Search Console integration and campaign tracking configuration.
 - **Figma Design**: [Add link when available]
 - **Settings Count**: 6
 
-## Settings
+## Google Search Console
 
 ### Show Google Search Tab
 
@@ -100,6 +100,8 @@ Google Search Console integration and campaign tracking configuration.
 **Dependencies**: Only visible when authenticated with Google Search Console
 
 ---
+
+## Campaign Builder
 
 ### Campaign Builder
 

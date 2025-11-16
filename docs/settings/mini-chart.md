@@ -17,7 +17,7 @@ Configuration for mini charts displayed on posts and pages, including chart pref
 - **Figma Design**: [Add link when available]
 - **Settings Count**: 5
 
-## Settings
+## Chart Preferences
 
 ### Chart Display
 
@@ -90,6 +90,8 @@ Configuration for mini charts displayed on posts and pages, including chart pref
 **Description**: Choose how to display the count under the chart.
 
 ---
+
+## Chart Appearance
 
 ### Primary Color
 

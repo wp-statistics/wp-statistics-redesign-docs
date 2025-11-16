@@ -17,7 +17,7 @@ Core tracking configuration including online visitor monitoring, user activity t
 - **Figma Design**: [Add link when available]
 - **Settings Count**: 6
 
-## Settings
+## Tracking Options
 
 ### Monitor Online Visitors
 
@@ -82,6 +82,8 @@ Core tracking configuration including online visitor monitoring, user activity t
 **Description**: Select how conversions are attributed: First-Touch credits the first interaction, and Last-Touch credits the most recent.
 
 ---
+
+## Tracker Configuration
 
 ### Tracking Method
 

@@ -3,7 +3,7 @@ title: "Customization Settings"
 type: "settings"
 add_on: "Customization"
 status: "Not Started"
-settings_count: 5
+settings_count: 6
 ---
 
 # Customization Settings
@@ -15,9 +15,9 @@ Menu management, white labeling, import/export, and overview widget customizatio
 - **Add-on**: Customization
 - **Status**: Not Started
 - **Figma Design**: [Add link when available]
-- **Settings Count**: 5
+- **Settings Count**: 6
 
-## Settings
+## Manage Admin Menus
 
 ### Disable Menus
 
@@ -49,6 +49,8 @@ Menu management, white labeling, import/export, and overview widget customizatio
 
 ---
 
+## White label and Header Customization
+
 ### White Label
 
 **Display Label**: White label
@@ -76,6 +78,14 @@ Menu management, white labeling, import/export, and overview widget customizatio
 **Description**: Customize the header logo to match your branding by uploading your own logo.
 
 ---
+
+## Import & Export Settings
+
+No configurable settings in this section. Provides UI for importing and exporting WP Statistics settings.
+
+---
+
+## Overview Widget Customization
 
 ### Enable Overview Widget
 

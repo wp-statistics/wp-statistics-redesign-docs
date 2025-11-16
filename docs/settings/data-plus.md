@@ -17,7 +17,7 @@ Event tracking configuration for outbound links, downloads, and content editor e
 - **Figma Design**: [Add link when available]
 - **Settings Count**: 3
 
-## Settings
+## Event Tracking
 
 ### Link Tracker
 
@@ -46,6 +46,8 @@ Event tracking configuration for outbound links, downloads, and content editor e
 **Description**: Watch which files people download and learn what's popular.
 
 ---
+
+## User Interface Preferences
 
 ### Latest Visitors in Editor
 

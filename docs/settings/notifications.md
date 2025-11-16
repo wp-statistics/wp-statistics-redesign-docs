@@ -17,7 +17,7 @@ Configure automated email report delivery including frequency, content customiza
 - **Figma Design**: [Add link when available]
 - **Settings Count**: 7
 
-## Settings
+## Email Configuration
 
 ### Recipient Email Addresses
 
@@ -32,6 +32,8 @@ Configure automated email report delivery including frequency, content customiza
 **Description**: Enter email addresses to receive reports. Use a comma to separate multiple addresses. If this field is left empty, the "Administration Email Address" from the "General Settings" of WordPress will be used.
 
 ---
+
+## Automated Report Delivery
 
 ### Report Frequency
 
