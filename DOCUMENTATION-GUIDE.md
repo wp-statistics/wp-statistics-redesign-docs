@@ -35,13 +35,14 @@ This guide ensures consistency and completeness when creating or updating docume
 
 ## Documentation Types
 
-We have 5 types of documentation:
+We have 6 types of documentation:
 
 1. **Reports** - Report pages (e.g., Visitors, Views)
 2. **Widgets** - Reusable widgets used in reports
 3. **Components** - Base UI components (e.g., Data Table, Line Chart)
 4. **Columns** - Reusable table column definitions
-5. **Global** - Global rules, menu, interactions
+5. **Settings** - Settings pages and configuration options
+6. **Global** - Global rules, menu, interactions
 
 ---
 
@@ -51,7 +52,7 @@ We have 5 types of documentation:
 
 ```yaml
 title: "Descriptive Name"
-type: "report" | "widget" | "component" | "column"
+type: "report" | "widget" | "component" | "column" | "settings"
 status: "Not Started" | "In Progress" | "Done"
 figma: ""  # URL to Figma design (can be empty initially)
 ```
@@ -91,6 +92,12 @@ used_in_widgets:
 ```yaml
 used_in_widgets:
   - "widget-id"
+```
+
+#### Settings
+```yaml
+add_on: "Free" | "Data Plus" | etc.
+settings_count: 5  # Number of settings in this group
 ```
 
 ---
@@ -269,6 +276,65 @@ Only if column has specific responsive rules.
 **Don't Include:**
 - ❌ Redundant Related Documentation
 
+### Settings Pages
+
+**Structure:**
+```markdown
+# Settings Page Name
+
+Brief description of what this settings page controls.
+
+## Page Configuration
+
+- **Add-on**: Free | Data Plus | etc.
+- **Status**: Not Started | In Progress | Done
+- **Figma Design**: [Add link when available]
+- **Settings Count**: Number of settings in this group
+
+## Settings
+
+### Setting Name 1
+
+**Display Label**: The label shown in the settings UI
+
+**Setting Key**: `wps_setting_name`
+
+**Type**: Checkbox | Dropdown | Text Input | Number Input | Radio | Toggle | Multi-select
+
+**Default Value**: `value`
+
+**Options** (for dropdowns/radios/multi-select):
+- option_value: Description of what this option does
+- option_value2: Description
+
+**Description**: What this setting does and how it affects behavior.
+
+**Dependencies**: (only include if setting has conditional visibility)
+- Only visible when "Other Setting" is enabled
+- Requires "Parent Setting" to equal "specific value"
+
+**Privacy Impact**: (only include if setting has privacy implications)
+Brief explanation of how this affects user privacy
+
+**Status Badge**: Deprecated | Beta (only if applicable)
+
+---
+
+### Setting Name 2
+
+[Same structure]
+
+---
+
+*Last Updated: YYYY-MM-DD*
+```
+
+**Don't Include:**
+- ❌ Cross-references to affected reports/widgets
+- ❌ Technical implementation details
+- ❌ Code examples
+- ❌ Design specifications
+
 ---
 
 ## Templates
@@ -398,6 +464,65 @@ What data is shown.
 
 ### Sortable
 Yes/No
+
+---
+
+*Last Updated: YYYY-MM-DD*
+```
+
+### New Settings Template
+
+```markdown
+---
+title: "Settings Page Name"
+type: "settings"
+add_on: "Free"
+status: "Not Started"
+settings_count: 0
+---
+
+# Settings Page Name
+
+Brief description of what this settings page controls.
+
+## Page Configuration
+
+- **Add-on**: Free
+- **Status**: Not Started
+- **Figma Design**: [Add link when available]
+- **Settings Count**: 0
+
+## Settings
+
+### Setting Name 1
+
+**Display Label**: The label shown in the settings UI
+
+**Setting Key**: `wps_setting_name`
+
+**Type**: Checkbox | Dropdown | Text Input | Number Input | Radio | Toggle | Multi-select
+
+**Default Value**: `value`
+
+**Options** (if applicable):
+- option_value: Description
+- option_value2: Description
+
+**Description**: What this setting does and how it affects behavior.
+
+**Dependencies**: (only include if conditional)
+- Only visible when X is enabled
+
+**Privacy Impact**: (only include if applicable)
+Brief explanation of privacy implications
+
+**Status Badge**: Deprecated | Beta (only if applicable)
+
+---
+
+### Setting Name 2
+
+[Same structure]
 
 ---
 

@@ -48,7 +48,8 @@ wp-statistics-new-design/
 │   ├── reports/           # Report pages (15 files)
 │   ├── widgets/           # Reusable widgets (31 files)
 │   ├── components/        # Base UI components (7 files)
-│   └── columns/           # Table column definitions (29 files)
+│   ├── columns/           # Table column definitions (29 files)
+│   └── settings/          # Settings pages and configuration options
 ├── src/
 │   ├── components/        # Custom React components
 │   │   ├── StatusBadge.tsx
@@ -110,7 +111,7 @@ Each document includes structured metadata:
 ```yaml
 ---
 title: "Document Name"
-type: "report" | "widget" | "component" | "column"
+type: "report" | "widget" | "component" | "column" | "settings"
 status: "Not Started" | "In Progress" | "Done"
 add_on: "Free" | "Data Plus" | "MiniChart"
 # Additional type-specific fields...
