@@ -83,7 +83,7 @@ The v15 database is organized into four primary categories:
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
+| `ID` | bigint unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `resource_uri_id` | bigint | NOT NULL, FK: wp_statistics_resource_uris |
 | `resource_id` | bigint | NOT NULL, FK: wp_statistics_resources |
 | `session_id` | bigint | NOT NULL, FK: wp_statistics_sessions |

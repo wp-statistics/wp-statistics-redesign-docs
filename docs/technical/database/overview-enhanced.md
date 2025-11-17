@@ -165,7 +165,7 @@ All references to `wp_users` are nullable to support both anonymous and authenti
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
+| `ID` | bigint unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `resource_uri_id` | bigint | NOT NULL, FK: [wp_statistics_resource_uris](#wp_statistics_resource_uris) |
 | `resource_id` | bigint | NOT NULL, FK: [wp_statistics_resources](#wp_statistics_resources) |
 | `session_id` | bigint | NOT NULL, FK: [wp_statistics_sessions](#wp_statistics_sessions) |

@@ -18,35 +18,43 @@ Please review and address these issues before finalizing the v15 database schema
 
 ## Critical Issues (Must Fix)
 
-### 1. Foreign Key Type Mismatch ❌
+### 1. Primary Key Missing UNSIGNED Keyword ❌
 
-**Location:** `wp_statistics_sessions` table (overview.md lines 42-43)
+**Location:** `wp_statistics_views` table (overview.md line 86)
 
 **Issue:**
-- Fields `initial_view_id` and `last_view_id` are defined as `bigint unsigned`
-- They reference `wp_statistics_views.ID` which is defined as `bigint` (signed) (overview.md line 86)
+- Primary key `ID` is defined as `bigint` but should be `bigint unsigned`
+- Foreign keys `initial_view_id` and `last_view_id` in `wp_statistics_sessions` are correctly defined as `bigint unsigned`
+- Type mismatch between primary key and foreign keys referencing it
 
 **Current State:**
 ```sql
+-- wp_statistics_views table (line 86)
+ID | bigint | PK, AUTO_INCREMENT, NOT NULL
+
+-- wp_statistics_sessions table (lines 42-43) - CORRECT
 initial_view_id | bigint unsigned | FK: wp_statistics_views
 last_view_id    | bigint unsigned | FK: wp_statistics_views
 ```
 
 **Required State:**
 ```sql
--- Both fields must match the referenced column type
--- Either make both unsigned, or both signed
-initial_view_id | bigint | FK: wp_statistics_views
-last_view_id    | bigint | FK: wp_statistics_views
+-- wp_statistics_views table
+ID | bigint unsigned | PK, AUTO_INCREMENT, NOT NULL
+
+-- wp_statistics_sessions table - NO CHANGE NEEDED
+initial_view_id | bigint unsigned | FK: wp_statistics_views
+last_view_id    | bigint unsigned | FK: wp_statistics_views
 ```
 
 **Impact:**
 - Foreign key constraint creation will FAIL in strict MySQL modes
+- Type mismatch between primary key and foreign keys
 - Database migration scripts will error
-- Data integrity cannot be enforced
+- Auto-increment primary keys should always be unsigned as best practice
 
 **Recommendation:**
-Change `initial_view_id` and `last_view_id` to `bigint` (signed) to match `wp_statistics_views.ID`, OR change `wp_statistics_views.ID` to `bigint unsigned` and update all references.
+Change `wp_statistics_views.ID` to `bigint unsigned` to match the foreign key references and follow MySQL best practices for auto-increment primary keys.
 
 ---
 
@@ -318,7 +326,7 @@ Add note:
 ## Action Items for Dev Team
 
 ### High Priority (Before Production)
-- [ ] Fix foreign key type mismatch (`initial_view_id`, `last_view_id`)
+- [ ] Add `unsigned` keyword to `wp_statistics_views.ID` primary key
 - [ ] Add indexes on `date` fields in summary tables
 - [ ] Verify and document nullability for ALL foreign keys
 - [ ] Standardize field name cases in schema
@@ -338,7 +346,7 @@ Add note:
 
 ## Questions for Dev Team
 
-1. **Type Mismatch:** Should views.ID be unsigned, or should session view references be signed?
+1. **Primary Key Type:** Confirm `wp_statistics_views.ID` should be `bigint unsigned` to match foreign key references.
 2. **Composite Indexes:** Do any composite indexes exist? If so, please provide list for documentation.
 3. **Duration Unit:** Confirm duration is stored in seconds (not milliseconds).
 4. **Bounce Logic:** Is `< 5 seconds` the correct bounce threshold?
