@@ -18,92 +18,7 @@ Please review and address these issues before finalizing the v15 database schema
 
 ## Critical Issues (Must Fix)
 
-### 1. Primary Key Missing UNSIGNED Keyword ❌
-
-**Location:** `wp_statistics_views` table (overview.md line 86)
-
-**Issue:**
-- Primary key `ID` is defined as `bigint` but should be `bigint unsigned`
-- Foreign keys `initial_view_id` and `last_view_id` in `wp_statistics_sessions` are correctly defined as `bigint unsigned`
-- Type mismatch between primary key and foreign keys referencing it
-
-**Current State:**
-```sql
--- wp_statistics_views table (line 86)
-ID | bigint | PK, AUTO_INCREMENT, NOT NULL
-
--- wp_statistics_sessions table (lines 42-43) - CORRECT
-initial_view_id | bigint unsigned | FK: wp_statistics_views
-last_view_id    | bigint unsigned | FK: wp_statistics_views
-```
-
-**Required State:**
-```sql
--- wp_statistics_views table
-ID | bigint unsigned | PK, AUTO_INCREMENT, NOT NULL
-
--- wp_statistics_sessions table - NO CHANGE NEEDED
-initial_view_id | bigint unsigned | FK: wp_statistics_views
-last_view_id    | bigint unsigned | FK: wp_statistics_views
-```
-
-**Impact:**
-- Foreign key constraint creation will FAIL in strict MySQL modes
-- Type mismatch between primary key and foreign keys
-- Database migration scripts will error
-- Auto-increment primary keys should always be unsigned as best practice
-
-**Recommendation:**
-Change `wp_statistics_views.ID` to `bigint unsigned` to match the foreign key references and follow MySQL best practices for auto-increment primary keys.
-
----
-
-### 2. Missing Critical Indexes on Summary Tables ❌
-
-**Location:** `wp_statistics_summary` and `wp_statistics_summary_totals` (overview.md lines 366-400)
-
-**Issue:**
-- Both tables have `date` field that is NOT NULL and heavily queried
-- NO index is documented on the `date` field
-- All example queries filter by date ranges (lines 552-620)
-
-**Current State:**
-```sql
--- wp_statistics_summary
-date | date | NOT NULL  -- NO INDEX DOCUMENTED
-
--- wp_statistics_summary_totals
-date | date | NOT NULL  -- NO INDEX DOCUMENTED
-```
-
-**Required State:**
-```sql
--- wp_statistics_summary
-date | date | NOT NULL, INDEXED
-
--- wp_statistics_summary_totals
-date | date | NOT NULL, INDEXED
-```
-
-**Impact:**
-- **SEVERE** performance degradation on time-based queries
-- Queries like "sessions in last 30 days" will do full table scans
-- Summary tables can grow to millions of rows
-- Unusable performance for date range reporting
-
-**Recommendation:**
-Add index on `date` field for both `wp_statistics_summary` and `wp_statistics_summary_totals`:
-```sql
-CREATE INDEX idx_summary_date ON wp_statistics_summary(date);
-CREATE INDEX idx_summary_totals_date ON wp_statistics_summary_totals(date);
-```
-
-**Additional Consideration:**
-Consider composite index on `(date, resource_uri_id)` for `wp_statistics_summary` since queries often filter by both.
-
----
-
-### 3. Foreign Key Nullability Not Specified ❌
+### 1. Foreign Key Nullability Not Specified ❌
 
 **Location:** `wp_statistics_sessions.referrer_id` (overview.md line 38)
 
@@ -140,7 +55,7 @@ Review ALL foreign key fields for proper nullability documentation:
 
 ---
 
-### 4. Inconsistent Field Name Cases in Documentation ⚠️
+### 2. Inconsistent Field Name Cases in Documentation ⚠️
 
 **Location:** Schema definitions vs. SQL queries
 
@@ -173,7 +88,7 @@ s.country_id = c.ID
 
 ## Minor Issues (Should Fix)
 
-### 5. Incomplete Relationship Diagram ⚠️
+### 3. Incomplete Relationship Diagram ⚠️
 
 **Location:** Table Relationships section (lines 418-438)
 
@@ -191,7 +106,7 @@ Add complete relationship diagram showing all foreign key relationships.
 
 ---
 
-### 6. Missing "Key Indexes" Sections ⚠️
+### 4. Missing "Key Indexes" Sections ⚠️
 
 **Tables Missing Index Documentation:**
 1. `wp_statistics_languages` (line 153) - has index on `name`
@@ -206,7 +121,7 @@ Add "Key Indexes" section for each table documenting all indexes.
 
 ---
 
-### 7. Inconsistent Constraint Notation Order ⚠️
+### 5. Inconsistent Constraint Notation Order ⚠️
 
 **Issue:**
 Some fields show: `nullable, FK: table_name`
@@ -226,7 +141,7 @@ Standardize to: `Type | [NOT NULL/nullable], FK: table_name, [other_constraints]
 
 ---
 
-### 8. Inconsistent "indexed" Capitalization ⚠️
+### 6. Inconsistent "indexed" Capitalization ⚠️
 
 **Issue:**
 Documentation uses both:
@@ -238,7 +153,7 @@ Standardize to uppercase "INDEXED" to match other constraints like "NOT NULL", "
 
 ---
 
-### 9. Ambiguous Bounce Calculation ⚠️
+### 7. Ambiguous Bounce Calculation ⚠️
 
 **Location:** Summary tables `bounces` field and example query (lines 379, 399, 609-614)
 
@@ -260,7 +175,7 @@ Add note explaining:
 
 ---
 
-### 10. Missing Unique Constraint Documentation ⚠️
+### 8. Missing Unique Constraint Documentation ⚠️
 
 **Location:** Device tables (lines 229, 240, 251)
 
@@ -277,7 +192,7 @@ Add "Key Indexes" sections documenting unique constraints.
 
 ---
 
-### 11. Composite Index Documentation Missing ⚠️
+### 9. Composite Index Documentation Missing ⚠️
 
 **Location:** Line 458
 
@@ -300,7 +215,7 @@ CREATE INDEX idx_sessions_visitor_date ON wp_statistics_sessions(visitor_id, sta
 
 ---
 
-### 12. Unclear Duration Field Constraints ⚠️
+### 10. Unclear Duration Field Constraints ⚠️
 
 **Location:** Multiple tables with `duration` field
 
@@ -326,8 +241,8 @@ Add note:
 ## Action Items for Dev Team
 
 ### High Priority (Before Production)
-- [ ] Add `unsigned` keyword to `wp_statistics_views.ID` primary key
-- [ ] Add indexes on `date` fields in summary tables
+- [x] ~~Add `unsigned` keyword to `wp_statistics_views.ID` primary key~~ **FIXED**
+- [x] ~~Add indexes on `date` fields in summary tables~~ **FIXED**
 - [ ] Verify and document nullability for ALL foreign keys
 - [ ] Standardize field name cases in schema
 
@@ -346,7 +261,7 @@ Add note:
 
 ## Questions for Dev Team
 
-1. **Primary Key Type:** Confirm `wp_statistics_views.ID` should be `bigint unsigned` to match foreign key references.
+1. ~~**Primary Key Type:** Confirm `wp_statistics_views.ID` should be `bigint unsigned` to match foreign key references.~~ **RESOLVED**
 2. **Composite Indexes:** Do any composite indexes exist? If so, please provide list for documentation.
 3. **Duration Unit:** Confirm duration is stored in seconds (not milliseconds).
 4. **Bounce Logic:** Is `< 5 seconds` the correct bounce threshold?

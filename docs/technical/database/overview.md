@@ -370,7 +370,7 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `date` | date | NOT NULL |
+| `date` | date | NOT NULL, INDEXED |
 | `resource_uri_id` | bigint | FK: wp_statistics_resource_uris |
 | `visitors` | bigint | DEFAULT 0, NOT NULL |
 | `sessions` | bigint | DEFAULT 0, NOT NULL |
@@ -378,9 +378,15 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | `total_duration` | int | NOT NULL, DEFAULT 0 |
 | `bounces` | bigint unsigned | NOT NULL, DEFAULT 0 |
 
+**Key Indexes:**
+- Primary key on `ID`
+- Index on `date`
+- Foreign key on `resource_uri_id`
+
 **Notes:**
 - Pre-aggregated data for performance optimization
 - Updated via scheduled processes (e.g., nightly cron jobs)
+- Index on `date` is critical for time-based queries
 
 ---
 
@@ -391,12 +397,19 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `date` | date | NOT NULL |
+| `date` | date | NOT NULL, INDEXED |
 | `visitors` | bigint | DEFAULT 0, NOT NULL |
 | `sessions` | bigint | DEFAULT 0, NOT NULL |
 | `views` | int | DEFAULT 0, NOT NULL |
 | `total_duration` | int | NOT NULL, DEFAULT 0 |
 | `bounces` | bigint unsigned | NOT NULL, DEFAULT 0 |
+
+**Key Indexes:**
+- Primary key on `ID`
+- Index on `date`
+
+**Notes:**
+- Index on `date` is critical for time-based queries
 
 ---
 
