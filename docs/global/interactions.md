@@ -5,7 +5,7 @@ This document describes all global interactions available across WP Statistics r
 ## Table of Contents
 
 1. [Date Picker](#date-picker)
-2. [Filters](#filters)
+2. [Filters](#filters) *(Legacy - see [Advanced Filters](advanced-filters.md))*
 3. [Search](#search)
 4. [Sort Options](#sort-options)
 5. [Auto Refresh](#auto-refresh)
@@ -68,6 +68,8 @@ interactions:
 ---
 
 ## Filters
+
+> **Note**: This section documents the legacy filtering system. The new [Advanced Filters](advanced-filters.md) system provides enhanced functionality with multiple filter support and will eventually replace this interaction.
 
 ### Description
 Advanced filtering options to narrow down data by various criteria.
@@ -428,6 +430,7 @@ interactions:
 
 ## Related Documentation
 
+- [Advanced Filters](advanced-filters.md)
 - [Global Rules](global-rules.md)
 - [Menu Structure](menu-structure.md)
 - [Report Pages](../reports/)
