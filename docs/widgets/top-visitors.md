@@ -1,11 +1,14 @@
 ---
 title: "Top Visitors"
 type: "widget"
-component: "table"
+component: "data-table"
 add_on: "Free"
 status: "Done"
-default_sort: "total_views"
+default_sort: "total-views"
 row_limit: 10
+column_management_mode: "none"
+pagination: false
+link_to_full_report: true
 used_in_reports:
   - "visitors-overview"
 ---
@@ -16,7 +19,7 @@ Displays the top 10 most active visitors in a simplified table format showing ke
 
 ## Widget Configuration
 
-- **Component**: [Table](../components/table.md)
+- **Component**: [Data Table](../components/data-table.md)
 - **Add-on**: Free (included in base plugin)
 - **Status**: Done
 - **Figma Design**: [Add link when available]
@@ -25,41 +28,30 @@ Displays the top 10 most active visitors in a simplified table format showing ke
 
 | Property | Value |
 |----------|-------|
-| **Title** | "Top Visitors" |
-| **Default Sort** | total_views (descending) |
+| **Default Sort** | Total Views (descending) |
 | **Row Limit** | 10 |
-| **Pagination** | ❌ No |
-| **Link to Full Report** | ✅ Yes (links to Top Visitors report) |
+| **Pagination** | No |
+| **Column Management Mode** | "none" |
+| **Link to Full Report** | Yes - [Top Visitors Table](../widgets/top-visitors-table.md) |
 
 ## Used In Reports
-
-This widget is used in the following reports:
 
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 5
 
 ## Table Structure
 
-The table displays 5 columns, all shown by default:
-
-| Column | Sortable | Status | Documentation |
-|--------|----------|--------|---------------|
-| **Visitor Informations** | ❌ No | Done | [View Docs](../columns/visitor-info.md) |
-| **Total Views** | ❌ No | Done | [View Docs](../columns/total-views.md) |
-| **Referrer** | ❌ No | Done | [View Docs](../columns/referrer.md) |
-| **Entry Page** | ❌ No | Done | [View Docs](../columns/entry-page.md) |
-| **Exit Page** | ❌ No | Done | [View Docs](../columns/exit-page.md) |
+| Column | Sortable | Header Label |
+|--------|----------|--------------|
+| [Visitor Informations](../columns/visitor-info.md) | No | Visitor Informations |
+| [Total Views](../columns/total-views.md) | No | Total Views |
+| [Referrer](../columns/referrer.md) | No | Referrer |
+| [Entry Page](../columns/entry-page.md) | No | Entry Page |
+| [Exit Page](../columns/exit-page.md) | No | Exit Page |
 
 ## Empty State
 
-When no visitor data is available for the selected period:
-- "No data available for the selected period"
-
-## Related Documentation
-
-- [Table Component](../components/table.md)
-- [Top Visitors Table](../widgets/top-visitors-table.md) - Full detailed version with 10 columns
-- [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
+"No data available for the selected period"
 
 ---
 
-*Last Updated: 2025-11-11*
+*Last Updated: 2025-11-23*

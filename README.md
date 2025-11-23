@@ -47,7 +47,7 @@ wp-statistics-new-design/
 │   ├── global/            # Global rules and patterns (5 files)
 │   ├── reports/           # Report pages (15 files)
 │   ├── widgets/           # Reusable widgets (31 files)
-│   ├── components/        # Base UI components (7 files)
+│   ├── components/        # Base UI components (6 active, 1 deprecated)
 │   ├── columns/           # Table column definitions (29 files)
 │   ├── settings/          # Settings pages and configuration options
 │   └── technical/         # Technical documentation (database, API, architecture)
@@ -228,7 +228,7 @@ npm run serve      # Serve production build locally
 - **Total Documents:** 90+ markdown files
 - **Reports:** 15 pages
 - **Widgets:** 31 reusable components
-- **UI Components:** 7 base components
+- **UI Components:** 6 base components (1 deprecated)
 - **Table Columns:** 29 column definitions
 - **Global Docs:** 5 essential guides
 

@@ -1,11 +1,13 @@
 ---
 title: "404 Pages Table"
 type: "widget"
-component: "table"
+component: "data-table"
 add_on: "Free"
 status: "Done"
-default_sort: "content_views"
+default_sort: "content-views"
 row_limit: 20
+column_management_mode: "none"
+pagination: false
 used_in_reports:
   - "404-pages"
 ---
@@ -16,49 +18,35 @@ A table showing 404 error pages with their view counts.
 
 ## Widget Configuration
 
-- **Component**: [Table](../components/table.md)
+- **Component**: [Data Table](../components/data-table.md)
 - **Add-on**: Free
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 
-## Component Configuration
+## Display Settings
 
 | Property | Value |
 |----------|-------|
-| **Title** | null |
 | **Default Sort** | Content Views (descending) |
 | **Row Limit** | 20 |
 | **Pagination** | No |
-| **Link to Full Report** | null |
+| **Column Management Mode** | "none" |
 
 ## Used In Reports
-
-This widget appears in the following report pages:
 
 - [404 Pages](../reports/page-insights/404-pages.md) - Row 1, full width
 
 ## Table Structure
 
-### Columns
-
-| Column | Label Override | Sortable | Default Visibility |
-|--------|----------------|----------|-------------------|
-| [URL](../columns/url.md) | - | No (pre-sorted) | Shown |
-| [Content Views](../columns/content-views.md) | Views | No (pre-sorted) | Shown |
-
-**Note:** This table uses the Table component (not Data Table), so columns are pre-sorted by Content Views and not interactively sortable.
+| Column | Sortable | Header Label |
+|--------|----------|--------------|
+| [URL](../columns/url.md) | No | URL |
+| [Content Views](../columns/content-views.md) | No | Views |
 
 ## Empty State
 
-When no data available:
-- "No 404 pages found for the selected period."
-
-## Related Documentation
-
-- [404 Pages Report](../reports/page-insights/404-pages.md)
-- [Table Component](../components/table.md)
-- [URL Column](../columns/url.md)
+"No 404 pages found for the selected period"
 
 ---
 
-*Last Updated: 2025-11-12*
+*Last Updated: 2025-11-23*

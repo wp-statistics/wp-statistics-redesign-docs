@@ -1,9 +1,14 @@
 ---
 title: "Top Entry Pages"
 type: "widget"
-component: "table"
+component: "data-table"
 add_on: "Data Plus"
 status: "Done"
+default_sort: "unique-entrances"
+row_limit: 5
+column_management_mode: "none"
+pagination: false
+link_to_full_report: true
 used_in_reports:
   - "visitors-overview"
 ---
@@ -14,58 +19,37 @@ Displays the top 5 entry pages based on unique entrances count in a simplified t
 
 ## Widget Configuration
 
-- **Component**: [Table](../components/table.md)
+- **Component**: [Data Table](../components/data-table.md)
 - **Add-on**: Data Plus (premium add-on)
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 
-## Component Configuration
+## Display Settings
 
 | Property | Value |
 |----------|-------|
-| **Title** | Top Entry Pages |
-| **Default Sort** | unique_entrances |
+| **Default Sort** | Unique Entrances (descending) |
 | **Row Limit** | 5 |
-| **Pagination** | ❌ No |
-| **Link to Full Report** | ✅ Yes (links to Entry Pages report) |
+| **Pagination** | No |
+| **Column Management Mode** | "none" |
+| **Link to Full Report** | Yes - [Entry Pages](../reports/page-insights/entry-pages.md) |
 
 ## Used In Reports
-
-This widget is used in the following reports:
 
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 3, left column (only shown when Data Plus add-on is activated)
 
 ## Table Structure
 
-### Columns
-
-| Column | Sortable | Default Visibility |
-|--------|----------|-------------------|
-| [Entry Page](../columns/entry-page.md) | No | Shown |
-| [Unique Entrances](../columns/unique-entrances.md) | No (static sort) | Shown |
-| [View Page](../columns/view-page.md) | No | Shown |
-
-**Note**: Data is pre-sorted by Unique Entrances in descending order. This is a static sort and cannot be changed by users.
-
-## Premium Add-on
-
-This widget requires the Data Plus add-on to be activated. When Data Plus is not activated:
-- The widget is not displayed in the Visitors Overview report
-- The Top Referrers widget expands to full width
+| Column | Sortable | Header Label |
+|--------|----------|--------------|
+| [Entry Page](../columns/entry-page.md) | No | Entry Page |
+| [Unique Entrances](../columns/unique-entrances.md) | No | Unique Entrances |
+| [View Page](../columns/view-page.md) | No | (No header) |
 
 ## Empty State
 
-When no entry page data is available for the selected period:
-- "No data available for the selected period"
-
-## Related Documentation
-
-- [Table Component](../components/table.md)
-- [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
-- [Entry Page Column](../columns/entry-page.md)
-- [Unique Entrances Column](../columns/unique-entrances.md)
-- [View Page Column](../columns/view-page.md)
+"No data available for the selected period"
 
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-11-23*

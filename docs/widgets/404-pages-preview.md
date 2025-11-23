@@ -1,12 +1,15 @@
 ---
 title: "404 Pages Preview"
 type: "widget"
-component: "table"
+component: "data-table"
 add_on: "Free"
 status: "Done"
 figma: ""
 default_sort: "content-views"
 row_limit: 5
+column_management_mode: "none"
+pagination: false
+link_to_full_report: true
 used_in_reports:
   - "page-insights-overview"
 ---
@@ -17,15 +20,20 @@ Preview of the top 5 pages generating 404 errors with a link to the full 404 Pag
 
 ## Widget Configuration
 
-- **Component**: [Table](../components/table.md)
+- **Component**: [Data Table](../components/data-table.md)
 - **Add-on**: Free
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Display Settings
 
-- **Default Sort**: Content Views (descending)
-- **Row Limit**: 5
+| Property | Value |
+|----------|-------|
+| **Default Sort** | Content Views (descending) |
+| **Row Limit** | 5 |
+| **Pagination** | No |
+| **Column Management Mode** | "none" |
+| **Link to Full Report** | Yes - [404 Pages](../reports/page-insights/404-pages.md) |
 
 ## Used In Reports
 
@@ -38,19 +46,10 @@ Preview of the top 5 pages generating 404 errors with a link to the full 404 Pag
 | [URL](../columns/url.md) | No | URL |
 | [Content Views](../columns/content-views.md) | No | Views |
 
-## Features
-
-### Link to Full Report
-- Links to [404 Pages](../reports/page-insights/404-pages.md) report for complete data
-
-### Pre-sorted Data
-- Shows top 5 URLs with most 404 errors
-- No interactive sorting available
-
 ## Empty State
 
 "No 404 pages found for the selected period"
 
 ---
 
-*Last Updated: 2025-11-12*
+*Last Updated: 2025-11-23*

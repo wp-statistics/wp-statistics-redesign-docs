@@ -1,44 +1,46 @@
 ---
-title: "Table"
+title: "Table (Deprecated)"
 type: "component"
-status: "Done"
-used_in_widgets:
-  - "404-pages-preview"
-  - "404-pages-table"
-  - "author-pages-preview"
-  - "top-entry-pages"
-  - "top-exit-pages-preview"
-  - "top-entry-pages-preview"
-  - "top-pages-preview"
-  - "top-visitors"
-  - "recent-pages-preview"
-  - "search-terms-table"
+status: "Deprecated"
+deprecated: true
+replaced_by: "data-table"
+used_in_widgets: []
 ---
 
-# Table Component
+# Table Component (Deprecated)
+
+> **⚠️ DEPRECATED**: This component has been deprecated and replaced by the [Data Table Component](../components/data-table.md) with `columnManagementMode: "none"`. All widgets have been migrated to use Data Table. This documentation is kept for historical reference only.
 
 A simplified table component for displaying pre-sorted structured data without interactive sorting or column management features.
+
+## Migration Notice
+
+This component has been consolidated into the Data Table component. To achieve the same behavior:
+
+- Use [Data Table Component](../components/data-table.md)
+- Set `columnManagementMode: "none"`
+- Configure other options as needed (pagination, linkToFullReport, etc.)
 
 ## Component Configuration
 
 - **Type**: Component
-- **Status**: Done
-- **Figma Design**: [Add link when available]
+- **Status**: Deprecated
+- **Replaced By**: [Data Table Component](../components/data-table.md)
 
-## Used In Widgets
+## Previously Used In Widgets
 
-This component is used by the following widgets:
+All of these widgets have been migrated to use the Data Table component:
 
-- [404 Pages Preview](../widgets/404-pages-preview.md)
-- [404 Pages Table](../widgets/404-pages-table.md)
-- [Author Pages Preview](../widgets/author-pages-preview.md)
-- [Recent Pages Preview](../widgets/recent-pages-preview.md)
-- [Search Terms Table](../widgets/search-terms-table.md)
-- [Top Entry Pages](../widgets/top-entry-pages.md)
-- [Top Entry Pages Preview](../widgets/top-entry-pages-preview.md)
-- [Top Exit Pages Preview](../widgets/top-exit-pages-preview.md)
-- [Top Pages Preview](../widgets/top-pages-preview.md)
-- [Top Visitors](../widgets/top-visitors.md)
+- [404 Pages Preview](../widgets/404-pages-preview.md) - Now uses Data Table
+- [404 Pages Table](../widgets/404-pages-table.md) - Now uses Data Table
+- [Author Pages Preview](../widgets/author-pages-preview.md) - Now uses Data Table
+- [Recent Pages Preview](../widgets/recent-pages-preview.md) - Now uses Data Table
+- [Search Terms Table](../widgets/search-terms-table.md) - Now uses Data Table
+- [Top Entry Pages](../widgets/top-entry-pages.md) - Now uses Data Table
+- [Top Entry Pages Preview](../widgets/top-entry-pages-preview.md) - Now uses Data Table
+- [Top Exit Pages Preview](../widgets/top-exit-pages-preview.md) - Now uses Data Table
+- [Top Pages Preview](../widgets/top-pages-preview.md) - Now uses Data Table
+- [Top Visitors](../widgets/top-visitors.md) - Now uses Data Table
 
 ## Overview
 
@@ -103,4 +105,5 @@ When no data is available for the selected period:
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-11-23*
+*Deprecated: 2025-11-23*

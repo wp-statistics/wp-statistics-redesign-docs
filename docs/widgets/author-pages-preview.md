@@ -1,12 +1,15 @@
 ---
 title: "Author Pages Preview"
 type: "widget"
-component: "table"
+component: "data-table"
 add_on: "Free"
 status: "Done"
 figma: ""
 default_sort: "content-visitors"
 row_limit: 5
+column_management_mode: "none"
+pagination: false
+link_to_full_report: true
 used_in_reports:
   - "page-insights-overview"
 ---
@@ -17,15 +20,20 @@ Preview of the top 5 authors by page views with a link to the full Author Pages 
 
 ## Widget Configuration
 
-- **Component**: [Table](../components/table.md)
+- **Component**: [Data Table](../components/data-table.md)
 - **Add-on**: Free
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Display Settings
 
-- **Default Sort**: Content Visitors (descending)
-- **Row Limit**: 5
+| Property | Value |
+|----------|-------|
+| **Default Sort** | Content Visitors (descending) |
+| **Row Limit** | 5 |
+| **Pagination** | No |
+| **Column Management Mode** | "none" |
+| **Link to Full Report** | Yes - [Author Pages](../reports/page-insights/author-pages.md) |
 
 ## Used In Reports
 
@@ -39,19 +47,10 @@ Preview of the top 5 authors by page views with a link to the full Author Pages 
 | [Content Visitors](../columns/content-visitors.md) | No | Author's Page Views |
 | [View Page](../columns/view-page.md) | No | (No header) |
 
-## Features
-
-### Link to Full Report
-- Links to [Author Pages](../reports/page-insights/author-pages.md) report for complete data
-
-### Pre-sorted Data
-- Shows top 5 authors by page visitors
-- No interactive sorting available
-
 ## Empty State
 
 "No author page data available for the selected period"
 
 ---
 
-*Last Updated: 2025-11-12*
+*Last Updated: 2025-11-23*
