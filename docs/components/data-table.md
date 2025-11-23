@@ -89,7 +89,7 @@ Widgets using this component can configure the following options:
 | **Row Limit** | Number | Number of rows to display per page | 50 |
 | **Column Management Mode** | String | Column control level: "none", "visibility", or "full" | "full" |
 | **Pagination** | Boolean | Enable/disable pagination controls | true |
-| **Link to Full Report** | Object/Boolean | Link configuration {text, url} or true for default pattern | null |
+| **Link to Full Report** | Object/Boolean | Link configuration \{text, url\} or true for default pattern | null |
 
 ## Column Management Modes
 
