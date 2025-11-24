@@ -124,8 +124,14 @@ The last page a visitor views before leaving the website or ending their session
 ### [404 Page](content-metrics/404-page.md)
 An HTTP error page displayed when a requested URL does not exist on the website.
 
-### [Search Term](content-metrics/search-term.md)
-The words or phrases a visitor uses in a search engine to discover the website (also called Search Query or Keyword).
+---
+
+## Visitor Behavior
+
+Actions and interactions visitors perform on the website.
+
+### [Search Term](visitor-behavior/search-term.md)
+Words or phrases visitors type into the WordPress site search to find content on your website.
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Search Term"
 type: "definition"
-category: "content-metrics"
+category: "visitor-behavior"
 status: "Need Review"
 aliases: ["Search Query", "Search Keywords", "Internal Search"]
 ---

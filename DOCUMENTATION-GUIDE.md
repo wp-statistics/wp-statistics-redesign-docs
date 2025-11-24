@@ -103,7 +103,7 @@ settings_count: 5  # Number of settings in this group
 
 #### Definitions
 ```yaml
-category: "core-metrics" | "visitor-classification" | "traffic-sources" | "technical-attributes" | "content-metrics" | "time-concepts"
+category: "core-metrics" | "visitor-classification" | "traffic-sources" | "technical-attributes" | "content-metrics" | "visitor-behavior" | "time-concepts"
 aliases: ["alternative-name-1", "alternative-name-2"]  # Optional
 ```
 
@@ -565,7 +565,7 @@ Brief explanation of privacy implications
 ---
 title: "Term Name"
 type: "definition"
-category: "core-metrics" | "visitor-classification" | "traffic-sources" | "technical-attributes" | "content-metrics" | "time-concepts"
+category: "core-metrics" | "visitor-classification" | "traffic-sources" | "technical-attributes" | "content-metrics" | "visitor-behavior" | "time-concepts"
 status: "Need Review"
 aliases: ["Alternative Name 1", "Alternative Name 2"]
 ---
