@@ -108,6 +108,7 @@ Filter Groups define which filters are bundled together for specific use cases a
 **Includes**: Total Views, Total Sessions, First Seen, Bounce, Views per Session, Session Duration, User ID, Visitor Type, Country, Referrer, City, Device Type, OS, Browser, Timezone, Language, Screen Resolution, IP Address/Hash
 
 **Used In Reports**:
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
 - [Visitors](../reports/visitor-insights/visitors.md)
 
 ---

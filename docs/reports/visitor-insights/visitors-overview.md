@@ -7,7 +7,7 @@ add_on: "Free"
 status: "Done"
 interactions:
   - "Date Picker"
-  - "Filters"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["overview-metrics"]
@@ -37,7 +37,7 @@ Comprehensive snapshot of your website's traffic and visitor behavior.
 ## Available Interactions
 
 - **Date Picker**
-- **Filters**
+- **[Advanced Filters](../../global/advanced-filters.md)**: Visitor Analysis filter group
 
 ## Widget Layout
 

@@ -7,7 +7,7 @@ add_on: "Free"
 status: "Done"
 interactions:
   - "Date Picker"
-  - "Filters"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["latest-visitors"]
@@ -27,7 +27,7 @@ Displays the latest visitors to your website with detailed information about the
 ## Available Interactions
 
 - **Date Picker**
-- **Filters**: Browser, Country, OS, Referrer, Source Category, User, IP Address/Hash
+- **[Advanced Filters](../../global/advanced-filters.md)**: Visitor Analysis filter group
 
 ## Widget Layout
 
