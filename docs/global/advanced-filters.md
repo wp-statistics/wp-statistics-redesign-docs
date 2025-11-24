@@ -61,6 +61,8 @@ This section documents all available filter types with their operators and input
 | Operating System (OS) | Filter by visitor operating system | is, is not | Dropdown (Windows, macOS, Linux, iOS, Android, etc.) |
 | Device Type | Filter by device category | is, is not | Dropdown (Desktop, Mobile, Tablet) |
 | Screen Resolution | Filter by screen resolution | is, is not | Dropdown (common resolutions) |
+| Timezone | Filter by visitor timezone | is, is not | Dropdown |
+| Language | Filter by visitor language | is, is not | Dropdown |
 
 ### Content Filters
 
@@ -75,13 +77,18 @@ This section documents all available filter types with their operators and input
 
 | Filter Name | Description | Operators | Input Type |
 |-------------|-------------|-----------|------------|
-| User | Filter by logged-in WordPress user | is, is not | Dropdown (searchable) |
+| User ID | Filter by user ID presence | is, is not, is null | Number input |
+| Logged-in User | Filter by specific logged-in WordPress user | is, is not | Dropdown (searchable) |
 | IP Address/Hash | Filter by visitor IP address or hash | is, is not, contains | Text input |
 | Source Category | Filter by traffic source category | is, is not | Dropdown (Direct, Search Engine, Social Media, Referral, Campaign, Internal) |
 | Referrer | Filter by referring domain or URL | is, is not, contains | Dropdown or text input (searchable) |
-| New vs Returning | Filter by visitor type | is | Dropdown (New Visitors, Returning Visitors) |
+| Visitor Type | Filter by visitor type | is | Dropdown (New, Returning, All) |
 | Session Duration | Filter by session length | greater than, less than, between | Number input (seconds or time picker) |
-| Pages per Session | Filter by pages viewed in session | greater than, less than, equals, between | Number input |
+| Views per Session | Filter by pages viewed per session | equals, greater than, less than | Number input |
+| Total Views | Filter by total page views | greater than, less than, between | Number input |
+| Total Sessions | Filter by total sessions | greater than, less than, between | Number input |
+| First Seen | Filter by first visit date | between, before, after | Date picker |
+| Bounce | Filter by bounce status | is | Dropdown (Yes, No) |
 
 ### Marketing Filters
 
@@ -98,7 +105,7 @@ Filter Groups define which filters are bundled together for specific use cases a
 
 ### Visitor Analysis Filters
 
-**Includes**: Browser, Country, OS, Referrer, Source Category, User, IP Address/Hash
+**Includes**: Total Views, Total Sessions, First Seen, Bounce, Views per Session, Session Duration, User ID, Visitor Type, Country, Referrer, City, Device Type, OS, Browser, Timezone, Language, Screen Resolution, IP Address/Hash
 
 **Used In Reports**:
 - [Visitors](../reports/visitor-insights/visitors.md)
