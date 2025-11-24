@@ -35,7 +35,7 @@ This guide ensures consistency and completeness when creating or updating docume
 
 ## Documentation Types
 
-We have 6 types of documentation:
+We have 7 types of documentation:
 
 1. **Reports** - Report pages (e.g., Visitors, Views)
 2. **Widgets** - Reusable widgets used in reports
@@ -43,6 +43,7 @@ We have 6 types of documentation:
 4. **Columns** - Reusable table column definitions
 5. **Settings** - Settings pages and configuration options
 6. **Global** - Global rules, menu, interactions
+7. **Definitions** - Term definitions and concepts (for internal understanding, not cross-linked)
 
 ---
 
@@ -98,6 +99,12 @@ used_in_widgets:
 ```yaml
 add_on: "Free" | "Data Plus" | etc.
 settings_count: 5  # Number of settings in this group
+```
+
+#### Definitions
+```yaml
+category: "core-metrics" | "visitor-classification" | "traffic-sources" | "technical-attributes" | "content-metrics" | "time-concepts"
+aliases: ["alternative-name-1", "alternative-name-2"]  # Optional
 ```
 
 ---
@@ -551,6 +558,69 @@ Brief explanation of privacy implications
 
 *Last Updated: YYYY-MM-DD*
 ```
+
+### New Definition Template
+
+```markdown
+---
+title: "Term Name"
+type: "definition"
+category: "core-metrics" | "visitor-classification" | "traffic-sources" | "technical-attributes" | "content-metrics" | "time-concepts"
+status: "Need Review"
+aliases: ["Alternative Name 1", "Alternative Name 2"]
+---
+
+# Term Name
+
+One-sentence definition of the term.
+
+## Definition
+
+Detailed explanation of what this term means in the context of WP Statistics.
+
+## Key Characteristics
+
+- Bullet points highlighting essential attributes
+- How it's calculated (if applicable)
+- Important rules or thresholds
+
+## How It Works
+
+Explanation of how this concept functions in practice.
+
+## Examples
+
+**Example 1: [Scenario Name]**
+Concrete example with data demonstrating the concept.
+
+**Example 2: [Scenario Name]**
+Another example from a different angle.
+
+## Why It Matters
+
+Explanation of why this concept is important:
+- Use case 1
+- Use case 2
+- Use case 3
+
+## Relationship to Other Metrics
+
+How this term relates to other concepts (without creating links).
+
+## Common Misconceptions
+
+**"[Misconception statement]"**
+- Explanation of why this is incorrect and what's actually true.
+
+**"[Another misconception]"**
+- Clarification.
+
+---
+
+*Last Updated: YYYY-MM-DD*
+```
+
+**Note:** Definitions are standalone reference materials for internal understanding. They do NOT use bidirectional cross-references or link to other documentation files.
 
 ---
 
