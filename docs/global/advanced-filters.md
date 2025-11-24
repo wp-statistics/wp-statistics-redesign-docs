@@ -78,7 +78,7 @@ This section documents all available filter types with their operators and input
 | Filter Name | Description | Operators | Input Type |
 |-------------|-------------|-----------|------------|
 | User ID | Filter by user ID presence | is, is not, is null | Number input |
-| Logged-in User | Filter by specific logged-in WordPress user | is, is not | Dropdown (searchable) |
+| Login Status | Filter by visitor authentication status | is | Dropdown (Logged-in, Anonymous) |
 | IP Address/Hash | Filter by visitor IP address or hash | is, is not, contains | Text input |
 | Source Category | Filter by traffic source category | is, is not | Dropdown (Direct, Search Engine, Social Media, Referral, Campaign, Internal) |
 | Referrer | Filter by referring domain or URL | is, is not, contains | Dropdown or text input (searchable) |
@@ -105,7 +105,7 @@ Filter Groups define which filters are bundled together for specific use cases a
 
 ### Visitor Analysis Filters
 
-**Includes**: Total Views, Total Sessions, First Seen, Bounce, Views per Session, Session Duration, User ID, Visitor Type, Country, Referrer, City, Device Type, OS, Browser, Timezone, Language, Screen Resolution, IP Address/Hash
+**Includes**: Total Views, Total Sessions, First Seen, Bounce, Views per Session, Session Duration, User ID, Login Status, Visitor Type, Country, Referrer, City, Device Type, OS, Browser, Timezone, Language, Screen Resolution, IP Address/Hash
 
 **Used In Reports**:
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
