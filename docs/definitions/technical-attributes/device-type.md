@@ -52,14 +52,6 @@ E-commerce: Mobile 60-75%, Desktop 20-35%, Tablet 5-10%
 - Casual browsing
 - Evening usage peaks
 
-## Common Misconceptions
-
-**"Responsive design = same experience all devices"**
-- No. Should optimize per device, not just adapt layout.
-
-**"Desktop is dying"**
-- Still important for complex tasks, B2B, certain demographics.
-
 ---
 
 *Last Updated: 2025-11-24*

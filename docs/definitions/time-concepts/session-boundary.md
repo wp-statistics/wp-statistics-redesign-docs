@@ -56,14 +56,6 @@ Jan 11 report: 1 session
 Total: 2 sessions from one continuous visit
 ```
 
-## Common Misconceptions
-
-**"Session ends when browser closes"**
-- No. Ends 30 min after last activity or at midnight.
-
-**"Sessions can span multiple days"**
-- No. Midnight boundary ensures one calendar day per session.
-
 ---
 
 *Last Updated: 2025-11-24*

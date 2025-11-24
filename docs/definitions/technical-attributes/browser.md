@@ -60,17 +60,6 @@ Mobile: Chrome Mobile 60-65%, Safari Mobile 25-30%, Samsung 5-8%
 4. Mobile browsers (iOS Safari, Chrome Mobile)
 ```
 
-## Common Misconceptions
-
-**"Everyone uses Chrome"**
-- Dominant but not universal. Safari significant (especially US/iOS).
-
-**"I only need to test Chrome"**
-- No. Safari has unique behaviors. Always test Safari (especially iOS).
-
-**"Browser version doesn't matter"**
-- Matters for features, security, compatibility.
-
 ---
 
 *Last Updated: 2025-11-24*

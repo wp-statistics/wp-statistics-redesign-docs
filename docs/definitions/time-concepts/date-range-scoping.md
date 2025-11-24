@@ -49,14 +49,6 @@ Can't add across ranges:
 Jan visitors + Feb visitors ≠ Q1 visitors (overlap possible)
 ```
 
-## Common Misconceptions
-
-**"All visitors shown were new during the range"**
-- No. Classification is all-time. Range only filters which activity you see.
-
-**"I can add January + February = Q1"**
-- No. Same visitors may appear in both months.
-
 ---
 
 *Last Updated: 2025-11-24*

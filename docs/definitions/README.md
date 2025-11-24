@@ -121,9 +121,6 @@ The first page a visitor views when starting a session on the website (also call
 ### [Exit Page](content-metrics/exit-page.md)
 The last page a visitor views before leaving the website or ending their session.
 
-### [404 Page](content-metrics/404-page.md)
-An HTTP error page displayed when a requested URL does not exist on the website.
-
 ---
 
 ## Visitor Behavior

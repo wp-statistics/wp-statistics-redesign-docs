@@ -47,35 +47,6 @@ Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHT
 Mozilla/5.0 (X11; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0
 ```
 
-## WP Statistics Usage
-
-**Parsing:**
-- Extracts browser name/version
-- Identifies OS
-- Determines device type (Desktop/Mobile/Tablet)
-
-**Not Stored:**
-- Full UA string typically not displayed
-- Only parsed data stored
-
-## Limitations
-
-- Can be spoofed (user can modify)
-- Privacy tools may alter it
-- "Frozen" UAs (browsers freezing strings for privacy)
-- Moving to User-Agent Client Hints (new standard)
-
-## Common Misconceptions
-
-**"User Agent identifies individual users"**
-- No. Many users share same UA. Identifies software config, not individuals.
-
-**"User Agent is always accurate"**
-- Can be spoofed. Generally accurate for analytics but not for security.
-
-**"All Chrome users have same User Agent"**
-- No. UA includes OS, device, version, creating many variations.
-
 ---
 
 *Last Updated: 2025-11-24*

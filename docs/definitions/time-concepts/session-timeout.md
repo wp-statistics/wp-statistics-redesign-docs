@@ -39,29 +39,6 @@ Multiple Sessions in One Day:
 Result: 1 visitor, 2 sessions
 ```
 
-## Why 30 Minutes
-
-- Industry standard (Google Analytics, most platforms)
-- Allows comparison across tools
-- Balance: separates distinct visits, allows reading/research
-
-## Impact on Metrics
-
-- Sessions count increases (timeouts create new sessions)
-- Duration underestimated (time on last page before timeout NOT counted)
-- Bounces may include long reading sessions that timed out
-
-## Common Misconceptions
-
-**"Timeout means visitor logged out"**
-- No. Analytics concept only, doesn't affect WordPress login.
-
-**"30 minutes is when visitor left"**
-- No. They may have left immediately. Timeout is just when session ends due to inactivity.
-
-**"I can change the timeout"**
-- No. Fixed at 30 minutes for consistency.
-
 ---
 
 *Last Updated: 2025-11-24*

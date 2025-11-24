@@ -52,24 +52,6 @@ Windows/macOS/Linux → Desktop/Laptop
 iOS/Android → Mobile/Tablet
 ```
 
-## Demographics
-
-- **iOS users:** Often higher income
-- **macOS users:** Often creative professionals
-- **Linux users:** Technical audience
-- **Windows:** Broad demographic
-
-## Common Misconceptions
-
-**"Everyone uses Windows"**
-- Windows dominates desktop, but mobile (iOS/Android) often exceeds desktop.
-
-**"iOS and Android users behave the same"**
-- Different demographics, behaviors, monetization. Analyze separately.
-
-**"macOS users are small minority"**
-- 15-20% desktop. Can be 40-60% for creative/design sites.
-
 ---
 
 *Last Updated: 2025-11-24*
