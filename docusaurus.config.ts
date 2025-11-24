@@ -100,6 +100,10 @@ const config: Config = {
               label: 'Components',
               to: '/components',
             },
+            {
+              label: 'Definitions',
+              to: '/definitions',
+            },
           ],
         },
         {
