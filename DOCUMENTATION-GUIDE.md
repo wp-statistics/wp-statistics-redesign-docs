@@ -704,7 +704,7 @@ When adding new items, update [docs/README.md](README.md):
 
 **Examples:**
 - ✅ `visitors-overview.md`
-- ✅ `latest-visitors.md`
+- ✅ `visitors-table.md`
 - ✅ `data-table.md`
 - ✅ `visitor-informations.md`
 - ❌ `VisitorsOverview.md`

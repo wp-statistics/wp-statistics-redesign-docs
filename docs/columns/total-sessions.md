@@ -3,7 +3,7 @@ title: "Total Sessions Column"
 type: "column"
 status: "Done"
 used_in_widgets:
-  - "latest-visitors"
+  - "visitors-table"
   - "top-visitors-table"
 ---
 
@@ -21,7 +21,7 @@ Shows the count of distinct sessions by the visitor within the active date range
 
 This column is used in the following widgets:
 
-- [Latest Visitors](../widgets/latest-visitors.md)
+- [Visitors Table](../widgets/visitors-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
 
 ## Display
@@ -61,7 +61,7 @@ Displays: "\{value\} sessions in selected period"
 
 ## Related Documentation
 
-- [Latest Visitors Widget](../widgets/latest-visitors.md)
+- [Visitors Table Widget](../widgets/visitors-table.md)
 - [Top Visitors Table Widget](../widgets/top-visitors-table.md)
 - [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 - [Data Model](../global/data-model.md)

@@ -4,7 +4,7 @@ type: "column"
 status: "Done"
 used_in_widgets:
   - "campaigns-table"
-  - "latest-visitors"
+  - "visitors-table"
   - "top-visitors-table"
   - "top-entry-pages"
   - "top-entry-pages-preview"
@@ -26,7 +26,7 @@ Shows the first page a visitor landed on in a session.
 This column is used in the following widgets:
 
 - [Campaigns Table](../widgets/campaigns-table.md)
-- [Latest Visitors](../widgets/latest-visitors.md)
+- [Visitors Table](../widgets/visitors-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
 - [Top Entry Pages](../widgets/top-entry-pages.md)
 - [Top Entry Pages Preview](../widgets/top-entry-pages-preview.md)
@@ -144,7 +144,7 @@ install-addon
 
 - [Attribution Settings](../global/attribution-settings.md)
 - [Data Model](../global/data-model.md)
-- [Latest Visitors Widget](../widgets/latest-visitors.md)
+- [Visitors Table Widget](../widgets/visitors-table.md)
 - [Exit Page Column](exit-page.md)
 - [Views Report](../reports/visitor-insights/views.md)
 - [Data Table Component](../components/data-table.md)

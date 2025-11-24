@@ -164,7 +164,7 @@ When designs are ready:
 
 Use **kebab-case** for all filenames:
 - ✅ `visitors-overview.md`
-- ✅ `latest-visitors.md`
+- ✅ `visitors-table.md`
 - ✅ `data-table.md`
 - ❌ `VisitorsOverview.md`
 - ❌ `latest_visitors.md`

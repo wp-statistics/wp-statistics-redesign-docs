@@ -3,7 +3,7 @@ title: "Total Views Column"
 type: "column"
 status: "Done"
 used_in_widgets:
-  - "latest-visitors"
+  - "visitors-table"
   - "latest-views-table"
   - "top-visitors-table"
   - "top-visitors"
@@ -23,7 +23,7 @@ Shows the count of page-views made by the visitor within the active date range.
 
 This column is used in the following widgets:
 
-- [Latest Visitors](../widgets/latest-visitors.md)
+- [Visitors Table](../widgets/visitors-table.md)
 - [Latest Views Table](../widgets/latest-views-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
 - [Top Visitors](../widgets/top-visitors.md)
@@ -72,7 +72,7 @@ Displays: "\{value\} Page Views from this visitor in selected period"
 ## Related Documentation
 
 - [Data Model](../global/data-model.md)
-- [Latest Visitors Widget](../widgets/latest-visitors.md)
+- [Visitors Table Widget](../widgets/visitors-table.md)
 - [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 - [Views Report](../reports/visitor-insights/views.md)
 - [Total Sessions Column](total-sessions.md)

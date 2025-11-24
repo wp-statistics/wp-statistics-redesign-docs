@@ -3,7 +3,7 @@ title: "Visitor Last Visit Column"
 type: "column"
 status: "Done"
 used_in_widgets:
-  - "latest-visitors"
+  - "visitors-table"
   - "latest-views-table"
   - "online-visitors-table"
 ---
@@ -22,7 +22,7 @@ Displays the date and time of a visitor's most recent visit to the website.
 
 This column is used in the following widgets:
 
-- [Latest Visitors](../widgets/latest-visitors.md)
+- [Visitors Table](../widgets/visitors-table.md)
 - [Latest Views Table](../widgets/latest-views-table.md)
 - [Online Visitors Table](../widgets/online-visitors-table.md)
 
@@ -51,7 +51,7 @@ This column is used in the following widgets:
 
 ## Related Documentation
 
-- [Latest Visitors Widget](../widgets/latest-visitors.md)
+- [Visitors Table Widget](../widgets/visitors-table.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

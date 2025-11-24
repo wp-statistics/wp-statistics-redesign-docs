@@ -11,7 +11,7 @@ interactions:
   - "Filters"
 widgets:
   - row: 1
-    columns: ["latest-visitors"]
+    columns: ["visitors-table"]
 ---
 
 # Referred Visitors
@@ -34,7 +34,7 @@ Displays only visitors who have a referrer, excluding direct traffic.
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Latest Visitors](../../widgets/latest-visitors.md) - Shows only visitors with referrer information
+- [Visitors Table](../../widgets/visitors-table.md) - Shows only visitors with referrer information
 
 ---
 

@@ -11,7 +11,7 @@ used_in_widgets:
   - "category-pages-table"
   - "entry-pages-table"
   - "exit-pages-table"
-  - "latest-visitors"
+  - "visitors-table"
   - "latest-views-table"
   - "logged-in-users-list"
   - "logged-in-users-views-table"
@@ -28,7 +28,6 @@ used_in_widgets:
   - "top-pages-preview"
   - "top-search-terms-list"
   - "top-visitors"
-  - "top-visitors-table"
   - "visitor-list"
 ---
 
@@ -54,7 +53,7 @@ This component is used by the following widgets:
 - [Category Pages Table](../widgets/category-pages-table.md)
 - [Entry Pages Table](../widgets/entry-pages-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)
-- [Latest Visitors](../widgets/latest-visitors.md)
+- [Visitors Table](../widgets/visitors-table.md)
 - [Latest Views Table](../widgets/latest-views-table.md)
 - [Logged-in Users List](../widgets/logged-in-users-list.md)
 - [Logged-in Users Views Table](../widgets/logged-in-users-views-table.md)
@@ -71,7 +70,6 @@ This component is used by the following widgets:
 - [Top Pages Preview](../widgets/top-pages-preview.md)
 - [Top Search Terms List](../widgets/top-search-terms-list.md)
 - [Top Visitors](../widgets/top-visitors.md)
-- [Top Visitors Table](../widgets/top-visitors-table.md)
 - [Visitor List](../widgets/visitor-list.md)
 
 ## Overview
@@ -123,11 +121,11 @@ When table has no data:
 
 ## Related Documentation
 
-- [Latest Visitors Widget](../widgets/latest-visitors.md)
+- [Visitors Table Widget](../widgets/visitors-table.md)
 - [Visitor List Widget](../widgets/visitor-list.md)
 - [Top Pages Widget](../widgets/top-pages.md)
 - [Global Rules](../global/global-rules.md)
 
 ---
 
-*Last Updated: 2025-11-23*
+*Last Updated: 2025-11-24*

@@ -3,7 +3,7 @@ title: "Visitor Info Column"
 type: "column"
 status: "Done"
 used_in_widgets:
-  - "latest-visitors"
+  - "visitors-table"
   - "latest-views-table"
   - "online-visitors-table"
   - "top-visitors-table"
@@ -24,7 +24,7 @@ Displays comprehensive visitor information through a series of icons and badges 
 
 This column is used in the following widgets:
 
-- [Latest Visitors](../widgets/latest-visitors.md)
+- [Visitors Table](../widgets/visitors-table.md)
 - [Latest Views Table](../widgets/latest-views-table.md)
 - [Online Visitors Table](../widgets/online-visitors-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
@@ -208,7 +208,7 @@ When data is unavailable or cannot be determined:
 
 ## Related Documentation
 
-- [Latest Visitors Widget](../widgets/latest-visitors.md)
+- [Visitors Table Widget](../widgets/visitors-table.md)
 - [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 - [Data Table Component](../components/data-table.md)
 

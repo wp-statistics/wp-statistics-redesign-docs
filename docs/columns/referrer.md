@@ -3,7 +3,7 @@ title: "Referrer Column"
 type: "column"
 status: "Done"
 used_in_widgets:
-  - "latest-visitors"
+  - "visitors-table"
   - "latest-views-table"
   - "online-visitors-table"
   - "top-visitors-table"
@@ -24,7 +24,7 @@ Displays the traffic source that referred the visitor to your website, shown as 
 
 This column is used in the following widgets:
 
-- [Latest Visitors](../widgets/latest-visitors.md)
+- [Visitors Table](../widgets/visitors-table.md)
 - [Latest Views Table](../widgets/latest-views-table.md)
 - [Online Visitors Table](../widgets/online-visitors-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
@@ -189,7 +189,7 @@ OTHER
 
 - [Attribution Settings](../global/attribution-settings.md)
 - [Data Model](../global/data-model.md)
-- [Latest Visitors Widget](../widgets/latest-visitors.md)
+- [Visitors Table Widget](../widgets/visitors-table.md)
 - [Visitor Sources Widget](../widgets/visitor-sources.md)
 - [Search Terms Report](../reports/visitor-insights/search-terms.md)
 - [Data Table Component](../components/data-table.md)

@@ -1,5 +1,5 @@
 ---
-title: "Latest Visitors"
+title: "Visitors Table"
 type: "widget"
 component: "data-table"
 add_on: "Free"
@@ -8,12 +8,13 @@ default_sort: "last_view"
 row_limit: 50
 used_in_reports:
   - "visitors"
+  - "top-visitors"
   - "referred-visitors"
 ---
 
-# Latest Visitors Widget
+# Visitors Table Widget
 
-Displays the most recent visitors to your website in a comprehensive data table.
+Displays visitor data in a comprehensive data table with configurable sorting, filtering, and column visibility.
 
 ## Widget Configuration
 
@@ -35,7 +36,10 @@ Displays the most recent visitors to your website in a comprehensive data table.
 ## Used In Reports
 
 - [Visitors](../reports/visitor-insights/visitors.md) - Row 1, full width
+- [Top Visitors](../reports/visitor-insights/top-visitors.md) - Row 1, full width (with custom configuration)
 - [Referred Visitors](../reports/referrals/referred-visitors.md) - Row 1, full width
+
+**Note**: The [Top Visitors](../reports/visitor-insights/top-visitors.md) report uses this widget with modified defaults including predefined filters, custom sorting, and different column visibility.
 
 ## Table Structure
 
@@ -63,10 +67,11 @@ When no visitors match criteria:
 ## Related Documentation
 
 - [Visitors Report](../reports/visitor-insights/visitors.md)
+- [Top Visitors Report](../reports/visitor-insights/top-visitors.md)
 - [Data Table Component](../components/data-table.md)
 - [Data Model](../global/data-model.md)
 - [Attribution Settings](../global/attribution-settings.md)
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-11-24*

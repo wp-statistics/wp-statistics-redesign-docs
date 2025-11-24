@@ -10,7 +10,7 @@ interactions:
   - "Advanced Filters"
 widgets:
   - row: 1
-    columns: ["latest-visitors"]
+    columns: ["visitors-table"]
 ---
 
 # Visitors Report
@@ -32,7 +32,7 @@ Displays the latest visitors to your website with detailed information about the
 ## Widget Layout
 
 ### Row 1 (Full Width)
-- [Latest Visitors](../../widgets/latest-visitors.md)
+- [Visitors Table](../../widgets/visitors-table.md)
 
 ---
 

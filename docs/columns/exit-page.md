@@ -3,7 +3,7 @@ title: "Exit Page Column"
 type: "column"
 status: "Done"
 used_in_widgets:
-  - "latest-visitors"
+  - "visitors-table"
   - "top-exit-pages-preview"
   - "top-visitors-table"
   - "top-visitors"
@@ -23,7 +23,7 @@ Shows the last page a visitor viewed in a session.
 
 This column is used in the following widgets:
 
-- [Latest Visitors](../widgets/latest-visitors.md)
+- [Visitors Table](../widgets/visitors-table.md)
 - [Top Exit Pages Preview](../widgets/top-exit-pages-preview.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
 - [Top Visitors](../widgets/top-visitors.md)
@@ -103,7 +103,7 @@ Displays full URL path
 
 - [Attribution Settings](../global/attribution-settings.md)
 - [Data Model](../global/data-model.md)
-- [Latest Visitors Widget](../widgets/latest-visitors.md)
+- [Visitors Table Widget](../widgets/visitors-table.md)
 - [Entry Page Column](entry-page.md)
 - [Views Report](../reports/visitor-insights/views.md)
 - [Data Table Component](../components/data-table.md)

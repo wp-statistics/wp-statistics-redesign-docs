@@ -225,7 +225,7 @@ The Attribution Model setting is configured in WP Statistics plugin settings (im
 ### Scope
 
 - Setting applies globally to all visitor tables and reports
-- Affects: Latest Visitors, Top Visitors, Single Visitor Report
+- Affects: Visitors Table, Top Visitors, Single Visitor Report
 - Takes effect immediately upon changing
 - Does not affect historical data, only display logic
 
@@ -237,7 +237,7 @@ The Attribution Model setting is configured in WP Statistics plugin settings (im
 - [Referrer Column](../columns/referrer.md)
 - [Entry Page Column](../columns/entry-page.md)
 - [Exit Page Column](../columns/exit-page.md)
-- [Latest Visitors Widget](../widgets/latest-visitors.md)
+- [Visitors Table Widget](../widgets/visitors-table.md)
 - [Top Visitors Table Widget](../widgets/top-visitors-table.md)
 - [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 

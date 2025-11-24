@@ -3,7 +3,7 @@ title: "Session Duration Column"
 type: "column"
 status: "Done"
 used_in_widgets:
-  - "latest-visitors"
+  - "visitors-table"
   - "top-visitors-table"
 ---
 
@@ -21,7 +21,7 @@ Shows the average time visitors spend during their sessions within the active da
 
 This column is used in the following widgets:
 
-- [Latest Visitors](../widgets/latest-visitors.md)
+- [Visitors Table](../widgets/visitors-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
 
 ## Display
@@ -60,7 +60,7 @@ Displays: "Average session duration: \{value\}"
 
 ## Related Documentation
 
-- [Latest Visitors Widget](../widgets/latest-visitors.md)
+- [Visitors Table Widget](../widgets/visitors-table.md)
 - [Top Visitors Table Widget](../widgets/top-visitors-table.md)
 - [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 - [Online For Column](online-for.md) - Shows current session duration for online visitors
