@@ -45,20 +45,6 @@ Multiple visits in one month:
 - March report: 1 visitor (new at start, returning for subsequent visits)
 ```
 
-## Typical Distribution
-
-- Content/Blog sites: 60-80% returning
-- E-commerce: 40-60% returning
-- New sites: 20-40% returning (growing)
-
-## Common Misconceptions
-
-**"High returning % means no growth"**
-- No. Indicates loyalty. Track new visitor count separately for growth.
-
-**"Returning visitors always convert better"**
-- Often true, but depends on context and offer.
-
 ---
 
 *Last Updated: 2025-11-24*

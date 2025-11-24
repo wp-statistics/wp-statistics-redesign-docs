@@ -41,31 +41,6 @@ Anonymous to Logged-in Transition:
 - May appear as 2 separate visitors in reports
 ```
 
-## Available Data
-
-- User ID
-- Username
-- Email
-- Role (Admin, Editor, Subscriber, etc.)
-- Can segment by role
-- Cross-device activity combined
-
-## Use Cases
-
-- Member site analytics
-- SaaS/dashboard tracking
-- User role analysis
-- Support/customer success
-- Feature usage by user
-
-## Common Misconceptions
-
-**"Logged-in users aren't tracked"**
-- Wrong. They ARE tracked, with additional user ID information.
-
-**"Same user on phone and laptop = 2 users"**
-- No. User ID tracks them as 1 user across devices.
-
 ---
 
 *Last Updated: 2025-11-24*

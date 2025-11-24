@@ -39,19 +39,6 @@ Different people, same IP = same visitor
 - Profile data: Name, email, role
 - Privacy: More identifiable
 
-## Typical Distribution
-
-Most sites: 80-95% anonymous visitors
-Member sites: 20-50% anonymous (more logged-in)
-
-## Common Misconceptions
-
-**"Anonymous means not tracked"**
-- No. Fully tracked, just without user account data.
-
-**"Cookies identify anonymous visitors"**
-- No. WP Statistics uses IP, not cookies.
-
 ---
 
 *Last Updated: 2025-11-24*
