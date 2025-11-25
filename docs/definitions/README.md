@@ -37,6 +37,18 @@ The percentage of sessions where the visitor viewed only one page before leaving
 ### [Views Per Session](core-metrics/views-per-session.md)
 The average number of pages viewed during a single session (also called Pages Per Session).
 
+### [Resource](core-metrics/resource.md)
+Any trackable content item on the website (page, post, custom post type).
+
+### [Hit](core-metrics/hit.md)
+A single tracking request sent to the server when a page loads.
+
+### [Conversion Rate](core-metrics/conversion-rate.md)
+Percentage of sessions that completed a defined goal.
+
+### [Summary Totals](core-metrics/summary-totals.md)
+Aggregated metric values displayed as headline numbers in reports.
+
 ---
 
 ## Visitor Classification
@@ -60,6 +72,9 @@ A visitor who is authenticated with a WordPress user account while browsing the 
 
 ### [Anonymous Visitor](visitor-classification/anonymous-visitor.md)
 A visitor who browses the website without logging into a WordPress user account.
+
+### [Online Visitor](visitor-classification/online-visitor.md)
+A visitor currently active on the website.
 
 ---
 
@@ -91,6 +106,9 @@ Traffic from visitors who clicked links in email messages, typically from market
 ### [UTM Parameters](traffic-sources/utm-parameters.md)
 URL parameters added to links to track the source, medium, and campaign name of website traffic.
 
+### [Campaign](traffic-sources/campaign.md)
+A tracked marketing effort identified by UTM parameters.
+
 ---
 
 ## Technical Attributes
@@ -109,6 +127,12 @@ The category of device a visitor uses: Desktop, Mobile, or Tablet.
 ### [User Agent](technical-attributes/user-agent.md)
 A text string sent by a browser identifying itself, the operating system, and device information to web servers.
 
+### [Screen Resolution](technical-attributes/screen-resolution.md)
+The display dimensions of a visitor's screen in pixels (width × height).
+
+### [Lookup Tables](technical-attributes/lookup-tables.md)
+Reference data tables that map stored IDs to human-readable names.
+
 ---
 
 ## Content Metrics
@@ -120,6 +144,12 @@ The first page a visitor views when starting a session on the website (also call
 
 ### [Exit Page](content-metrics/exit-page.md)
 The last page a visitor views before leaving the website or ending their session.
+
+### [Time on Page](content-metrics/time-on-page.md)
+Average time visitors spend viewing a specific page.
+
+### [Exit Rate](content-metrics/exit-rate.md)
+Percentage of page views that were the last page in a session.
 
 ---
 
@@ -203,4 +233,4 @@ All definitions in this glossary are marked as "Need Review" and should be valid
 
 ---
 
-*Last Updated: 2025-11-24*
+*Last Updated: 2025-11-25*
