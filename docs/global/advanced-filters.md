@@ -112,6 +112,7 @@ Filter Groups define which filters are bundled together for specific use cases a
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
 - [Visitors](../reports/visitor-insights/visitors.md)
 - [Top Visitors](../reports/visitor-insights/top-visitors.md)
+- [Logged-in Users](../reports/visitor-insights/logged-in-users.md)
 
 ---
 

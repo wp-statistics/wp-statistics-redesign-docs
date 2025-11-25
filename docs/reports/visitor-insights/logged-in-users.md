@@ -7,7 +7,7 @@ add_on: "Free"
 status: "Done"
 interactions:
   - "Date Picker"
-  - "User Role Filter"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["logged-in-traffic-trends"]
@@ -29,7 +29,7 @@ Track and analyze activity of registered users on your WordPress site.
 ## Available Interactions
 
 - **Date Picker**
-- **User Role Filter**
+- **[Advanced Filters](../../global/advanced-filters.md)**: Visitor Analysis Filters
 
 ## Widget Layout
 
@@ -41,4 +41,4 @@ Track and analyze activity of registered users on your WordPress site.
 
 ---
 
-*Last Updated: 2025-11-11*
+*Last Updated: 2025-11-25*
