@@ -48,6 +48,10 @@ URL: /getting-started/
 Views: 500
 ```
 
+## Related Documentation
+
+- [Page Column](../../columns/page.md)
+
 ---
 
 *Last Updated: 2025-11-25*

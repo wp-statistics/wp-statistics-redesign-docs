@@ -73,6 +73,7 @@ Displays full URL path
 
 ## Related Documentation
 
+- [Resource Definition](../definitions/core-metrics/resource.md)
 - [Latest Views Table Widget](../widgets/latest-views-table.md)
 - [Single Content Report](../reports/single-content-report.md)
 - [Data Table Component](../components/data-table.md)
