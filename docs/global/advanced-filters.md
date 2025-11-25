@@ -89,6 +89,7 @@ This section documents all available filter types with their operators and input
 | Total Views | Filter by total page views | greater than, less than, between | Number input |
 | Total Sessions | Filter by total sessions | greater than, less than, between | Number input |
 | First Seen | Filter by first visit date | between, before, after | Date picker |
+| Last Seen | Filter by last activity timestamp | in the last, between, before, after | Relative time selector / Date-time picker |
 | Bounce | Filter by bounce status | is | Dropdown (Yes, No) |
 
 ### Marketing Filters
@@ -106,7 +107,7 @@ Filter Groups define which filters are bundled together for specific use cases a
 
 ### Visitor Analysis Filters
 
-**Includes**: Total Views, Total Sessions, First Seen, Bounce, Views per Session, Session Duration, User ID, Login Status, User Role, Visitor Type, Country, Referrer, City, Device Type, OS, Browser, Timezone, Language, Screen Resolution, IP Address/Hash
+**Includes**: Total Views, Total Sessions, First Seen, Last Seen, Bounce, Views per Session, Session Duration, User ID, Login Status, User Role, Visitor Type, Country, Referrer, City, Device Type, OS, Browser, Timezone, Language, Screen Resolution, IP Address/Hash
 
 **Used In Reports**:
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
