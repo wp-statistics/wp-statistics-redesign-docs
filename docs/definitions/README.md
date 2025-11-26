@@ -133,6 +133,9 @@ The display dimensions of a visitor's screen in pixels (width × height).
 ### [Lookup Tables](technical-attributes/lookup-tables.md)
 Reference data tables that map stored IDs to human-readable names.
 
+### [(Not set)](technical-attributes/not-set.md)
+Placeholder value displayed in reports when a metric cannot be identified.
+
 ---
 
 ## Content Metrics
