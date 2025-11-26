@@ -74,7 +74,7 @@ The 64-character hash is truncated to 40 characters for storage efficiency.
 
 ## Hash Rotation Interval (v15)
 
-In v15, administrators can configure how frequently the daily salt rotates using the [Hash Rotation Interval](../settings/privacy.md#hash-rotation-interval) setting.
+In v15, administrators can configure how frequently the daily salt rotates using the [Hash Rotation Interval](../../settings/privacy.md#hash-rotation-interval) setting.
 
 ## Storage
 
@@ -95,7 +95,7 @@ This enables:
 
 ## Related Settings
 
-See [Privacy & Data Protection Settings](../settings/privacy.md) for configuration options:
+See [Privacy & Data Protection Settings](../../settings/privacy.md) for configuration options:
 - Anonymize IP Addresses
 - Hash IP Addresses
 - Hash Rotation Interval
