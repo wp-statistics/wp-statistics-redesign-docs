@@ -8,14 +8,19 @@ aliases: ["Unique Visitor"]
 
 # Visitor
 
-A unique individual identified by IP address (or IP hash).
+A unique individual identified by IP address, IP hash, or user ID.
 
 ## Definition
 
-One unique IP address = one visitor, regardless of how many sessions or views they generate. Logged-in users are tracked by WordPress user ID in addition to IP.
+One unique identifier = one visitor, regardless of how many sessions or views they generate. The identifier depends on privacy settings:
+
+- **Plain IP mode:** IP address is the identifier
+- **Hash mode:** [Visitor hash](../../technical/architecture/visitor-hash-mechanism.md) (SHA-256 of anonymized IP + User Agent + daily salt) is the identifier
+- **Logged-in users:** WordPress user ID (tracked across IPs)
 
 **Key Points:**
-- Same IP on different days = same visitor
+- With hashing enabled and default rotation (24h): same IP on different days = different visitor (privacy-focused)
+- With hashing disabled or extended rotation: same IP on different days = same visitor
 - Different IPs (home/office/mobile) = different visitors
 - Logged-in users: tracked by user ID across IPs
 - Visitor counts are date-range scoped
@@ -52,4 +57,10 @@ Total Visitors (in date range) = COUNT(DISTINCT ip_address WHERE date IN range)
 
 ---
 
-*Last Updated: 2025-11-24*
+## Related Documentation
+
+- [Visitor Hash Mechanism](../../technical/architecture/visitor-hash-mechanism.md) - Technical details on privacy-focused visitor identification
+
+---
+
+*Last Updated: 2025-11-26*

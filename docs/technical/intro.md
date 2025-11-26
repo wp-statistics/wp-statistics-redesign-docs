@@ -16,7 +16,7 @@ This section contains technical documentation for WP Statistics v15, including d
 *Coming soon* - API endpoints, request/response specifications, and authentication
 
 ### Architecture
-*Coming soon* - System architecture, component relationships, and design patterns
+- [Visitor Hash Mechanism](architecture/visitor-hash-mechanism.md) - Privacy-focused visitor identification using hashed IPs
 
 ### Data Flow
 *Coming soon* - Data flow diagrams and processing pipelines
@@ -33,4 +33,4 @@ For product features, UI components, and user-facing documentation, see the main
 
 ---
 
-*Last Updated: 2025-11-16*
+*Last Updated: 2025-11-26*
