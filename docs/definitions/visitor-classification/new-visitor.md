@@ -12,7 +12,7 @@ First-time visitor to the website (all-time classification, permanent).
 
 ## Definition
 
-Classification based on all-time history, not date range. Once a visitor identifier (IP or hash) is recorded, it's never "new" again.
+Classification based on all-time history, not date range. Once a visitor hash is recorded, it's never "new" again.
 
 **Key Rule:** All-time classification, date-range scoped counting.
 
