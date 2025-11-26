@@ -79,32 +79,7 @@ The 64-character hash is truncated to 40 characters and prefixed with `#hash#` f
 
 ## Hash Rotation Interval (v15)
 
-In v15, administrators can configure how frequently the daily salt rotates.
-
-### Available Options
-
-| Interval | Description | Use Case |
-|----------|-------------|----------|
-| 24 hours | Default. Salt rotates daily at midnight. | Maximum privacy protection |
-| 48 hours | Salt rotates every 2 days | Balance between privacy and returning visitor tracking |
-| Disabled | Hash generated but never rotates | Maximum visitor tracking accuracy (less privacy) |
-
-### Behavior by Configuration
-
-**24 hours (Default):**
-- Same visitor on different days = different hash = counted as new visitor
-- No cross-day visitor correlation possible
-- "Returning visitors" metric not available across days
-
-**48 hours:**
-- Same visitor within 48-hour window = same hash = same visitor
-- Limited cross-day correlation within the window
-- Partial "returning visitors" tracking
-
-**Disabled:**
-- Same visitor always produces same hash (until salt is manually rotated)
-- Full returning visitor tracking capability
-- IP address still anonymized/hashed (not stored in plain text)
+In v15, administrators can configure how frequently the daily salt rotates using the [Hash Rotation Interval](../settings/privacy.md#hash-rotation-interval) setting.
 
 ## Storage
 
@@ -123,15 +98,12 @@ This enables:
 - Consistent visitor identification across privacy setting changes
 - Future-proofing for privacy regulations
 
-## Privacy Settings
+## Related Settings
 
-### Related Settings
-
-| Setting | Location | Effect |
-|---------|----------|--------|
-| Anonymize IP Addresses | Privacy Settings | Masks last IP segment before hashing |
-| Hash IP Addresses | Privacy Settings | Stores hash instead of IP in database |
-| Hash Rotation Interval | Privacy Settings | Controls how often the daily salt changes |
+See [Privacy & Data Protection Settings](../settings/privacy.md) for configuration options:
+- Anonymize IP Addresses
+- Hash IP Addresses
+- Hash Rotation Interval
 
 ---
 
