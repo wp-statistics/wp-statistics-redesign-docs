@@ -39,9 +39,7 @@ The hash mechanism transforms visitor data (IP address + User Agent) into a non-
        ↓
 [Truncate to 40 characters]
        ↓
-[Add Prefix: #hash#]
-       ↓
-[Store: #hash#e7b398f96b14993b571215e36b41850c65f39b1a]
+[Store: e7b398f96b14993b571215e36b41850c65f39b1a]
 ```
 
 ### Components
@@ -71,11 +69,8 @@ The combined string (salt + anonymized IP + user agent) is hashed using SHA-256:
 hash = SHA-256(daily_salt + anonymized_ip + user_agent)
 ```
 
-#### 5. Truncation and Prefix
-The 64-character hash is truncated to 40 characters and prefixed with `#hash#` for identification:
-```
-#hash# + first 40 characters of hash = 46 characters total
-```
+#### 5. Truncation
+The 64-character hash is truncated to 40 characters for storage efficiency.
 
 ## Hash Rotation Interval (v15)
 
@@ -91,7 +86,7 @@ Starting in v15, the visitor hash is always generated and stored, regardless of 
 |---------|------------|--------------|
 | Hash IPs: OFF, Anonymize: OFF | Plain IP (e.g., `192.168.1.15`) | Also stored |
 | Hash IPs: OFF, Anonymize: ON | Anonymized IP (e.g., `192.168.1.0`) | Also stored |
-| Hash IPs: ON | Hash only (e.g., `#hash#e7b398...`) | Primary identifier |
+| Hash IPs: ON | Hash only (e.g., `e7b398f96b...`) | Primary identifier |
 
 This enables:
 - Retroactive privacy compliance (can remove plain IPs later)
