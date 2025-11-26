@@ -40,23 +40,6 @@ Total Visitors (in date range) = COUNT(DISTINCT ip_address WHERE date IN range)
 
 **Result:** 2 visitors (2 different IPs)
 
-## Relationships
-
-- 1 visitor → many sessions
-- 1 visitor → many views
-- Sessions ÷ Visitors = avg sessions per visitor
-- Views ÷ Visitors = avg views per visitor
-
-## Common Misconceptions
-
-**"Sessions should equal visitors"**
-- No. One visitor typically has multiple sessions over time.
-
-**"Changing date range should show same visitor counts"**
-- No. Visitor counts are scoped to the selected date range.
-
----
-
 ## Related Documentation
 
 - [Visitor Hash Mechanism](../../technical/architecture/visitor-hash-mechanism.md) - Technical details on privacy-focused visitor identification
