@@ -33,31 +33,45 @@ The v15 database is organized into four primary categories:
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `visitor_id` | bigint | nullable, FK: wp_statistics_visitors |
-| `referrer_id` | bigint | nullable, FK: wp_statistics_referrers |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `visitor_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_visitors |
 | `ip` | varchar(128) | nullable, INDEXED |
-| `country_id` | bigint | FK: wp_statistics_countries |
-| `city_id` | bigint | FK: wp_statistics_cities |
-| `initial_view_id` | bigint unsigned | FK: wp_statistics_views |
-| `last_view_id` | bigint unsigned | FK: wp_statistics_views |
-| `total_views` | int(11) | DEFAULT 1, NOT NULL |
-| `device_type_id` | bigint | FK: wp_statistics_device_types |
-| `device_os_id` | bigint | FK: wp_statistics_device_oss |
-| `device_browser_id` | bigint | FK: wp_statistics_device_browsers |
-| `device_browser_version_id` | bigint | FK: wp_statistics_device_browser_versions |
+| `referrer_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_referrers |
+| `country_id` | bigint(20) unsigned | nullable, FK: wp_statistics_countries |
+| `city_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_cities |
+| `initial_view_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_views |
+| `last_view_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_views |
+| `total_views` | int(11) | DEFAULT 1, NOT NULL, INDEXED |
+| `device_type_id` | bigint(20) unsigned | nullable, FK: wp_statistics_device_types |
+| `device_os_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_device_oss |
+| `device_browser_id` | bigint(20) unsigned | nullable, FK: wp_statistics_device_browsers |
+| `device_browser_version_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_device_browser_versions |
 | `started_at` | datetime | NOT NULL |
 | `ended_at` | datetime | nullable |
 | `duration` | int(11) unsigned | nullable |
-| `user_id` | bigint | nullable, FK: wp_users |
-| `timezone_id` | bigint | FK: wp_statistics_timezones |
-| `language_id` | bigint | FK: wp_statistics_languages |
-| `resolution_id` | bigint | FK: wp_statistics_resolutions |
+| `user_id` | bigint(20) unsigned | nullable, FK: wp_users |
+| `timezone_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_timezones |
+| `language_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_languages |
+| `resolution_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_resolutions |
 
 **Key Indexes:**
 - Primary key on `ID`
 - Index on `ip`
-- Foreign keys on all `_id` fields
+- Index on `visitor_id`
+- Index on `referrer_id`
+- Index on `city_id`
+- Index on `initial_view_id`
+- Index on `last_view_id`
+- Index on `device_os_id`
+- Index on `device_browser_version_id`
+- Index on `timezone_id`
+- Index on `language_id`
+- Index on `resolution_id`
+- Index on `total_views`
+- Composite index on `(started_at, ID)`
+- Composite index on `(started_at, device_browser_id)`
+- Composite index on `(started_at, device_type_id)`
+- Composite index on `(started_at, country_id)`
 
 ---
 
@@ -67,7 +81,7 @@ The v15 database is organized into four primary categories:
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `hash` | varchar(128) | NOT NULL, INDEXED |
 | `created_at` | datetime | NOT NULL |
 
@@ -83,17 +97,22 @@ The v15 database is organized into four primary categories:
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint unsigned | PK, AUTO_INCREMENT, NOT NULL |
-| `resource_uri_id` | bigint | NOT NULL, FK: wp_statistics_resource_uris |
-| `resource_id` | bigint | NOT NULL, FK: wp_statistics_resources |
-| `session_id` | bigint | NOT NULL, FK: wp_statistics_sessions |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `session_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_sessions |
+| `resource_uri_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_resource_uris |
+| `resource_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_resources |
 | `viewed_at` | datetime | NOT NULL |
-| `next_view_id` | bigint | FK: wp_statistics_views |
+| `next_view_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_views |
 | `duration` | int(11) unsigned | nullable |
 
 **Key Indexes:**
 - Primary key on `ID`
-- Foreign keys on `resource_uri_id`, `resource_id`, `session_id`, `next_view_id`
+- Index on `session_id`
+- Index on `resource_uri_id`
+- Index on `resource_id`
+- Index on `next_view_id`
+- Composite index on `(viewed_at, resource_id)`
+- Composite index on `(viewed_at, resource_uri_id)`
 
 ---
 
@@ -103,21 +122,22 @@ The v15 database is organized into four primary categories:
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `resource_id` | bigint | NOT NULL |
-| `resource_type` | varchar(64) | NOT NULL |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `resource_type` | varchar(64) | NOT NULL, INDEXED |
+| `resource_id` | bigint(20) unsigned | NOT NULL, INDEXED |
 | `cached_title` | text | nullable |
 | `cached_terms` | text | nullable |
-| `cached_author_id` | bigint | nullable, FK: wp_users |
-| `cached_author_name` | varchar(250) | nullable |
+| `cached_author_id` | bigint(20) unsigned | nullable, FK: wp_users |
 | `cached_date` | datetime | nullable |
 | `resource_meta` | text | nullable |
+| `language` | varchar(32) | nullable, INDEXED |
 | `is_deleted` | tinyint(1) | DEFAULT 0, NOT NULL |
-| `language` | varchar(32) | nullable |
 
 **Key Indexes:**
 - Primary key on `ID`
-- Foreign key on `cached_author_id`
+- Index on `resource_type`
+- Index on `resource_id`
+- Index on `language`
 
 **Notes:**
 - Caches WordPress post/page metadata for performance
@@ -131,14 +151,14 @@ The v15 database is organized into four primary categories:
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `resource_id` | bigint | NOT NULL, FK: wp_statistics_resources |
+| `ID` | bigint(20) | PK, AUTO_INCREMENT, NOT NULL |
+| `resource_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_resources |
 | `uri` | varchar(255) | NOT NULL, INDEXED |
 
 **Key Indexes:**
 - Primary key on `ID`
+- Index on `resource_id`
 - Index on `uri`
-- Foreign key on `resource_id`
 
 **Notes:**
 - Enables path-specific tracking across different domains or subdomains
@@ -156,7 +176,7 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `code` | varchar(8) | NOT NULL |
 | `name` | varchar(64) | NOT NULL, INDEXED |
 | `region` | varchar(4) | nullable |
@@ -173,10 +193,10 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `domain` | varchar(128) | nullable, INDEXED |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `channel` | varchar(128) | NOT NULL |
 | `name` | varchar(128) | nullable, INDEXED |
+| `domain` | varchar(128) | nullable, INDEXED |
 
 **Key Indexes:**
 - Primary key on `ID`
@@ -191,15 +211,16 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `code` | varchar(4) | NOT NULL, UNIQUE, INDEXED |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `code` | varchar(4) | NOT NULL, UNIQUE |
 | `name` | varchar(64) | NOT NULL |
-| `continent_code` | varchar(4) | NOT NULL |
+| `continent_code` | varchar(4) | NOT NULL, INDEXED |
 | `continent` | varchar(16) | NOT NULL |
 
 **Key Indexes:**
 - Primary key on `ID`
 - Unique index on `code`
+- Index on `continent_code`
 
 ---
 
@@ -209,15 +230,17 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `country_id` | bigint | NOT NULL, FK: wp_statistics_countries |
-| `region_code` | varchar(4) | nullable |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `country_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_countries |
+| `region_code` | varchar(4) | nullable, INDEXED |
 | `region_name` | varchar(64) | NOT NULL |
-| `city_name` | varchar(64) | NOT NULL |
+| `city_name` | varchar(64) | NOT NULL, INDEXED |
 
 **Key Indexes:**
 - Primary key on `ID`
-- Foreign key on `country_id`
+- Index on `country_id`
+- Index on `region_code`
+- Index on `city_name`
 
 ---
 
@@ -229,7 +252,7 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `name` | varchar(64) | NOT NULL, UNIQUE |
 
 **Key Indexes:**
@@ -244,7 +267,7 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `name` | varchar(64) | NOT NULL, UNIQUE |
 
 **Key Indexes:**
@@ -259,7 +282,7 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `name` | varchar(64) | NOT NULL, UNIQUE |
 
 **Key Indexes:**
@@ -274,13 +297,15 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `browser_id` | bigint | NOT NULL, FK: wp_statistics_device_browsers |
-| `version` | varchar(64) | NOT NULL |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `browser_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_device_browsers |
+| `version` | varchar(64) | NOT NULL, INDEXED |
 
 **Key Indexes:**
 - Primary key on `ID`
-- Foreign key on `browser_id`
+- Index on `browser_id`
+- Index on `version`
+- Unique composite index on `(browser_id, version)`
 
 ---
 
@@ -290,7 +315,7 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `width` | int(5) | NOT NULL |
 | `height` | int(5) | NOT NULL |
 
@@ -305,7 +330,7 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `name` | varchar(128) | NOT NULL, UNIQUE |
 | `offset` | varchar(16) | NOT NULL |
 | `is_dst` | tinyint(1) | NOT NULL, DEFAULT 0 |
@@ -324,17 +349,18 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `session_id` | bigint | nullable, FK: wp_statistics_sessions |
-| `view_id` | bigint | nullable, INDEXED, FK: wp_statistics_views |
-| `resource_uri_id` | bigint | nullable, FK: wp_statistics_resource_uris |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `session_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_sessions |
+| `resource_uri_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_resource_uris |
+| `view_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_views |
 | `parameter` | varchar(64) | nullable |
 | `value` | varchar(255) | nullable |
 
 **Key Indexes:**
 - Primary key on `ID`
+- Index on `session_id`
+- Index on `resource_uri_id`
 - Index on `view_id`
-- Foreign keys on `session_id`, `view_id`, `resource_uri_id`
 
 **Notes:**
 - Enables campaign and keyword-level performance tracking per path
@@ -347,19 +373,20 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
+| `ID` | bigint(20) | PK, AUTO_INCREMENT, NOT NULL |
 | `date` | datetime | NOT NULL |
-| `resource_uri_id` | bigint | nullable, INDEXED, FK: wp_statistics_resource_uris |
-| `session_id` | bigint | nullable, INDEXED, FK: wp_statistics_sessions |
+| `resource_uri_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_resource_uris |
+| `session_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_sessions |
+| `user_id` | bigint(20) unsigned | nullable, FK: wp_users |
 | `event_name` | varchar(64) | NOT NULL, INDEXED |
 | `event_data` | text | NOT NULL |
-| `user_id` | bigint | nullable, FK: wp_users |
 
 **Key Indexes:**
 - Primary key on `ID`
-- Index on `resource_uri_id`
 - Index on `session_id`
+- Index on `resource_uri_id`
 - Index on `event_name`
+- Composite index on `(session_id, event_name)`
 
 ---
 
@@ -369,20 +396,18 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `created_by` | bigint | nullable, FK: wp_users |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `created_by` | bigint(20) unsigned | nullable, FK: wp_users |
 | `title` | varchar(128) | NOT NULL |
 | `description` | varchar(255) | nullable |
 | `filters` | text | JSON or serialized config |
 | `widgets` | text | JSON or serialized config |
 | `access_level` | varchar(128) | nullable |
-| `created_at` | datetime | NOT NULL, INDEXED |
+| `created_at` | datetime | NOT NULL |
 | `updated_at` | datetime | nullable |
 
 **Key Indexes:**
 - Primary key on `ID`
-- Index on `created_at`
-- Foreign key on `created_by`
 
 ---
 
@@ -392,24 +417,24 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `date` | date | NOT NULL, INDEXED |
-| `resource_uri_id` | bigint | FK: wp_statistics_resource_uris |
-| `visitors` | bigint | DEFAULT 0, NOT NULL |
-| `sessions` | bigint | DEFAULT 0, NOT NULL |
-| `views` | int | DEFAULT 0, NOT NULL |
-| `total_duration` | int | NOT NULL, DEFAULT 0 |
-| `bounces` | bigint unsigned | NOT NULL, DEFAULT 0 |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `date` | date | NOT NULL |
+| `resource_uri_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_resource_uris |
+| `visitors` | bigint(20) unsigned | NOT NULL |
+| `sessions` | bigint(20) unsigned | NOT NULL |
+| `views` | bigint(20) unsigned | NOT NULL |
+| `total_duration` | int(11) unsigned | NOT NULL, DEFAULT 0 |
+| `bounces` | bigint(20) unsigned | NOT NULL, DEFAULT 0 |
 
 **Key Indexes:**
 - Primary key on `ID`
-- Index on `date`
-- Foreign key on `resource_uri_id`
+- Unique composite index on `(date, resource_uri_id)`
+- Index on `resource_uri_id`
 
 **Notes:**
 - Pre-aggregated data for performance optimization
 - Updated via scheduled processes (e.g., nightly cron jobs)
-- Index on `date` is critical for time-based queries
+- Unique constraint on `(date, resource_uri_id)` ensures one row per resource per day
 
 ---
 
@@ -419,20 +444,20 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `date` | date | NOT NULL, INDEXED |
-| `visitors` | bigint | DEFAULT 0, NOT NULL |
-| `sessions` | bigint | DEFAULT 0, NOT NULL |
-| `views` | int | DEFAULT 0, NOT NULL |
-| `total_duration` | int | NOT NULL, DEFAULT 0 |
-| `bounces` | bigint unsigned | NOT NULL, DEFAULT 0 |
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `date` | date | NOT NULL, UNIQUE |
+| `visitors` | bigint(20) unsigned | NOT NULL |
+| `sessions` | bigint(20) unsigned | NOT NULL |
+| `views` | bigint(20) unsigned | NOT NULL |
+| `total_duration` | int(11) unsigned | NOT NULL, DEFAULT 0 |
+| `bounces` | bigint(20) unsigned | NOT NULL, DEFAULT 0 |
 
 **Key Indexes:**
 - Primary key on `ID`
-- Index on `date`
+- Unique index on `date`
 
 **Notes:**
-- Index on `date` is critical for time-based queries
+- Unique constraint on `date` ensures one row per day
 
 ---
 
@@ -442,14 +467,15 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `ID` | bigint(20) | PK, AUTO_INCREMENT |
+| `ID` | bigint(20) | PK, AUTO_INCREMENT, NOT NULL |
 | `date` | date | NOT NULL, INDEXED |
-| `reason` | varchar(180) | NOT NULL |
+| `reason` | varchar(180) | nullable, INDEXED |
 | `count` | bigint(20) | NOT NULL |
 
 **Key Indexes:**
 - Primary key on `ID`
 - Index on `date`
+- Index on `reason`
 
 ---
 
