@@ -28,10 +28,10 @@ Different people, same IP = same visitor
 ## Comparison
 
 **Anonymous:**
-- ID: IP address only
+- ID: IP address or [visitor hash](../../technical/architecture/visitor-hash-mechanism.md)
 - Cross-device: Not possible
 - Profile data: None
-- Privacy: IP can be hashed
+- Privacy: IP can be anonymized and hashed
 
 **Logged-in:**
 - ID: User ID + IP
@@ -39,6 +39,10 @@ Different people, same IP = same visitor
 - Profile data: Name, email, role
 - Privacy: More identifiable
 
+## Related Documentation
+
+- [Visitor Hash Mechanism](../../technical/architecture/visitor-hash-mechanism.md) - Privacy-focused visitor identification
+
 ---
 
-*Last Updated: 2025-11-24*
+*Last Updated: 2025-11-26*

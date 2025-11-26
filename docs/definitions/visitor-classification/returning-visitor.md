@@ -12,7 +12,9 @@ Visitor who has visited before (all-time classification, permanent).
 
 ## Definition
 
-Complement of "New Visitor". Any visitor whose IP exists in database from a previous visit.
+Complement of "New Visitor". Any visitor whose identifier (IP or hash) exists in database from a previous visit.
+
+**Note:** With [Hash Rotation Interval](../../settings/privacy.md#hash-rotation-interval) enabled (default: 24h), returning visitor detection is limited to the rotation window. Cross-day returning visitor tracking requires extended rotation (48h) or disabled rotation.
 
 ```
 New + Returning = All Visitors
@@ -47,4 +49,11 @@ Multiple visits in one month:
 
 ---
 
-*Last Updated: 2025-11-24*
+## Related Documentation
+
+- [Visitor Hash Mechanism](../../technical/architecture/visitor-hash-mechanism.md) - How visitor identification works
+- [Hash Rotation Interval](../../settings/privacy.md#hash-rotation-interval) - Configure returning visitor detection window
+
+---
+
+*Last Updated: 2025-11-26*

@@ -12,9 +12,11 @@ First-time visitor to the website (all-time classification, permanent).
 
 ## Definition
 
-Classification based on all-time history, not date range. Once an IP is recorded, it's never "new" again, even after years.
+Classification based on all-time history, not date range. Once a visitor identifier (IP or hash) is recorded, it's never "new" again.
 
 **Key Rule:** All-time classification, date-range scoped counting.
+
+**Note:** With [Hash Rotation Interval](../../settings/privacy.md#hash-rotation-interval) enabled (default: 24h), the same visitor may appear as "new" again after the rotation window, since a new hash is generated. Disable rotation to maintain permanent new/returning classification.
 
 ## How It Works
 
@@ -49,8 +51,14 @@ Date Range "December 2023":
 - No. New = first visit ever, not first visit in the period.
 
 **"Can a visitor become 'new' again after long absence?"**
-- No. Classification is permanent, never resets.
+- With hash rotation enabled (default): Yes, after the rotation interval
+- With hash rotation disabled: No, classification is permanent
+
+## Related Documentation
+
+- [Visitor Hash Mechanism](../../technical/architecture/visitor-hash-mechanism.md) - How visitor identification works
+- [Hash Rotation Interval](../../settings/privacy.md#hash-rotation-interval) - Configure new visitor classification behavior
 
 ---
 
-*Last Updated: 2025-11-24*
+*Last Updated: 2025-11-26*
