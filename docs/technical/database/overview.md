@@ -34,9 +34,9 @@ The v15 database is organized into four primary categories:
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `visitor_id` | bigint | **nullable**, FK: wp_statistics_visitors |
-| `referrer_id` | bigint | FK: wp_statistics_referrers |
-| `ip` | varchar(128) | indexed, nullable |
+| `visitor_id` | bigint | nullable, FK: wp_statistics_visitors |
+| `referrer_id` | bigint | nullable, FK: wp_statistics_referrers |
+| `ip` | varchar(128) | nullable, INDEXED |
 | `country_id` | bigint | FK: wp_statistics_countries |
 | `city_id` | bigint | FK: wp_statistics_cities |
 | `initial_view_id` | bigint unsigned | FK: wp_statistics_views |
@@ -49,7 +49,7 @@ The v15 database is organized into four primary categories:
 | `started_at` | datetime | NOT NULL |
 | `ended_at` | datetime | nullable |
 | `duration` | int(11) unsigned | nullable |
-| `user_id` | bigint | FK: wp_users |
+| `user_id` | bigint | nullable, FK: wp_users |
 | `timezone_id` | bigint | FK: wp_statistics_timezones |
 | `language_id` | bigint | FK: wp_statistics_languages |
 | `resolution_id` | bigint | FK: wp_statistics_resolutions |
@@ -108,7 +108,7 @@ The v15 database is organized into four primary categories:
 | `resource_type` | varchar(64) | NOT NULL |
 | `cached_title` | text | nullable |
 | `cached_terms` | text | nullable |
-| `cached_author_id` | bigint | FK: wp_users, nullable |
+| `cached_author_id` | bigint | nullable, FK: wp_users |
 | `cached_author_name` | varchar(250) | nullable |
 | `cached_date` | datetime | nullable |
 | `resource_meta` | text | nullable |
@@ -158,8 +158,12 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 |-------|------|-------------|
 | `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
 | `code` | varchar(8) | NOT NULL |
-| `name` | varchar(64) | INDEXED, NOT NULL |
+| `name` | varchar(64) | NOT NULL, INDEXED |
 | `region` | varchar(4) | nullable |
+
+**Key Indexes:**
+- Primary key on `ID`
+- Index on `name`
 
 ---
 
@@ -228,6 +232,10 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
 | `name` | varchar(64) | NOT NULL, UNIQUE |
 
+**Key Indexes:**
+- Primary key on `ID`
+- Unique index on `name`
+
 ---
 
 #### `wp_statistics_device_oss`
@@ -239,6 +247,10 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
 | `name` | varchar(64) | NOT NULL, UNIQUE |
 
+**Key Indexes:**
+- Primary key on `ID`
+- Unique index on `name`
+
 ---
 
 #### `wp_statistics_device_browsers`
@@ -249,6 +261,10 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 |-------|------|-------------|
 | `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
 | `name` | varchar(64) | NOT NULL, UNIQUE |
+
+**Key Indexes:**
+- Primary key on `ID`
+- Unique index on `name`
 
 ---
 
@@ -278,6 +294,9 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | `width` | int(5) | NOT NULL |
 | `height` | int(5) | NOT NULL |
 
+**Key Indexes:**
+- Primary key on `ID`
+
 ---
 
 ### `wp_statistics_timezones`
@@ -291,6 +310,10 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | `offset` | varchar(16) | NOT NULL |
 | `is_dst` | tinyint(1) | NOT NULL, DEFAULT 0 |
 
+**Key Indexes:**
+- Primary key on `ID`
+- Unique index on `name`
+
 ---
 
 ## Behavioral & Analytics Tables
@@ -302,9 +325,9 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `session_id` | bigint | FK: wp_statistics_sessions |
-| `view_id` | bigint | indexed, FK: wp_statistics_views |
-| `resource_uri_id` | bigint | FK: wp_statistics_resource_uris |
+| `session_id` | bigint | nullable, FK: wp_statistics_sessions |
+| `view_id` | bigint | nullable, INDEXED, FK: wp_statistics_views |
+| `resource_uri_id` | bigint | nullable, FK: wp_statistics_resource_uris |
 | `parameter` | varchar(64) | nullable |
 | `value` | varchar(255) | nullable |
 
@@ -325,12 +348,12 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `date` | datetime | NOT NULL - When the event occurred |
-| `resource_uri_id` | bigint | FK: wp_statistics_resource_uris, nullable, indexed |
-| `session_id` | bigint | FK: wp_statistics_sessions, nullable, indexed |
-| `event_name` | varchar(64) | NOT NULL, indexed |
-| `event_data` | text | NOT NULL - Raw payload or serialized JSON |
-| `user_id` | bigint | FK: wp_users, nullable |
+| `date` | datetime | NOT NULL |
+| `resource_uri_id` | bigint | nullable, INDEXED, FK: wp_statistics_resource_uris |
+| `session_id` | bigint | nullable, INDEXED, FK: wp_statistics_sessions |
+| `event_name` | varchar(64) | NOT NULL, INDEXED |
+| `event_data` | text | NOT NULL |
+| `user_id` | bigint | nullable, FK: wp_users |
 
 **Key Indexes:**
 - Primary key on `ID`
@@ -347,7 +370,7 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `created_by` | bigint | FK: wp_users, nullable |
+| `created_by` | bigint | nullable, FK: wp_users |
 | `title` | varchar(128) | NOT NULL |
 | `description` | varchar(255) | nullable |
 | `filters` | text | JSON or serialized config |
@@ -420,9 +443,13 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint(20) | PK, AUTO_INCREMENT |
-| `date` | date | When the exclusion happened |
-| `reason` | varchar(180) | Reason for exclusion (e.g., bot) |
-| `count` | bigint(20) | Number of times this exclusion occurred |
+| `date` | date | NOT NULL, INDEXED |
+| `reason` | varchar(180) | NOT NULL |
+| `count` | bigint(20) | NOT NULL |
+
+**Key Indexes:**
+- Primary key on `ID`
+- Index on `date`
 
 ---
 
@@ -433,9 +460,15 @@ wp_statistics_visitors (1) ──< (∞) wp_statistics_sessions
                                          │
                                          ├──< (∞) wp_statistics_views
                                          │         │
-                                         │         └──< (1) wp_statistics_resource_uris ──< (1) wp_statistics_resources
+                                         │         ├──< (1) wp_statistics_resource_uris ──< (1) wp_statistics_resources
+                                         │         │                                              │
+                                         │         │                                              └──< (1) wp_users (cached_author_id)
+                                         │         │
+                                         │         └──< (∞) wp_statistics_views (next_view_id, self-reference)
                                          │
-                                         └──< (∞) wp_statistics_parameters
+                                         ├──< (∞) wp_statistics_parameters
+                                         │
+                                         └──< (1) wp_users (user_id)
 
 wp_statistics_sessions (∞) ──< (1) wp_statistics_referrers
 wp_statistics_sessions (∞) ──< (1) wp_statistics_countries ──< (1) wp_statistics_cities
@@ -445,9 +478,13 @@ wp_statistics_sessions (∞) ──< (1) wp_statistics_device_oss
 wp_statistics_sessions (∞) ──< (1) wp_statistics_resolutions
 wp_statistics_sessions (∞) ──< (1) wp_statistics_timezones
 wp_statistics_sessions (∞) ──< (1) wp_statistics_languages
+wp_statistics_sessions (∞) ──< (1) wp_statistics_views (initial_view_id, last_view_id)
 
 wp_statistics_events (∞) ──< (1) wp_statistics_sessions
 wp_statistics_events (∞) ──< (1) wp_statistics_resource_uris
+wp_statistics_events (∞) ──< (1) wp_users (user_id)
+
+wp_statistics_reports (∞) ──< (1) wp_users (created_by)
 ```
 
 ---
@@ -468,7 +505,6 @@ Data is normalized to reduce redundancy:
 ### 3. Strategic Indexing
 - Indexes on frequently queried columns (timestamps, IDs, foreign keys)
 - Unique indexes on lookup table names (browsers, countries)
-- Composite indexes where needed for multi-column queries
 
 ### 4. Performance Optimization
 - **Summary tables** (`wp_statistics_summary`, `wp_statistics_summary_totals`) pre-aggregate data
@@ -574,7 +610,7 @@ WHERE started_at >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);
 ```sql
 SELECT c.name AS country, COUNT(*) AS visitors
 FROM wp_statistics_sessions s
-JOIN wp_statistics_countries c ON s.country_id = c.id
+JOIN wp_statistics_countries c ON s.country_id = c.ID
 WHERE s.started_at >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
 GROUP BY c.name
 ORDER BY visitors DESC
@@ -586,7 +622,7 @@ LIMIT 5;
 ```sql
 SELECT r.channel, COUNT(*) AS session_count
 FROM wp_statistics_sessions s
-JOIN wp_statistics_referrers r ON s.referrer_id = r.id
+JOIN wp_statistics_referrers r ON s.referrer_id = r.ID
 WHERE MONTH(s.started_at) = MONTH(CURDATE())
   AND YEAR(s.started_at) = YEAR(CURDATE())
 GROUP BY r.channel
@@ -598,9 +634,9 @@ ORDER BY session_count DESC;
 ```sql
 SELECT
   p.value AS campaign,
-  COUNT(DISTINCT s.id) AS session_count
+  COUNT(DISTINCT s.ID) AS session_count
 FROM wp_statistics_parameters p
-JOIN wp_statistics_sessions s ON p.session_id = s.id
+JOIN wp_statistics_sessions s ON p.session_id = s.ID
 WHERE p.parameter = 'utm_campaign'
   AND s.started_at >= DATE_SUB(CURDATE(), INTERVAL 14 DAY)
 GROUP BY p.value
@@ -612,7 +648,7 @@ ORDER BY session_count DESC;
 ```sql
 SELECT dt.name AS device_type, COUNT(*) AS sessions
 FROM wp_statistics_sessions s
-JOIN wp_statistics_device_types dt ON s.device_type_id = dt.id
+JOIN wp_statistics_device_types dt ON s.device_type_id = dt.ID
 GROUP BY dt.name
 ORDER BY sessions DESC;
 ```
@@ -626,7 +662,7 @@ SELECT
   COUNT(*) AS total_views,
   ROUND(100 * SUM(CASE WHEN v.duration IS NULL OR v.duration < 5 THEN 1 ELSE 0 END) / COUNT(*), 2) AS bounce_rate_percent
 FROM wp_statistics_views v
-JOIN wp_statistics_resource_uris ru ON v.resource_uri_id = ru.id
+JOIN wp_statistics_resource_uris ru ON v.resource_uri_id = ru.ID
 WHERE v.viewed_at >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)
 GROUP BY ru.uri
 ORDER BY bounce_rate_percent DESC;
@@ -641,7 +677,9 @@ ORDER BY bounce_rate_percent DESC;
 - Summary tables aggregated via scheduled processes (e.g., nightly cron)
 - Foreign key constraints ensure referential integrity
 - Soft deletes preserve historical data without loss
+- Duration fields store values in seconds
+- Bounce threshold: no duration recorded OR < 5 seconds on page
 
 ---
 
-*Last Updated: 2025-11-16*
+*Last Updated: 2025-11-26*

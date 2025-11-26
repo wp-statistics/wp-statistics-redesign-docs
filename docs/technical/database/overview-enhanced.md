@@ -71,7 +71,6 @@ Data is normalized to reduce redundancy:
 ### 3. Strategic Indexing
 - Indexes on frequently queried columns (timestamps, IDs, foreign keys)
 - Unique indexes on lookup table names (browsers, countries)
-- Composite indexes where needed for multi-column queries
 
 ### 4. Performance Optimization
 - **Summary tables** ([wp_statistics_summary](#wp_statistics_summary), [wp_statistics_summary_totals](#wp_statistics_summary_totals)) pre-aggregate data
@@ -752,4 +751,4 @@ ORDER BY bounce_rate_percent DESC;
 
 ---
 
-*Last Updated: 2025-11-16*
+*Last Updated: 2025-11-26*
