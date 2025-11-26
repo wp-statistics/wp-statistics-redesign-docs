@@ -123,25 +123,6 @@ This enables:
 - Consistent visitor identification across privacy setting changes
 - Future-proofing for privacy regulations
 
-### Database Column
-
-Stored in the `wp_statistics_visitor` table:
-
-| Column | Type | Example |
-|--------|------|---------|
-| `ip` | VARCHAR(60) | `#hash#e7b398f96b14993b571215e36b41850c65f39b1a` |
-
-### Hash Identification
-
-Hashed IPs are identified by the `#hash#` prefix:
-```php
-public static $hash_ip_prefix = '#hash#';
-
-public static function IsHashIP($ip) {
-    return (substr($ip, 0, strlen(self::$hash_ip_prefix)) == self::$hash_ip_prefix);
-}
-```
-
 ## Privacy Settings
 
 ### Related Settings
@@ -151,57 +132,6 @@ public static function IsHashIP($ip) {
 | Anonymize IP Addresses | Privacy Settings | Masks last IP segment before hashing |
 | Hash IP Addresses | Privacy Settings | Stores hash instead of IP in database |
 | Hash Rotation Interval | Privacy Settings | Controls how often the daily salt changes |
-
-### Privacy Audit Integration
-
-When Privacy Audit is enabled, the hash settings are evaluated for compliance:
-- Hashing enabled = higher privacy score
-- Shorter rotation intervals = better privacy protection
-- Anonymization + hashing = maximum protection
-
-## Technical Details
-
-### Security Properties
-
-- **Non-reversible:** SHA-256 is a one-way function; original IP cannot be recovered
-- **Collision-resistant:** Extremely unlikely for two different inputs to produce the same hash
-- **Deterministic:** Same input always produces same output (within same salt period)
-
-### Performance
-
-- Hash generation: < 1ms per request
-- Salt lookup: Cached in WordPress options (single DB query per page load)
-- No additional database queries for hash validation
-
-### Limitations
-
-- **No cross-device tracking:** Different devices = different User Agents = different hashes
-- **No cross-network tracking:** Different IPs (home/office/mobile) = different hashes
-- **VPN users:** All users on same VPN exit node may share the same anonymized IP
-
-## Migration
-
-### Upgrading Existing Data
-
-Existing plain IP addresses can be converted to hashes:
-
-```php
-IP::Update_HashIP_Visitor()
-```
-
-This function:
-1. Finds all non-hashed IPs in the visitor table
-2. Generates hashes using the current daily salt
-3. Updates records with hashed values
-
-**Note:** Once converted, original IPs cannot be recovered.
-
-## Notes
-
-- The hash mechanism is independent of cookie consent; it works without any cookies
-- For maximum privacy, enable both IP anonymization and IP hashing
-- The hash prefix `#hash#` allows the system to distinguish between hashed and plain IPs
-- User Agent is included in the hash to differentiate between multiple users behind the same IP (e.g., office networks)
 
 ---
 

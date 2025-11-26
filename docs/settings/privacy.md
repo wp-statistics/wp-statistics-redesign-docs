@@ -3,7 +3,7 @@ title: "Privacy & Data Protection Settings"
 type: "settings"
 add_on: "Free"
 status: "Not Started"
-settings_count: 7
+settings_count: 8
 ---
 
 # Privacy & Data Protection Settings
@@ -15,7 +15,7 @@ Controls data protection, IP anonymization, hashing, privacy compliance auditing
 - **Add-on**: Free
 - **Status**: Not Started
 - **Figma Design**: [Add link when available]
-- **Settings Count**: 7
+- **Settings Count**: 8
 
 ## Data Protection
 
@@ -48,6 +48,31 @@ Controls data protection, IP anonymization, hashing, privacy compliance auditing
 **Description**: Transforms IP addresses into a unique, non-reversible string using a secure algorithm, enhancing privacy protection and complying with data privacy regulations.
 
 **Privacy Impact**: This setting affects user privacy and requires compliance with privacy standards.
+
+---
+
+### Hash Rotation Interval
+
+*New in v15*
+
+**Display Label**: Hash Rotation Interval
+
+**Setting Key**: `wps_hash_rotation_interval`
+
+**Type**: Dropdown
+
+**Default Value**: `daily`
+
+**Options**:
+- `daily`: 24 hours (Default) - Maximum privacy protection
+- `48h`: 48 hours - Balance between privacy and returning visitor tracking
+- `disabled`: Disabled - Hash never rotates (maximum tracking accuracy)
+
+**Description**: Controls how frequently the daily salt rotates for visitor hash generation. Shorter intervals provide better privacy protection but prevent returning visitor identification across the interval. When disabled, the same visitor always produces the same hash, enabling full returning visitor tracking while still anonymizing the actual IP address.
+
+**Dependencies**: Only visible when Hash IP Addresses is enabled
+
+**Related Documentation**: [Visitor Hash Mechanism](../technical/architecture/visitor-hash-mechanism.md)
 
 ---
 
@@ -143,4 +168,4 @@ Controls data protection, IP anonymization, hashing, privacy compliance auditing
 
 ---
 
-*Last Updated: 2025-11-16*
+*Last Updated: 2025-11-26*
