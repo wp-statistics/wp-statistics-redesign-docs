@@ -14,6 +14,36 @@ Complete database schema documentation for WP Statistics v15 analytics system.
 For an interactive diagram of this schema, [view on dbdiagram.io](https://dbdiagram.io/d/v15-684909454aa7226ff858929c)
 :::
 
+---
+
+## Quick Reference
+
+| Table | Category | Purpose |
+|-------|----------|---------|
+| [wp_statistics_sessions](#wp_statistics_sessions) | Main | Logs each visitor session with device, location, and referral context |
+| [wp_statistics_visitors](#wp_statistics_visitors) | Main | Identifies unique visitors for persistent tracking |
+| [wp_statistics_views](#wp_statistics_views) | Main | Logs each resource view with navigation flow tracking |
+| [wp_statistics_resources](#wp_statistics_resources) | Main | Metadata for all viewable content (posts, pages, custom) |
+| [wp_statistics_resource_uris](#wp_statistics_resource_uris) | Main | Distinct URIs for path-specific tracking |
+| [wp_statistics_languages](#wp_statistics_languages) | Lookup - Visitor Context | Language preferences per visitor |
+| [wp_statistics_resolutions](#wp_statistics_resolutions) | Lookup - Visitor Context | Screen width and height of devices |
+| [wp_statistics_timezones](#wp_statistics_timezones) | Lookup - Visitor Context | Time zone-aware session tracking |
+| [wp_statistics_referrers](#wp_statistics_referrers) | Lookup - Traffic Source | Referral domains and source types |
+| [wp_statistics_countries](#wp_statistics_countries) | Lookup - Geographic | Country data for geolocation |
+| [wp_statistics_cities](#wp_statistics_cities) | Lookup - Geographic | Region and city-level location details |
+| [wp_statistics_device_types](#wp_statistics_device_types) | Lookup - Device & Browser | Device categories (mobile, tablet, desktop) |
+| [wp_statistics_device_oss](#wp_statistics_device_oss) | Lookup - Device & Browser | Visitor operating system metadata |
+| [wp_statistics_device_browsers](#wp_statistics_device_browsers) | Lookup - Device & Browser | Recognized browser names |
+| [wp_statistics_device_browser_versions](#wp_statistics_device_browser_versions) | Lookup - Device & Browser | Specific browser versions |
+| [wp_statistics_parameters](#wp_statistics_parameters) | Behavioral & Analytics | URL parameters (UTM tags) for campaigns |
+| [wp_statistics_events](#wp_statistics_events) | Behavioral & Analytics | Custom event data (clicks, conversions, interactions) |
+| [wp_statistics_reports](#wp_statistics_reports) | Behavioral & Analytics | Saved reports and dashboard configurations |
+| [wp_statistics_summary](#wp_statistics_summary) | Behavioral & Analytics | Aggregated per-resource daily analytics |
+| [wp_statistics_summary_totals](#wp_statistics_summary_totals) | Behavioral & Analytics | Platform-wide daily totals (site-level KPIs) |
+| [wp_statistics_exclusions](#wp_statistics_exclusions) | Behavioral & Analytics | Excluded traffic tracking (bots, excluded IPs) |
+
+---
+
 ## Database Architecture
 
 The v15 database is organized into four primary categories:
@@ -22,6 +52,56 @@ The v15 database is organized into four primary categories:
 2. **Lookup Tables** - Normalized reference data (countries, devices, browsers, etc.)
 3. **Behavioral & Analytics Tables** - Events, parameters, reports, and aggregated summaries
 4. **WordPress Integration** - References to WordPress core tables (wp_users)
+
+---
+
+## Database Design Principles
+
+### 1. Normalization
+Data is normalized to reduce redundancy:
+- Lookup tables store frequently repeated values once (browsers, countries, etc.)
+- Resources cached separately from views
+- URIs separated from resources for multi-domain tracking
+
+### 2. Foreign Key Constraints
+- Relationships maintained through foreign key constraints
+- Ensures referential integrity across the system
+- Prevents orphaned records
+
+### 3. Strategic Indexing
+- Indexes on frequently queried columns (timestamps, IDs, foreign keys)
+- Unique indexes on lookup table names (browsers, countries)
+
+### 4. Performance Optimization
+- **Summary tables** ([wp_statistics_summary](#wp_statistics_summary), [wp_statistics_summary_totals](#wp_statistics_summary_totals)) pre-aggregate data
+- **Lookup tables** reduce storage and improve join performance
+- **Nullable fields** for optional data to avoid defaults
+
+### 5. Scalability
+- Separate tables for high-volume data (views vs. sessions vs. visitors)
+- Event system allows extensibility without schema changes
+- Resource URI separation supports multi-site and multi-domain tracking
+
+### 6. Data Integrity
+- Soft deletes via `is_deleted` flag preserve historical data
+- Cached fields reduce dependency on WordPress core tables
+- UTC timestamps ensure consistent time-based queries
+
+---
+
+## WordPress Integration
+
+This plugin integrates with WordPress core tables for user tracking and content relationships:
+
+### `wp_users` (WordPress Core Table)
+
+Referenced by multiple WP Statistics tables:
+- [wp_statistics_sessions](#wp_statistics_sessions) - `user_id` links logged-in user sessions
+- [wp_statistics_resources](#wp_statistics_resources) - `cached_author_id` tracks content authors
+- [wp_statistics_events](#wp_statistics_events) - `user_id` associates events with users
+- [wp_statistics_reports](#wp_statistics_reports) - `created_by` tracks report creators
+
+All references to `wp_users` are nullable to support both anonymous and authenticated tracking.
 
 ---
 
@@ -34,25 +114,25 @@ The v15 database is organized into four primary categories:
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
-| `visitor_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_visitors |
+| `visitor_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_visitors](#wp_statistics_visitors) |
 | `ip` | varchar(128) | nullable, INDEXED |
-| `referrer_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_referrers |
-| `country_id` | bigint(20) unsigned | nullable, FK: wp_statistics_countries |
-| `city_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_cities |
-| `initial_view_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_views |
-| `last_view_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_views |
+| `referrer_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_referrers](#wp_statistics_referrers) |
+| `country_id` | bigint(20) unsigned | nullable, FK: [wp_statistics_countries](#wp_statistics_countries) |
+| `city_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_cities](#wp_statistics_cities) |
+| `initial_view_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_views](#wp_statistics_views) |
+| `last_view_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_views](#wp_statistics_views) |
 | `total_views` | int(11) | DEFAULT 1, NOT NULL, INDEXED |
-| `device_type_id` | bigint(20) unsigned | nullable, FK: wp_statistics_device_types |
-| `device_os_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_device_oss |
-| `device_browser_id` | bigint(20) unsigned | nullable, FK: wp_statistics_device_browsers |
-| `device_browser_version_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_device_browser_versions |
+| `device_type_id` | bigint(20) unsigned | nullable, FK: [wp_statistics_device_types](#wp_statistics_device_types) |
+| `device_os_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_device_oss](#wp_statistics_device_oss) |
+| `device_browser_id` | bigint(20) unsigned | nullable, FK: [wp_statistics_device_browsers](#wp_statistics_device_browsers) |
+| `device_browser_version_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_device_browser_versions](#wp_statistics_device_browser_versions) |
 | `started_at` | datetime | NOT NULL |
 | `ended_at` | datetime | nullable |
 | `duration` | int(11) unsigned | nullable |
 | `user_id` | bigint(20) unsigned | nullable, FK: wp_users |
-| `timezone_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_timezones |
-| `language_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_languages |
-| `resolution_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_resolutions |
+| `timezone_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_timezones](#wp_statistics_timezones) |
+| `language_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_languages](#wp_statistics_languages) |
+| `resolution_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_resolutions](#wp_statistics_resolutions) |
 
 **Key Indexes:**
 - Primary key on `ID`
@@ -98,11 +178,11 @@ The v15 database is organized into four primary categories:
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
-| `session_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_sessions |
-| `resource_uri_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_resource_uris |
-| `resource_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_resources |
+| `session_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_sessions](#wp_statistics_sessions) |
+| `resource_uri_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_resource_uris](#wp_statistics_resource_uris) |
+| `resource_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_resources](#wp_statistics_resources) |
 | `viewed_at` | datetime | NOT NULL |
-| `next_view_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_views |
+| `next_view_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_views](#wp_statistics_views) |
 | `duration` | int(11) unsigned | nullable |
 
 **Key Indexes:**
@@ -113,6 +193,9 @@ The v15 database is organized into four primary categories:
 - Index on `next_view_id`
 - Composite index on `(viewed_at, resource_id)`
 - Composite index on `(viewed_at, resource_uri_id)`
+
+**Notes:**
+- `next_view_id` is a self-referencing foreign key for tracking navigation sequences
 
 ---
 
@@ -152,7 +235,7 @@ The v15 database is organized into four primary categories:
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint(20) | PK, AUTO_INCREMENT, NOT NULL |
-| `resource_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_resources |
+| `resource_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_resources](#wp_statistics_resources) |
 | `uri` | varchar(255) | NOT NULL, INDEXED |
 
 **Key Indexes:**
@@ -170,24 +253,9 @@ The v15 database is organized into four primary categories:
 
 Lookup tables normalize frequently repeated data to reduce storage and improve query performance.
 
-### `wp_statistics_languages`
+### Traffic Source Tables
 
-**Purpose:** Stores language preferences per visitor.
-
-| Field | Type | Constraints |
-|-------|------|-------------|
-| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
-| `code` | varchar(8) | NOT NULL |
-| `name` | varchar(64) | NOT NULL, INDEXED |
-| `region` | varchar(4) | nullable |
-
-**Key Indexes:**
-- Primary key on `ID`
-- Index on `name`
-
----
-
-### `wp_statistics_referrers`
+#### `wp_statistics_referrers`
 
 **Purpose:** Tracks referral domains and source types.
 
@@ -205,7 +273,9 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 ---
 
-### `wp_statistics_countries`
+### Geographic Tables
+
+#### `wp_statistics_countries`
 
 **Purpose:** Country data for geolocation tracking.
 
@@ -224,14 +294,14 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 
 ---
 
-### `wp_statistics_cities`
+#### `wp_statistics_cities`
 
 **Purpose:** Region and city-level location details.
 
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
-| `country_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_countries |
+| `country_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_countries](#wp_statistics_countries) |
 | `region_code` | varchar(4) | nullable, INDEXED |
 | `region_name` | varchar(64) | NOT NULL |
 | `city_name` | varchar(64) | NOT NULL, INDEXED |
@@ -241,6 +311,57 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 - Index on `country_id`
 - Index on `region_code`
 - Index on `city_name`
+
+---
+
+### Visitor Context Tables
+
+#### `wp_statistics_languages`
+
+**Purpose:** Stores language preferences per visitor.
+
+| Field | Type | Constraints |
+|-------|------|-------------|
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `code` | varchar(8) | NOT NULL |
+| `name` | varchar(64) | NOT NULL, INDEXED |
+| `region` | varchar(4) | nullable |
+
+**Key Indexes:**
+- Primary key on `ID`
+- Index on `name`
+
+---
+
+#### `wp_statistics_resolutions`
+
+**Purpose:** Stores screen width and height of visitor devices.
+
+| Field | Type | Constraints |
+|-------|------|-------------|
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `width` | int(5) | NOT NULL |
+| `height` | int(5) | NOT NULL |
+
+**Key Indexes:**
+- Primary key on `ID`
+
+---
+
+#### `wp_statistics_timezones`
+
+**Purpose:** Supports time zone-aware session tracking.
+
+| Field | Type | Constraints |
+|-------|------|-------------|
+| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
+| `name` | varchar(128) | NOT NULL, UNIQUE |
+| `offset` | varchar(16) | NOT NULL |
+| `is_dst` | tinyint(1) | NOT NULL, DEFAULT 0 |
+
+**Key Indexes:**
+- Primary key on `ID`
+- Unique index on `name`
 
 ---
 
@@ -298,7 +419,7 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
-| `browser_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_device_browsers |
+| `browser_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_device_browsers](#wp_statistics_device_browsers) |
 | `version` | varchar(64) | NOT NULL, INDEXED |
 
 **Key Indexes:**
@@ -306,38 +427,6 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 - Index on `browser_id`
 - Index on `version`
 - Unique composite index on `(browser_id, version)`
-
----
-
-### `wp_statistics_resolutions`
-
-**Purpose:** Stores screen width and height of visitor devices.
-
-| Field | Type | Constraints |
-|-------|------|-------------|
-| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
-| `width` | int(5) | NOT NULL |
-| `height` | int(5) | NOT NULL |
-
-**Key Indexes:**
-- Primary key on `ID`
-
----
-
-### `wp_statistics_timezones`
-
-**Purpose:** Supports time zone-aware session tracking.
-
-| Field | Type | Constraints |
-|-------|------|-------------|
-| `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
-| `name` | varchar(128) | NOT NULL, UNIQUE |
-| `offset` | varchar(16) | NOT NULL |
-| `is_dst` | tinyint(1) | NOT NULL, DEFAULT 0 |
-
-**Key Indexes:**
-- Primary key on `ID`
-- Unique index on `name`
 
 ---
 
@@ -350,9 +439,9 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
-| `session_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_sessions |
-| `resource_uri_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_resource_uris |
-| `view_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_views |
+| `session_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_sessions](#wp_statistics_sessions) |
+| `resource_uri_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_resource_uris](#wp_statistics_resource_uris) |
+| `view_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_views](#wp_statistics_views) |
 | `parameter` | varchar(64) | nullable |
 | `value` | varchar(255) | nullable |
 
@@ -375,8 +464,8 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 |-------|------|-------------|
 | `ID` | bigint(20) | PK, AUTO_INCREMENT, NOT NULL |
 | `date` | datetime | NOT NULL |
-| `resource_uri_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_resource_uris |
-| `session_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_sessions |
+| `resource_uri_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_resource_uris](#wp_statistics_resource_uris) |
+| `session_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_sessions](#wp_statistics_sessions) |
 | `user_id` | bigint(20) unsigned | nullable, FK: wp_users |
 | `event_name` | varchar(64) | NOT NULL, INDEXED |
 | `event_data` | text | NOT NULL |
@@ -387,6 +476,10 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 - Index on `resource_uri_id`
 - Index on `event_name`
 - Composite index on `(session_id, event_name)`
+
+**Notes:**
+- `event_data` stores raw payload or serialized JSON
+- Indexed on `event_name` for efficient event-type filtering
 
 ---
 
@@ -400,14 +493,17 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 | `created_by` | bigint(20) unsigned | nullable, FK: wp_users |
 | `title` | varchar(128) | NOT NULL |
 | `description` | varchar(255) | nullable |
-| `filters` | text | JSON or serialized config |
-| `widgets` | text | JSON or serialized config |
+| `filters` | text | nullable |
+| `widgets` | text | nullable |
 | `access_level` | varchar(128) | nullable |
 | `created_at` | datetime | NOT NULL |
 | `updated_at` | datetime | nullable |
 
 **Key Indexes:**
 - Primary key on `ID`
+
+**Notes:**
+- `filters` and `widgets` store JSON or serialized configuration
 
 ---
 
@@ -419,7 +515,7 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 |-------|------|-------------|
 | `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `date` | date | NOT NULL |
-| `resource_uri_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_resource_uris |
+| `resource_uri_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_resource_uris](#wp_statistics_resource_uris) |
 | `visitors` | bigint(20) unsigned | NOT NULL |
 | `sessions` | bigint(20) unsigned | NOT NULL |
 | `views` | bigint(20) unsigned | NOT NULL |
@@ -477,6 +573,9 @@ Lookup tables normalize frequently repeated data to reduce storage and improve q
 - Index on `date`
 - Index on `reason`
 
+**Notes:**
+- Tracks excluded traffic for analysis and debugging
+
 ---
 
 ## Table Relationships
@@ -515,40 +614,6 @@ wp_statistics_reports (∞) ──< (1) wp_users (created_by)
 
 ---
 
-## Database Design Principles
-
-### 1. Normalization
-Data is normalized to reduce redundancy:
-- Lookup tables store frequently repeated values once (browsers, countries, etc.)
-- Resources cached separately from views
-- URIs separated from resources for multi-domain tracking
-
-### 2. Foreign Key Constraints
-- Relationships maintained through foreign key constraints
-- Ensures referential integrity across the system
-- Prevents orphaned records
-
-### 3. Strategic Indexing
-- Indexes on frequently queried columns (timestamps, IDs, foreign keys)
-- Unique indexes on lookup table names (browsers, countries)
-
-### 4. Performance Optimization
-- **Summary tables** (`wp_statistics_summary`, `wp_statistics_summary_totals`) pre-aggregate data
-- **Lookup tables** reduce storage and improve join performance
-- **Nullable fields** for optional data to avoid defaults
-
-### 5. Scalability
-- Separate tables for high-volume data (views vs. sessions vs. visitors)
-- Event system allows extensibility without schema changes
-- Resource URI separation supports multi-site and multi-domain tracking
-
-### 6. Data Integrity
-- Soft deletes via `is_deleted` flag preserve historical data
-- Cached fields reduce dependency on WordPress core tables
-- UTC timestamps ensure consistent time-based queries
-
----
-
 ## Real-World Scenario: A Visitor's Journey
 
 ### Scenario: From Landing to Purchase
@@ -558,51 +623,51 @@ This walkthrough demonstrates how data flows through the v15 analytics system:
 #### 1. The Visitor Lands on a Page
 - Visitor opens a tracked resource (e.g., `/blog/post-1`)
 - System extracts URI path from full URL
-- Looks up or inserts URI into **wp_statistics_resource_uris** → gets `resource_uri_id`
-- Links URI to canonical `resource_id` in **wp_statistics_resources**
+- Looks up or inserts URI into [wp_statistics_resource_uris](#wp_statistics_resource_uris) → gets `resource_uri_id`
+- Links URI to canonical `resource_id` in [wp_statistics_resources](#wp_statistics_resources)
 
 ✅ Enables tracking per path, even across multiple domains
 
 #### 2. Visitor Profile Is Established
-- System checks for existing visitor using `hash` in **wp_statistics_visitors**
+- System checks for existing visitor using `hash` in [wp_statistics_visitors](#wp_statistics_visitors)
 - If not found, creates new visitor record
 - Visitor becomes anchor for all future sessions
 
 #### 3. Device & Environment Data Is Captured
 - Detects device type, OS, browser, version, screen resolution
 - Each matched to lookup table:
-  - `wp_statistics_device_types`
-  - `wp_statistics_device_oss`
-  - `wp_statistics_device_browsers`
-  - `wp_statistics_device_browser_versions`
-  - `wp_statistics_resolutions`
+  - [wp_statistics_device_types](#wp_statistics_device_types)
+  - [wp_statistics_device_oss](#wp_statistics_device_oss)
+  - [wp_statistics_device_browsers](#wp_statistics_device_browsers)
+  - [wp_statistics_device_browser_versions](#wp_statistics_device_browser_versions)
+  - [wp_statistics_resolutions](#wp_statistics_resolutions)
 
 ✅ Lookup tables prevent duplication and normalize data
 
 #### 4. Location & Locale Are Identified
 - Based on IP and browser settings:
-  - `country_id` → from `wp_statistics_countries`
-  - `city_id` → from `wp_statistics_cities`
-  - `language_id` → from `wp_statistics_languages`
-  - `timezone_id` → from `wp_statistics_timezones`
+  - `country_id` → from [wp_statistics_countries](#wp_statistics_countries)
+  - `city_id` → from [wp_statistics_cities](#wp_statistics_cities)
+  - `language_id` → from [wp_statistics_languages](#wp_statistics_languages)
+  - `timezone_id` → from [wp_statistics_timezones](#wp_statistics_timezones)
 
 ✅ Enables localized analysis and filtering
 
 #### 5. Traffic Source Is Logged
 - Checks for Referer header, parses domain
-- Domain, channel, and campaign info saved in **wp_statistics_referrers**
+- Domain, channel, and campaign info saved in [wp_statistics_referrers](#wp_statistics_referrers)
 
 ✅ Enables marketing attribution and source-based reporting
 
 #### 6. A Session Is Created
-- New row in **wp_statistics_sessions**:
+- New row in [wp_statistics_sessions](#wp_statistics_sessions):
   - Links to visitor, referrer, country/city, device info
   - Includes session timing, total views, optionally user ID
 
 ✅ Represents a unique visit to the site
 
 #### 7. Page Views Are Tracked
-- Each page load stored in **wp_statistics_views**:
+- Each page load stored in [wp_statistics_views](#wp_statistics_views):
   - Linked to session (`session_id`)
   - Linked to URI path (`resource_uri_id`)
   - Timestamp (`viewed_at`)
@@ -612,7 +677,7 @@ This walkthrough demonstrates how data flows through the v15 analytics system:
 
 #### 8. Query Parameters Are Saved
 - UTM or query parameters extracted from full URL
-- Stored in **wp_statistics_parameters**, linked to:
+- Stored in [wp_statistics_parameters](#wp_statistics_parameters), linked to:
   - `session_id`
   - `view_id`
   - `resource_uri_id`
