@@ -21,13 +21,15 @@ A resource is any piece of content that can be viewed and tracked by WP Statisti
 - Archives
 - Category/Tag pages
 - Author pages
+- 404 pages
+- Search pages
+- Any other visitable page on the frontend
 
 ## Identification
 
 Each resource is identified by:
-- **Post ID:** WordPress internal identifier
-- **URL/Slug:** The page address
-- **Post Type:** The content type classification
+- **Page ID:** WordPress internal identifier
+- **Page Type:** Same as resource type (e.g., "page", "post", "archive", "404", "search")
 
 ## Metrics Per Resource
 
