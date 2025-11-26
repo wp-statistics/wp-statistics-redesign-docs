@@ -100,7 +100,7 @@ The v15 database is organized into four primary categories:
 | `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `session_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_sessions |
 | `resource_uri_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_resource_uris |
-| `resource_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_resources |
+| `resource_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: wp_statistics_resources |
 | `viewed_at` | datetime | NOT NULL |
 | `next_view_id` | bigint(20) unsigned | nullable, INDEXED, FK: wp_statistics_views |
 | `duration` | int(11) unsigned | nullable |

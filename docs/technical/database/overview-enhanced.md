@@ -180,7 +180,7 @@ All references to `wp_users` are nullable to support both anonymous and authenti
 | `ID` | bigint(20) unsigned | PK, AUTO_INCREMENT, NOT NULL |
 | `session_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_sessions](#wp_statistics_sessions) |
 | `resource_uri_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_resource_uris](#wp_statistics_resource_uris) |
-| `resource_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_resources](#wp_statistics_resources) |
+| `resource_id` | bigint(20) unsigned | NOT NULL, INDEXED, FK: [wp_statistics_resources](#wp_statistics_resources) |
 | `viewed_at` | datetime | NOT NULL |
 | `next_view_id` | bigint(20) unsigned | nullable, INDEXED, FK: [wp_statistics_views](#wp_statistics_views) |
 | `duration` | int(11) unsigned | nullable |
