@@ -14,7 +14,7 @@ A unique individual identified by [visitor hash](../../technical/architecture/vi
 
 One unique identifier = one visitor, regardless of how many sessions or views they generate.
 
-- **Anonymous visitors:** Identified by visitor hash (SHA-256 of IP + User Agent + daily salt)
+- **Anonymous visitors:** Identified by [visitor hash](../../technical/architecture/visitor-hash-mechanism.md)
 - **Logged-in users:** WordPress user ID (tracked across IPs)
 
 **Key Points:**
@@ -23,21 +23,6 @@ One unique identifier = one visitor, regardless of how many sessions or views th
 - Different IPs (home/office/mobile) = different visitors
 - Logged-in users: tracked by user ID across IPs
 - Visitor counts are date-range scoped
-
-## Formulas
-
-```
-Total Visitors (in date range) = COUNT(DISTINCT ip_address WHERE date IN range)
-```
-
-## Example
-
-**Scenario:**
-- Jan 10: Person visits from home (IP: 192.168.1.1)
-- Jan 12: Same person visits from home (same IP)
-- Jan 15: Same person visits from office (IP: 10.0.0.5)
-
-**Result:** 2 visitors (2 different IPs)
 
 ## Related Documentation
 
