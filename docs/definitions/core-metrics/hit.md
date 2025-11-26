@@ -21,10 +21,17 @@ A hit is the raw tracking event recorded when the tracking script executes on a 
 Each hit captures:
 - Timestamp
 - Page URL
+- Resource ID
+- Resource Type
+- Resource URI
+- Resource URI ID
 - Visitor identifier (IP hash)
 - Referrer
 - User agent (browser, OS, device)
 - Screen resolution
+- Timezone
+- Language
+- Language Full Name
 
 ## Hit vs View
 
