@@ -68,7 +68,7 @@ The v15 database is organized into four primary categories:
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `hash` | varchar(128) | indexed, nullable |
+| `hash` | varchar(128) | NOT NULL, INDEXED |
 | `created_at` | datetime | NOT NULL |
 
 **Key Indexes:**

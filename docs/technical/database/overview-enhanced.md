@@ -150,7 +150,7 @@ All references to `wp_users` are nullable to support both anonymous and authenti
 | Field | Type | Constraints |
 |-------|------|-------------|
 | `ID` | bigint | PK, AUTO_INCREMENT, NOT NULL |
-| `hash` | varchar(128) | INDEXED, nullable |
+| `hash` | varchar(128) | NOT NULL, INDEXED |
 | `created_at` | datetime | NOT NULL |
 
 **Key Indexes:**
