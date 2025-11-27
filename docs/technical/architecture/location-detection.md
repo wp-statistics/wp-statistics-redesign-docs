@@ -59,12 +59,15 @@ Location detection transforms visitor IP addresses into geographic information (
 - "IP Geolocation" must be enabled in Cloudflare dashboard (Network settings)
 
 **Headers Used:**
-| Header | Data |
-|--------|------|
-| `HTTP_CF_IPCOUNTRY` | Country code |
-| `HTTP_CF_IPCONTINENT` | Continent code |
-| `HTTP_CF_REGION` | Region name |
-| `HTTP_CF_IPCITY` | City name |
+| Header | Data | Stored |
+|--------|------|--------|
+| `HTTP_CF_IPCOUNTRY` | Country code | Yes |
+| `HTTP_CF_IPCONTINENT` | Continent code | Yes |
+| `HTTP_CF_REGION` | Region name | Yes |
+| `HTTP_CF_IPCITY` | City name | Yes |
+| `HTTP_CF_IPLATITUDE` | Latitude | No |
+| `HTTP_CF_IPLONGITUDE` | Longitude | No |
+| `HTTP_CF_POSTAL_CODE` | Postal code | No |
 
 **Advantages:**
 - No database storage required
