@@ -26,7 +26,8 @@ This document tracks all settings changes in WP Statistics v15 compared to previ
 
 | Setting | Previous Page | Reason |
 |---------|---------------|--------|
-| *None yet* | | |
+| [Country Code for Private IPs](#country-code-for-private-ips) | Advanced | Private IPs now return null for location (same as unknown) |
+| [Update Missing Geolocation Data](#update-missing-geolocation-data) | Advanced | Feature removed - not compatible with hashed IPs |
 
 ---
 
@@ -57,4 +58,44 @@ This document tracks all settings changes in WP Statistics v15 compared to previ
 
 ---
 
-*Last Updated: 2025-11-26*
+## Removed Settings Details
+
+### Country Code for Private IPs
+
+**Previous Display Label**: Country Code for Private IPs
+
+**Previous Setting Key**: `wps_private_country_code`
+
+**Previous Type**: Text Input (3 characters)
+
+**Previous Default Value**: `000`
+
+**Previous Location**: Advanced Options > Geolocation Settings
+
+**Reason for Removal**: Simplified location detection. Private IP addresses (localhost, internal networks) now return `null` for all location fields, treating them the same as any other unidentifiable location. This eliminates the need for a separate country code configuration.
+
+**Migration**: Existing data with `000` country codes remains unchanged. New private IP visits will have null location values.
+
+**Related Documentation**: [Location Detection](../technical/architecture/location-detection.md)
+
+---
+
+### Update Missing Geolocation Data
+
+**Previous Display Label**: Update Missing Geolocation Data
+
+**Previous Setting Key**: `wps_auto_pop`
+
+**Previous Type**: Checkbox
+
+**Previous Default Value**: `false`
+
+**Previous Location**: Advanced Options > Geolocation Settings
+
+**Reason for Removal**: This feature is no longer compatible with the privacy-first approach in v15. Since visitor IPs are hashed by default, the original IP address is not stored and cannot be used to retroactively look up location data. Location must be captured at the time of the visit.
+
+**Related Documentation**: [Location Detection](../technical/architecture/location-detection.md)
+
+---
+
+*Last Updated: 2025-11-27*

@@ -17,6 +17,7 @@ This section contains technical documentation for WP Statistics v15, including d
 
 ### Architecture
 - [Visitor Hash Mechanism](architecture/visitor-hash-mechanism.md) - Privacy-focused visitor identification using hashed IPs
+- [Location Detection](architecture/location-detection.md) - Geolocation providers and IP-to-location resolution
 
 ### Data Flow
 *Coming soon* - Data flow diagrams and processing pipelines

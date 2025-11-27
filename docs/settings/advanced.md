@@ -3,7 +3,7 @@ title: "Advanced Options Settings"
 type: "settings"
 add_on: "Free"
 status: "Not Started"
-settings_count: 15
+settings_count: 13
 ---
 
 # Advanced Options Settings
@@ -15,7 +15,7 @@ Technical configuration including IP detection methods, geolocation providers, c
 - **Add-on**: Free
 - **Status**: Not Started
 - **Figma Design**: [Add link when available]
-- **Settings Count**: 15
+- **Settings Count**: 13
 
 ## Your IP Information
 
@@ -190,33 +190,23 @@ Technical configuration including IP detection methods, geolocation providers, c
 
 ---
 
-### Update Missing Geolocation Data
+### ~~Update Missing Geolocation Data~~ (Removed in v15)
 
-**Display Label**: Update Missing Geolocation Data
+**Status**: Removed in v15 - Not compatible with hashed IPs
 
-**Setting Key**: `wps_auto_pop`
+**Previous Setting Key**: `wps_auto_pop`
 
-**Type**: Checkbox
-
-**Default Value**: `false`
-
-**Description**: Fills in any gaps in the Geolocation database following a new download.
-
-**Dependencies**: Only visible when Location Detection Method is "maxmind" or "dbip"
+See [v15 Settings Changes](v15-changes.md#update-missing-geolocation-data) for details.
 
 ---
 
-### Country Code for Private IPs
+### ~~Country Code for Private IPs~~ (Removed in v15)
 
-**Display Label**: Country Code for Private IPs
+**Status**: Removed in v15 - Private IPs now return null for location
 
-**Setting Key**: `wps_private_country_code`
+**Previous Setting Key**: `wps_private_country_code`
 
-**Type**: Text Input (3 characters)
-
-**Default Value**: `000` or provider-specific default
-
-**Description**: Assigns a default country code for private IP addresses that cannot be geographically located.
+See [v15 Settings Changes](v15-changes.md#country-code-for-private-ips) for details.
 
 ---
 
@@ -300,4 +290,4 @@ Technical configuration including IP detection methods, geolocation providers, c
 
 ---
 
-*Last Updated: 2025-11-16*
+*Last Updated: 2025-11-27*
