@@ -68,10 +68,16 @@ This section documents all available filter types with their operators and input
 
 | Filter Name | Description | Operators | Input Type |
 |-------------|-------------|-----------|------------|
-| Post Type | Filter by WordPress post type | is, is not | Dropdown (Page, Post, Custom Post Types) |
-| Category | Filter by WordPress category | is, is not | Dropdown (searchable) |
-| Tag | Filter by WordPress tag | is, is not | Dropdown (searchable) |
+| Page URL | Filter by page URL/URI | is, is not, contains, starts with | Text input |
+| Page Title | Filter by cached page title | is, is not, contains | Text input or searchable dropdown |
+| Page Term | Filter by taxonomy terms across all taxonomies | is, is not | Dropdown (searchable, all taxonomy terms) |
+| Resource Type | Filter by resource/page type | is any of, is not any of | Multi-select dropdown (home, search, post, page, author_archive, date_archive, post_type_archive, category, post_tag, archive, 404, attachment, feed, loginpage) |
+| Resource ID | Filter by content or taxonomy ID | is, is not | Two-step: Select type (Content/Taxonomy) + Numeric input |
+| Cached Date | Filter by page cache/index date | between, before, after | Date picker |
+| Language | Filter by content language (future: requires multi-language plugin) | is, is not | Dropdown |
 | Author | Filter by content author | is, is not | Dropdown (author list) |
+
+> **Note**: The Language filter is planned for a future release and will require integration with a multi-language plugin when active.
 
 ### Visitor & Behavior Filters
 
@@ -138,7 +144,7 @@ Filter Groups define which filters are bundled together for specific use cases a
 
 ### Content Filters
 
-**Includes**: Post Type, Category, Tag, Author
+**Includes**: Page URL, Page Title, Page Term, Resource Type, Resource ID, Cached Date, Language (future), Author
 
 **Used In Reports**:
 - [Top Pages](../reports/page-insights/top-pages.md)
