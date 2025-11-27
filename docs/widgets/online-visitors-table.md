@@ -43,11 +43,13 @@ This widget is used in the following reports:
 
 | Column | Sortable | Default Visibility |
 |--------|----------|--------------------|
-| [Visitor Last Visit](../columns/visitor-last-visit.md) | No (default) | Shown |
-| [Online For](../columns/online-for.md) | No | Shown |
 | [Visitor Info](../columns/visitor-info.md) | No | Shown |
-| [Referrer](../columns/referrer.md) | No | Shown |
+| [Online For](../columns/online-for.md) | No | Shown |
 | [Page](../columns/page.md) | No | Shown |
+| [Total Views](../columns/total-views.md) | No | Shown |
+| [Entry Page](../columns/entry-page.md) | No | Shown |
+| [Referrer](../columns/referrer.md) | No | Shown |
+| [Visitor Last Visit](../columns/visitor-last-visit.md) | No (default) | Shown |
 
 ## Empty State
 
@@ -61,4 +63,4 @@ When no visitors are currently online:
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-27*
