@@ -112,6 +112,7 @@ Filter Groups define which filters are bundled together for specific use cases a
 **Used In Reports**:
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
 - [Visitors](../reports/visitor-insights/visitors.md)
+- [Views](../reports/visitor-insights/views.md)
 - [Top Visitors](../reports/visitor-insights/top-visitors.md)
 - [Logged-in Users](../reports/visitor-insights/logged-in-users.md)
 
@@ -195,4 +196,4 @@ In the "Available Interactions" section, list the specific filters available for
 
 ---
 
-*Last Updated: 2025-11-25*
+*Last Updated: 2025-11-27*

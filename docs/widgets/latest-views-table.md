@@ -41,11 +41,12 @@ Displays the most recent page views across your website in a comprehensive data 
 
 | Column | Sortable | Default Visibility |
 |--------|----------|--------------------|
-| [Visitor Last Visit](../columns/visitor-last-visit.md) | No (default) | Shown |
 | [Visitor Info](../columns/visitor-info.md) | No | Shown |
-| [Referrer](../columns/referrer.md) | No | Shown |
+| [Visitor Last Visit](../columns/visitor-last-visit.md) | Yes (default) | Shown |
 | [Page](../columns/page.md) | No | Shown |
-| [Total Views](../columns/total-views.md) | No | Shown |
+| [Referrer](../columns/referrer.md) | No | Shown |
+| [Entry Page](../columns/entry-page.md) | No | Shown |
+| [Total Views](../columns/total-views.md) | Yes | Shown |
 
 ## Empty State
 
@@ -54,4 +55,4 @@ When no views match criteria:
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-27*

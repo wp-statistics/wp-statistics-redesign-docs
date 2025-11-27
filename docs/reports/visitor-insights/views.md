@@ -7,6 +7,7 @@ add_on: "Free"
 status: "Done"
 interactions:
   - "Date Picker"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["latest-views-table"]
@@ -26,6 +27,7 @@ Track and analyze page views across your website.
 ## Available Interactions
 
 - **Date Picker**
+- **[Advanced Filters](../../global/advanced-filters.md)**: Visitor Analysis filter group
 
 ## Widget Layout
 
@@ -34,4 +36,4 @@ Track and analyze page views across your website.
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-11-27*

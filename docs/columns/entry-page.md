@@ -10,6 +10,7 @@ used_in_widgets:
   - "top-entry-pages-preview"
   - "top-visitors"
   - "online-visitors-table"
+  - "latest-views-table"
 ---
 
 # Entry Page Column
@@ -33,6 +34,7 @@ This column is used in the following widgets:
 - [Top Entry Pages Preview](../widgets/top-entry-pages-preview.md)
 - [Top Visitors](../widgets/top-visitors.md)
 - [Online Visitors Table](../widgets/online-visitors-table.md)
+- [Latest Views Table](../widgets/latest-views-table.md)
 
 ## Attribution Model Behavior
 
