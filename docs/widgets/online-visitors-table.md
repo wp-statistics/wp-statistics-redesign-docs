@@ -44,12 +44,12 @@ This widget is used in the following reports:
 | Column | Sortable | Default Visibility |
 |--------|----------|--------------------|
 | [Visitor Info](../columns/visitor-info.md) | No | Shown |
-| [Online For](../columns/online-for.md) | No | Shown |
+| [Online For](../columns/online-for.md) | Yes | Shown |
 | [Page](../columns/page.md) | No | Shown |
-| [Total Views](../columns/total-views.md) | No | Shown |
+| [Total Views](../columns/total-views.md) | Yes | Shown |
 | [Entry Page](../columns/entry-page.md) | No | Shown |
 | [Referrer](../columns/referrer.md) | No | Shown |
-| [Visitor Last Visit](../columns/visitor-last-visit.md) | No (default) | Shown |
+| [Visitor Last Visit](../columns/visitor-last-visit.md) | Yes (default) | Shown |
 
 ## Empty State
 
