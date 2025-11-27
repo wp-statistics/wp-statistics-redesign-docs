@@ -13,8 +13,8 @@ widgets:
     columns: ["logged-in-traffic-trends"]
   - row: 2
     columns: ["latest-views-table"]
-row_limit: 20
-title: "Latest Views"
+widget_row_limit: 20
+widget_title: "Latest Views"
 ---
 
 # Logged-in Users Report
