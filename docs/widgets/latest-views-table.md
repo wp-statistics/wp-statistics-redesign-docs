@@ -8,6 +8,7 @@ default_sort: "last_view"
 row_limit: 50
 used_in_reports:
   - "views"
+  - "logged-in-users"
 ---
 
 # Latest Views Table Widget
@@ -34,6 +35,7 @@ Displays the most recent page views across your website in a comprehensive data 
 ## Used In Reports
 
 - [Views](../reports/visitor-insights/views.md) - Row 1, full width
+- [Logged-in Users](../reports/visitor-insights/logged-in-users.md) - Row 2, full width (with custom configuration)
 
 ## Table Structure
 

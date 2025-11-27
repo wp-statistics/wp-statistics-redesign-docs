@@ -12,7 +12,9 @@ widgets:
   - row: 1
     columns: ["logged-in-traffic-trends"]
   - row: 2
-    columns: ["logged-in-users-views-table"]
+    columns: ["latest-views-table"]
+row_limit: 20
+title: "Latest Views"
 ---
 
 # Logged-in Users Report
@@ -31,14 +33,21 @@ Track and analyze activity of registered users on your WordPress site.
 - **Date Picker**
 - **[Advanced Filters](../../global/advanced-filters.md)**: Visitor Analysis Filters
 
+## Report Configuration
+
+This report uses the same widget as the Views report but with different default settings:
+
+- **Title**: "Latest Views"
+- **Row Limit**: 20 (instead of 50)
+
 ## Widget Layout
 
 ### Row 1 (Full Width)
 - [Logged-in Traffic Trends](../../widgets/logged-in-traffic-trends.md)
 
 ### Row 2 (Full Width)
-- [Logged-in Users Views Table](../../widgets/logged-in-users-views-table.md)
+- [Latest Views Table](../../widgets/latest-views-table.md)
 
 ---
 
-*Last Updated: 2025-11-25*
+*Last Updated: 2025-11-27*

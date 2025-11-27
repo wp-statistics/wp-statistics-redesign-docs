@@ -14,7 +14,6 @@ used_in_widgets:
   - "visitors-table"
   - "latest-views-table"
   - "logged-in-users-list"
-  - "logged-in-users-views-table"
   - "online-visitors-table"
   - "recent-pages-preview"
   - "referrers-table"
@@ -56,7 +55,6 @@ This component is used by the following widgets:
 - [Visitors Table](../widgets/visitors-table.md)
 - [Latest Views Table](../widgets/latest-views-table.md)
 - [Logged-in Users List](../widgets/logged-in-users-list.md)
-- [Logged-in Users Views Table](../widgets/logged-in-users-views-table.md)
 - [Online Visitors Table](../widgets/online-visitors-table.md)
 - [Recent Pages Preview](../widgets/recent-pages-preview.md)
 - [Referrers Table](../widgets/referrers-table.md)
