@@ -7,8 +7,7 @@ add_on: "Data Plus"
 status: "Done"
 interactions:
   - "Date Picker"
-  - "Post Type Filter"
-  - "Filters"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["exit-pages-table"]
@@ -30,10 +29,7 @@ Shows which pages visitors view last before leaving your website.
 ## Available Interactions
 
 - **Date Picker**: Select time period for data
-- **Post Type Filter**: Filter by content type (Posts, Pages, Custom Post Types)
-- **Filters**: Additional filtering options
-  - Author
-  - URL
+- **Advanced Filters**: [Content Filters](../../global/advanced-filters.md#content-filters)
 
 ## Widget Layout
 
