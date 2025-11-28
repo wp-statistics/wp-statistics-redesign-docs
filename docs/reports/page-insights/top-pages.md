@@ -7,8 +7,7 @@ add_on: "Free"
 status: "Done"
 interactions:
   - "Date Picker"
-  - "Post Type Filter"
-  - "Filters"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["top-pages-full"]
@@ -30,10 +29,7 @@ Shows the most viewed pages on your website with detailed performance metrics.
 ## Available Interactions
 
 - **Date Picker**: Select time period for data
-- **Post Type Filter**: Filter by content type (Posts, Pages, Custom Post Types)
-- **Filters**: Additional filtering options
-  - Author
-  - URL
+- **Advanced Filters**: [Content Filters](../../global/advanced-filters.md#content-filters)
 
 ## Widget Layout
 
