@@ -28,6 +28,10 @@ Shows 404 error pages with their view counts to identify broken links and missin
 
 - **Date Picker**: Select time period for data
 
+### Predefined Filters
+
+- **Resource Type**: Predefined to "404" (not visible to users)
+
 ## Widget Layout
 
 ### Row 1 (Full Width)

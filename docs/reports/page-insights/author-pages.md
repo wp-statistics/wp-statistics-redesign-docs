@@ -29,6 +29,10 @@ Shows performance metrics for author archive pages (e.g., `/author/john-doe/`), 
 
 - **Date Picker**: Select time period for data
 
+### Predefined Filters
+
+- **Resource Type**: Predefined to "author_archive" (not visible to users)
+
 ## Widget Layout
 
 ### Row 1 (Full Width)
