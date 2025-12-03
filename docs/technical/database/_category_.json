@@ -1,0 +1,10 @@
+{
+  "label": "Database",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "title": "Database Schema",
+    "description": "Database tables, relationships, indexes, and data storage structure.",
+    "keywords": ["database", "schema", "tables", "sql"]
+  }
+}

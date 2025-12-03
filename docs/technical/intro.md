@@ -13,26 +13,28 @@ This section contains technical documentation for WP Statistics v15, including d
 - [Database Overview](database/overview.md) - Complete database schema and table structure
 
 ### API
-*Coming soon* - API endpoints, request/response specifications, and authentication
+- [API Overview](api/api-architecture.md) - Introduction to WP Statistics API architecture
+- [Analytics Query API](api/analytics-query-api.md) - Flexible metrics + dimensions based query API
 
 ### Architecture
+
+**Query System:**
+- [Backend Architecture](architecture/analytics-query-backend.md) - Query building, MetricRegistry, DimensionRegistry, and SQL generation
+- [Frontend Integration](architecture/analytics-query-frontend.md) - React hooks, TypeScript interfaces, and component patterns
+
+**Core Systems:**
 - [Visitor Hash Mechanism](architecture/visitor-hash-mechanism.md) - Privacy-focused visitor identification using hashed IPs
 - [Location Detection](architecture/location-detection.md) - Geolocation providers and IP-to-location resolution
 - [Device Detection](architecture/device-detection.md) - User Agent parsing for device, browser, and OS identification
 
-### Data Flow
-*Coming soon* - Data flow diagrams and processing pipelines
-
 ## About This Documentation
 
-This technical documentation complements the [product documentation](/docs/intro) by providing:
+This technical documentation provides:
 - Database schema and table structures
-- Technical implementation details
-- System architecture and design
-- Developer-focused specifications
-
-For product features, UI components, and user-facing documentation, see the main [documentation](/docs/intro).
+- API endpoints and specifications
+- System architecture and design patterns
+- Developer-focused implementation details
 
 ---
 
-*Last Updated: 2025-11-27*
+*Last Updated: 2024-12-03*
