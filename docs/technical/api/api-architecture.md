@@ -1,5 +1,5 @@
 ---
-title: "API Architecture"
+title: "API Architecture Overview"
 type: "technical"
 category: "api"
 status: "In Progress"
@@ -106,8 +106,8 @@ class WP_Statistics_API_Handler {
 
 - **Endpoint**: `wp-admin/admin-ajax.php`
 - **Action**: `wp_statistics_fetch_widget_data`
-- **Security**: WordPress nonces + capability check (`read_wp_statistics`)
-- **Avoids adblockers**: Yes ✓
+- **Security**: WordPress nonces + capability check (`wps_read_capability`)
+- **Avoids adblockers**: Yes (recommended over REST API)
 
 ### 1.3 REST API Integration (External Access)
 
@@ -808,4 +808,16 @@ The phased implementation ensures steady progress with testable milestones at ea
 
 ---
 
-*Last Updated: 2025-11-29*
+## Related Documentation
+
+### Analytics Query API (New)
+
+For the new metrics + dimensions based query API, see:
+
+- [Analytics Query API](./analytics-query-api.md) - API endpoint, request/response format, examples
+- [Analytics Query Backend](../architecture/analytics-query-backend.md) - Backend query building architecture
+- [Analytics Query Frontend](../architecture/analytics-query-frontend.md) - React integration patterns
+
+---
+
+*Last Updated: 2024-12-03*
