@@ -24,7 +24,7 @@ Flexible metrics + dimensions based query API for fetching any analytics data.
 
 ### Public REST API
 
-*Coming soon* - External REST API for third-party integrations (refactored from existing Add-on REST API).
+*Coming soon* - External REST API for third-party integrations. Will be refactored during the v15 add-ons update.
 
 ---
 

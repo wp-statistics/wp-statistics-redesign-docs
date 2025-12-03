@@ -12,26 +12,24 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
 
 ## Quick Navigation
 
-| Section | Description |
-|---------|-------------|
-| [Endpoint](#endpoint) | Admin-Ajax and REST API endpoints |
-| [Authentication](#authentication) | Security and capability requirements |
-| [Request Parameters](#request-parameters) | Required and optional parameters |
-| [Available Metrics](#available-metrics) | Metrics you can query |
-| [Available Dimensions](#available-dimensions) | Dimensions for grouping data |
-| [Filters](#filters) | Filter syntax and operators |
-| [Response Structure](#response-structure) | Response format and fields |
-| [Error Codes](#error-codes) | Error handling |
-| [Batch Queries](#batch-queries) | Multiple queries in one request |
-| **Examples** | |
-| [Line Chart](#1-line-chart---time-series) | Time series data |
-| [Horizontal Bar](#2-horizontal-bar-chart---top-countries) | Top countries |
-| [Pie/Donut Chart](#3-piedonut-chart---device-distribution) | Device distribution |
-| [Data Table](#4-data-table---top-pages-with-pagination) | Paginated tables |
-| [Metrics Cards](#5-metrics-cards---kpi-summary-no-dimensions) | KPI summaries |
-| [World Map](#6-world-map---geographic-distribution) | Geographic data |
-| [Online Visitors](#7-online-visitors-real-time) | Real-time visitors |
-| [Referrers](#8-traffic-sources-referrers) | Traffic sources |
+- [Endpoint](#endpoint)
+- [Authentication](#authentication)
+- [Request Parameters](#request-parameters)
+- [Available Metrics](#available-metrics)
+- [Available Dimensions](#available-dimensions)
+- [Filters](#filters)
+- [Response Structure](#response-structure)
+- [Error Codes](#error-codes)
+- [Batch Queries](#batch-queries)
+- **Examples:**
+  - [Line Chart](#1-line-chart---time-series)
+  - [Horizontal Bar](#2-horizontal-bar-chart---top-countries)
+  - [Pie/Donut Chart](#3-piedonut-chart---device-distribution)
+  - [Data Table](#4-data-table---top-pages-with-pagination)
+  - [Metrics Cards](#5-metrics-cards---kpi-summary-no-dimensions)
+  - [World Map](#6-world-map---geographic-distribution)
+  - [Online Visitors](#7-online-visitors-real-time)
+  - [Referrers](#8-traffic-sources-referrers)
 
 ---
 
