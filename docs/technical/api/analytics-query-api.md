@@ -21,15 +21,17 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
 - [Response Structure](#response-structure)
 - [Error Codes](#error-codes)
 - [Batch Queries](#batch-queries)
-- **Examples:**
-  - [Line Chart](#1-line-chart---time-series)
-  - [Horizontal Bar](#2-horizontal-bar-chart---top-countries)
-  - [Pie/Donut Chart](#3-piedonut-chart---device-distribution)
-  - [Data Table](#4-data-table---top-pages-with-pagination)
-  - [Metrics Cards](#5-metrics-cards---kpi-summary-no-dimensions)
-  - [World Map](#6-world-map---geographic-distribution)
-  - [Online Visitors](#7-online-visitors-real-time)
-  - [Referrers](#8-traffic-sources-referrers)
+
+## Examples
+
+- [Line Chart](#1-line-chart---time-series)
+- [Horizontal Bar](#2-horizontal-bar-chart---top-countries)
+- [Pie/Donut Chart](#3-piedonut-chart---device-distribution)
+- [Data Table](#4-data-table---top-pages-with-pagination)
+- [Metrics Cards](#5-metrics-cards---kpi-summary-no-dimensions)
+- [World Map](#6-world-map---geographic-distribution)
+- [Online Visitors](#7-online-visitors-real-time)
+- [Referrers](#8-traffic-sources-referrers)
 
 ---
 
