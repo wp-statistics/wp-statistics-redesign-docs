@@ -18,6 +18,7 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
 - [Available Metrics](#available-metrics)
 - [Available Dimensions](#available-dimensions)
 - [Filters](#filters)
+- [Request Example](#request-example)
 - [Response Structure](#response-structure)
 - [Error Codes](#error-codes)
 - [Batch Queries](#batch-queries)
@@ -221,9 +222,51 @@ For advanced filtering, use operator syntax:
 
 ---
 
+## Request Example
+
+A complete request showcasing all available parameters:
+
+```json
+{
+  "metrics": ["visitors", "views", "sessions", "bounce_rate"],
+  "dimensions": ["country"],
+  "date_from": "2024-11-01 08:00:00",
+  "date_to": "2024-11-30 17:30:00",
+  "compare": true,
+  "filters": {
+    "device_type": "desktop",
+    "browser": { "in": ["Chrome", "Firefox", "Safari"] },
+    "referrer": { "contains": "google" }
+  },
+  "page": 1,
+  "per_page": 10,
+  "order_by": "visitors",
+  "order": "DESC"
+}
+```
+
+**Parameters Breakdown:**
+
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| `metrics` | `["visitors", "views", "sessions", "bounce_rate"]` | Request multiple metrics in one query |
+| `dimensions` | `["country"]` | Group results by country |
+| `date_from` | `"2024-11-01 08:00:00"` | Start of date range (8 AM) |
+| `date_to` | `"2024-11-30 17:30:00"` | End of date range (5:30 PM) |
+| `compare` | `true` | Include comparison with previous period |
+| `filters` | `{...}` | Filter by desktop devices, specific browsers, and Google referrers |
+| `page` | `1` | First page of results |
+| `per_page` | `10` | Return 10 results per page |
+| `order_by` | `"visitors"` | Sort by visitors metric |
+| `order` | `"DESC"` | Sort in descending order (highest first) |
+
+---
+
 ## Response Structure
 
 ### Success Response
+
+Response for the [Request Example](#request-example) above:
 
 ```json
 {
@@ -233,36 +276,49 @@ For advanced filtering, use operator syntax:
       {
         "country": "United States",
         "country_code": "US",
+        "flag": "us",
         "visitors": 12500,
         "views": 35000,
+        "sessions": 15200,
+        "bounce_rate": 42.3,
         "previous": {
           "visitors": 11200,
-          "views": 32000
+          "views": 32000,
+          "sessions": 13800,
+          "bounce_rate": 44.1
         },
         "change": {
           "visitors": 11.6,
-          "views": 9.4
+          "views": 9.4,
+          "sessions": 10.1,
+          "bounce_rate": -4.1
         }
       }
     ],
     "totals": {
       "visitors": 35000,
       "views": 98000,
+      "sessions": 42000,
+      "bounce_rate": 45.2,
       "previous": {
         "visitors": 32000,
-        "views": 90000
+        "views": 90000,
+        "sessions": 38000,
+        "bounce_rate": 47.8
       },
       "change": {
         "visitors": 9.4,
-        "views": 8.9
+        "views": 8.9,
+        "sessions": 10.5,
+        "bounce_rate": -5.4
       }
     }
   },
   "meta": {
-    "date_from": "2024-11-01",
-    "date_to": "2024-11-30",
-    "compare_from": "2024-10-02",
-    "compare_to": "2024-10-31",
+    "date_from": "2024-11-01 08:00:00",
+    "date_to": "2024-11-30 17:30:00",
+    "compare_from": "2024-10-02 08:00:00",
+    "compare_to": "2024-10-31 17:30:00",
     "total_rows": 145,
     "page": 1,
     "per_page": 10,
