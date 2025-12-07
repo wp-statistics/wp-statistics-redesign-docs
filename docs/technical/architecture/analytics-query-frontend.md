@@ -22,7 +22,17 @@ The frontend uses a simple query interface to fetch analytics data. The API acce
 interface AnalyticsQuery {
   metrics: string[];
   dimensions: string[];
+  /**
+   * Start date/time. Accepts:
+   * - Date only: "YYYY-MM-DD" (defaults to 00:00:00)
+   * - With time: "YYYY-MM-DD HH:mm:ss" or "YYYY-MM-DDTHH:mm:ss"
+   */
   date_from?: string;
+  /**
+   * End date/time. Accepts:
+   * - Date only: "YYYY-MM-DD" (defaults to 23:59:59)
+   * - With time: "YYYY-MM-DD HH:mm:ss" or "YYYY-MM-DDTHH:mm:ss"
+   */
   date_to?: string;
   compare?: boolean;
   filters?: Record<string, any>;
@@ -43,9 +53,13 @@ interface AnalyticsResponse {
     totals: Record<string, any>;
   };
   meta: {
+    /** Normalized start date-time (always includes time: "YYYY-MM-DD HH:mm:ss") */
     date_from: string;
+    /** Normalized end date-time (always includes time: "YYYY-MM-DD HH:mm:ss") */
     date_to: string;
+    /** Comparison period start (when compare=true) */
     compare_from?: string;
+    /** Comparison period end (when compare=true) */
     compare_to?: string;
     total_rows: number;
     page?: number;
@@ -544,10 +558,10 @@ function FilteredAnalytics() {
 ### Date Range Context
 
 ```typescript
-// Context for global date range
+// Context for global date range (supports both date-only and date-time formats)
 const DateRangeContext = createContext<{
-  dateFrom: string;
-  dateTo: string;
+  dateFrom: string;  // "YYYY-MM-DD" or "YYYY-MM-DD HH:mm:ss"
+  dateTo: string;    // "YYYY-MM-DD" or "YYYY-MM-DD HH:mm:ss"
   setDateRange: (from: string, to: string) => void;
 }>(null);
 
@@ -562,13 +576,22 @@ function useAnalyticsWithDateRange(query: Omit<AnalyticsQuery, 'date_from' | 'da
   });
 }
 
-// Usage
+// Usage - Date only (backend defaults to full day 00:00:00 - 23:59:59)
 function Widget() {
   const { data } = useAnalyticsWithDateRange({
     metrics: ['visitors'],
     dimensions: ['country']
   });
-  // Automatically uses global date range
+}
+
+// Usage - Intraday query with specific times
+function BusinessHoursWidget() {
+  const { data } = useAnalytics({
+    metrics: ['visitors', 'views'],
+    dimensions: ['hour'],
+    date_from: '2024-11-01 09:00:00',  // 9 AM
+    date_to: '2024-11-01 17:00:00'     // 5 PM
+  });
 }
 ```
 
@@ -706,4 +729,4 @@ function SortableHeader({
 
 ---
 
-*Last Updated: 2024-12-03*
+*Last Updated: 2025-12-07*

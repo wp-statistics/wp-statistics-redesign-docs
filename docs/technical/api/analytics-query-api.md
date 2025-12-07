@@ -78,14 +78,42 @@ X-WP-Nonce: {nonce}
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `date_from` | string | 30 days ago | Start date `YYYY-MM-DD` |
-| `date_to` | string | today | End date `YYYY-MM-DD` |
+| `date_from` | string | 30 days ago | Start date/time. Formats: `YYYY-MM-DD`, `YYYY-MM-DD HH:mm:ss`, or `YYYY-MM-DDTHH:mm:ss`. Defaults to `00:00:00` if time omitted. |
+| `date_to` | string | today | End date/time. Formats: `YYYY-MM-DD`, `YYYY-MM-DD HH:mm:ss`, or `YYYY-MM-DDTHH:mm:ss`. Defaults to `23:59:59` if time omitted. |
 | `compare` | boolean | `false` | Include previous period comparison |
 | `filters` | object | `{}` | Filter criteria (see Filters section) |
 | `page` | integer | `1` | Page number for pagination |
 | `per_page` | integer | `10` | Results per page (max: 100) |
 | `order_by` | string | first metric | Column to sort by |
 | `order` | string | `DESC` | Sort direction: `ASC` or `DESC` |
+
+### Date/Time Format
+
+The `date_from` and `date_to` parameters accept flexible date-time formats:
+
+| Format | Example | Description |
+|--------|---------|-------------|
+| Date only | `2024-11-01` | Time defaults to `00:00:00` for `date_from`, `23:59:59` for `date_to` |
+| With space | `2024-11-01 14:30:00` | Exact time specified (24-hour format) |
+| ISO 8601 | `2024-11-01T14:30:00` | JavaScript-friendly format with `T` separator |
+
+**Default Time Behavior:**
+- When only a date is provided, `date_from` defaults to midnight (`00:00:00`) and `date_to` defaults to end of day (`23:59:59`)
+- This ensures full-day queries when times are omitted
+- The response `meta` object returns the actual normalized date-time values used
+
+**Example - Intraday Query:**
+
+Query only business hours (9 AM to 5 PM):
+
+```json
+{
+  "metrics": ["visitors", "views"],
+  "dimensions": ["hour"],
+  "date_from": "2024-11-01 09:00:00",
+  "date_to": "2024-11-01 17:00:00"
+}
+```
 
 ---
 
@@ -888,4 +916,4 @@ async function fetchDashboardBatch() {
 
 ---
 
-*Last Updated: 2024-12-03*
+*Last Updated: 2025-12-07*

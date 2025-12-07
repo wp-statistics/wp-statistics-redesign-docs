@@ -78,12 +78,61 @@ public function handle(array $request): array
     // 3. Validate and sanitize filters
     $filters = FilterBuilder::validate($request['filters'] ?? []);
 
-    // 4. Validate date range
-    $dateRange = $this->validateDateRange($request);
+    // 4. Validate and normalize date range
+    $dateRange = $this->normalizeDateRange($request);
 
     // Continue to query building...
 }
 ```
+
+#### Date/Time Normalization
+
+The `normalizeDateRange` method handles flexible date-time input formats:
+
+```php
+private function normalizeDateRange(array $request): array
+{
+    $dateFrom = $request['date_from'] ?? date('Y-m-d', strtotime('-30 days'));
+    $dateTo = $request['date_to'] ?? date('Y-m-d');
+
+    // Normalize ISO 8601 'T' separator to space for MySQL
+    $dateFrom = str_replace('T', ' ', $dateFrom);
+    $dateTo = str_replace('T', ' ', $dateTo);
+
+    // If no time component (length = 10 for YYYY-MM-DD), add default times
+    if (strlen($dateFrom) === 10) {
+        $dateFrom .= ' 00:00:00';  // Start of day
+    }
+    if (strlen($dateTo) === 10) {
+        $dateTo .= ' 23:59:59';    // End of day
+    }
+
+    // Validate format
+    if (!$this->isValidDateTime($dateFrom) || !$this->isValidDateTime($dateTo)) {
+        throw new InvalidDateRangeException('Invalid date format');
+    }
+
+    // Validate range
+    if (strtotime($dateFrom) > strtotime($dateTo)) {
+        throw new InvalidDateRangeException('date_from must be before date_to');
+    }
+
+    return [
+        'from' => $dateFrom,
+        'to' => $dateTo
+    ];
+}
+
+private function isValidDateTime(string $dateTime): bool
+{
+    return (bool) DateTime::createFromFormat('Y-m-d H:i:s', $dateTime);
+}
+```
+
+**Accepted Formats:**
+- `YYYY-MM-DD` - Date only (time defaults to `00:00:00` for start, `23:59:59` for end)
+- `YYYY-MM-DD HH:mm:ss` - Date with time (space separator)
+- `YYYY-MM-DDTHH:mm:ss` - ISO 8601 format (T separator, normalized to space internally)
 
 ### Step 2: Metric Registry
 
@@ -515,8 +564,12 @@ Here's how a request flows through the system:
 5. FILTER PROCESSING
    → WHERE: sessions.device_type = 'mobile'
 
-6. DATE RANGE
+6. DATE RANGE NORMALIZATION
+   → Input: "2024-11-01" to "2024-11-30" (date only)
+   → Normalized: "2024-11-01 00:00:00" to "2024-11-30 23:59:59"
    → WHERE: sessions.started_at BETWEEN '2024-11-01 00:00:00' AND '2024-11-30 23:59:59'
+
+   Note: If times were provided (e.g., "2024-11-01 09:00:00"), they would be used exactly.
 
 7. PAGINATION
    → ORDER BY: visitors DESC
@@ -750,4 +803,4 @@ LIMIT 50
 
 ---
 
-*Last Updated: 2024-12-03*
+*Last Updated: 2025-12-07*
