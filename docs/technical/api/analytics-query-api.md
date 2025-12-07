@@ -15,9 +15,9 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
 - [Endpoint](#endpoint)
 - [Authentication](#authentication)
 - [Request Parameters](#request-parameters)
-- [Available Metrics](#available-metrics)
-- [Available Dimensions](#available-dimensions)
-- [Filters](#filters)
+  - [Available Metrics](#available-metrics)
+  - [Available Dimensions](#available-dimensions)
+  - [Available Filters](#available-filters)
 - [Request Example](#request-example)
 - [Response Structure](#response-structure)
 - [Error Codes](#error-codes)
@@ -158,24 +158,7 @@ Query only business hours (9 AM to 5 PM):
 
 ---
 
-## Filters
-
-Filters narrow down your data. Pass them as a key-value object:
-
-```json
-{
-  "filters": {
-    "country": "US",
-    "browser": "Chrome",
-    "device_type": "mobile",
-    "logged_in": true,
-    "post_type": "post",
-    "author_id": 5
-  }
-}
-```
-
-### Available Filters
+## Available Filters
 
 | Filter | Type | Description |
 |--------|------|-------------|
