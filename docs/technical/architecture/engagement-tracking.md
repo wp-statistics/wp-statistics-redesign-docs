@@ -289,8 +289,7 @@ Large payloads are automatically split:
 
 ## Related Documentation
 
-- [Visitor Hash Mechanism](visitor-hash-mechanism.md) - How visitor identity is determined
-- [Database Overview](../database/overview.md) - Sessions table schema
+- [Database Overview](../database/overview) - Sessions table schema with duration field
 
 ---
 
