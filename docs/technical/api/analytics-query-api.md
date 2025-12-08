@@ -376,12 +376,54 @@ When `dimensions` is empty, you get aggregate totals:
 
 The API supports batch requests to fetch multiple datasets in a single HTTP call. This is useful for initial dashboard loads where you need data for multiple widgets.
 
-### Batch Request Format
+### Global Parameters
 
-Send an array of queries instead of a single query object:
+Batch queries support global `date_from`, `date_to`, and `filters` parameters that apply to all child queries by default. This reduces repetition and makes batch requests more concise.
+
+#### Supported Global Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `date_from` | string | Default start date for all queries |
+| `date_to` | string | Default end date for all queries |
+| `filters` | object | Default filters for all queries |
+
+#### Inheritance Behavior
+
+- **Filters**: Child filters **merge** with global filters. Child values override matching keys, and keys not specified in child are inherited from global.
+- **Dates**: If child specifies dates, it must provide both `date_from` and `date_to` (complete override). If neither specified, inherit from global.
+
+#### Example: Filter Merging
 
 ```json
 {
+  "filters": { "country": "US", "device_type": "desktop" },
+  "queries": [
+    {
+      "id": "mobile_users",
+      "metrics": ["visitors"],
+      "dimensions": ["country"],
+      "filters": { "device_type": "mobile" }
+    }
+  ]
+}
+```
+
+**Resolved filters for `mobile_users`:** `{ "country": "US", "device_type": "mobile" }`
+
+The child's `device_type: "mobile"` overrides global's `device_type: "desktop"`, while `country: "US"` is inherited.
+
+### Batch Request Format
+
+Send an array of queries with optional global parameters:
+
+```json
+{
+  "date_from": "2024-11-01",
+  "date_to": "2024-11-30",
+  "filters": {
+    "country": "US"
+  },
   "queries": [
     {
       "id": "traffic_trends",
@@ -396,19 +438,26 @@ Send an array of queries instead of a single query object:
       "per_page": 10
     },
     {
-      "id": "overview",
-      "metrics": ["visitors", "views", "sessions", "bounce_rate"],
+      "id": "mobile_stats",
+      "metrics": ["visitors", "sessions"],
       "dimensions": [],
-      "compare": true
+      "filters": { "device_type": "mobile" }
     },
     {
-      "id": "devices",
-      "metrics": ["sessions"],
-      "dimensions": ["device_type"]
+      "id": "yesterday",
+      "metrics": ["visitors"],
+      "dimensions": [],
+      "date_from": "2024-10-31",
+      "date_to": "2024-10-31"
     }
   ]
 }
 ```
+
+In this example:
+- `traffic_trends` and `top_countries` inherit global dates and filters
+- `mobile_stats` inherits global dates, merges filters to `{ "country": "US", "device_type": "mobile" }`
+- `yesterday` overrides dates, inherits global filters
 
 ### Batch Response Format
 
@@ -424,19 +473,52 @@ Send an array of queries instead of a single query object:
       "rows": [...],
       "totals": {...}
     },
-    "overview": {
+    "mobile_stats": {
       "totals": {...}
     },
-    "devices": {
-      "rows": [...],
+    "yesterday": {
       "totals": {...}
     }
   },
   "meta": {
     "query_count": 4,
+    "success_count": 4,
+    "error_count": 0,
     "total_time": 0.342,
-    "date_from": "2024-11-01",
-    "date_to": "2024-11-30"
+    "global": {
+      "date_from": "2024-11-01",
+      "date_to": "2024-11-30",
+      "filters": { "country": "US" }
+    },
+    "queries": {
+      "traffic_trends": {
+        "date_from": "2024-11-01",
+        "date_to": "2024-11-30",
+        "filters": { "country": "US" },
+        "cached": true
+      },
+      "top_countries": {
+        "date_from": "2024-11-01",
+        "date_to": "2024-11-30",
+        "filters": { "country": "US" },
+        "total_rows": 145,
+        "page": 1,
+        "per_page": 10,
+        "total_pages": 15
+      },
+      "mobile_stats": {
+        "date_from": "2024-11-01",
+        "date_to": "2024-11-30",
+        "filters": { "country": "US", "device_type": "mobile" },
+        "cached": true
+      },
+      "yesterday": {
+        "date_from": "2024-10-31",
+        "date_to": "2024-10-31",
+        "filters": { "country": "US" },
+        "cached": false
+      }
+    }
   },
   "errors": {}
 }
@@ -483,11 +565,16 @@ async function fetchDashboardBatch() {
   formData.append('action', 'wp_statistics_analytics');
   formData.append('wps_nonce', wpStatisticsGlobal.rest_api_nonce);
   formData.append('query', JSON.stringify({
+    // Global parameters apply to all queries
+    date_from: '2024-11-01',
+    date_to: '2024-11-30',
+    filters: { country: 'US' },
     queries: [
       { id: 'trends', metrics: ['visitors', 'views'], dimensions: ['date'], compare: true },
       { id: 'countries', metrics: ['visitors'], dimensions: ['country'], per_page: 10 },
       { id: 'overview', metrics: ['visitors', 'views', 'sessions', 'bounce_rate'], dimensions: [], compare: true },
-      { id: 'devices', metrics: ['sessions'], dimensions: ['device_type'] }
+      // Override filters for this query (merges with global)
+      { id: 'mobile', metrics: ['sessions'], dimensions: ['device_type'], filters: { device_type: 'mobile' } }
     ]
   }));
 
@@ -499,7 +586,11 @@ async function fetchDashboardBatch() {
   const result = await response.json();
 
   // Access individual results
-  const { traffic_trends, top_countries, overview, devices } = result.data;
+  const { trends, countries, overview, mobile } = result.data;
+
+  // Access resolved parameters per query
+  const mobileFilters = result.meta.queries.mobile.filters;
+  // { country: 'US', device_type: 'mobile' }
 
   return result;
 }
@@ -955,4 +1046,4 @@ async function fetchDashboardBatch() {
 
 ---
 
-*Last Updated: 2025-12-07*
+*Last Updated: 2025-12-08*

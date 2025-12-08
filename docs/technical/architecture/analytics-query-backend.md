@@ -653,6 +653,121 @@ class ComparisonHandler
 
 ---
 
+## Batch Processor
+
+The BatchProcessor handles batch requests with global parameter inheritance.
+
+### Class Structure
+
+```
+BatchProcessor
+├── extractGlobalParameters()     # Extract date_from, date_to, filters from request
+├── validateBatchStructure()      # Validate queries array structure
+├── validateGlobalParameters()    # Validate global date range and filters
+├── resolveQueryParameters()      # Merge global and child parameters
+├── processBatch()                # Main entry point for batch processing
+└── buildQueryMeta()              # Build per-query meta for response
+```
+
+### Parameter Resolution
+
+The `resolveQueryParameters()` method applies inheritance from global parameters:
+
+```php
+private function resolveQueryParameters(array $query, array $globalParams): array
+{
+    $resolved = $query;
+
+    // Date handling: complete override only
+    // Child must specify both date_from AND date_to, or neither
+    if (!isset($query['date_from']) && !isset($query['date_to'])) {
+        // Inherit global dates
+        if (isset($globalParams['date_from'])) {
+            $resolved['date_from'] = $globalParams['date_from'];
+        }
+        if (isset($globalParams['date_to'])) {
+            $resolved['date_to'] = $globalParams['date_to'];
+        }
+    } elseif (!isset($query['date_from']) || !isset($query['date_to'])) {
+        // Partial date override is not allowed
+        throw new BatchValidationException(
+            'Query must specify both date_from and date_to, or neither'
+        );
+    }
+    // If both dates specified in child, they override global (no action needed)
+
+    // Filter handling: merge & override
+    // Child filters merge with global, child values override matching keys
+    $globalFilters = $globalParams['filters'] ?? [];
+    $childFilters = $query['filters'] ?? [];
+    $resolved['filters'] = array_merge($globalFilters, $childFilters);
+
+    return $resolved;
+}
+```
+
+### Processing Flow
+
+```
+1. EXTRACT GLOBAL PARAMETERS
+   → date_from, date_to, filters from batch request root
+
+2. VALIDATE BATCH STRUCTURE
+   → Ensure queries array exists and is not empty
+   → Ensure each query has required fields (metrics, dimensions)
+   → Check batch limits (max 20 queries)
+
+3. VALIDATE GLOBAL PARAMETERS
+   → If dates provided, both must be present
+   → Validate date format and range
+   → Validate filters against allowed filters
+
+4. FOR EACH QUERY:
+   a. Resolve parameters (merge global + child)
+   b. Validate resolved query
+   c. Build SQL via QueryBuilder
+   d. Execute query
+   e. Store result or error
+
+5. BUILD RESPONSE
+   → Data: keyed by query ID
+   → Meta: global values + per-query resolved values
+   → Errors: keyed by query ID
+```
+
+### Example Resolution
+
+**Input:**
+```json
+{
+  "date_from": "2024-11-01",
+  "date_to": "2024-11-30",
+  "filters": { "country": "US", "device_type": "desktop" },
+  "queries": [
+    {
+      "id": "overview",
+      "metrics": ["visitors"],
+      "dimensions": []
+    },
+    {
+      "id": "mobile",
+      "metrics": ["visitors"],
+      "dimensions": [],
+      "filters": { "device_type": "mobile" }
+    }
+  ]
+}
+```
+
+**Resolved Parameters:**
+
+| Query | date_from | date_to | filters |
+|-------|-----------|---------|---------|
+| `overview` | `2024-11-01` (inherited) | `2024-11-30` (inherited) | `{ country: "US", device_type: "desktop" }` (inherited) |
+| `mobile` | `2024-11-01` (inherited) | `2024-11-30` (inherited) | `{ country: "US", device_type: "mobile" }` (merged) |
+
+---
+
 ## Generated SQL Examples
 
 ### Line Chart (Time Series)
@@ -803,4 +918,4 @@ LIMIT 50
 
 ---
 
-*Last Updated: 2025-12-07*
+*Last Updated: 2025-12-08*
