@@ -12,20 +12,20 @@ This document explains how the backend transforms simple JSON requests into SQL 
 
 ## Overview
 
-The Analytics Query system uses a **registry-based architecture** where metrics and dimensions are defined declaratively, and the QueryBuilder assembles them into SQL queries. This design ensures:
+The Analytics Query system uses a **registry-based architecture** where sources and group_by options are defined declaratively, and the QueryBuilder assembles them into SQL queries. This design ensures:
 
 - **Security**: No raw SQL from frontend - all queries built from whitelisted components
-- **Flexibility**: New metrics/dimensions added by updating registries
+- **Flexibility**: New sources/group_by options added by updating registries
 - **Maintainability**: Clean separation of concerns
 
 ## Class Structure
 
 ```
 AnalyticsQueryHandler (Entry Point)
-├── MetricRegistry (Metric definitions)
-│   └── Maps metric names → SQL aggregations
-├── DimensionRegistry (Dimension definitions)
-│   └── Maps dimension names → columns + JOINs
+├── SourceRegistry (Source definitions)
+│   └── Maps source names → SQL aggregations
+├── GroupByRegistry (Group By definitions)
+│   └── Maps group_by names → columns + JOINs
 ├── FilterBuilder (Filter translation)
 │   └── Converts filter objects → WHERE clauses
 ├── QueryBuilder (SQL generation)
@@ -41,8 +41,8 @@ AnalyticsQueryHandler (Entry Point)
 wp-statistics/src/Service/Analytics/
 ├── AnalyticsServiceProvider.php    # Registers the service
 ├── AnalyticsQueryHandler.php       # Main entry point
-├── MetricRegistry.php              # Metric definitions
-├── DimensionRegistry.php           # Dimension definitions
+├── SourceRegistry.php              # Source definitions
+├── GroupByRegistry.php             # Group By definitions
 ├── FilterBuilder.php               # Filter → WHERE clause
 ├── QueryBuilder.php                # Assembles SQL query
 ├── ComparisonHandler.php           # Previous period logic
@@ -61,17 +61,17 @@ When a request comes in, the handler first validates all inputs:
 // AnalyticsQueryHandler.php
 public function handle(array $request): array
 {
-    // 1. Validate metrics exist in registry
-    foreach ($request['metrics'] as $metric) {
-        if (!MetricRegistry::has($metric)) {
-            throw new InvalidMetricException($metric);
+    // 1. Validate sources exist in registry
+    foreach ($request['sources'] as $source) {
+        if (!SourceRegistry::has($source)) {
+            throw new InvalidSourceException($source);
         }
     }
 
-    // 2. Validate dimensions exist in registry
-    foreach ($request['dimensions'] as $dimension) {
-        if (!DimensionRegistry::has($dimension)) {
-            throw new InvalidDimensionException($dimension);
+    // 2. Validate group_by options exist in registry
+    foreach ($request['group_by'] as $groupBy) {
+        if (!GroupByRegistry::has($groupBy)) {
+            throw new InvalidGroupByException($groupBy);
         }
     }
 
@@ -134,15 +134,15 @@ private function isValidDateTime(string $dateTime): bool
 - `YYYY-MM-DD HH:mm:ss` - Date with time (space separator)
 - `YYYY-MM-DDTHH:mm:ss` - ISO 8601 format (T separator, normalized to space internally)
 
-### Step 2: Metric Registry
+### Step 2: Source Registry
 
-Each metric is mapped to its SQL expression and required table:
+Each source is mapped to its SQL expression and required table:
 
 ```php
-// MetricRegistry.php
-class MetricRegistry
+// SourceRegistry.php
+class SourceRegistry
 {
-    private static array $metrics = [
+    private static array $sources = [
         'visitors' => [
             'expression' => 'COUNT(DISTINCT sessions.visitor_id)',
             'table' => 'sessions',
@@ -182,30 +182,30 @@ class MetricRegistry
 
     public static function get(string $name): array
     {
-        return self::$metrics[$name];
+        return self::$sources[$name];
     }
 
     public static function has(string $name): bool
     {
-        return isset(self::$metrics[$name]);
+        return isset(self::$sources[$name]);
     }
 
     public static function getExpression(string $name): string
     {
-        return self::$metrics[$name]['expression'] . ' AS ' . $name;
+        return self::$sources[$name]['expression'] . ' AS ' . $name;
     }
 }
 ```
 
-### Step 3: Dimension Registry
+### Step 3: Group By Registry
 
-Each dimension defines its column, required JOINs, and grouping:
+Each group_by option defines its column, required JOINs, and grouping:
 
 ```php
-// DimensionRegistry.php
-class DimensionRegistry
+// GroupByRegistry.php
+class GroupByRegistry
 {
-    private static array $dimensions = [
+    private static array $groupBys = [
         'date' => [
             'column' => 'DATE(sessions.started_at)',
             'alias' => 'date',
@@ -273,17 +273,17 @@ class DimensionRegistry
             ],
             'group_by' => 'referrers.ID'
         ],
-        // ... more dimensions
+        // ... more group_by options
     ];
 
     public static function get(string $name): array
     {
-        return self::$dimensions[$name];
+        return self::$groupBys[$name];
     }
 
     public static function getSelectColumns(string $name): array
     {
-        $dim = self::$dimensions[$name];
+        $dim = self::$groupBys[$name];
         $columns = [$dim['column'] . ' AS ' . $dim['alias']];
 
         if (isset($dim['extra_columns'])) {
@@ -404,14 +404,14 @@ class QueryBuilder
 
     public function buildFromRequest(array $request): string
     {
-        // 1. Determine primary table from metrics
-        $primaryTable = $this->determinePrimaryTable($request['metrics']);
+        // 1. Determine primary table from sources
+        $primaryTable = $this->determinePrimaryTable($request['sources']);
         $this->from = "wp_statistics_{$primaryTable} AS {$primaryTable}";
 
-        // 2. Add dimension columns to SELECT
-        foreach ($request['dimensions'] as $dimension) {
-            $dim = DimensionRegistry::get($dimension);
-            $this->select = array_merge($this->select, DimensionRegistry::getSelectColumns($dimension));
+        // 2. Add group_by columns to SELECT
+        foreach ($request['group_by'] as $groupBy) {
+            $dim = GroupByRegistry::get($groupBy);
+            $this->select = array_merge($this->select, GroupByRegistry::getSelectColumns($groupBy));
 
             // Add required JOINs
             if (isset($dim['join'])) {
@@ -424,9 +424,9 @@ class QueryBuilder
             }
         }
 
-        // 3. Add metric expressions to SELECT
-        foreach ($request['metrics'] as $metric) {
-            $this->select[] = MetricRegistry::getExpression($metric);
+        // 3. Add source expressions to SELECT
+        foreach ($request['sources'] as $source) {
+            $this->select[] = SourceRegistry::getExpression($source);
         }
 
         // 4. Add date range WHERE clause
@@ -440,7 +440,7 @@ class QueryBuilder
         }
 
         // 6. Add ORDER BY
-        $orderBy = $request['order_by'] ?? $request['metrics'][0];
+        $orderBy = $request['order_by'] ?? $request['sources'][0];
         $order = strtoupper($request['order'] ?? 'DESC');
         $this->orderBy[] = "$orderBy $order";
 
@@ -483,13 +483,13 @@ class QueryBuilder
         return $sql;
     }
 
-    private function determinePrimaryTable(array $metrics): string
+    private function determinePrimaryTable(array $sources): string
     {
-        // Determine primary table based on metrics
-        // If any metric requires 'views' table, use views
+        // Determine primary table based on sources
+        // If any source requires 'views' table, use views
         // Otherwise default to 'sessions'
-        foreach ($metrics as $metric) {
-            $config = MetricRegistry::get($metric);
+        foreach ($sources as $source) {
+            $config = SourceRegistry::get($source);
             if ($config['table'] === 'views') {
                 return 'views';
             }
@@ -531,8 +531,8 @@ Here's how a request flows through the system:
 **Input Request:**
 ```json
 {
-  "metrics": ["visitors", "sessions"],
-  "dimensions": ["country"],
+  "sources": ["visitors", "sessions"],
+  "group_by": ["country"],
   "filters": { "device_type": "mobile" },
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
@@ -544,20 +544,20 @@ Here's how a request flows through the system:
 
 ```
 1. VALIDATION
-   ✓ metrics: ['visitors', 'sessions'] → both exist in MetricRegistry
-   ✓ dimensions: ['country'] → exists in DimensionRegistry
+   ✓ sources: ['visitors', 'sessions'] → both exist in SourceRegistry
+   ✓ group_by: ['country'] → exists in GroupByRegistry
    ✓ filters: { device_type: 'mobile' } → 'device_type' is allowed
    ✓ dates: valid format
 
 2. PRIMARY TABLE DETECTION
-   → metrics need 'sessions' table → FROM sessions
+   → sources need 'sessions' table → FROM sessions
 
-3. DIMENSION PROCESSING (country)
+3. GROUP_BY PROCESSING (country)
    → SELECT: countries.name AS country, countries.code AS country_code, countries.flag AS flag
    → JOIN: LEFT JOIN wp_statistics_countries AS countries ON sessions.country_id = countries.ID
    → GROUP BY: countries.ID
 
-4. METRIC PROCESSING
+4. SOURCE PROCESSING
    → SELECT: COUNT(DISTINCT sessions.visitor_id) AS visitors
    → SELECT: COUNT(*) AS sessions
 
@@ -621,7 +621,7 @@ class ComparisonHandler
 
     public function mergeResults(array $current, array $previous): array
     {
-        // Match rows by dimension values and add previous/change data
+        // Match rows by group_by values and add previous/change data
         foreach ($current as &$row) {
             $matchKey = $this->getMatchKey($row);
             $prevRow = $this->findMatch($previous, $matchKey);
@@ -630,11 +630,11 @@ class ComparisonHandler
                 $row['previous'] = [];
                 $row['change'] = [];
 
-                foreach ($this->metrics as $metric) {
-                    $row['previous'][$metric] = $prevRow[$metric];
-                    $row['change'][$metric] = $this->calculateChange(
-                        $row[$metric],
-                        $prevRow[$metric]
+                foreach ($this->sources as $source) {
+                    $row['previous'][$source] = $prevRow[$source];
+                    $row['change'][$source] = $this->calculateChange(
+                        $row[$source],
+                        $prevRow[$source]
                     );
                 }
             }
@@ -714,7 +714,7 @@ private function resolveQueryParameters(array $query, array $globalParams): arra
 
 2. VALIDATE BATCH STRUCTURE
    → Ensure queries array exists and is not empty
-   → Ensure each query has required fields (metrics, dimensions)
+   → Ensure each query has required fields (sources, group_by)
    → Check batch limits (max 20 queries)
 
 3. VALIDATE GLOBAL PARAMETERS
@@ -746,13 +746,13 @@ private function resolveQueryParameters(array $query, array $globalParams): arra
   "queries": [
     {
       "id": "overview",
-      "metrics": ["visitors"],
-      "dimensions": []
+      "sources": ["visitors"],
+      "group_by": []
     },
     {
       "id": "mobile",
-      "metrics": ["visitors"],
-      "dimensions": [],
+      "sources": ["visitors"],
+      "group_by": [],
       "filters": { "device_type": "mobile" }
     }
   ]
@@ -843,7 +843,7 @@ GROUP BY sessions.device_type
 ORDER BY sessions DESC
 ```
 
-### Metrics Cards (Totals Only)
+### Metrics Cards (No Group By)
 
 ```sql
 SELECT
@@ -901,8 +901,8 @@ LIMIT 50
 
 ## Security Model
 
-1. **Whitelisted Metrics**: Only predefined metric names accepted
-2. **Whitelisted Dimensions**: Only predefined dimension names accepted
+1. **Whitelisted Sources**: Only predefined source names accepted
+2. **Whitelisted Group By**: Only predefined group_by names accepted
 3. **No Raw SQL**: Backend generates all SQL internally
 4. **Filter Validation**: All filter values sanitized
 5. **Permission Check**: User must have `wps_read_capability` capability

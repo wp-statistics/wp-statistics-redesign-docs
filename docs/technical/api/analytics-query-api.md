@@ -8,15 +8,15 @@ sidebar_position: 2
 
 # Analytics Query API
 
-A flexible, secure analytics query system for the WP Statistics v15 React dashboard. This API uses a **metrics + dimensions** approach - you specify what to measure and how to group it, and the backend generates all SQL securely.
+A flexible, secure analytics query system for the WP Statistics v15 React dashboard. This API uses a **sources + group_by** approach - you specify what to measure and how to group it, and the backend generates all SQL securely.
 
 ## Quick Navigation
 
 - [Endpoint](#endpoint)
 - [Authentication](#authentication)
 - [Request Parameters](#request-parameters)
-  - [Available Metrics](#available-metrics)
-  - [Available Dimensions](#available-dimensions)
+  - [Available Sources](#available-sources)
+  - [Available Group By](#available-group-by)
   - [Available Filters](#available-filters)
 - [Request Example](#request-example)
 - [Response Structure](#response-structure)
@@ -29,7 +29,7 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
 - [Horizontal Bar](#2-horizontal-bar-chart---top-countries)
 - [Pie/Donut Chart](#3-piedonut-chart---device-distribution)
 - [Data Table](#4-data-table---top-pages-with-pagination)
-- [Metrics Cards](#5-metrics-cards---kpi-summary-no-dimensions)
+- [Metrics Cards](#5-metrics-cards---kpi-summary-no-group-by)
 - [World Map](#6-world-map---geographic-distribution)
 - [Online Visitors](#7-online-visitors-real-time)
 - [Referrers](#8-traffic-sources-referrers)
@@ -72,8 +72,8 @@ X-WP-Nonce: {nonce}
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `metrics` | array | List of metric names to calculate. At least one required. |
-| `dimensions` | array | List of dimension names for grouping. Can be empty for totals only. |
+| `sources` | array | List of source names to calculate. At least one required. [See available sources](#available-sources) |
+| `group_by` | array | List of group by options for grouping. Can be empty for totals only. [See available options](#available-group-by) |
 
 ### Optional Parameters
 
@@ -85,7 +85,7 @@ X-WP-Nonce: {nonce}
 | `filters` | object | `{}` | Filter criteria (see Filters section) |
 | `page` | integer | `1` | Page number for pagination |
 | `per_page` | integer | `10` | Results per page (max: 100) |
-| `order_by` | string | first metric | Column to sort by |
+| `order_by` | string | first source | Column to sort by |
 | `order` | string | `DESC` | Sort direction: `ASC` or `DESC` |
 
 ### Date/Time Format
@@ -109,8 +109,8 @@ Query only business hours (9 AM to 5 PM):
 
 ```json
 {
-  "metrics": ["visitors", "views"],
-  "dimensions": ["hour"],
+  "sources": ["visitors", "views"],
+  "group_by": ["hour"],
   "date_from": "2024-11-01 09:00:00",
   "date_to": "2024-11-01 17:00:00"
 }
@@ -118,9 +118,9 @@ Query only business hours (9 AM to 5 PM):
 
 ---
 
-## Available Metrics
+## Available Sources
 
-| Metric | Description | Data Type |
+| Source | Description | Data Type |
 |--------|-------------|-----------|
 | `visitors` | Unique visitors count | integer |
 | `views` | Total page views | integer |
@@ -135,9 +135,9 @@ Query only business hours (9 AM to 5 PM):
 
 ---
 
-## Available Dimensions
+## Available Group By
 
-| Dimension | Description | Extra Fields in Response |
+| Group By | Description | Extra Fields in Response |
 |-----------|-------------|-------------------------|
 | `date` | Daily breakdown | - |
 | `week` | Weekly breakdown | `week_start`, `week_end` |
@@ -211,8 +211,8 @@ A complete request showcasing all available parameters:
 
 ```json
 {
-  "metrics": ["visitors", "views", "sessions", "bounce_rate"],
-  "dimensions": ["country"],
+  "sources": ["visitors", "views", "sessions", "bounce_rate"],
+  "group_by": ["country"],
   "date_from": "2024-11-01 08:00:00",
   "date_to": "2024-11-30 17:30:00",
   "compare": true,
@@ -232,15 +232,15 @@ A complete request showcasing all available parameters:
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
-| `metrics` | `["visitors", "views", "sessions", "bounce_rate"]` | Request multiple metrics in one query |
-| `dimensions` | `["country"]` | Group results by country |
+| `sources` | `["visitors", "views", "sessions", "bounce_rate"]` | Request multiple sources in one query |
+| `group_by` | `["country"]` | Group results by country |
 | `date_from` | `"2024-11-01 08:00:00"` | Start of date range (8 AM) |
 | `date_to` | `"2024-11-30 17:30:00"` | End of date range (5:30 PM) |
 | `compare` | `true` | Include comparison with previous period |
 | `filters` | `{...}` | Filter by desktop devices, specific browsers, and Google referrers |
 | `page` | `1` | First page of results |
 | `per_page` | `10` | Return 10 results per page |
-| `order_by` | `"visitors"` | Sort by visitors metric |
+| `order_by` | `"visitors"` | Sort by visitors source |
 | `order` | `"DESC"` | Sort in descending order (highest first) |
 
 ---
@@ -312,9 +312,9 @@ Response for the [Request Example](#request-example) above:
 }
 ```
 
-### Response Without Dimensions (Totals Only)
+### Response Without Group By (Totals Only)
 
-When `dimensions` is empty, you get aggregate totals:
+When `group_by` is empty, you get aggregate totals:
 
 ```json
 {
@@ -349,8 +349,8 @@ When `dimensions` is empty, you get aggregate totals:
 {
   "success": false,
   "error": {
-    "code": "invalid_metric",
-    "message": "Unknown metric: 'invalid_name'. Valid metrics: visitors, views, sessions, ..."
+    "code": "invalid_source",
+    "message": "Unknown source: 'invalid_name'. Valid sources: visitors, views, sessions, ..."
   }
 }
 ```
@@ -361,8 +361,8 @@ When `dimensions` is empty, you get aggregate totals:
 
 | Code | HTTP | Description |
 |------|------|-------------|
-| `invalid_metric` | 400 | Metric name not recognized |
-| `invalid_dimension` | 400 | Dimension name not recognized |
+| `invalid_source` | 400 | Source name not recognized |
+| `invalid_group_by` | 400 | Group by option not recognized |
 | `invalid_filter` | 400 | Filter key or operator invalid |
 | `invalid_date_range` | 400 | Date format or range invalid |
 | `unauthorized` | 401 | User not logged in |
@@ -401,8 +401,8 @@ Batch queries support global `date_from`, `date_to`, and `filters` parameters th
   "queries": [
     {
       "id": "mobile_users",
-      "metrics": ["visitors"],
-      "dimensions": ["country"],
+      "sources": ["visitors"],
+      "group_by": ["country"],
       "filters": { "device_type": "mobile" }
     }
   ]
@@ -427,26 +427,26 @@ Send an array of queries with optional global parameters:
   "queries": [
     {
       "id": "traffic_trends",
-      "metrics": ["visitors", "views"],
-      "dimensions": ["date"],
+      "sources": ["visitors", "views"],
+      "group_by": ["date"],
       "compare": true
     },
     {
       "id": "top_countries",
-      "metrics": ["visitors"],
-      "dimensions": ["country"],
+      "sources": ["visitors"],
+      "group_by": ["country"],
       "per_page": 10
     },
     {
       "id": "mobile_stats",
-      "metrics": ["visitors", "sessions"],
-      "dimensions": [],
+      "sources": ["visitors", "sessions"],
+      "group_by": [],
       "filters": { "device_type": "mobile" }
     },
     {
       "id": "yesterday",
-      "metrics": ["visitors"],
-      "dimensions": [],
+      "sources": ["visitors"],
+      "group_by": [],
       "date_from": "2024-10-31",
       "date_to": "2024-10-31"
     }
@@ -537,8 +537,8 @@ If some queries succeed and others fail, the response includes both:
   },
   "errors": {
     "invalid_query": {
-      "code": "invalid_metric",
-      "message": "Unknown metric: 'invalid_metric_name'"
+      "code": "invalid_source",
+      "message": "Unknown source: 'invalid_source_name'"
     }
   },
   "meta": {
@@ -570,11 +570,11 @@ async function fetchDashboardBatch() {
     date_to: '2024-11-30',
     filters: { country: 'US' },
     queries: [
-      { id: 'trends', metrics: ['visitors', 'views'], dimensions: ['date'], compare: true },
-      { id: 'countries', metrics: ['visitors'], dimensions: ['country'], per_page: 10 },
-      { id: 'overview', metrics: ['visitors', 'views', 'sessions', 'bounce_rate'], dimensions: [], compare: true },
+      { id: 'trends', sources: ['visitors', 'views'], group_by: ['date'], compare: true },
+      { id: 'countries', sources: ['visitors'], group_by: ['country'], per_page: 10 },
+      { id: 'overview', sources: ['visitors', 'views', 'sessions', 'bounce_rate'], group_by: [], compare: true },
       // Override filters for this query (merges with global)
-      { id: 'mobile', metrics: ['sessions'], dimensions: ['device_type'], filters: { device_type: 'mobile' } }
+      { id: 'mobile', sources: ['sessions'], group_by: ['device_type'], filters: { device_type: 'mobile' } }
     ]
   }));
 
@@ -605,8 +605,8 @@ async function fetchDashboardBatch() {
 **Request:**
 ```json
 {
-  "metrics": ["visitors", "views"],
-  "dimensions": ["date"],
+  "sources": ["visitors", "views"],
+  "group_by": ["date"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true
@@ -657,8 +657,8 @@ async function fetchDashboardBatch() {
 **Request:**
 ```json
 {
-  "metrics": ["visitors", "sessions"],
-  "dimensions": ["country"],
+  "sources": ["visitors", "sessions"],
+  "group_by": ["country"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,
@@ -716,8 +716,8 @@ async function fetchDashboardBatch() {
 **Request:**
 ```json
 {
-  "metrics": ["sessions"],
-  "dimensions": ["device_type"],
+  "sources": ["sessions"],
+  "group_by": ["device_type"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30"
 }
@@ -750,8 +750,8 @@ async function fetchDashboardBatch() {
 **Request:**
 ```json
 {
-  "metrics": ["views", "visitors", "avg_time_on_page", "bounce_rate"],
-  "dimensions": ["page"],
+  "sources": ["views", "visitors", "avg_time_on_page", "bounce_rate"],
+  "group_by": ["page"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,
@@ -809,12 +809,12 @@ async function fetchDashboardBatch() {
 }
 ```
 
-### 5. Metrics Cards - KPI Summary (No Dimensions)
+### 5. Metrics Cards - KPI Summary (No Group By)
 
 **Request:**
 ```json
 {
-  "metrics": [
+  "sources": [
     "visitors",
     "views",
     "sessions",
@@ -822,7 +822,7 @@ async function fetchDashboardBatch() {
     "avg_session_duration",
     "pages_per_session"
   ],
-  "dimensions": [],
+  "group_by": [],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true
@@ -893,8 +893,8 @@ async function fetchDashboardBatch() {
 **Request:**
 ```json
 {
-  "metrics": ["visitors"],
-  "dimensions": ["country"],
+  "sources": ["visitors"],
+  "group_by": ["country"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "per_page": 250
@@ -932,8 +932,8 @@ async function fetchDashboardBatch() {
 **Request:**
 ```json
 {
-  "metrics": ["online_visitors"],
-  "dimensions": ["visitor"],
+  "sources": ["online_visitors"],
+  "group_by": ["visitor"],
   "per_page": 50
 }
 ```
@@ -977,8 +977,8 @@ async function fetchDashboardBatch() {
 **Request:**
 ```json
 {
-  "metrics": ["visitors", "sessions", "bounce_rate"],
-  "dimensions": ["referrer"],
+  "sources": ["visitors", "sessions", "bounce_rate"],
+  "group_by": ["referrer"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,

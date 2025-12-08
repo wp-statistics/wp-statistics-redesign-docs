@@ -12,7 +12,7 @@ This document explains how to integrate the Analytics Query API into React compo
 
 ## Overview
 
-The frontend uses a simple query interface to fetch analytics data. The API accepts metric and dimension names - no SQL knowledge required.
+The frontend uses a simple query interface to fetch analytics data. The API accepts source and group_by names - no SQL knowledge required.
 
 ## TypeScript Interfaces
 
@@ -20,8 +20,8 @@ The frontend uses a simple query interface to fetch analytics data. The API acce
 
 ```typescript
 interface AnalyticsQuery {
-  metrics: string[];
-  dimensions: string[];
+  sources: string[];
+  group_by: string[];
   /**
    * Start date/time. Accepts:
    * - Date only: "YYYY-MM-DD" (defaults to 00:00:00)
@@ -141,8 +141,8 @@ function useAnalytics(
 ```typescript
 function TopCountriesWidget() {
   const { data, isLoading, error } = useAnalytics({
-    metrics: ['visitors', 'sessions'],
-    dimensions: ['country'],
+    sources: ['visitors', 'sessions'],
+    group_by: ['country'],
     per_page: 10,
     compare: true
   });
@@ -163,8 +163,8 @@ function TopCountriesWidget() {
 ```typescript
 function TrafficTrendsChart() {
   const { data, isLoading } = useAnalytics({
-    metrics: ['visitors', 'views'],
-    dimensions: ['date'],
+    sources: ['visitors', 'views'],
+    group_by: ['date'],
     compare: true
   });
 
@@ -196,8 +196,8 @@ function TrafficTrendsChart() {
 ```typescript
 function TopCountriesChart() {
   const { data, isLoading } = useAnalytics({
-    metrics: ['visitors'],
-    dimensions: ['country'],
+    sources: ['visitors'],
+    group_by: ['country'],
     per_page: 10,
     order_by: 'visitors',
     order: 'DESC'
@@ -227,8 +227,8 @@ function TopCountriesChart() {
 ```typescript
 function MetricsOverview() {
   const { data, isLoading } = useAnalytics({
-    metrics: ['visitors', 'views', 'sessions', 'bounce_rate'],
-    dimensions: [], // Empty = totals only
+    sources: ['visitors', 'views', 'sessions', 'bounce_rate'],
+    group_by: [], // Empty = totals only
     compare: true
   });
 
@@ -277,8 +277,8 @@ function TopPagesTable() {
   const [sortOrder, setSortOrder] = useState<'ASC' | 'DESC'>('DESC');
 
   const { data, isLoading } = useAnalytics({
-    metrics: ['views', 'visitors', 'bounce_rate'],
-    dimensions: ['page'],
+    sources: ['views', 'visitors', 'bounce_rate'],
+    group_by: ['page'],
     page,
     per_page: 10,
     order_by: sortBy,
@@ -354,8 +354,8 @@ function TopPagesTable() {
 ```typescript
 function VisitorWorldMap() {
   const { data, isLoading } = useAnalytics({
-    metrics: ['visitors'],
-    dimensions: ['country'],
+    sources: ['visitors'],
+    group_by: ['country'],
     per_page: 250 // Get all countries
   });
 
@@ -385,8 +385,8 @@ function VisitorWorldMap() {
 ```typescript
 function DeviceDistributionChart() {
   const { data, isLoading } = useAnalytics({
-    metrics: ['sessions'],
-    dimensions: ['device_type']
+    sources: ['sessions'],
+    group_by: ['device_type']
   });
 
   if (isLoading) return <PieChartSkeleton />;
@@ -449,10 +449,10 @@ function useDashboardBatch() {
   return useQuery({
     queryKey: ['dashboard-batch'],
     queryFn: () => queryAnalyticsBatch([
-      { id: 'trends', metrics: ['visitors', 'views'], dimensions: ['date'], compare: true },
-      { id: 'countries', metrics: ['visitors'], dimensions: ['country'], per_page: 10 },
-      { id: 'pages', metrics: ['views', 'visitors'], dimensions: ['page'], per_page: 10 },
-      { id: 'overview', metrics: ['visitors', 'views', 'sessions', 'bounce_rate'], dimensions: [], compare: true }
+      { id: 'trends', sources: ['visitors', 'views'], group_by: ['date'], compare: true },
+      { id: 'countries', sources: ['visitors'], group_by: ['country'], per_page: 10 },
+      { id: 'pages', sources: ['views', 'visitors'], group_by: ['page'], per_page: 10 },
+      { id: 'overview', sources: ['visitors', 'views', 'sessions', 'bounce_rate'], group_by: [], compare: true }
     ]),
     staleTime: 5 * 60 * 1000,
   });
@@ -483,26 +483,26 @@ If you need independent caching/refetching per widget, use parallel individual q
 function useDashboardData() {
   // Parallel queries for initial dashboard load
   const trafficTrends = useAnalytics({
-    metrics: ['visitors', 'views'],
-    dimensions: ['date'],
+    sources: ['visitors', 'views'],
+    group_by: ['date'],
     compare: true
   });
 
   const topCountries = useAnalytics({
-    metrics: ['visitors'],
-    dimensions: ['country'],
+    sources: ['visitors'],
+    group_by: ['country'],
     per_page: 10
   });
 
   const topPages = useAnalytics({
-    metrics: ['views', 'visitors'],
-    dimensions: ['page'],
+    sources: ['views', 'visitors'],
+    group_by: ['page'],
     per_page: 10
   });
 
   const overview = useAnalytics({
-    metrics: ['visitors', 'views', 'sessions', 'bounce_rate'],
-    dimensions: [],
+    sources: ['visitors', 'views', 'sessions', 'bounce_rate'],
+    group_by: [],
     compare: true
   });
 
@@ -529,8 +529,8 @@ function FilteredAnalytics() {
   const [filters, setFilters] = useState({});
 
   const { data, isLoading } = useAnalytics({
-    metrics: ['visitors', 'views'],
-    dimensions: ['page'],
+    sources: ['visitors', 'views'],
+    group_by: ['page'],
     filters,
     per_page: 20
   });
@@ -579,16 +579,16 @@ function useAnalyticsWithDateRange(query: Omit<AnalyticsQuery, 'date_from' | 'da
 // Usage - Date only (backend defaults to full day 00:00:00 - 23:59:59)
 function Widget() {
   const { data } = useAnalyticsWithDateRange({
-    metrics: ['visitors'],
-    dimensions: ['country']
+    sources: ['visitors'],
+    group_by: ['country']
   });
 }
 
 // Usage - Intraday query with specific times
 function BusinessHoursWidget() {
   const { data } = useAnalytics({
-    metrics: ['visitors', 'views'],
-    dimensions: ['hour'],
+    sources: ['visitors', 'views'],
+    group_by: ['hour'],
     date_from: '2024-11-01 09:00:00',  // 9 AM
     date_to: '2024-11-01 17:00:00'     // 5 PM
   });
@@ -601,8 +601,8 @@ function BusinessHoursWidget() {
 function OnlineVisitorsWidget() {
   const { data, isLoading } = useAnalytics(
     {
-      metrics: ['online_visitors'],
-      dimensions: ['visitor'],
+      sources: ['online_visitors'],
+      group_by: ['visitor'],
       per_page: 50
     },
     {
@@ -635,8 +635,8 @@ function OnlineVisitorsWidget() {
 ```typescript
 function WidgetWithErrorHandling() {
   const { data, isLoading, error, refetch } = useAnalytics({
-    metrics: ['visitors'],
-    dimensions: ['country']
+    sources: ['visitors'],
+    group_by: ['country']
   });
 
   if (isLoading) return <Skeleton />;
@@ -729,4 +729,4 @@ function SortableHeader({
 
 ---
 
-*Last Updated: 2025-12-07*
+*Last Updated: 2025-12-08*
