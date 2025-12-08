@@ -5,6 +5,7 @@ status: "Done"
 used_in_widgets:
   - "campaigns-table"
   - "referrers-table"
+  - "source-categories-table"
   - "top-pages-full"
 ---
 
@@ -24,6 +25,7 @@ This column is used in the following widgets:
 
 - [Campaigns Table](../widgets/campaigns-table.md)
 - [Referrers Table](../widgets/referrers-table.md)
+- [Source Categories Table](../widgets/source-categories-table.md)
 - [Top Pages Full](../widgets/top-pages-full.md)
 
 ## Display
@@ -66,4 +68,4 @@ This column is **sortable**.
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-12-08*

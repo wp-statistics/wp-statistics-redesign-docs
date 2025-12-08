@@ -6,6 +6,7 @@ used_in_widgets:
   - "visitors-table"
   - "top-visitors-table"
   - "referrers-table"
+  - "source-categories-table"
 ---
 
 # Views Per Session Column
@@ -25,6 +26,7 @@ This column is used in the following widgets:
 - [Visitors Table](../widgets/visitors-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
 - [Referrers Table](../widgets/referrers-table.md)
+- [Source Categories Table](../widgets/source-categories-table.md)
 
 ## Display
 

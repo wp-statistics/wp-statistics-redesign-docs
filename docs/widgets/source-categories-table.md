@@ -43,14 +43,14 @@ Displays traffic by source category in a paginated table sorted by referral coun
 |--------|----------|--------------------|
 | [Source Category](../columns/source-category.md) | No | Shown |
 | [Referrals](../columns/referrals.md) | Yes (default) | Shown |
+| [Content Views](../columns/content-views.md) | Yes | Shown |
+| [Session Duration](../columns/content-session-duration.md) | Yes | Shown |
 | [Bounce Rate](../columns/content-bounce-rate.md) | Yes | Shown |
+| [Views Per Session](../columns/views-per-session.md) | Yes | Shown |
 
 ### Notes
 
 - Default sorted by referral count (highest to lowest)
-- Users can sort by Referrals and Bounce Rate columns
-- 20 items per page with pagination controls
-- Column management available for show/hide and reordering
 - Referrals column links to filtered Referred Visitors report
 
 ## Empty State
@@ -60,4 +60,4 @@ When no source categories found for the selected period:
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-12-08*

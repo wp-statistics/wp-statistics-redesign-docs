@@ -8,6 +8,7 @@ used_in_widgets:
   - "campaigns-table"
   - "recent-pages-preview"
   - "referrers-table"
+  - "source-categories-table"
   - "top-pages-full"
   - "top-pages-preview"
 ---
@@ -31,6 +32,7 @@ This column is used in the following widgets:
 - [Campaigns Table](../widgets/campaigns-table.md)
 - [Recent Pages Preview](../widgets/recent-pages-preview.md)
 - [Referrers Table](../widgets/referrers-table.md)
+- [Source Categories Table](../widgets/source-categories-table.md)
 - [Top Pages Full](../widgets/top-pages-full.md)
 - [Top Pages Preview](../widgets/top-pages-preview.md)
 
@@ -57,4 +59,4 @@ This column is **sortable**.
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-12-08*
