@@ -8,7 +8,7 @@ status: "Done"
 figma: ""
 interactions:
   - "Date Picker"
-  - "Filters"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["visitors-table"]
@@ -28,8 +28,7 @@ Displays only visitors who have a referrer, excluding direct traffic.
 ## Available Interactions
 
 - **Date Picker**
-- **Source Category**: Filter by source category (default = all)
-- **Filters**: Referrer (default = all)
+- **[Advanced Filters](../../global/advanced-filters.md)**: Visitor Analysis filter group (with referrer filter predefined)
 
 ## Widget Layout
 
@@ -38,4 +37,4 @@ Displays only visitors who have a referrer, excluding direct traffic.
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-12-08*
