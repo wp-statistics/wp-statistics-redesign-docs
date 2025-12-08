@@ -10,7 +10,7 @@ interactions:
   - "Filters"
 widgets:
   - row: 1
-    columns: ["search-engines-chart"]
+    columns: ["traffic-source-chart"]
   - row: 2
     columns: ["referrers-table"]
 ---
@@ -38,7 +38,7 @@ Shows search engine traffic driving visitors to your website, with trend analysi
 
 ### Row 1 (Full Width)
 
-[Search Engines Chart](../../widgets/search-engines-chart.md) - Line chart showing visitor trends from search engines with breakdown by top 3 search engines.
+[Traffic Source Chart](../../widgets/traffic-source-chart.md) - Line chart showing visitor trends from search engines with breakdown by top 3 search engines. This widget is filtered to display only search engine traffic.
 
 ### Row 2 (Full Width)
 
@@ -48,4 +48,4 @@ Shows search engine traffic driving visitors to your website, with trend analysi
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-12-08*

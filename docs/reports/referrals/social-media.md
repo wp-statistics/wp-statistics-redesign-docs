@@ -10,7 +10,7 @@ interactions:
   - "Filters"
 widgets:
   - row: 1
-    columns: ["social-media-chart"]
+    columns: ["traffic-source-chart"]
   - row: 2
     columns: ["referrers-table"]
 ---
@@ -38,7 +38,7 @@ Shows social media traffic driving visitors to your website, with trend analysis
 
 ### Row 1 (Full Width)
 
-[Social Media Chart](../../widgets/social-media-chart.md) - Line chart showing visitor trends from social media platforms with breakdown by top 3 platforms.
+[Traffic Source Chart](../../widgets/traffic-source-chart.md) - Line chart showing visitor trends from social media platforms with breakdown by top 3 platforms. This widget is filtered to display only social media traffic.
 
 ### Row 2 (Full Width)
 
@@ -48,4 +48,4 @@ Shows social media traffic driving visitors to your website, with trend analysis
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-12-08*

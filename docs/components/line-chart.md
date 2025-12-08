@@ -5,8 +5,7 @@ status: "Done"
 used_in_widgets:
   - "traffic-trends"
   - "logged-in-traffic-trends"
-  - "search-engines-chart"
-  - "social-media-chart"
+  - "traffic-source-chart"
   - "source-categories-chart"
   - "campaigns-traffic-trends"
 ---
@@ -27,8 +26,7 @@ This component is used by the following widgets:
 
 - [Traffic Trends](../widgets/traffic-trends.md)
 - [Logged-in Traffic Trends](../widgets/logged-in-traffic-trends.md)
-- [Search Engines Chart](../widgets/search-engines-chart.md)
-- [Social Media Chart](../widgets/social-media-chart.md)
+- [Traffic Source Chart](../widgets/traffic-source-chart.md)
 - [Source Categories Chart](../widgets/source-categories-chart.md)
 - [Campaigns Traffic Trends](../widgets/campaigns-traffic-trends.md)
 
@@ -120,4 +118,4 @@ When no data is available for the selected period:
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-12-08*
