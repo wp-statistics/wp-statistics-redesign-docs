@@ -82,7 +82,7 @@ X-WP-Nonce: {nonce}
 | `date_from` | string | 30 days ago | Start date/time. Formats: `YYYY-MM-DD`, `YYYY-MM-DD HH:mm:ss`, or `YYYY-MM-DDTHH:mm:ss`. Defaults to `00:00:00` if time omitted. |
 | `date_to` | string | today | End date/time. Formats: `YYYY-MM-DD`, `YYYY-MM-DD HH:mm:ss`, or `YYYY-MM-DDTHH:mm:ss`. Defaults to `23:59:59` if time omitted. |
 | `compare` | boolean | `false` | Include previous period comparison |
-| `filters` | object | `{}` | Filter criteria (see Filters section) |
+| `filters` | object | `{}` | Filter criteria. [See available filters](#available-filters) |
 | `page` | integer | `1` | Page number for pagination |
 | `per_page` | integer | `10` | Results per page (max: 100) |
 | `order_by` | string | first source | Column to sort by |
