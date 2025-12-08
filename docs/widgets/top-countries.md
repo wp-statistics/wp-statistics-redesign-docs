@@ -6,6 +6,7 @@ add_on: "Free"
 status: "Done"
 used_in_reports:
   - "visitors-overview"
+  - "referrals-overview"
 ---
 
 # Top Countries Widget
@@ -34,6 +35,7 @@ Displays the top 5 countries by visitor count in a horizontal bar list format wi
 This widget is used in the following reports:
 
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 4
+- [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 4
 
 ## Empty State
 
@@ -47,4 +49,4 @@ When no country data is available for the selected period:
 
 ---
 
-*Last Updated: 2025-11-11*
+*Last Updated: 2025-12-08*

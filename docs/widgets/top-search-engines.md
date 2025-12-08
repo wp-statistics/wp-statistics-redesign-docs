@@ -1,17 +1,16 @@
 ---
-title: "Top Operating Systems"
+title: "Top Search Engines"
 type: "widget"
 component: "horizontal-bar-list"
 add_on: "Free"
 status: "Done"
 used_in_reports:
-  - "visitors-overview"
   - "referrals-overview"
 ---
 
-# Top Operating Systems Widget
+# Top Search Engines Widget
 
-Displays the top 5 operating systems by visitor count in a horizontal bar list format with OS icons and previous period comparison.
+Displays the top 5 search engines by referral count in a horizontal bar list format with previous period comparison.
 
 ## Widget Configuration
 
@@ -26,26 +25,26 @@ Displays the top 5 operating systems by visitor count in a horizontal bar list f
 |----------|-------|
 | **Max Visible Items** | 5 |
 | **Show Previous Period** | ✅ Yes |
-| **Show Icons** | ✅ Yes (OS icons) |
+| **Show Icons** | ❌ No |
 | **Enable Other Item** | ❌ No |
-| **Link to Full Report** | ✅ Yes ("View Full OS Report") |
+| **Link to Full Report** | ✅ Yes (links to Search Engines report) |
 
 ## Used In Reports
 
 This widget is used in the following reports:
 
-- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 4
-- [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 4
+- [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 5, middle column
 
 ## Empty State
 
-When no operating system data is available for the selected period:
+When no search engine data is available for the selected period:
 - "No data available for the selected period"
 
 ## Related Documentation
 
 - [Horizontal Bar List Component](../components/horizontal-bar-list.md)
-- [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
+- [Search Engines Report](../reports/referrals/search-engines.md)
+- [Referrals Overview Report](../reports/referrals/referrals-overview.md)
 
 ---
 

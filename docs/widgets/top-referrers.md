@@ -6,6 +6,7 @@ add_on: "Free"
 status: "Done"
 used_in_reports:
   - "visitors-overview"
+  - "referrals-overview"
 ---
 
 # Top Referrers Widget
@@ -34,6 +35,7 @@ Displays the top 5 referrer domains in a horizontal bar list format with previou
 This widget is used in the following reports:
 
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 3, right column (expands to full width when Data Plus is not activated)
+- [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 3, right column (expands to full width when Data Plus is not activated)
 
 ## Empty State
 
@@ -47,4 +49,4 @@ When no referrer data is available for the selected period:
 
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-12-08*

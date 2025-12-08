@@ -6,6 +6,7 @@ add_on: "Free"
 status: "Done"
 used_in_reports:
   - "visitors-overview"
+  - "referrals-overview"
 ---
 
 # Traffic Trends Widget
@@ -39,6 +40,7 @@ Displays visitor and view trends over time using an interactive line chart with 
 This widget is used in the following reports:
 
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 2, full width
+- [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 2, full width (filtered to referred visitors)
 
 ## Chart Behavior
 
@@ -64,4 +66,4 @@ When no data is available for the selected period:
 
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-12-08*

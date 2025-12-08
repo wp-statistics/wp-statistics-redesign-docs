@@ -7,6 +7,9 @@ used_in_widgets:
   - "top-countries"
   - "top-operating-systems"
   - "top-device-categories"
+  - "top-source-categories"
+  - "top-search-engines"
+  - "top-social-media"
 ---
 
 # Horizontal Bar List Component
@@ -27,6 +30,9 @@ This component is used by the following widgets:
 - [Top Countries](../widgets/top-countries.md)
 - [Top Operating Systems](../widgets/top-operating-systems.md)
 - [Top Device Categories](../widgets/top-device-categories.md)
+- [Top Source Categories](../widgets/top-source-categories.md)
+- [Top Search Engines](../widgets/top-search-engines.md)
+- [Top Social Media](../widgets/top-social-media.md)
 
 ## Overview
 
@@ -128,4 +134,4 @@ When no data is available for the selected period:
 
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-12-08*
