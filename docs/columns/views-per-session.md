@@ -5,6 +5,7 @@ status: "Done"
 used_in_widgets:
   - "visitors-table"
   - "top-visitors-table"
+  - "referrers-table"
 ---
 
 # Views Per Session Column
@@ -23,6 +24,7 @@ This column is used in the following widgets:
 
 - [Visitors Table](../widgets/visitors-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
+- [Referrers Table](../widgets/referrers-table.md)
 
 ## Display
 
@@ -71,4 +73,4 @@ Displays: "\{value\} average page views per session"
 
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-12-08*

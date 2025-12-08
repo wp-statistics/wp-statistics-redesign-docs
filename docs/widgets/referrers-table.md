@@ -51,14 +51,11 @@ Displays the top referring domains in a paginated table sorted by referral count
 | [Content Views](../columns/content-views.md) | Yes | Shown |
 | [Session Duration](../columns/content-session-duration.md) | Yes | Shown |
 | [Bounce Rate](../columns/content-bounce-rate.md) | Yes | Shown |
+| [Views Per Session](../columns/views-per-session.md) | Yes | Shown |
 
 ### Notes
 
 - Default sorted by referral count (highest to lowest)
-- Users can sort by metric columns (Referrals, Content Views, Session Duration, Bounce Rate)
-- Domain and Source Name columns are not sortable
-- 20 items per page with pagination controls
-- Column management available for show/hide and reordering
 - Domain column links to external website
 - Referrals column links to filtered Referred Visitors report
 
@@ -69,4 +66,4 @@ When no referrers found for the selected period:
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-12-08*
