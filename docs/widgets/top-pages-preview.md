@@ -44,7 +44,7 @@ Preview of the top 5 most viewed pages with a link to the full Top Pages report.
 | Column | Sortable | Header Label |
 |--------|----------|--------------|
 | [Page](../columns/page.md) | No | Page |
-| [Content Views](../columns/content-views.md) | No | Views |
+| [Views](../columns/views.md) | No | Views |
 | [View Page](../columns/view-page.md) | No | (No header) |
 
 ## Empty State

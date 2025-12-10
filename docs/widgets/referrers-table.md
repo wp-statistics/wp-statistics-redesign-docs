@@ -48,7 +48,7 @@ Displays the top referring domains in a paginated table sorted by referral count
 | [Domain](../columns/domain.md) | No | Shown |
 | [Source Name](../columns/source-name.md) | No | Shown |
 | [Referrals](../columns/referrals.md) | Yes (default) | Shown |
-| [Content Views](../columns/content-views.md) | Yes | Shown |
+| [Views](../columns/views.md) | Yes | Shown |
 | [Session Duration](../columns/content-session-duration.md) | Yes | Shown |
 | [Bounce Rate](../columns/content-bounce-rate.md) | Yes | Shown |
 | [Views Per Session](../columns/views-per-session.md) | Yes | Shown |

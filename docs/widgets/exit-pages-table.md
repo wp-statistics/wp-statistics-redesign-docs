@@ -44,7 +44,7 @@ This widget appears in the following report pages:
 | Column | Sortable | Default Visibility |
 |--------|----------|-------------------|
 | [Exit Page](../columns/page.md) | Yes | Shown |
-| [Content Visitors](../columns/content-visitors.md) | Yes | Shown |
+| [Visitors](../columns/visitors.md) | Yes | Shown |
 | [Content Unique Exits](../columns/content-unique-exits.md) | Yes | Shown |
 | [Content Exit Rate](../columns/content-exit-rate.md) | Yes | Shown |
 | [View Page](../columns/view-page.md) | No | Shown |

@@ -44,7 +44,7 @@ Preview of the 5 most recently published pages with a link to the Top Pages repo
 | Column | Sortable | Header Label |
 |--------|----------|--------------|
 | [Page](../columns/page.md) | No | Page |
-| [Content Views](../columns/content-views.md) | No | Views |
+| [Views](../columns/views.md) | No | Views |
 | [View Page](../columns/view-page.md) | No | (No header) |
 
 ## Empty State

@@ -44,8 +44,8 @@ This widget appears in the following report pages:
 | Column | Sortable | Default Visibility |
 |--------|----------|-------------------|
 | [Page](../columns/page.md) | Yes | Shown |
-| [Content Visitors](../columns/content-visitors.md) | Yes | Shown |
-| [Content Views](../columns/content-views.md) | Yes | Shown |
+| [Visitors](../columns/visitors.md) | Yes | Shown |
+| [Views](../columns/views.md) | Yes | Shown |
 | [Content Bounce Rate](../columns/content-bounce-rate.md) | Yes | Shown |
 | [Content Session Duration](../columns/content-session-duration.md) | Yes | Hidden |
 | [Content Published Date](../columns/content-published-date.md) | Yes | Hidden |

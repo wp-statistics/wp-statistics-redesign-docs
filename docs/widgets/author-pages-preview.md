@@ -44,7 +44,7 @@ Preview of the top 5 authors by page views with a link to the full Author Pages 
 | Column | Sortable | Header Label |
 |--------|----------|--------------|
 | [Author](../columns/author.md) | No | Author |
-| [Content Visitors](../columns/content-visitors.md) | No | Author's Page Views |
+| [Visitors](../columns/visitors.md) | No | Author's Page Views |
 | [View Page](../columns/view-page.md) | No | (No header) |
 
 ## Empty State

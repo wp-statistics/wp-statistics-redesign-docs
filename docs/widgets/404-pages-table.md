@@ -41,7 +41,7 @@ A table showing 404 error pages with their view counts.
 | Column | Sortable | Header Label |
 |--------|----------|--------------|
 | [URL](../columns/url.md) | No | URL |
-| [Content Views](../columns/content-views.md) | No | Views |
+| [Views](../columns/views.md) | No | Views |
 
 ## Empty State
 

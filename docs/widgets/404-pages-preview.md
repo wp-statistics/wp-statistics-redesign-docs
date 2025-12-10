@@ -44,7 +44,7 @@ Preview of the top 5 pages generating 404 errors with a link to the full 404 Pag
 | Column | Sortable | Header Label |
 |--------|----------|--------------|
 | [URL](../columns/url.md) | No | URL |
-| [Content Views](../columns/content-views.md) | No | Views |
+| [Views](../columns/views.md) | No | Views |
 
 ## Empty State
 

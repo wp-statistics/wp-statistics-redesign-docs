@@ -3,8 +3,14 @@ title: "Visitors"
 type: "column"
 status: "Done"
 used_in_widgets:
-  - "top-categories-table"
+  - "author-pages-preview"
+  - "author-pages-table"
+  - "campaigns-table"
+  - "category-pages-table"
+  - "exit-pages-table"
   - "top-authors-table"
+  - "top-categories-table"
+  - "top-pages-full"
 ---
 
 # Visitors Column
@@ -21,8 +27,14 @@ Shows the number of unique visitors.
 
 This column is used in the following widgets:
 
-- [Top Categories Table](../widgets/top-categories-table.md)
+- [Author Pages Preview](../widgets/author-pages-preview.md)
+- [Author Pages Table](../widgets/author-pages-table.md)
+- [Campaigns Table](../widgets/campaigns-table.md)
+- [Category Pages Table](../widgets/category-pages-table.md)
+- [Exit Pages Table](../widgets/exit-pages-table.md)
 - [Top Authors Table](../widgets/top-authors-table.md)
+- [Top Categories Table](../widgets/top-categories-table.md)
+- [Top Pages Full](../widgets/top-pages-full.md)
 
 ## Display
 
@@ -40,8 +52,6 @@ This column is used in the following widgets:
 
 ## Related Documentation
 
-- [Top Categories Table Widget](../widgets/top-categories-table.md)
-- [Top Authors Table Widget](../widgets/top-authors-table.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

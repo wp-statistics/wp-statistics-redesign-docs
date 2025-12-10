@@ -44,11 +44,11 @@ This widget appears in the following report pages:
 | Column | Label Override | Sortable | Default Visibility |
 |--------|----------------|----------|-------------------|
 | [Author](../columns/author.md) | - | Yes | Shown |
-| [Content Visitors](../columns/content-visitors.md) | Author's Page Views | Yes | Shown |
+| [Visitors](../columns/visitors.md) | Author's Page Views | Yes | Shown |
 | [Published Contents](../columns/published-contents.md) | - | Yes | Shown |
 | [View Page](../columns/view-page.md) | View Author Page | No | Shown |
 
-**Note:** The Content Visitors column displays with the label "Author's Page Views" and the View Page column displays with the label "View Author Page" in this widget to clarify they relate to the author's archive page.
+**Note:** The Visitors column displays with the label "Author's Page Views" and the View Page column displays with the label "View Author Page" in this widget to clarify they relate to the author's archive page.
 
 ## Empty State
 

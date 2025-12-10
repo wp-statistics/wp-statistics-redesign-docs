@@ -45,8 +45,8 @@ Displays campaign performance data in a paginated table with UTM parameter break
 | [UTM Source](../columns/utm-source.md) | No | Shown |
 | [UTM Medium](../columns/utm-medium.md) | No | Shown |
 | [UTM Campaign](../columns/utm-campaign.md) | No | Shown |
-| [Visitors](../columns/content-visitors.md) | Yes (default) | Shown |
-| [Views](../columns/content-views.md) | Yes | Shown |
+| [Visitors](../columns/visitors.md) | Yes (default) | Shown |
+| [Views](../columns/views.md) | Yes | Shown |
 | [Session Duration](../columns/content-session-duration.md) | Yes | Shown |
 | [Bounce Rate](../columns/content-bounce-rate.md) | Yes | Shown |
 
