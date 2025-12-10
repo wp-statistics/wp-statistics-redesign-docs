@@ -4,6 +4,8 @@ type: "component"
 status: "Done"
 used_in_widgets:
   - "top-content"
+  - "top-terms"
+  - "top-authors"
 ---
 
 # Tabbed List Component
@@ -21,6 +23,7 @@ Displays content items in a tabbed interface with thumbnails, supporting multipl
 This component is used by the following widgets:
 
 - [Top Content](../widgets/top-content.md)
+- [Top Terms](../widgets/top-terms.md)
 
 ## Overview
 
@@ -99,6 +102,8 @@ When no data is available for a tab:
 ## Related Documentation
 
 - [Top Content Widget](../widgets/top-content.md)
+- [Top Terms Widget](../widgets/top-terms.md)
+- [Top Authors Widget](../widgets/top-authors.md)
 - [Global Rules](../global/global-rules.md)
 
 ---

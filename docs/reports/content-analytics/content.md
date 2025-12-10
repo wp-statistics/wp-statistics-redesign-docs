@@ -79,25 +79,25 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 
 ### Row 2 (Full Width) - Performance
 
-- [Content Performance](../../widgets/content-performance.md) - Line chart displaying visitor and view trends over time for the selected post type
+- [Content Performance](../../widgets/content-performance.md)
 
 ### Row 3 (Full Width) - Top Content
 
-- [Top Content](../../widgets/top-content.md) - Tabbed list showing Most Popular, Most Commented, and Most Recent content with thumbnails
+- [Top Content](../../widgets/top-content.md)
 
 ### Row 4 (Three Columns) - Traffic Sources
 
-- [Top Referrers](../../widgets/top-referrers.md) - Top referring websites
-- [Top Search Engines](../../widgets/top-search-engines.md) - Top search engines
-- [Top Countries](../../widgets/top-countries.md) - Top visitor countries
+- [Top Referrers](../../widgets/top-referrers.md)
+- [Top Search Engines](../../widgets/top-search-engines.md)
+- [Top Countries](../../widgets/top-countries.md)
 
 **Note:** These widgets display data without "See all" links in this context.
 
 ### Row 5 (Three Columns) - Device Analytics
 
-- [Top Browsers](../../widgets/top-browsers.md) - Top browsers
-- [Top Operating Systems](../../widgets/top-operating-systems.md) - Top operating systems
-- [Top Device Categories](../../widgets/top-device-categories.md) - Top device categories
+- [Top Browsers](../../widgets/top-browsers.md)
+- [Top Operating Systems](../../widgets/top-operating-systems.md)
+- [Top Device Categories](../../widgets/top-device-categories.md)
 
 **Note:** These widgets display data without "See all" links in this context.
 

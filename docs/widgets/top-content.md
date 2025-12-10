@@ -6,6 +6,7 @@ add_on: "Free"
 status: "Done"
 used_in_reports:
   - "content"
+  - "categories"
 ---
 
 # Top Content Widget
@@ -63,6 +64,7 @@ Displays content items in a tabbed interface with three views: Most Popular, Mos
 This widget is used in the following reports:
 
 - [Content](../reports/content-analytics/content.md) - Row 3, full width
+- [Categories](../reports/content-analytics/categories.md) - Row 4
 
 ## Related Documentation
 

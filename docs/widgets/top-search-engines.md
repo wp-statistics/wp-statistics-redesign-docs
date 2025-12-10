@@ -7,6 +7,7 @@ status: "Done"
 used_in_reports:
   - "referrals-overview"
   - "content"
+  - "categories"
 ---
 
 # Top Search Engines Widget
@@ -36,6 +37,7 @@ This widget is used in the following reports:
 
 - [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 5, middle column
 - [Content](../reports/content-analytics/content.md) - Row 4 (no "See all" link)
+- [Categories](../reports/content-analytics/categories.md) - Row 6 (no "See all" link)
 
 ## Empty State
 

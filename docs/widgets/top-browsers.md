@@ -6,6 +6,7 @@ add_on: "Free"
 status: "Done"
 used_in_reports:
   - "content"
+  - "categories"
 ---
 
 # Top Browsers Widget
@@ -34,6 +35,7 @@ Displays the top 5 browsers by visitor count in a horizontal bar list format wit
 This widget is used in the following reports:
 
 - [Content](../reports/content-analytics/content.md) - Row 5 (no "See all" link)
+- [Categories](../reports/content-analytics/categories.md) - Row 7 (no "See all" link)
 
 ## Empty State
 

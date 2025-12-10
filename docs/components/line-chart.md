@@ -9,6 +9,7 @@ used_in_widgets:
   - "source-categories-chart"
   - "campaigns-traffic-trends"
   - "content-performance"
+  - "categories-performance"
 ---
 
 # Line Chart Component
@@ -31,6 +32,7 @@ This component is used by the following widgets:
 - [Source Categories Chart](../widgets/source-categories-chart.md)
 - [Campaigns Traffic Trends](../widgets/campaigns-traffic-trends.md)
 - [Content Performance](../widgets/content-performance.md)
+- [Categories Performance](../widgets/categories-performance.md)
 
 ## Overview
 
