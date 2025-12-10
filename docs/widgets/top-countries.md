@@ -7,6 +7,7 @@ status: "Done"
 used_in_reports:
   - "visitors-overview"
   - "referrals-overview"
+  - "content"
 ---
 
 # Top Countries Widget
@@ -36,6 +37,7 @@ This widget is used in the following reports:
 
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 4
 - [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 4
+- [Content](../reports/content-analytics/content.md) - Row 4 (no "See all" link)
 
 ## Empty State
 

@@ -7,6 +7,7 @@ status: "Done"
 used_in_reports:
   - "visitors-overview"
   - "referrals-overview"
+  - "content"
 ---
 
 # Top Referrers Widget
@@ -36,6 +37,7 @@ This widget is used in the following reports:
 
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 3, right column (expands to full width when Data Plus is not activated)
 - [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 3, right column (expands to full width when Data Plus is not activated)
+- [Content](../reports/content-analytics/content.md) - Row 4 (no "See all" link)
 
 ## Empty State
 

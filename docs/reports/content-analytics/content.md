@@ -15,6 +15,8 @@ widgets:
     columns: ["content-performance"]
   - row: 3
     columns: ["top-content"]
+  - row: 4
+    columns: ["top-referrers", "top-search-engines", "top-countries"]
 ---
 
 # Content
@@ -80,6 +82,14 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 ### Row 3 (Full Width) - Top Content
 
 - [Top Content](../../widgets/top-content.md) - Tabbed list showing Most Popular, Most Commented, and Most Recent content with thumbnails
+
+### Row 4 (Three Columns) - Traffic Sources
+
+- [Top Referrers](../../widgets/top-referrers.md) - Top referring websites
+- [Top Search Engines](../../widgets/top-search-engines.md) - Top search engines
+- [Top Countries](../../widgets/top-countries.md) - Top visitor countries
+
+**Note:** These widgets display data without "See all" links in this context.
 
 ## Related Documentation
 

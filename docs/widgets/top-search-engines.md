@@ -6,6 +6,7 @@ add_on: "Free"
 status: "Done"
 used_in_reports:
   - "referrals-overview"
+  - "content"
 ---
 
 # Top Search Engines Widget
@@ -34,6 +35,7 @@ Displays the top 5 search engines by referral count in a horizontal bar list for
 This widget is used in the following reports:
 
 - [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 5, middle column
+- [Content](../reports/content-analytics/content.md) - Row 4 (no "See all" link)
 
 ## Empty State
 
