@@ -59,6 +59,7 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 - **[Individual Content](../reports/content-analytics/individual-content.md)**: (Not Started) Accessed by clicking on a content item in the Content report
 - **[Individual Author](../reports/content-analytics/individual-author.md)**: (Not Started, Data Plus) Accessed by clicking on an author in the Authors report
 - **[Individual Category](../reports/content-analytics/individual-category.md)**: (Not Started) Accessed by clicking on a category/taxonomy in the Categories report
+- **[Top Categories](../reports/content-analytics/top-categories.md)**: (Done) Accessed from "See all" link in Top Terms widget on Categories report
 
 ### Content Analytics vs Page Insights
 

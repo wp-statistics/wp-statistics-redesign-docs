@@ -28,6 +28,7 @@ used_in_widgets:
   - "top-search-terms-list"
   - "top-visitors"
   - "visitor-list"
+  - "top-categories-table"
 ---
 
 # Data Table Component
@@ -69,6 +70,7 @@ This component is used by the following widgets:
 - [Top Search Terms List](../widgets/top-search-terms-list.md)
 - [Top Visitors](../widgets/top-visitors.md)
 - [Visitor List](../widgets/visitor-list.md)
+- [Top Categories Table](../widgets/top-categories-table.md)
 
 ## Overview
 

@@ -118,6 +118,7 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 
 ## Related Documentation
 
+- [Top Categories Report](top-categories.md)
 - [Individual Category Report](individual-category.md)
 - [Content Report](content.md)
 - [Authors Report](authors.md)
