@@ -50,7 +50,7 @@ This widget appears in the following report pages:
 | [Term Views per Content](../columns/term-views-per-content.md) | Yes | Shown |
 | [Term Bounce Rate](../columns/term-bounce-rate.md) | Yes | Hidden |
 | [Term Time on Page](../columns/term-time-on-page.md) | Yes | Hidden |
-| [View Term Page](../columns/view-term-page.md) | No | Shown |
+| [View Page](../columns/view-page.md) | No | Shown |
 
 ## Empty State
 

@@ -36,27 +36,7 @@ This column is used in the following widgets:
 Opens the [Individual Category Report](../reports/content-analytics/individual-category.md) for this term in the same tab
 
 ### Hover Tooltip
-Displays full term name if truncated
-
-## Display Examples
-
-### Example 1: Standard Term
-
-**Visual:** `News`
-
-**Description:**
-- Label: Term name "News"
-- Click: Opens Individual Category Report
-- Hover: Shows full term name
-
-### Example 2: Long Term Name Truncated
-
-**Visual:** `WordPress Development Tutorial…`
-
-**Description:**
-- Label: Term name truncated at 35 chars
-- Click: Opens Individual Category Report
-- Hover: Shows full term name (e.g., "WordPress Development Tutorials and Guides")
+Always displays full term name
 
 ## Related Documentation
 

@@ -36,16 +36,6 @@ This column is used in the following widgets:
 - **Default Sort Order:** Descending (longest first - more time is better)
 - **Sort Type:** Numeric (seconds)
 
-## Display Examples
-
-### Example 1: Short Duration
-
-**Visual:** `01:23`
-
-### Example 2: Long Duration
-
-**Visual:** `05:45`
-
 ## Related Documentation
 
 - [Top Categories Table Widget](../widgets/top-categories-table.md)

@@ -36,16 +36,6 @@ This column is used in the following widgets:
 - **Default Sort Order:** Descending (highest first)
 - **Sort Type:** Numeric
 
-## Display Examples
-
-### Example 1: Low Ratio
-
-**Visual:** `12.5`
-
-### Example 2: High Ratio
-
-**Visual:** `245.8`
-
 ## Related Documentation
 
 - [Top Categories Table Widget](../widgets/top-categories-table.md)

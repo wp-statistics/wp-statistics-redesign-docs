@@ -36,16 +36,6 @@ This column is used in the following widgets:
 - **Default Sort Order:** Descending (highest first)
 - **Sort Type:** Numeric
 
-## Display Examples
-
-### Example 1: Small Number
-
-**Visual:** `245`
-
-### Example 2: Large Number
-
-**Visual:** `12,456`
-
 ## Related Documentation
 
 - [Top Categories Table Widget](../widgets/top-categories-table.md)

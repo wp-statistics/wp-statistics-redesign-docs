@@ -13,6 +13,7 @@ used_in_widgets:
   - "top-entry-pages-preview"
   - "top-exit-pages-preview"
   - "top-pages-preview"
+  - "top-categories-table"
 ---
 
 # View Page Column
@@ -39,6 +40,7 @@ This column is used in the following widgets:
 - [Top Entry Pages Preview](../widgets/top-entry-pages-preview.md)
 - [Top Exit Pages Preview](../widgets/top-exit-pages-preview.md)
 - [Top Pages Preview](../widgets/top-pages-preview.md)
+- [Top Categories Table](../widgets/top-categories-table.md)
 
 ## Display
 

@@ -36,16 +36,6 @@ This column is used in the following widgets:
 - **Default Sort Order:** Ascending (lowest first - lower bounce rate is better)
 - **Sort Type:** Numeric
 
-## Display Examples
-
-### Example 1: Low Bounce Rate
-
-**Visual:** `25.3%`
-
-### Example 2: High Bounce Rate
-
-**Visual:** `78.9%`
-
 ## Related Documentation
 
 - [Top Categories Table Widget](../widgets/top-categories-table.md)
