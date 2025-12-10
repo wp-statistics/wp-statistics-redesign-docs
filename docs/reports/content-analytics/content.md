@@ -4,7 +4,7 @@ type: "report"
 group: "Content Analytics"
 show_in_menu: true
 add_on: "Free"
-status: "Not Started"
+status: "In Progress"
 interactions:
   - "Date Picker"
   - "Post Type Filter"

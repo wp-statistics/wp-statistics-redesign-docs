@@ -1,7 +1,7 @@
 ---
 title: "Tabbed List"
 type: "component"
-status: "Not Started"
+status: "Done"
 used_in_widgets:
   - "top-content"
 ---

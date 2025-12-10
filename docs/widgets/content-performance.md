@@ -3,7 +3,7 @@ title: "Content Performance"
 type: "widget"
 component: "line-chart"
 add_on: "Free"
-status: "Not Started"
+status: "Done"
 used_in_reports:
   - "content"
 ---
