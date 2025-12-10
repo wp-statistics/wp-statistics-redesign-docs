@@ -19,14 +19,14 @@ The WP Statistics menu is organized into logical groups, with the Visitor Insigh
 | 3 | [Views](../reports/visitor-insights/views.md) | Free | Done | Content performance |
 | 4 | [Online Visitors](../reports/visitor-insights/online-visitors.md) | Free | Done | Real-time data |
 | 5 | [Top Visitors](../reports/visitor-insights/top-visitors.md) | Free | Done | Power users |
-| 6 | [Logged-in Users](../reports/visitor-insights/logged-in-users.md) | Free | Done | Registered users (only shown when "Track Logged-in Users" setting is enabled) |
-| 7 | [Search Terms](../reports/visitor-insights/search-terms.md) | Data Plus | Done | SEO insights |
+| 6 | [Logged-in Users](../reports/visitor-insights/logged-in-users.md) | Free | Done | Registered users (only shown when "Track Logged-In User Activity" setting is enabled) |
+| 7 | [Search Terms](../reports/visitor-insights/search-terms.md) | Data Plus | Done | Internal site search insights |
 
 ### Hidden Pages
 
 Some pages are not shown in the menu because they are accessed via drill-down navigation:
 
-- **[Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)**: Accessed by clicking on individual visitor rows in the Visitors, Top Visitors, or Online Visitors reports
+- **[Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)**: (Not Started) Accessed by clicking on individual visitor rows in the Visitors, Top Visitors, or Online Visitors reports
 
 ---
 
@@ -48,14 +48,13 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 
 | Sort | Menu Item | Add-on | Status | Notes |
 |------|-----------|--------|--------|-------|
-| 1 | [Overview](../reports/referrals/referrals-overview.md) | Free | Not Started | High-level summary (entry point) |
+| 1 | [Referrals Overview](../reports/referrals/referrals-overview.md) | Free | Done | High-level summary (entry point) |
 | 2 | [Referred Visitors](../reports/referrals/referred-visitors.md) | Free | Done | Visitors from referral sources |
 | 3 | [Referrers](../reports/referrals/referrers.md) | Free | Done | Top referring websites |
 | 4 | [Search Engines](../reports/referrals/search-engines.md) | Free | Done | Search engine traffic |
 | 5 | [Social Media](../reports/referrals/social-media.md) | Free | Done | Social platform traffic |
 | 6 | [Source Categories](../reports/referrals/source-categories.md) | Free | Done | Traffic by source category |
 | 7 | [Campaigns](../reports/referrals/campaigns.md) | Marketing | Done | Marketing campaign performance |
-| 8 | [UTM Performance](../reports/referrals/utm-performance.md) | Marketing | Not Started | UTM parameter tracking |
 
 ---
 
@@ -134,4 +133,4 @@ As more report groups are documented, they will be added to this structure:
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-12-10*
