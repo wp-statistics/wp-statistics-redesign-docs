@@ -4,6 +4,7 @@ type: "component"
 status: "Done"
 used_in_widgets:
   - "account-information"
+  - "visitor-information"
 ---
 
 # Information Component
@@ -21,6 +22,7 @@ A component for displaying structured key-value information in a clean, readable
 This component is used by the following widgets:
 
 - [Account Information](../widgets/account-information.md)
+- [Visitor Information](../widgets/visitor-information.md)
 
 ## Overview
 
