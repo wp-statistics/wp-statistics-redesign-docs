@@ -80,6 +80,7 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 
 ## Related Documentation
 
+- [Top Authors Report](top-authors.md)
 - [Individual Author Report](individual-author.md)
 - [Content Report](content.md)
 - [Categories Report](categories.md)

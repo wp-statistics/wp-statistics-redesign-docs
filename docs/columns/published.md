@@ -1,14 +1,15 @@
 ---
-title: "Term Views"
+title: "Published"
 type: "column"
 status: "Done"
 used_in_widgets:
   - "top-categories-table"
+  - "top-authors-table"
 ---
 
-# Term Views Column
+# Published Column
 
-Shows the total number of page views for content within this taxonomy term.
+Shows the number of published content items.
 
 ## Column Configuration
 
@@ -21,10 +22,11 @@ Shows the total number of page views for content within this taxonomy term.
 This column is used in the following widgets:
 
 - [Top Categories Table](../widgets/top-categories-table.md)
+- [Top Authors Table](../widgets/top-authors-table.md)
 
 ## Display
 
-**Label:** Views
+**Label:** Published
 
 **Format:** Number with thousand separators
 
@@ -39,6 +41,7 @@ This column is used in the following widgets:
 ## Related Documentation
 
 - [Top Categories Table Widget](../widgets/top-categories-table.md)
+- [Top Authors Table Widget](../widgets/top-authors-table.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

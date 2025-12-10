@@ -7,6 +7,8 @@ used_in_widgets:
   - "top-pages-full"
   - "referrers-table"
   - "source-categories-table"
+  - "top-categories-table"
+  - "top-authors-table"
 ---
 
 # Bounce Rate Column
@@ -27,6 +29,8 @@ This column is used in the following widgets:
 - [Top Pages Full](../widgets/top-pages-full.md)
 - [Referrers Table](../widgets/referrers-table.md)
 - [Source Categories Table](../widgets/source-categories-table.md)
+- [Top Categories Table](../widgets/top-categories-table.md)
+- [Top Authors Table](../widgets/top-authors-table.md)
 
 ## Display
 

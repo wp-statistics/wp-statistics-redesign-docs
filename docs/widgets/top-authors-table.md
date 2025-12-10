@@ -1,23 +1,23 @@
 ---
-title: "Top Categories Table"
+title: "Top Authors Table"
 type: "widget"
 component: "data-table"
 add_on: "Free"
 status: "Done"
-default_sort: "term_views"
+default_sort: "views"
 row_limit: 20
 used_in_reports:
-  - "top-categories"
+  - "top-authors"
 ---
 
-# Top Categories Table
+# Top Authors Table
 
-A data table showing taxonomy terms with their content performance metrics including visitors, views, and engagement data.
+A data table showing authors with their content performance metrics including visitors, views, and engagement data.
 
 ## Widget Configuration
 
 - **Component**: [Data Table](../components/data-table.md)
-- **Add-on**: Free (Data Plus for custom taxonomies)
+- **Add-on**: Free (Data Plus for custom post types)
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 
@@ -35,7 +35,7 @@ A data table showing taxonomy terms with their content performance metrics inclu
 
 This widget appears in the following report pages:
 
-- [Top Categories](../reports/content-analytics/top-categories.md) - Row 1, full width
+- [Top Authors](../reports/content-analytics/top-authors.md) - Row 1, full width
 
 ## Table Structure
 
@@ -43,25 +43,24 @@ This widget appears in the following report pages:
 
 | Column | Sortable | Default Visibility |
 |--------|----------|-------------------|
-| [Term Name](../columns/term-name.md) | Yes | Shown |
+| [Author Name](../columns/author-name.md) | Yes | Shown |
 | [Visitors](../columns/visitors.md) | Yes | Shown |
 | [Views](../columns/views.md) | Yes | Shown |
 | [Published](../columns/published.md) | Yes | Shown |
 | [Views per Content](../columns/views-per-content.md) | Yes | Shown |
 | [Bounce Rate](../columns/content-bounce-rate.md) | Yes | Hidden |
 | [Time on Page](../columns/time-on-page.md) | Yes | Hidden |
-| [View Page](../columns/view-page.md) | No | Shown |
 
 ## Empty State
 
 When no data available:
-- "No terms found for the selected period."
+- "No authors found for the selected period."
 
 ## Related Documentation
 
-- [Top Categories Report](../reports/content-analytics/top-categories.md)
+- [Top Authors Report](../reports/content-analytics/top-authors.md)
 - [Data Table Component](../components/data-table.md)
-- [Term Name Column](../columns/term-name.md)
+- [Author Name Column](../columns/author-name.md)
 
 ---
 

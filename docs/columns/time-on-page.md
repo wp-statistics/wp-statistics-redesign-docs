@@ -1,14 +1,15 @@
 ---
-title: "Term Published"
+title: "Time on Page"
 type: "column"
 status: "Done"
 used_in_widgets:
   - "top-categories-table"
+  - "top-authors-table"
 ---
 
-# Term Published Column
+# Time on Page Column
 
-Shows the number of published content items within this taxonomy term.
+Shows the average time spent on content.
 
 ## Column Configuration
 
@@ -21,24 +22,26 @@ Shows the number of published content items within this taxonomy term.
 This column is used in the following widgets:
 
 - [Top Categories Table](../widgets/top-categories-table.md)
+- [Top Authors Table](../widgets/top-authors-table.md)
 
 ## Display
 
-**Label:** Published
+**Label:** Avg. Time on Page
 
-**Format:** Number with thousand separators
+**Format:** Time in MM:SS format
 
 **Alignment:** Right
 
 ## Sortable Behavior
 
 - **Sortable:** Yes
-- **Default Sort Order:** Descending (highest first)
-- **Sort Type:** Numeric
+- **Default Sort Order:** Descending (longest first - more time is better)
+- **Sort Type:** Numeric (seconds)
 
 ## Related Documentation
 
 - [Top Categories Table Widget](../widgets/top-categories-table.md)
+- [Top Authors Table Widget](../widgets/top-authors-table.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

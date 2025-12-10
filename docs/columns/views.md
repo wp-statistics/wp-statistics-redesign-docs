@@ -1,14 +1,15 @@
 ---
-title: "Term Bounce Rate"
+title: "Views"
 type: "column"
 status: "Done"
 used_in_widgets:
   - "top-categories-table"
+  - "top-authors-table"
 ---
 
-# Term Bounce Rate Column
+# Views Column
 
-Shows the bounce rate for content within this taxonomy term.
+Shows the total number of page views.
 
 ## Column Configuration
 
@@ -21,24 +22,26 @@ Shows the bounce rate for content within this taxonomy term.
 This column is used in the following widgets:
 
 - [Top Categories Table](../widgets/top-categories-table.md)
+- [Top Authors Table](../widgets/top-authors-table.md)
 
 ## Display
 
-**Label:** Bounce Rate
+**Label:** Views
 
-**Format:** Percentage with one decimal place
+**Format:** Number with thousand separators
 
 **Alignment:** Right
 
 ## Sortable Behavior
 
 - **Sortable:** Yes
-- **Default Sort Order:** Ascending (lowest first - lower bounce rate is better)
+- **Default Sort Order:** Descending (highest first)
 - **Sort Type:** Numeric
 
 ## Related Documentation
 
 - [Top Categories Table Widget](../widgets/top-categories-table.md)
+- [Top Authors Table Widget](../widgets/top-authors-table.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

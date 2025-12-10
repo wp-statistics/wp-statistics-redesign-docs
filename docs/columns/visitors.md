@@ -1,14 +1,15 @@
 ---
-title: "Term Views per Content"
+title: "Visitors"
 type: "column"
 status: "Done"
 used_in_widgets:
   - "top-categories-table"
+  - "top-authors-table"
 ---
 
-# Term Views per Content Column
+# Visitors Column
 
-Shows the average views per content item within this taxonomy term (Views ÷ Published).
+Shows the number of unique visitors.
 
 ## Column Configuration
 
@@ -21,12 +22,13 @@ Shows the average views per content item within this taxonomy term (Views ÷ Pub
 This column is used in the following widgets:
 
 - [Top Categories Table](../widgets/top-categories-table.md)
+- [Top Authors Table](../widgets/top-authors-table.md)
 
 ## Display
 
-**Label:** Views/Content
+**Label:** Visitors
 
-**Format:** Decimal with one decimal place
+**Format:** Number with thousand separators
 
 **Alignment:** Right
 
@@ -39,6 +41,7 @@ This column is used in the following widgets:
 ## Related Documentation
 
 - [Top Categories Table Widget](../widgets/top-categories-table.md)
+- [Top Authors Table Widget](../widgets/top-authors-table.md)
 - [Data Table Component](../components/data-table.md)
 
 ---

@@ -38,7 +38,7 @@ Displays top authors in a tabbed interface, showing authors ranked by views, pub
 | **Sort By** | Views (descending) |
 | **Secondary Text** | "\{views\} views" |
 | **Link Text** | "See all authors" |
-| **Link Target** | Top Authors report |
+| **Link Target** | [Top Authors](../reports/content-analytics/top-authors.md) |
 
 ### Tab 2: Publishing
 
@@ -48,7 +48,7 @@ Displays top authors in a tabbed interface, showing authors ranked by views, pub
 | **Sort By** | Content count in period (descending) |
 | **Secondary Text** | "\{count\} \{post type\}" |
 | **Link Text** | "See all authors" |
-| **Link Target** | Top Authors report |
+| **Link Target** | [Top Authors](../reports/content-analytics/top-authors.md) |
 
 ### Tab 3: Views per \{Post Type\}
 
@@ -58,7 +58,7 @@ Displays top authors in a tabbed interface, showing authors ranked by views, pub
 | **Sort By** | Views/content ratio (descending) |
 | **Secondary Text** | "\{ratio\} views/\{post type\}" |
 | **Link Text** | "See all authors" |
-| **Link Target** | Top Authors report |
+| **Link Target** | [Top Authors](../reports/content-analytics/top-authors.md) |
 
 ### Tab 4: Comments per \{Post Type\}
 
@@ -68,7 +68,7 @@ Displays top authors in a tabbed interface, showing authors ranked by views, pub
 | **Sort By** | Comments/content ratio (descending) |
 | **Secondary Text** | "\{ratio\} comments/\{post type\}" |
 | **Link Text** | "See all authors" |
-| **Link Target** | Top Authors report |
+| **Link Target** | [Top Authors](../reports/content-analytics/top-authors.md) |
 | **Conditional** | Only shown if comments are enabled for the post type |
 
 **Note:** \{Post Type\} is dynamic based on selected filter (e.g., "Views per Post", "Comments per Page").
@@ -94,6 +94,7 @@ When no author data is available for the selected period:
 
 - [Tabbed List Component](../components/tabbed-list.md)
 - [Authors Report](../reports/content-analytics/authors.md)
+- [Top Authors Report](../reports/content-analytics/top-authors.md)
 - [Categories Report](../reports/content-analytics/categories.md)
 
 ---
