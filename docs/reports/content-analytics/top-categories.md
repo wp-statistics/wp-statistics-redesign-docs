@@ -29,7 +29,7 @@ Shows all taxonomy terms with their content performance metrics in a data table 
 
 ## Access
 
-This page is accessed by clicking "See all {taxonomy}" link in the [Top Terms](../../widgets/top-terms.md) widget on the [Categories Report](categories.md).
+This page is accessed by clicking "See all \{taxonomy\}" link in the [Top Terms](../../widgets/top-terms.md) widget on the [Categories Report](categories.md).
 
 ## Add-on Requirements
 
