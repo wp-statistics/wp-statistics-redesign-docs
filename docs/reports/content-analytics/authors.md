@@ -69,8 +69,6 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 | **Views** | Number | ✅ Yes | Always |
 | **Views per Author** | Decimal | ✅ Yes | Always |
 | **Avg. \{Post Type\} per Author** | Decimal | ✅ Yes | Always |
-| **Bounce Rate** | Percentage | ✅ Yes | Always |
-| **Avg. Time on Page** | Time (MM:SS) | ✅ Yes | Always |
 
 **Note:** \{Post Type\} is dynamic based on selected filter (e.g., "Published Posts", "Published Pages", "Published Products")
 
