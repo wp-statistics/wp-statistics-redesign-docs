@@ -13,6 +13,8 @@ widgets:
     columns: ["content-metrics"]
   - row: 2
     columns: ["content-performance"]
+  - row: 3
+    columns: ["top-posts"]
 ---
 
 # Content
@@ -75,6 +77,10 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 
 - [Content Performance](../../widgets/content-performance.md) - Line chart displaying visitor and view trends over time for the selected post type
 
+### Row 3 (Full Width) - Top Posts
+
+- [Top Posts](../../widgets/top-posts.md) - Tabbed list showing Most Popular, Most Commented, and Most Recent content with thumbnails
+
 ## Related Documentation
 
 - [Individual Content Report](individual-content.md)
@@ -82,6 +88,7 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 - [Content Analytics Menu Group](../../global/menu-structure.md)
 - [Metrics Component](../../components/metrics.md)
 - [Content Performance Widget](../../widgets/content-performance.md)
+- [Top Posts Widget](../../widgets/top-posts.md)
 
 ---
 
