@@ -8,6 +8,7 @@ status: "Done"
 interactions:
   - "Date Picker"
   - "Taxonomy Filter"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["top-categories-table"]
@@ -41,6 +42,7 @@ This page is accessed by clicking "See all {taxonomy}" link in the [Top Terms](.
 - **Taxonomy Filter**: Filter by taxonomy type (default: Categories)
   - Free: Categories, Tags
   - Data Plus: Custom taxonomies
+- **Advanced Filters**: [Taxonomy Filters](../../global/advanced-filters.md#taxonomy-filters)
 
 ## Widget Layout
 

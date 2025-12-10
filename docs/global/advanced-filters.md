@@ -76,6 +76,7 @@ This section documents all available filter types with their operators and input
 | Cached Date | Filter by page cache/index date | between, before, after | Date picker |
 | Language | Filter by content language (future: requires multi-language plugin) | is, is not | Dropdown |
 | Author | Filter by content author | is, is not | Dropdown (author list) |
+| Post Type | Filter by content post type | is, is not | Dropdown (Posts, Pages, custom post types) |
 
 > **Note**: The Language filter is planned for a future release and will require integration with a multi-language plugin when active.
 
@@ -144,12 +145,21 @@ Filter Groups define which filters are bundled together for specific use cases a
 
 ### Content Filters
 
-**Includes**: Page URL, Page Title, Page Term, Resource Type, Resource ID, Cached Date, Language (future), Author
+**Includes**: Page URL, Page Title, Page Term, Resource Type, Resource ID, Cached Date, Language (future), Author, Post Type
 
 **Used In Reports**:
 - [Top Pages](../reports/page-insights/top-pages.md)
 - [Entry Pages](../reports/page-insights/entry-pages.md)
 - [Exit Pages](../reports/page-insights/exit-pages.md)
+
+---
+
+### Taxonomy Filters
+
+**Includes**: Author, Post Type, Cached Date
+
+**Used In Reports**:
+- [Top Categories](../reports/content-analytics/top-categories.md)
 
 ## Implementation Notes
 
@@ -202,4 +212,4 @@ In the "Available Interactions" section, list the specific filters available for
 
 ---
 
-*Last Updated: 2025-11-27*
+*Last Updated: 2025-12-10*
