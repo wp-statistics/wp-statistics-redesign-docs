@@ -37,7 +37,7 @@ Displays top taxonomy terms in a tabbed interface, showing terms ranked by views
 | **Sort By** | Views (descending) |
 | **Secondary Text** | "\{views\} views" |
 | **Link Text** | "See all \{taxonomy\}" |
-| **Link Target** | Top Categories report (with taxonomy filter) |
+| **Link Target** | [Top Categories](../reports/content-analytics/top-categories.md) (with taxonomy filter) |
 
 ### Tab 2: Publishing
 
@@ -47,7 +47,7 @@ Displays top taxonomy terms in a tabbed interface, showing terms ranked by views
 | **Sort By** | Content count in period (descending) |
 | **Secondary Text** | "\{count\} contents" |
 | **Link Text** | "See all \{taxonomy\}" |
-| **Link Target** | Top Categories report (with taxonomy filter) |
+| **Link Target** | [Top Categories](../reports/content-analytics/top-categories.md) (with taxonomy filter) |
 
 **Note:** \{taxonomy\} is dynamic based on selected filter (e.g., "See all categories", "See all tags", "See all product_cat").
 
@@ -66,6 +66,7 @@ When no term data is available for the selected period:
 
 - [Tabbed List Component](../components/tabbed-list.md)
 - [Categories Report](../reports/content-analytics/categories.md)
+- [Top Categories Report](../reports/content-analytics/top-categories.md)
 
 ---
 
