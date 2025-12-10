@@ -17,6 +17,8 @@ widgets:
     columns: ["top-content"]
   - row: 4
     columns: ["top-referrers", "top-search-engines", "top-countries"]
+  - row: 5
+    columns: ["top-browsers", "top-operating-systems", "top-device-categories"]
 ---
 
 # Content
@@ -88,6 +90,14 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 - [Top Referrers](../../widgets/top-referrers.md) - Top referring websites
 - [Top Search Engines](../../widgets/top-search-engines.md) - Top search engines
 - [Top Countries](../../widgets/top-countries.md) - Top visitor countries
+
+**Note:** These widgets display data without "See all" links in this context.
+
+### Row 5 (Three Columns) - Device Analytics
+
+- [Top Browsers](../../widgets/top-browsers.md) - Top browsers
+- [Top Operating Systems](../../widgets/top-operating-systems.md) - Top operating systems
+- [Top Device Categories](../../widgets/top-device-categories.md) - Top device categories
 
 **Note:** These widgets display data without "See all" links in this context.
 

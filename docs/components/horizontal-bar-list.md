@@ -10,6 +10,7 @@ used_in_widgets:
   - "top-source-categories"
   - "top-search-engines"
   - "top-social-media"
+  - "top-browsers"
 ---
 
 # Horizontal Bar List Component
@@ -33,6 +34,7 @@ This component is used by the following widgets:
 - [Top Source Categories](../widgets/top-source-categories.md)
 - [Top Search Engines](../widgets/top-search-engines.md)
 - [Top Social Media](../widgets/top-social-media.md)
+- [Top Browsers](../widgets/top-browsers.md)
 
 ## Overview
 

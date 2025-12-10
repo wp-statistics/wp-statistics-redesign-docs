@@ -1,18 +1,16 @@
 ---
-title: "Top Device Categories"
+title: "Top Browsers"
 type: "widget"
 component: "horizontal-bar-list"
 add_on: "Free"
 status: "Done"
 used_in_reports:
-  - "visitors-overview"
-  - "referrals-overview"
   - "content"
 ---
 
-# Top Device Categories Widget
+# Top Browsers Widget
 
-Displays the top 5 device categories by visitor count in a horizontal bar list format with device icons and previous period comparison.
+Displays the top 5 browsers by visitor count in a horizontal bar list format with browser icons and previous period comparison.
 
 ## Widget Configuration
 
@@ -27,28 +25,26 @@ Displays the top 5 device categories by visitor count in a horizontal bar list f
 |----------|-------|
 | **Max Visible Items** | 5 |
 | **Show Previous Period** | ✅ Yes |
-| **Show Icons** | ✅ Yes (device icons) |
+| **Show Icons** | ✅ Yes (browser icons) |
 | **Enable Other Item** | ❌ No |
-| **Link to Full Report** | ✅ Yes (links to Device Categories report) |
+| **Link to Full Report** | ✅ Yes (links to Browsers report) |
 
 ## Used In Reports
 
 This widget is used in the following reports:
 
-- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 4
-- [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 4
 - [Content](../reports/content-analytics/content.md) - Row 5 (no "See all" link)
 
 ## Empty State
 
-When no device category data is available for the selected period:
+When no browser data is available for the selected period:
 - "No data available for the selected period"
 
 ## Related Documentation
 
 - [Horizontal Bar List Component](../components/horizontal-bar-list.md)
-- [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
+- [Content Report](../reports/content-analytics/content.md)
 
 ---
 
-*Last Updated: 2025-12-08*
+*Last Updated: 2025-12-10*
