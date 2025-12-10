@@ -4,19 +4,13 @@ type: "report"
 group: "Visitors"
 show_in_menu: false
 add_on: "Free"
-status: "Not Started"
+status: "In Progress"
 interactions:
   - "Back Navigation"
   - "Export"
 widgets:
   - row: 1
-    columns: ["visitor-info-card"]
-  - row: 2
-    columns: ["visitor-activity-timeline"]
-  - row: 3
-    columns: ["visitor-page-views", "visitor-tech-info"]
-  - row: 4
-    columns: ["visitor-location-map"]
+    columns: ["account-information"]
 ---
 
 # Single Visitor Report
@@ -27,8 +21,18 @@ Detailed drill-down view for analyzing individual visitor behavior and activity.
 
 - **Menu Visibility**: Hidden from main menu (accessed via drill-down)
 - **Add-on**: Free (included in base plugin)
-- **Status**: Not Started
+- **Status**: In Progress
 - **Figma Design**: [Add link when available]
+
+## Access Methods
+
+This report is accessed by clicking on visitor identifiers in the [Visitor Info](../../columns/visitor-info.md) column. The report can load visitor data based on three identifier types:
+
+| Identifier | When Used | Example |
+|------------|-----------|---------|
+| **Username** | Visitor is a logged-in WordPress user | `navid #123` |
+| **IP Address** | Anonymous visitor, hash disabled | `192.168.1.1` |
+| **Hash** | Anonymous visitor, hash enabled | `abc123` |
 
 ## Available Interactions
 
@@ -37,19 +41,11 @@ Detailed drill-down view for analyzing individual visitor behavior and activity.
 
 ## Widget Layout
 
-### Row 1 (Full Width)
-- [Visitor Info Card](../../widgets/visitor-info-card.md)
+### Row 1 (Full Width) - Conditional
+- [Account Information](../../widgets/account-information.md) - Only shown for logged-in users
 
-### Row 2 (Full Width)
-- [Visitor Activity Timeline](../../widgets/visitor-activity-timeline.md)
-
-### Row 3 (Two Columns)
-- [Visitor Page Views](../../widgets/visitor-page-views.md)
-- [Visitor Tech Info](../../widgets/visitor-tech-info.md)
-
-### Row 4 (Full Width)
-- [Visitor Location Map](../../widgets/visitor-location-map.md)
+*Additional widgets to be documented.*
 
 ---
 
-*Last Updated: 2025-11-06*
+*Last Updated: 2025-12-10*
