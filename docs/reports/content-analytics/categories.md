@@ -79,6 +79,8 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 | **Views** | Number | ✅ Yes | Always |
 | **Views per Term** | Decimal | ✅ Yes | Always |
 | **Avg. Contents per Term** | Decimal | ✅ Yes | Always |
+| **Bounce Rate** | Percentage | ✅ Yes | Always |
+| **Avg. Time on Page** | Time (MM:SS) | ✅ Yes | Always |
 
 ### Row 2 (Full Width) - Performance
 
@@ -95,6 +97,8 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 ### Row 5 (Full Width) - Top Authors
 
 - [Top Authors](../../widgets/top-authors.md)
+
+**Note:** Shows only authors who have content in the selected taxonomy.
 
 ### Row 6 (Three Columns) - Traffic Sources
 
