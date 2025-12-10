@@ -3,7 +3,6 @@ title: "Analytics Query API"
 type: "technical"
 category: "api"
 status: "Done"
-sidebar_position: 2
 ---
 
 # Analytics Query API
@@ -1039,11 +1038,32 @@ async function fetchDashboardBatch() {
 
 ---
 
-## Related Documentation
+## Architecture
 
-- [Analytics Query Backend Architecture](../architecture/analytics-query-backend.md)
-- [Analytics Query Frontend Integration](../architecture/analytics-query-frontend.md)
+### [Backend Architecture](../architecture/analytics-query-backend.md)
+
+How the backend processes queries and generates SQL.
+
+- MetricRegistry - Available metrics and SQL expressions
+- DimensionRegistry - Dimensions, JOINs, and grouping
+- FilterBuilder - Filter to WHERE clause conversion
+- QueryBuilder - SQL query assembly
+
+### [Frontend Integration](../architecture/analytics-query-frontend.md)
+
+React patterns for consuming the API.
+
+- TypeScript interfaces
+- `useAnalytics` hook
+- Batch queries for dashboard loads
+- Component examples
 
 ---
 
-*Last Updated: 2025-12-08*
+## Related Documentation
+
+- [Admin AJAX API](../api/admin-ajax-api.md) - Overview of Admin AJAX endpoints
+
+---
+
+*Last Updated: 2025-12-10*

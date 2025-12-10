@@ -8,46 +8,31 @@ sidebar_position: 1
 
 # API Overview
 
-WP Statistics v15 provides APIs for fetching analytics data. The primary endpoint uses **Admin-Ajax** (recommended - avoids adblockers).
+WP Statistics v15 provides two types of APIs for fetching analytics data: **Admin AJAX** and **REST API**.
 
 ---
 
-## Available APIs
+## API Types
 
-### [Analytics Query API](./analytics-query-api.md)
+### [Admin AJAX](./admin-ajax-api.md) (Recommended)
 
-Flexible metrics + dimensions based query API for fetching any analytics data.
+Admin AJAX endpoints use WordPress's built-in `admin-ajax.php` handler. This is the **recommended approach** for the WP Statistics dashboard because:
 
-- Metrics: `visitors`, `views`, `sessions`, `bounce_rate`, etc.
-- Dimensions: `date`, `country`, `browser`, `page`, etc.
-- Supports batch queries, filters, pagination, and comparison periods
+- **Avoids adblockers** - Adblockers commonly block REST API endpoints but rarely block admin-ajax requests
+- **Built-in WordPress authentication** - Uses WordPress nonce verification
+- **Same-origin requests** - Requests stay within the WordPress admin context
 
-### Public REST API
+All Admin AJAX actions are prefixed with `wp_statistics_` and use the `X-WP-Nonce` header for authentication.
+
+**Available AJAX Endpoints:**
+
+- [Get Filter Options](../api-endpoints/get-filter-options.md) - Filter options for dropdowns
+- [Analytics Query API](../api-endpoints/analytics-query-api.md) - Flexible metrics + dimensions based query API
+
+### REST API
 
 *Coming soon* - External REST API for third-party integrations. Will be refactored during the v15 add-ons update.
 
 ---
 
-## Architecture
-
-### [Backend Architecture](../architecture/analytics-query-backend.md)
-
-How the backend processes queries and generates SQL.
-
-- MetricRegistry - Available metrics and SQL expressions
-- DimensionRegistry - Dimensions, JOINs, and grouping
-- FilterBuilder - Filter to WHERE clause conversion
-- QueryBuilder - SQL query assembly
-
-### [Frontend Integration](../architecture/analytics-query-frontend.md)
-
-React patterns for consuming the API.
-
-- TypeScript interfaces
-- `useAnalytics` hook
-- Batch queries for dashboard loads
-- Component examples
-
----
-
-*Last Updated: 2024-12-03*
+*Last Updated: 2025-12-10*
