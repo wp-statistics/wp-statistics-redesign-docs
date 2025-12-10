@@ -6,11 +6,12 @@ add_on: "Free"
 status: "Done"
 used_in_reports:
   - "categories"
+  - "authors"
 ---
 
 # Top Authors Widget
 
-Displays top authors in a tabbed interface, showing authors ranked by views or by content publishing activity.
+Displays top authors in a tabbed interface, showing authors ranked by views, publishing activity, or engagement metrics.
 
 ## Widget Configuration
 
@@ -37,7 +38,7 @@ Displays top authors in a tabbed interface, showing authors ranked by views or b
 | **Sort By** | Views (descending) |
 | **Secondary Text** | "\{views\} views" |
 | **Link Text** | "See all authors" |
-| **Link Target** | Authors report |
+| **Link Target** | Top Authors report |
 
 ### Tab 2: Publishing
 
@@ -45,15 +46,44 @@ Displays top authors in a tabbed interface, showing authors ranked by views or b
 |----------|-------|
 | **Label** | Publishing |
 | **Sort By** | Content count in period (descending) |
-| **Secondary Text** | "\{count\} contents" |
+| **Secondary Text** | "\{count\} \{post type\}" |
 | **Link Text** | "See all authors" |
-| **Link Target** | Authors report |
+| **Link Target** | Top Authors report |
+
+### Tab 3: Views per \{Post Type\}
+
+| Property | Value |
+|----------|-------|
+| **Label** | Views per \{Post Type\} |
+| **Sort By** | Views/content ratio (descending) |
+| **Secondary Text** | "\{ratio\} views/\{post type\}" |
+| **Link Text** | "See all authors" |
+| **Link Target** | Top Authors report |
+
+### Tab 4: Comments per \{Post Type\}
+
+| Property | Value |
+|----------|-------|
+| **Label** | Comments per \{Post Type\} |
+| **Sort By** | Comments/content ratio (descending) |
+| **Secondary Text** | "\{ratio\} comments/\{post type\}" |
+| **Link Text** | "See all authors" |
+| **Link Target** | Top Authors report |
+| **Conditional** | Only shown if comments are enabled for the post type |
+
+**Note:** \{Post Type\} is dynamic based on selected filter (e.g., "Views per Post", "Comments per Page").
+
+## Context-Specific Behavior
+
+- **Authors Report**: Shows all 4 tabs (or 3 if comments disabled)
+- **Categories Report**: Shows only 2 tabs (Views, Publishing) for authors within the selected taxonomy
 
 ## Used In Reports
 
 This widget is used in the following reports:
 
-- [Categories](../reports/content-analytics/categories.md) - Row 5
+- [Authors](../reports/content-analytics/authors.md) - Row 2
+- [Categories](../reports/content-analytics/categories.md) - Row 5 (only authors within selected taxonomy)
 
 ## Empty State
 
@@ -63,6 +93,7 @@ When no author data is available for the selected period:
 ## Related Documentation
 
 - [Tabbed List Component](../components/tabbed-list.md)
+- [Authors Report](../reports/content-analytics/authors.md)
 - [Categories Report](../reports/content-analytics/categories.md)
 
 ---
