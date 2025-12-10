@@ -83,7 +83,8 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 ## Related Documentation
 
 - [Individual Author Report](individual-author.md)
-- [Content Analytics Overview](overview.md)
+- [Content Report](content.md)
+- [Categories Report](categories.md)
 - [Author Pages Report](../page-insights/author-pages.md) (different focus)
 - [Content Analytics Menu Group](../../global/menu-structure.md)
 - [Metrics Component](../../components/metrics.md)

@@ -104,7 +104,8 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 ## Related Documentation
 
 - [Individual Content Report](individual-content.md)
-- [Content Analytics Overview](overview.md)
+- [Authors Report](authors.md)
+- [Categories Report](categories.md)
 - [Content Analytics Menu Group](../../global/menu-structure.md)
 - [Metrics Component](../../components/metrics.md)
 - [Content Performance Widget](../../widgets/content-performance.md)

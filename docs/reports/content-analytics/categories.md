@@ -119,7 +119,8 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 ## Related Documentation
 
 - [Individual Category Report](individual-category.md)
-- [Content Analytics Overview](overview.md)
+- [Content Report](content.md)
+- [Authors Report](authors.md)
 - [Category Pages Report](../page-insights/category-pages.md) (different focus)
 - [Content Analytics Menu Group](../../global/menu-structure.md)
 - [Metrics Component](../../components/metrics.md)

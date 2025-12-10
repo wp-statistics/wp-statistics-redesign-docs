@@ -48,10 +48,9 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 
 | Sort | Menu Item | Add-on | Status | Notes |
 |------|-----------|--------|--------|-------|
-| 1 | [Overview](../reports/content-analytics/overview.md) | Free | Not Started | High-level summary (entry point) |
-| 2 | [Content](../reports/content-analytics/content.md) | Free | Not Started | Content performance by post type (Data Plus for custom post types) |
-| 3 | [Authors](../reports/content-analytics/authors.md) | Free | Not Started | Author content performance |
-| 4 | [Categories](../reports/content-analytics/categories.md) | Free | Not Started | Taxonomy content performance (Data Plus for custom taxonomies) |
+| 1 | [Content](../reports/content-analytics/content.md) | Free | Done | Content performance by post type (Data Plus for custom post types) |
+| 2 | [Authors](../reports/content-analytics/authors.md) | Free | Done | Author content performance |
+| 3 | [Categories](../reports/content-analytics/categories.md) | Free | Done | Taxonomy content performance (Data Plus for custom taxonomies) |
 
 ### Hidden Pages
 
