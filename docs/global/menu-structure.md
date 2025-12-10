@@ -44,6 +44,34 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 
 ---
 
+## Content Analytics Menu Group
+
+| Sort | Menu Item | Add-on | Status | Notes |
+|------|-----------|--------|--------|-------|
+| 1 | [Overview](../reports/content-analytics/overview.md) | Free | Not Started | High-level summary (entry point) |
+| 2 | [Content](../reports/content-analytics/content.md) | Free | Not Started | Content performance by post type (Data Plus for custom post types) |
+| 3 | [Authors](../reports/content-analytics/authors.md) | Free | Not Started | Author content performance |
+| 4 | [Categories](../reports/content-analytics/categories.md) | Free | Not Started | Taxonomy content performance (Data Plus for custom taxonomies) |
+
+### Hidden Pages
+
+Some pages are not shown in the menu because they are accessed via drill-down navigation:
+
+- **[Individual Content](../reports/content-analytics/individual-content.md)**: (Not Started) Accessed by clicking on a content item in the Content report
+- **[Individual Author](../reports/content-analytics/individual-author.md)**: (Not Started, Data Plus) Accessed by clicking on an author in the Authors report
+- **[Individual Category](../reports/content-analytics/individual-category.md)**: (Not Started) Accessed by clicking on a category/taxonomy in the Categories report
+
+### Content Analytics vs Page Insights
+
+Content Analytics focuses on **content performance** (how posts/articles perform), while Page Insights focuses on **URL/page performance** (how specific URLs are visited):
+
+| Content Analytics | Page Insights | Difference |
+|-------------------|---------------|------------|
+| Authors | Author Pages | Content by author vs author archive URL visits |
+| Categories | Category Pages | Content in categories vs category archive URL visits |
+
+---
+
 ## Referrals Menu Group
 
 | Sort | Menu Item | Add-on | Status | Notes |
@@ -121,7 +149,6 @@ As more report groups are documented, they will be added to this structure:
 
 - Geographic Reports
 - Device & Browser Reports
-- Custom Reports
 
 ---
 

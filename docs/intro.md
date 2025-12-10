@@ -34,6 +34,9 @@ Report pages organized by feature groups:
 **Page Insights Reports** - Page-level content performance
 - Overview, Top Pages, Entry Pages, Exit Pages, Category Pages, Author Pages, 404 Pages
 
+**Content Analytics Reports** - Content performance by post type, author, and taxonomy
+- Overview, Content, Authors, Categories (plus hidden drill-down pages)
+
 ### 🧩 Widgets
 
 Reusable widgets used across multiple report pages. Each widget is based on a component and can be configured independently. Examples include:
