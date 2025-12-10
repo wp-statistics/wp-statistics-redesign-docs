@@ -4,7 +4,7 @@ type: "report"
 group: "Content Analytics"
 show_in_menu: true
 add_on: "Free"
-status: "In Progress"
+status: "Done"
 interactions:
   - "Date Picker"
   - "Post Type Filter"
@@ -31,7 +31,7 @@ Shows performance metrics for individual content items (posts, pages, custom pos
 - **Menu Group**: Content Analytics
 - **Show in Menu**: Yes
 - **Add-on**: Free (Data Plus required for custom post types)
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Add-on Requirements
