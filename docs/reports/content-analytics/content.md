@@ -56,16 +56,16 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 
 | Metric | Value Format | Previous Period | Conditional |
 |--------|--------------|-----------------|-------------|
-| **Published {{Post Type}}** | Number | ✅ Yes | Always |
+| **Published \{Post Type\}** | Number | ✅ Yes | Always |
 | **Visitors** | Number | ✅ Yes | Always |
 | **Views** | Number | ✅ Yes | Always |
-| **Views per {{Post Type}}** | Decimal | ✅ Yes | Always |
+| **Views per \{Post Type\}** | Decimal | ✅ Yes | Always |
 | **Bounce Rate** | Percentage | ✅ Yes | Always |
 | **Time on Page** | Time (MM:SS) | ✅ Yes | Always |
 | **Comments** | Number | ✅ Yes | If comments enabled for post type |
-| **Avg. Comments per {{Post Type}}** | Decimal | ✅ Yes | If comments enabled for post type |
+| **Avg. Comments per \{Post Type\}** | Decimal | ✅ Yes | If comments enabled for post type |
 
-**Note:** {{Post Type}} is dynamic based on selected filter (e.g., "Published Posts", "Published Pages", "Published Products")
+**Note:** \{Post Type\} is dynamic based on selected filter (e.g., "Published Posts", "Published Pages", "Published Products")
 
 **Conditional Display:**
 - When comments are **enabled** for the selected post type: All 8 metrics displayed
