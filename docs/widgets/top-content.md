@@ -1,5 +1,5 @@
 ---
-title: "Top Posts"
+title: "Top Content"
 type: "widget"
 component: "tabbed-list"
 add_on: "Free"
@@ -8,9 +8,9 @@ used_in_reports:
   - "content"
 ---
 
-# Top Posts Widget
+# Top Content Widget
 
-Displays content items in a tabbed interface with three views: Most Popular, Most Commented, and Most Recent. Each item shows a thumbnail, title, and relevant metrics.
+Displays content items in a tabbed interface with three views: Most Popular, Most Commented, and Most Recent.
 
 ## Widget Configuration
 
@@ -37,6 +37,7 @@ Displays content items in a tabbed interface with three views: Most Popular, Mos
 | **Sort By** | Views (descending) |
 | **Secondary Text** | "\{views\} views" |
 | **Link to Report** | [Top Pages](../reports/page-insights/top-pages.md) with sort=views, respects date range |
+| **Link Text** | "See all \{post type\}" |
 
 ### Tab 2: Most Commented
 
@@ -55,33 +56,13 @@ Displays content items in a tabbed interface with three views: Most Popular, Mos
 | **Sort By** | Published Date (descending) |
 | **Secondary Text** | "\{date\} · \{views\} views" |
 | **Link to Report** | [Top Pages](../reports/page-insights/top-pages.md) with sort=date, respects date range |
+| **Link Text** | "See all \{post type\}" |
 
 ## Used In Reports
 
 This widget is used in the following reports:
 
 - [Content](../reports/content-analytics/content.md) - Row 3, full width
-
-## List Item Display
-
-Each item in the list shows:
-
-| Element | Description |
-|---------|-------------|
-| **Thumbnail** | Post featured image (left side), placeholder if none |
-| **Title** | Post title (primary text) |
-| **Metrics** | Tab-specific secondary text (views, comments, date) |
-
-## "See All" Links
-
-- **Most Popular**: "See all posts" → Top Pages report (sorted by views, current date range applied)
-- **Most Commented**: No link
-- **Most Recent**: "See all posts" → Top Pages report (sorted by date, current date range applied)
-
-## Empty State
-
-When no content is available for the selected period and post type:
-- "No content available for the selected period"
 
 ## Related Documentation
 

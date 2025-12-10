@@ -3,7 +3,7 @@ title: "Tabbed List"
 type: "component"
 status: "Not Started"
 used_in_widgets:
-  - "top-posts"
+  - "top-content"
 ---
 
 # Tabbed List Component
@@ -20,7 +20,7 @@ Displays content items in a tabbed interface with thumbnails, supporting multipl
 
 This component is used by the following widgets:
 
-- [Top Posts](../widgets/top-posts.md)
+- [Top Content](../widgets/top-content.md)
 
 ## Overview
 
@@ -98,7 +98,7 @@ When no data is available for a tab:
 
 ## Related Documentation
 
-- [Top Posts Widget](../widgets/top-posts.md)
+- [Top Content Widget](../widgets/top-content.md)
 - [Global Rules](../global/global-rules.md)
 
 ---
