@@ -5,8 +5,14 @@ group: "Content Analytics"
 show_in_menu: true
 add_on: "Free"
 status: "Not Started"
-interactions: []
-widgets: []
+interactions:
+  - "Date Picker"
+  - "Post Type Filter"
+widgets:
+  - row: 1
+    columns: ["content-metrics"]
+  - row: 2
+    columns: ["content-performance"]
 ---
 
 # Content
@@ -29,17 +35,53 @@ Shows performance metrics for individual content items (posts, pages, custom pos
 
 ## Available Interactions
 
-*To be defined*
+- **Date Picker**: Select time period for data
+- **Post Type Filter**: Filter content by post type (default: Posts)
+  - Free: Post and Page
+  - Data Plus: Custom post types
 
 ## Widget Layout
 
-*To be defined*
+### Row 1 (Full Width) - Content Metrics
+
+Uses the [Metrics](../../components/metrics.md) component to display key performance indicators for the selected post type.
+
+#### Component Configuration
+
+- **Component**: [Metrics](../../components/metrics.md)
+- **Show Previous Period**: Enabled
+- **Show Source Icons**: Disabled
+
+#### Metrics Display
+
+| Metric | Value Format | Previous Period | Conditional |
+|--------|--------------|-----------------|-------------|
+| **Published {{Post Type}}** | Number | ✅ Yes | Always |
+| **Visitors** | Number | ✅ Yes | Always |
+| **Views** | Number | ✅ Yes | Always |
+| **Views per {{Post Type}}** | Decimal | ✅ Yes | Always |
+| **Bounce Rate** | Percentage | ✅ Yes | Always |
+| **Time on Page** | Time (MM:SS) | ✅ Yes | Always |
+| **Comments** | Number | ✅ Yes | If comments enabled for post type |
+| **Avg. Comments per {{Post Type}}** | Decimal | ✅ Yes | If comments enabled for post type |
+
+**Note:** {{Post Type}} is dynamic based on selected filter (e.g., "Published Posts", "Published Pages", "Published Products")
+
+**Conditional Display:**
+- When comments are **enabled** for the selected post type: All 8 metrics displayed
+- When comments are **disabled** for the selected post type: 6 metrics displayed (Comments and Avg. Comments hidden)
+
+### Row 2 (Full Width) - Performance
+
+- [Content Performance](../../widgets/content-performance.md) - Line chart displaying visitor and view trends over time for the selected post type
 
 ## Related Documentation
 
 - [Individual Content Report](individual-content.md)
 - [Content Analytics Overview](overview.md)
 - [Content Analytics Menu Group](../../global/menu-structure.md)
+- [Metrics Component](../../components/metrics.md)
+- [Content Performance Widget](../../widgets/content-performance.md)
 
 ---
 

@@ -8,6 +8,7 @@ used_in_widgets:
   - "traffic-source-chart"
   - "source-categories-chart"
   - "campaigns-traffic-trends"
+  - "content-performance"
 ---
 
 # Line Chart Component
@@ -29,6 +30,7 @@ This component is used by the following widgets:
 - [Traffic Source Chart](../widgets/traffic-source-chart.md)
 - [Source Categories Chart](../widgets/source-categories-chart.md)
 - [Campaigns Traffic Trends](../widgets/campaigns-traffic-trends.md)
+- [Content Performance](../widgets/content-performance.md)
 
 ## Overview
 
@@ -61,6 +63,7 @@ Widgets using this component can configure the following options:
 | **Tertiary Metric** | String | Third metric to display | null |
 | **Quaternary Metric** | String | Fourth metric to display | null |
 | **Quinary Metric** | String | Fifth metric to display | null |
+| **Bar Metric** | String | Metric to display as bars instead of a line (uses separate Y-axis) | null |
 | **Previous Period** | Boolean | Enable/disable previous period comparison toggle | true |
 | **Metric Toggle** | Boolean | Allow users to toggle individual metrics on/off | true |
 | **Timeframe Selector** | Boolean | Enable timeframe switching dropdown (Daily/Weekly/Monthly) | true |
@@ -80,6 +83,22 @@ When disabled, dashed comparison lines will not appear in any line chart.
 
 The most recent day/week/month is treated as incomplete and shown as a **dashed extension** of the solid line to indicate the partial nature of the data.
 
+## Bar Metric
+
+When a **Bar Metric** is configured, the chart displays a hybrid line+bar visualization:
+
+| Feature | Description |
+|---------|-------------|
+| **Display** | Vertical bars rendered behind the line metrics |
+| **Y-Axis** | Uses a separate Y-axis on the right side (independent scale from lines) |
+| **Previous Period** | Shown as lighter/outlined bars when enabled |
+| **Toggle** | Can be shown/hidden via legend like line metrics |
+| **Use Case** | Ideal for low-volume metrics (e.g., published content count) that would appear flat as a line |
+
+**Visual Appearance:**
+- Current period: Solid filled bars
+- Previous period: Lighter opacity or outlined bars
+
 ## Visual Style Guide
 
 | Element | Appearance |
@@ -87,6 +106,8 @@ The most recent day/week/month is treated as incomplete and shown as a **dashed 
 | **Current Metric** | Solid Line (Color-coded) |
 | **Previous Metric** | Dashed Line (Color-coded) |
 | **Incomplete Period** | Dashed extension of current metric |
+| **Bar Metric (Current)** | Solid filled bars |
+| **Bar Metric (Previous)** | Lighter/outlined bars |
 | **Max Data Points** | Chart displays up to 8 points for readability |
 
 ## Color Codes
@@ -118,4 +139,4 @@ When no data is available for the selected period:
 
 ---
 
-*Last Updated: 2025-12-08*
+*Last Updated: 2025-12-10*
