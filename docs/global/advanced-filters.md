@@ -161,6 +161,15 @@ Filter Groups define which filters are bundled together for specific use cases a
 **Used In Reports**:
 - [Top Categories](../reports/content-analytics/top-categories.md)
 
+---
+
+### Individual Content Filters
+
+**Includes**: Country, City, Browser, Operating System, Device Type, Referrer, Source Category, Login Status, User Role
+
+**Used In Reports**:
+- [Individual Content](../reports/content-analytics/individual-content.md)
+
 ## Implementation Notes
 
 Reports that support Advanced Filters should include this in their YAML frontmatter:

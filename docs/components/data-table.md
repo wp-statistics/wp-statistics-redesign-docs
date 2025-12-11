@@ -30,6 +30,7 @@ used_in_widgets:
   - "visitor-list"
   - "top-categories-table"
   - "views-timeline"
+  - "traffic-summary"
 ---
 
 # Data Table Component
@@ -73,6 +74,7 @@ This component is used by the following widgets:
 - [Visitor List](../widgets/visitor-list.md)
 - [Top Categories Table](../widgets/top-categories-table.md)
 - [Views Timeline](../widgets/views-timeline.md)
+- [Traffic Summary](../widgets/traffic-summary.md)
 
 ## Overview
 

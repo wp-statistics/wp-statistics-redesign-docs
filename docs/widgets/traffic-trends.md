@@ -7,6 +7,7 @@ status: "Done"
 used_in_reports:
   - "visitors-overview"
   - "referrals-overview"
+  - "individual-content"
 ---
 
 # Traffic Trends Widget
@@ -41,6 +42,7 @@ This widget is used in the following reports:
 
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 2, full width
 - [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 2, full width (filtered to referred visitors)
+- [Individual Content](../reports/content-analytics/individual-content.md) - Row 2, full width (filtered to specific content)
 
 ## Chart Behavior
 
