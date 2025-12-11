@@ -17,6 +17,7 @@ This section contains technical documentation for WP Statistics v15, including d
 - [Admin AJAX API](api/admin-ajax-api.md) - Dashboard AJAX endpoints for the v15 React interface
   - [Get Filter Options](api-endpoints/get-filter-options.md) - Filter options for dropdowns
   - [Analytics Query API](api-endpoints/analytics-query-api.md) - Flexible metrics + dimensions based query API
+- [Localize Data](localize-data/overview.md) - Initial configuration data passed to the React dashboard
 - REST API - *Coming soon*
 
 ### Architecture

@@ -46,6 +46,17 @@ Content-Type: application/x-www-form-urlencoded
 
 ---
 
+## Initial Data (Localize Data)
+
+Before making AJAX requests, the dashboard receives initial configuration via WordPress localize script. See [Localize Data](../localize-data) for details on:
+
+- [Globals](../localize-data/globals.md) - AJAX URL, nonce, license status
+- [Filters](../localize-data/filters.md) - Filter definitions and operators
+- [Layout](../localize-data/layout.md) - Sidebar menu structure
+- [Header](../localize-data/header.md) - Header area configuration
+
+---
+
 ## Error Handling
 
 All endpoints return standardized error responses:
