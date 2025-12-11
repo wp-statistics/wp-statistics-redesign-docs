@@ -10,7 +10,7 @@ used_in_reports:
 
 # Visitor Information Widget
 
-Displays detailed information about a single visitor including their technical profile and session data.
+Displays detailed information about the selected visit. All fields show data specific to this visit, not aggregated across multiple visits by the same visitor.
 
 ## Widget Configuration
 
@@ -25,20 +25,22 @@ Displays detailed information about a single visitor including their technical p
 
 ## Fields
 
+All fields display data from the current/selected visit:
+
 | Field | Description | Format |
 |-------|-------------|--------|
-| Visitor Hash | The visitor's unique hash identifier | Text |
-| Referrer | Domain without prefix (e.g., "google.com"), opens in new tab | External Link |
-| Source Category | Traffic source category (e.g., Search Engine, Social, Direct) | Text |
-| Browser | Browser name and version | Text |
-| Operating System | OS name (without version) | Text |
-| Country | Country name with flag icon | Text with Flag |
-| Region | Visitor's region/state | Text |
-| City | Visitor's city | Text |
-| First View | Date/time of first page view | Date |
-| Entry Page | Page title linked to Single Page Report | Link |
-| Exit Page | Page title linked to Single Page Report | Link |
-| Total Views | Total page views count | Number |
+| Visitor Hash | This visit's hash identifier | Text |
+| Referrer | This visit's referrer domain without prefix (e.g., "google.com"), opens in new tab | External Link |
+| Source Category | This visit's traffic source category (e.g., Search Engine, Social, Direct) | Text |
+| Browser | This visit's browser name and version | Text |
+| Operating System | This visit's OS name (without version) | Text |
+| Country | This visit's country with flag icon | Text with Flag |
+| Region | This visit's region/state | Text |
+| City | This visit's city | Text |
+| First View | This visit's first page view date/time | Date |
+| Entry Page | This visit's entry page, linked to Single Page Report | Link |
+| Exit Page | This visit's exit page, linked to Single Page Report | Link |
+| Total Views | This visit's page view count | Number |
 
 ## Empty State
 

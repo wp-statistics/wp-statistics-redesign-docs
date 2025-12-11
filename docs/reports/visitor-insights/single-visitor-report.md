@@ -28,6 +28,16 @@ Detailed drill-down view for analyzing individual visitor behavior and activity.
 - **Status**: In Progress
 - **Figma Design**: [Add link when available]
 
+## Dynamic Page Title
+
+The page title changes based on the visitor identifier type:
+
+| Visitor Type | Title Format | Example |
+|--------------|--------------|---------|
+| Logged-in user | `Visitor: \{Display Name\} (#\{user_id\})` | `Visitor: John Doe (#123)` |
+| IP address | `Visitor: \{ip_address\}` | `Visitor: 192.168.1.1` |
+| Hash | `Visitor: #\{hash\}` | `Visitor: #abc123` |
+
 ## Access Methods
 
 This report is accessed by clicking on visitor identifiers in the [Visitor Info](../../columns/visitor-info.md) column. The report can load visitor data based on three identifier types:
