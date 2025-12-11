@@ -12,7 +12,6 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
 ## Quick Navigation
 
 - [Endpoint](#endpoint)
-- [Authentication](#authentication)
 - [Request Parameters](#request-parameters)
   - [Available Sources](#available-sources)
   - [Available Group By](#available-group-by)
@@ -37,44 +36,30 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
 
 ## Endpoint
 
-### Admin-Ajax (Recommended - avoids adblockers)
-
-```
-POST /wp-admin/admin-ajax.php
-Content-Type: application/x-www-form-urlencoded
-```
-
-**Parameters:**
-- `action`: `wp_statistics_analytics`
-- `wps_nonce`: WordPress nonce for security
-- `query`: JSON-encoded query object (single query or array for batch)
-
-### REST API (Alternative)
-
-```
-POST /wp-json/wp-statistics/v2/analytics
-Content-Type: application/json
-X-WP-Nonce: {nonce}
-```
-
-## Authentication
-
-- User must be logged in to WordPress admin
-- User must have `wps_read_capability` capability
-- Valid nonce required for CSRF protection
+| Property | Value |
+|----------|-------|
+| Action | `wp_statistics_analytics` |
+| Method | POST |
+| Auth | Required |
 
 ---
 
 ## Request Parameters
 
-### Required Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `query` | string (JSON) | Yes | JSON-encoded query object (single query or array for batch) |
+
+### Query Object Parameters
+
+#### Required
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `sources` | array | List of source names to calculate. At least one required. [See available sources](#available-sources) |
 | `group_by` | array | List of group by options for grouping. Can be empty for totals only. [See available options](#available-group-by) |
 
-### Optional Parameters
+#### Optional
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
