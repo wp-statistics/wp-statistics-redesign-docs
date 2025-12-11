@@ -14,13 +14,13 @@ The `globals` key provides essential application-wide configuration data require
 
 ## Data Structure
 
-```typescript
-interface GlobalsData {
-  isPremium: boolean;
-  ajaxUrl: string;
-  nonce: string;
-  pluginUrl: string;
-  analyticsAction: string;
+```json
+{
+  "isPremium": true,
+  "ajaxUrl": "/wp-admin/admin-ajax.php",
+  "nonce": "abc123def456",
+  "pluginUrl": "/wp-content/plugins/wp-statistics/",
+  "analyticsAction": "wp_statistics_analytics"
 }
 ```
 
@@ -35,20 +35,6 @@ interface GlobalsData {
 | `nonce` | `string` | Security nonce for AJAX requests |
 | `pluginUrl` | `string` | Base URL of the WP Statistics plugin |
 | `analyticsAction` | `string` | AJAX action name for analytics queries |
-
----
-
-## Example Output
-
-```json
-{
-  "isPremium": true,
-  "ajaxUrl": "/wp-admin/admin-ajax.php",
-  "nonce": "abc123def456",
-  "pluginUrl": "/wp-content/plugins/wp-statistics/",
-  "analyticsAction": "wp_statistics_analytics"
-}
-```
 
 ---
 

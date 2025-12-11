@@ -14,48 +14,6 @@ The `layout` key provides sidebar navigation structure and menu configuration fo
 
 ## Data Structure
 
-```typescript
-interface LayoutData {
-  sidebar: Record<string, MenuItem>;
-}
-
-interface MenuItem {
-  icon: string;
-  label: string;
-  slug: string;
-  subPages?: Record<string, SubMenuItem>;
-}
-
-interface SubMenuItem {
-  label: string;
-  slug: string;
-}
-```
-
----
-
-## Properties
-
-### MenuItem
-
-| Property | Type | Description |
-|----------|------|-------------|
-| `icon` | `string` | Lucide icon name (e.g., `'Gauge'`, `'User'`) |
-| `label` | `string` | Translated menu item label |
-| `slug` | `string` | URL slug for routing |
-| `subPages` | `object?` | Nested sub-menu items |
-
-### SubMenuItem
-
-| Property | Type | Description |
-|----------|------|-------------|
-| `label` | `string` | Translated sub-menu label |
-| `slug` | `string` | URL slug for routing |
-
----
-
-## Example Output
-
 ```json
 {
   "sidebar": {
@@ -76,41 +34,8 @@ interface SubMenuItem {
         "visitors": {
           "label": "Visitors",
           "slug": "visitors"
-        },
-        "views": {
-          "label": "Views",
-          "slug": "views"
-        },
-        "onlineVisitors": {
-          "label": "Online Visitors",
-          "slug": "online-visitors"
         }
       }
-    },
-    "referrals": {
-      "icon": "RefreshCw",
-      "label": "Referrals",
-      "slug": "referrals",
-      "subPages": {
-        "referredVisitors": {
-          "label": "Referred Visitors",
-          "slug": "referred-visitors"
-        },
-        "referrers": {
-          "label": "Referrers",
-          "slug": "referrers"
-        }
-      }
-    },
-    "geographic": {
-      "icon": "Earth",
-      "label": "Geographics",
-      "slug": "geographic"
-    },
-    "devices": {
-      "icon": "MonitorSmartphone",
-      "label": "Devices",
-      "slug": "devices"
     }
   }
 }
@@ -118,7 +43,88 @@ interface SubMenuItem {
 
 ---
 
-## Menu Items
+## Properties
+
+### MenuItem
+
+A **MenuItem** represents a top-level menu item in the sidebar navigation. It can be a standalone page or a parent menu that contains sub-pages.
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `icon` | `string` | Yes | Lucide icon name (e.g., `'Gauge'`, `'User'`) |
+| `label` | `string` | Yes | Translated menu item label shown in sidebar |
+| `slug` | `string` | Yes | URL slug for routing (e.g., `'overview'` → `/overview`) |
+| `subPages` | `object` | No | Optional nested sub-menu items. If present, creates expandable menu |
+
+**Example 1: Simple MenuItem (no sub-pages)**
+```json
+{
+  "overview": {
+    "icon": "Gauge",
+    "label": "General",
+    "slug": "overview"
+  }
+}
+```
+This creates a single menu item that navigates directly to `/overview`.
+
+**Example 2: MenuItem with sub-pages**
+```json
+{
+  "visitorInsights": {
+    "icon": "User",
+    "label": "Visitor Insights",
+    "slug": "visitor-insights",
+    "subPages": {
+      "visitors": {
+        "label": "Visitors",
+        "slug": "visitors"
+      },
+      "views": {
+        "label": "Views",
+        "slug": "views"
+      }
+    }
+  }
+}
+```
+This creates an expandable menu with two sub-items. Clicking "Visitor Insights" expands the menu to show "Visitors" and "Views" sub-pages.
+
+---
+
+### SubMenuItem
+
+A **SubMenuItem** represents a nested page under a parent MenuItem. Sub-menu items appear indented under their parent when expanded.
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `label` | `string` | Yes | Translated sub-menu label shown in sidebar |
+| `slug` | `string` | Yes | URL slug for routing (e.g., `'visitors'` → `/visitors`) |
+
+**Example: SubMenuItem**
+```json
+{
+  "visitors": {
+    "label": "Visitors",
+    "slug": "visitors"
+  }
+}
+```
+This sub-item appears under its parent menu and navigates to `/visitors` when clicked.
+
+**Visual Representation:**
+```
+📊 Visitor Insights (MenuItem - parent)
+   ├─ Visitors Overview (SubMenuItem)
+   ├─ Visitors (SubMenuItem)
+   └─ Views (SubMenuItem)
+
+📍 Geographic (MenuItem - no sub-pages)
+```
+
+---
+
+## Current Menu Items
 
 | Key | Icon | Label | Has Sub-pages |
 |-----|------|-------|---------------|

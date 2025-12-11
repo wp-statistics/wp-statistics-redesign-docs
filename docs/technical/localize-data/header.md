@@ -14,78 +14,6 @@ The `header` key provides configuration for the dashboard header area, including
 
 ## Data Structure
 
-```typescript
-interface HeaderData {
-  notifications: NotificationConfig;
-  privacyAudit: ActionConfig;
-  premiumBadge: BadgeConfig;
-}
-
-interface NotificationConfig {
-  isActive: boolean;
-  items: Notification[];
-  icon: string;
-  label: string;
-}
-
-interface ActionConfig {
-  isActive: boolean;
-  url: string;
-  icon: string;
-  label: string;
-}
-
-interface BadgeConfig {
-  isActive: boolean;
-  url: string;
-  icon: string;
-  label: string;
-}
-
-interface Notification {
-  id: string;
-  title: string;
-  content: string;
-  type: 'info' | 'warning' | 'success';
-  date: string;
-}
-```
-
----
-
-## Properties
-
-### notifications
-
-| Property | Type | Description |
-|----------|------|-------------|
-| `isActive` | `boolean` | Whether notifications are enabled in settings |
-| `items` | `array` | Array of notification objects |
-| `icon` | `string` | Lucide icon name (`'Bell'`) |
-| `label` | `string` | Translated label |
-
-### privacyAudit
-
-| Property | Type | Description |
-|----------|------|-------------|
-| `isActive` | `boolean` | Whether user has manage capability |
-| `url` | `string` | Link to privacy audit page |
-| `icon` | `string` | Lucide icon name (`'ShieldCheck'`) |
-| `label` | `string` | Translated label |
-
-### premiumBadge
-
-| Property | Type | Description |
-|----------|------|-------------|
-| `isActive` | `boolean` | Whether to show upgrade badge (false if premium) |
-| `url` | `string` | Link to pricing page |
-| `icon` | `string` | Lucide icon name (`'Crown'`) |
-| `label` | `string` | Translated label |
-
----
-
-## Example Output
-
 ```json
 {
   "notifications": {
@@ -110,6 +38,99 @@ interface Notification {
   },
   "premiumBadge": {
     "isActive": false,
+    "url": "https://wp-statistics.com/pricing/",
+    "icon": "Crown",
+    "label": "Upgrade To Premium"
+  }
+}
+```
+
+---
+
+## Properties
+
+The header data provides configuration for three main UI elements in the dashboard header: notifications, privacy audit button, and premium upgrade badge.
+
+### notifications
+
+Configures the notifications dropdown in the header. Shows important updates, warnings, and announcements to users.
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `isActive` | `boolean` | Yes | Whether notifications are enabled. Controlled by `display_notifications` setting |
+| `items` | `array` | Yes | Array of notification objects. Each has `id`, `title`, `content`, `type`, `date` |
+| `icon` | `string` | Yes | Lucide icon name displayed in header (default: `'Bell'`) |
+| `label` | `string` | Yes | Translated label for accessibility and tooltips |
+
+**Purpose**: Displays a bell icon with badge count. Clicking opens a dropdown showing recent notifications like plugin updates, warnings, or tips.
+
+**Example**:
+```json
+{
+  "notifications": {
+    "isActive": true,
+    "items": [
+      {
+        "id": "update-available",
+        "title": "Update Available",
+        "content": "WP Statistics 15.1 is available.",
+        "type": "info",
+        "date": "2025-12-11"
+      }
+    ],
+    "icon": "Bell",
+    "label": "Notifications"
+  }
+}
+```
+
+---
+
+### privacyAudit
+
+Configures the privacy audit button in the header. Provides quick access to privacy compliance tools.
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `isActive` | `boolean` | Yes | Whether to show button. Only shown if user has `manage_capability` permission |
+| `url` | `string` | Yes | Link to privacy audit page or modal |
+| `icon` | `string` | Yes | Lucide icon name displayed in header (default: `'ShieldCheck'`) |
+| `label` | `string` | Yes | Translated label for accessibility and tooltips |
+
+**Purpose**: Shows a shield icon that links to privacy audit tools. Helps administrators review and ensure GDPR compliance.
+
+**Example**:
+```json
+{
+  "privacyAudit": {
+    "isActive": true,
+    "url": "/wp-admin/admin.php?page=wps_privacy_audit",
+    "icon": "ShieldCheck",
+    "label": "Privacy Audit"
+  }
+}
+```
+
+---
+
+### premiumBadge
+
+Configures the premium upgrade badge in the header. Encourages free users to upgrade to premium version.
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `isActive` | `boolean` | Yes | Whether to show badge. Set to `false` if user has valid premium license |
+| `url` | `string` | Yes | Link to pricing/upgrade page |
+| `icon` | `string` | Yes | Lucide icon name displayed in header (default: `'Crown'`) |
+| `label` | `string` | Yes | Translated label shown as button text |
+
+**Purpose**: Displays a crown icon with "Upgrade" text for free users. Hidden for premium users. Clicking navigates to pricing page.
+
+**Example**:
+```json
+{
+  "premiumBadge": {
+    "isActive": true,
     "url": "https://wp-statistics.com/pricing/",
     "icon": "Crown",
     "label": "Upgrade To Premium"

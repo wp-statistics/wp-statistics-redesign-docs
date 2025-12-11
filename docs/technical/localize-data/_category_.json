@@ -1,6 +1,7 @@
 {
   "label": "Localize Data",
   "position": 4,
+  "description": "Initial configuration and data provided to the dashboard via WordPress localize script",
   "link": {
     "type": "doc",
     "id": "technical/localize-data/index"

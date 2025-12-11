@@ -33,6 +33,17 @@ All Admin AJAX actions are prefixed with `wp_statistics_` and use the `X-WP-Nonc
 
 *Coming soon* - External REST API for third-party integrations. Will be refactored during the v15 add-ons update.
 
+### [Localize Data](../localize-data/overview.md)
+
+The dashboard receives initial configuration and data via WordPress localize script. This provides essential data like nonce, AJAX URL, filter definitions, menu structure, and header configuration without requiring additional HTTP requests.
+
+**Available Data:**
+
+- [Globals](../localize-data/globals.md) - AJAX URL, nonce, license status, user permissions
+- [Filters](../localize-data/filters.md) - Filter definitions and operators
+- [Layout](../localize-data/layout.md) - Sidebar menu structure
+- [Header](../localize-data/header.md) - Header area configuration
+
 ---
 
-*Last Updated: 2025-12-10*
+*Last Updated: 2025-12-11*
