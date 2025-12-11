@@ -56,8 +56,8 @@ Displays a quick overview of traffic across different time periods with previous
 ## Previous Period Comparison
 
 For rows with previous period comparison enabled:
-- **Today** vs same day last week
-- **Yesterday** vs same day last week
+- **Today** vs Yesterday
+- **Yesterday** vs day before yesterday
 - **Last 7 Days** vs previous 7 days
 - **Last 28 Days** vs previous 28 days
 
