@@ -37,19 +37,34 @@ Detailed performance report for a single content item (post, page, or custom pos
 - **Free**: Post and Page post types
 - **Data Plus**: Custom post types
 
-## Dynamic Page Title
+## Page Header
 
-The page title shows the content title:
-- Example: `How to Build a WordPress Plugin`
+### Title
 
-## Access
+The page title shows the content title with action icons:
+- **Title**: Content title (e.g., `How to Build a WordPress Plugin`)
+- **View Icon**: Opens content in new tab
+- **Edit Icon**: Opens content edit page in WordPress admin
 
-This page is accessed by clicking on a specific content item in the [Content Report](content.md).
+### Content Meta (Line 1)
+
+Displayed below the title:
+
+| Field | Description | Link |
+|-------|-------------|------|
+| Post Type | Content type label | Links to [Content Report](content.md) filtered by this post type |
+| Published Date | Date content was published | - |
+| Last Updated | Date content was last modified | Only shown if different from Published Date |
+| Author | Content author name | Links to [Individual Author Report](individual-author.md) |
+
+### Content Terms (Line 2)
+
+List of taxonomy terms (categories, tags) assigned to this content. Each term links to its respective report page.
 
 ## Available Interactions
 
 - **Date Picker**: Select time period for data
-- **Advanced Filters**: [Individual Content Filters](../../global/advanced-filters.md#individual-content-filters) - Country, City, Browser, Operating System, Device Type, Referrer, Source Category, Login Status, User Role
+- **Advanced Filters**: [Individual Content Filters](../../global/advanced-filters.md#individual-content-filters)
 
 ## Widget Layout
 
@@ -75,16 +90,6 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 | **Exit Page** | Times this was last page visited | Number | ✅ Yes | Always |
 | **Exit Rate** | Percentage of exits from this page | Percentage | ✅ Yes | Always |
 | **Comments** | Total comments | Number | ✅ Yes | If comments enabled |
-
-**Metric Grouping:**
-1. **Traffic**: Visitors, Views
-2. **Engagement**: Avg. Time on Page, Bounce Rate
-3. **Navigation**: Entry Page, Exit Page, Exit Rate
-4. **Interaction**: Comments (conditional)
-
-**Conditional Display:**
-- When comments are **enabled** for this content type: All 8 metrics displayed
-- When comments are **disabled**: 7 metrics displayed (Comments hidden)
 
 ### Row 2 (Two Columns: 1/3 + 2/3) - Traffic Overview
 
