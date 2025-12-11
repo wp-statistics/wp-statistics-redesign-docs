@@ -4,7 +4,7 @@ type: "report"
 group: "Visitors"
 show_in_menu: false
 add_on: "Free"
-status: "In Progress"
+status: "Done"
 interactions:
   - "Back Navigation"
   - "Export"
@@ -25,7 +25,7 @@ Detailed drill-down view for analyzing individual visitor behavior and activity.
 
 - **Menu Visibility**: Hidden from main menu (accessed via drill-down)
 - **Add-on**: Free (included in base plugin)
-- **Status**: In Progress
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Dynamic Page Title
