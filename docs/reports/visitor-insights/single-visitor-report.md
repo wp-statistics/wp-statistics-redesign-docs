@@ -13,6 +13,8 @@ widgets:
     columns: ["account-information"]
   - row: 2
     columns: ["visitor-information", "views-timeline"]
+  - row: 3
+    columns: ["visitors-table"]
 ---
 
 # Single Visitor Report
@@ -50,7 +52,8 @@ This report is accessed by clicking on visitor identifiers in the [Visitor Info]
 - [Visitor Information](../../widgets/visitor-information.md)
 - [Views Timeline](../../widgets/views-timeline.md)
 
-*Additional widgets to be documented.*
+### Row 3 (Full Width)
+- [Visitors Table](../../widgets/visitors-table.md) - Title: "Visits" - Shows other visits by the same visitor
 
 ---
 

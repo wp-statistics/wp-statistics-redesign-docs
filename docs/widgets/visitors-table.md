@@ -10,6 +10,7 @@ used_in_reports:
   - "visitors"
   - "top-visitors"
   - "referred-visitors"
+  - "single-visitor-report"
 ---
 
 # Visitors Table Widget
@@ -38,6 +39,7 @@ Displays visitor data in a comprehensive data table with configurable sorting, f
 - [Visitors](../reports/visitor-insights/visitors.md) - Row 1, full width
 - [Top Visitors](../reports/visitor-insights/top-visitors.md) - Row 1, full width (with custom configuration)
 - [Referred Visitors](../reports/referrals/referred-visitors.md) - Row 1, full width
+- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md) - Row 3, title: "Visits" (filtered to same visitor)
 
 **Note**: The [Top Visitors](../reports/visitor-insights/top-visitors.md) report uses this widget with modified defaults including predefined filters, custom sorting, and different column visibility.
 
