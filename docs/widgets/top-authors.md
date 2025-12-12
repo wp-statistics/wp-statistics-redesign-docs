@@ -7,6 +7,7 @@ status: "Done"
 used_in_reports:
   - "categories"
   - "authors"
+  - "individual-category"
 ---
 
 # Top Authors Widget
@@ -84,6 +85,7 @@ This widget is used in the following reports:
 
 - [Authors](../reports/content-analytics/authors.md) - Row 2
 - [Categories](../reports/content-analytics/categories.md) - Row 5 (only authors within selected taxonomy)
+- [Individual Category](../reports/content-analytics/individual-category.md) - Row 4 (authors within this term)
 
 ## Empty State
 

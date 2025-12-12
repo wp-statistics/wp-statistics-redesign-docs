@@ -6,6 +6,7 @@ add_on: "Free"
 status: "Done"
 used_in_reports:
   - "categories"
+  - "individual-category"
 ---
 
 # Categories Performance Widget
@@ -39,6 +40,7 @@ Displays visitor, view, and term publishing trends over time for the selected ta
 This widget is used in the following reports:
 
 - [Categories](../reports/content-analytics/categories.md) - Row 2, full width
+- [Individual Category](../reports/content-analytics/individual-category.md) - Row 2, full width (filtered to specific term)
 
 ## Empty State
 

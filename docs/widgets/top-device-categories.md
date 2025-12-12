@@ -9,6 +9,8 @@ used_in_reports:
   - "referrals-overview"
   - "content"
   - "categories"
+  - "individual-content"
+  - "individual-category"
 ---
 
 # Top Device Categories Widget
@@ -40,6 +42,8 @@ This widget is used in the following reports:
 - [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 4
 - [Content](../reports/content-analytics/content.md) - Row 5 (no "See all" link)
 - [Categories](../reports/content-analytics/categories.md) - Row 7 (no "See all" link)
+- [Individual Content](../reports/content-analytics/individual-content.md) - Row 5 (no "See all" link)
+- [Individual Category](../reports/content-analytics/individual-category.md) - Row 6 (no "See all" link)
 
 ## Empty State
 

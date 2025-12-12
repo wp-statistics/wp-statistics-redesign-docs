@@ -7,6 +7,7 @@ status: "Done"
 used_in_reports:
   - "content"
   - "categories"
+  - "individual-category"
 ---
 
 # Top Content Widget
@@ -65,6 +66,7 @@ This widget is used in the following reports:
 
 - [Content](../reports/content-analytics/content.md) - Row 3, full width
 - [Categories](../reports/content-analytics/categories.md) - Row 4
+- [Individual Category](../reports/content-analytics/individual-category.md) - Row 3 (filtered to content within term)
 
 ## Related Documentation
 
