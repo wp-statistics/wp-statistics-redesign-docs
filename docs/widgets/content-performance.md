@@ -6,6 +6,7 @@ add_on: "Free"
 status: "Done"
 used_in_reports:
   - "content"
+  - "individual-author"
 ---
 
 # Content Performance Widget
@@ -37,6 +38,7 @@ Displays visitor, view, and publishing trends over time for the selected post ty
 This widget is used in the following reports:
 
 - [Content](../reports/content-analytics/content.md) - Row 2, full width
+- [Individual Author](../reports/content-analytics/individual-author.md) - Row 2 (2/3 width, filtered to author's content)
 
 ## Empty State
 

@@ -9,6 +9,7 @@ pagination: false
 used_in_reports:
   - "individual-content"
   - "individual-category"
+  - "individual-author"
 ---
 
 # Traffic Summary Widget
@@ -34,6 +35,7 @@ Displays a quick overview of traffic across different time periods with previous
 
 - [Individual Content](../reports/content-analytics/individual-content.md) - Row 2
 - [Individual Category](../reports/content-analytics/individual-category.md) - Row 2
+- [Individual Author](../reports/content-analytics/individual-author.md) - Row 2
 
 ## Table Structure
 

@@ -9,6 +9,7 @@ used_in_reports:
   - "categories"
   - "individual-content"
   - "individual-category"
+  - "individual-author"
 ---
 
 # Top Browsers Widget
@@ -40,6 +41,7 @@ This widget is used in the following reports:
 - [Categories](../reports/content-analytics/categories.md) - Row 7 (no "See all" link)
 - [Individual Content](../reports/content-analytics/individual-content.md) - Row 4
 - [Individual Category](../reports/content-analytics/individual-category.md) - Row 6 (no "See all" link)
+- [Individual Author](../reports/content-analytics/individual-author.md) - Row 5
 
 ## Empty State
 
