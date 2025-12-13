@@ -65,35 +65,6 @@ The script will:
 3. Download WordPress test library to `/tmp/wordpress-tests-lib/`
 4. Create `wp-tests-config.php` with your database credentials
 
-**Alternative: Manual Installation**
-
-If the script doesn't work, you can install manually:
-
-```bash
-# 1. Create test database
-mysql -u root -p -e "CREATE DATABASE wordpress_test;"
-
-# 2. Download WordPress test library
-svn co https://develop.svn.wordpress.org/trunk/ /tmp/wordpress-tests-lib
-
-# 3. Download WordPress core
-svn co https://develop.svn.wordpress.org/tags/latest /tmp/wordpress
-
-# 4. Create wp-tests-config.php
-cp /tmp/wordpress-tests-lib/wp-tests-config-sample.php /tmp/wordpress-tests-lib/wp-tests-config.php
-
-# 5. Edit wp-tests-config.php with your database credentials
-```
-
-**Edit `/tmp/wordpress-tests-lib/wp-tests-config.php`:**
-
-```php
-define( 'DB_NAME', 'wordpress_test' );
-define( 'DB_USER', 'root' );
-define( 'DB_PASSWORD', '' );
-define( 'DB_HOST', 'localhost' );
-```
-
 ### Configuration
 
 Tests are configured in `phpunit.xml.dist` at the plugin root:
