@@ -169,6 +169,7 @@ Filter Groups define which filters are bundled together for specific use cases a
 
 **Used In Reports**:
 - [Individual Content](../reports/content-analytics/individual-content.md)
+- [Individual Author](../reports/content-analytics/individual-author.md)
 
 ## Implementation Notes
 

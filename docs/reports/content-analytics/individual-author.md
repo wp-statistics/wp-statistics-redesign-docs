@@ -8,6 +8,7 @@ status: "Done"
 interactions:
   - "Date Picker"
   - "Post Type Filter"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["individual-author-metrics"]
@@ -62,6 +63,7 @@ Displayed below the title:
 - **Date Picker**: Select time period for data
 - **Post Type Filter**: Filter by post type (default: Posts)
   - Posts, Pages, and custom post types (Data Plus)
+- **Advanced Filters**: [Individual Content Filters](../../global/advanced-filters.md#individual-content-filters)
 
 ## Widget Layout
 
