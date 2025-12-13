@@ -5,6 +5,7 @@ status: "Done"
 used_in_widgets:
   - "countries-table"
   - "top-visitors-table"
+  - "us-states-table"
   - "visitors-table"
 ---
 
@@ -24,6 +25,7 @@ This column is used in the following widgets:
 
 - [Countries Table](../widgets/countries-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
+- [US States Table](../widgets/us-states-table.md)
 - [Visitors Table](../widgets/visitors-table.md)
 
 ## Display

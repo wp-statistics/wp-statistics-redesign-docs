@@ -4,6 +4,7 @@ type: "column"
 status: "Done"
 used_in_widgets:
   - "countries-table"
+  - "us-states-table"
 ---
 
 # Views per Visitor Column
@@ -21,6 +22,7 @@ Shows the average number of page views per unique visitor.
 This column is used in the following widgets:
 
 - [Countries Table](../widgets/countries-table.md)
+- [US States Table](../widgets/us-states-table.md)
 
 ## Display
 

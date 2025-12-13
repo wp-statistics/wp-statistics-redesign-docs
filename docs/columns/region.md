@@ -4,6 +4,7 @@ type: "column"
 status: "Done"
 used_in_widgets:
   - "cities-table"
+  - "us-states-table"
 ---
 
 # Region Column
@@ -21,6 +22,7 @@ Shows the region/state/province name.
 This column is used in the following widgets:
 
 - [Cities Table](../widgets/cities-table.md)
+- [US States Table](../widgets/us-states-table.md)
 
 ## Display
 
@@ -41,7 +43,9 @@ This column is used in the following widgets:
 ## Related Documentation
 
 - [Cities Table Widget](../widgets/cities-table.md)
+- [US States Table Widget](../widgets/us-states-table.md)
 - [Cities Report](../reports/geographic/cities.md)
+- [US States Report](../reports/geographic/us-states.md)
 - [City Column](city.md)
 - [Country Column](country.md)
 - [Data Table Component](../components/data-table.md)

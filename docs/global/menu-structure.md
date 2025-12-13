@@ -38,7 +38,7 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 | 2 | [Countries](../reports/geographic/countries.md) | Free | Done | Country-level visitor data |
 | 3 | [Cities](../reports/geographic/cities.md) | Free | Done | City-level visitor data |
 | 4 | [European Countries](../reports/geographic/european-countries.md) | Free | Done | EU country breakdown |
-| 5 | [US States](../reports/geographic/us-states.md) | Data Plus | Not Started | US state-level data |
+| 5 | [US States](../reports/geographic/us-states.md) | Free | Done | US state-level data |
 
 ### Hidden Pages
 
