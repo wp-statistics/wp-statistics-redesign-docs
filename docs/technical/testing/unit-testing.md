@@ -29,15 +29,70 @@ WP Statistics uses PHPUnit with the WordPress test library to ensure code qualit
 
 ### Prerequisites
 
-Before running tests, you need to install the WordPress test library. For detailed setup instructions, see:
+Before running tests, you need to install the WordPress test library and set up a test database.
 
-**[Getting Started - Running Unit Tests](https://github.com/wp-statistics/wp-statistics/wiki/Getting-Started#running-unit-tests)**
+**Required:**
+- PHP 7.4 or higher
+- PHPUnit 9.x
+- MySQL or MariaDB
+- WordPress test library
+- Subversion (SVN) client
 
-The wiki covers:
-- WordPress test library installation
-- Database configuration
-- Environment setup
-- Troubleshooting common issues
+### Installing WordPress Test Library
+
+The WordPress test library provides the testing framework and utilities for testing WordPress plugins.
+
+**Step 1: Install the test library**
+
+Run the installation script from the plugin root:
+
+```bash
+bash bin/install-wp-tests.sh wordpress_test root '' localhost latest
+```
+
+**Parameters:**
+- `wordpress_test` - Test database name (will be created)
+- `root` - Database user
+- `''` - Database password (empty in this example)
+- `localhost` - Database host
+- `latest` - WordPress version to test against (or specify version like `6.4`)
+
+**Step 2: Verify installation**
+
+The script will:
+1. Create a test database (`wordpress_test`)
+2. Download WordPress core to `/tmp/wordpress/`
+3. Download WordPress test library to `/tmp/wordpress-tests-lib/`
+4. Create `wp-tests-config.php` with your database credentials
+
+**Alternative: Manual Installation**
+
+If the script doesn't work, you can install manually:
+
+```bash
+# 1. Create test database
+mysql -u root -p -e "CREATE DATABASE wordpress_test;"
+
+# 2. Download WordPress test library
+svn co https://develop.svn.wordpress.org/trunk/ /tmp/wordpress-tests-lib
+
+# 3. Download WordPress core
+svn co https://develop.svn.wordpress.org/tags/latest /tmp/wordpress
+
+# 4. Create wp-tests-config.php
+cp /tmp/wordpress-tests-lib/wp-tests-config-sample.php /tmp/wordpress-tests-lib/wp-tests-config.php
+
+# 5. Edit wp-tests-config.php with your database credentials
+```
+
+**Edit `/tmp/wordpress-tests-lib/wp-tests-config.php`:**
+
+```php
+define( 'DB_NAME', 'wordpress_test' );
+define( 'DB_USER', 'root' );
+define( 'DB_PASSWORD', '' );
+define( 'DB_HOST', 'localhost' );
+```
 
 ### Configuration
 

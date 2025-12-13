@@ -1,0 +1,10 @@
+{
+  "label": "Testing",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "title": "Testing Documentation",
+    "description": "Guide for writing and running PHPUnit tests with WordPress test library.",
+    "keywords": ["testing", "phpunit", "unit tests", "integration tests"]
+  }
+}
