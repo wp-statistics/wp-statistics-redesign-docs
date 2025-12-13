@@ -12,6 +12,7 @@ used_in_reports:
   - "individual-content"
   - "individual-category"
   - "individual-author"
+  - "countries"
 ---
 
 # Top Countries Widget
@@ -56,7 +57,9 @@ When no country data is available for the selected period:
 
 - [Horizontal Bar List Component](../components/horizontal-bar-list.md)
 - [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
+- [Countries Report](../reports/geographic/countries.md)
+- [Countries Table Widget](countries-table.md)
 
 ---
 
-*Last Updated: 2025-12-08*
+*Last Updated: 2025-12-13*

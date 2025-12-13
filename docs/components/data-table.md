@@ -9,6 +9,7 @@ used_in_widgets:
   - "author-pages-table"
   - "campaigns-table"
   - "category-pages-table"
+  - "countries-table"
   - "entry-pages-table"
   - "exit-pages-table"
   - "visitors-table"
@@ -53,6 +54,7 @@ This component is used by the following widgets:
 - [Author Pages Table](../widgets/author-pages-table.md)
 - [Campaigns Table](../widgets/campaigns-table.md)
 - [Category Pages Table](../widgets/category-pages-table.md)
+- [Countries Table](../widgets/countries-table.md)
 - [Entry Pages Table](../widgets/entry-pages-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)
 - [Visitors Table](../widgets/visitors-table.md)
@@ -132,4 +134,4 @@ When table has no data:
 
 ---
 
-*Last Updated: 2025-11-24*
+*Last Updated: 2025-12-13*

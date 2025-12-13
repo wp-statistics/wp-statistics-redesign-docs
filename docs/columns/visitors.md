@@ -7,6 +7,7 @@ used_in_widgets:
   - "author-pages-table"
   - "campaigns-table"
   - "category-pages-table"
+  - "countries-table"
   - "exit-pages-table"
   - "top-authors-table"
   - "top-categories-table"
@@ -31,6 +32,7 @@ This column is used in the following widgets:
 - [Author Pages Table](../widgets/author-pages-table.md)
 - [Campaigns Table](../widgets/campaigns-table.md)
 - [Category Pages Table](../widgets/category-pages-table.md)
+- [Countries Table](../widgets/countries-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)
 - [Top Authors Table](../widgets/top-authors-table.md)
 - [Top Categories Table](../widgets/top-categories-table.md)
@@ -56,4 +58,4 @@ This column is used in the following widgets:
 
 ---
 
-*Last Updated: 2025-12-10*
+*Last Updated: 2025-12-13*

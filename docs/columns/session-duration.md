@@ -3,8 +3,9 @@ title: "Session Duration Column"
 type: "column"
 status: "Done"
 used_in_widgets:
-  - "visitors-table"
+  - "countries-table"
   - "top-visitors-table"
+  - "visitors-table"
 ---
 
 # Session Duration Column
@@ -21,8 +22,9 @@ Shows the average time visitors spend during their sessions within the active da
 
 This column is used in the following widgets:
 
-- [Visitors Table](../widgets/visitors-table.md)
+- [Countries Table](../widgets/countries-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
+- [Visitors Table](../widgets/visitors-table.md)
 
 ## Display
 
@@ -69,4 +71,4 @@ Displays: "Average session duration: \{value\}"
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-12-13*

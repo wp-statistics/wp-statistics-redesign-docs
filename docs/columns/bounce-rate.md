@@ -3,8 +3,9 @@ title: "Bounce Rate Column"
 type: "column"
 status: "Done"
 used_in_widgets:
-  - "visitors-table"
+  - "countries-table"
   - "top-visitors-table"
+  - "visitors-table"
 ---
 
 # Bounce Rate Column
@@ -21,8 +22,9 @@ Shows the percentage of sessions where the visitor viewed only one page within t
 
 This column is used in the following widgets:
 
-- [Visitors Table](../widgets/visitors-table.md)
+- [Countries Table](../widgets/countries-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
+- [Visitors Table](../widgets/visitors-table.md)
 
 ## Display
 
@@ -73,4 +75,4 @@ Displays: "\{value\}% of sessions viewed only one page"
 
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-12-13*

@@ -31,6 +31,9 @@ Report pages organized by feature groups:
 **Visitors Reports** - Comprehensive visitor behavior and traffic analysis
 - Overview, Visitors, Views, Online Visitors, Top Visitors, Logged-in Users, Search Terms, Single Visitor Report
 
+**Geographic Reports** - Location-based visitor analysis
+- Overview, Countries, Cities, European Countries, US States, Single Country Report
+
 **Page Insights Reports** - Page-level content performance
 - Overview, Top Pages, Entry Pages, Exit Pages, Category Pages, Author Pages, 404 Pages
 

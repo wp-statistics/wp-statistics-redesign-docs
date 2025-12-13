@@ -30,6 +30,24 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 
 ---
 
+## Geographic Menu Group
+
+| Sort | Menu Item | Add-on | Status | Notes |
+|------|-----------|--------|--------|-------|
+| 1 | [Overview](../reports/geographic/overview.md) | Free | Not Started | High-level summary (entry point) |
+| 2 | [Countries](../reports/geographic/countries.md) | Free | Done | Country-level visitor data |
+| 3 | [Cities](../reports/geographic/cities.md) | Data Plus | Not Started | City-level visitor data |
+| 4 | [European Countries](../reports/geographic/european-countries.md) | Data Plus | Not Started | EU country breakdown |
+| 5 | [US States](../reports/geographic/us-states.md) | Data Plus | Not Started | US state-level data |
+
+### Hidden Pages
+
+Some pages are not shown in the menu because they are accessed via drill-down navigation:
+
+- **[Single Country Report](../reports/geographic/single-country.md)**: (Not Started, Data Plus) Accessed by clicking on a country in the Countries report
+
+---
+
 ## Page Insights Menu Group
 
 | Sort | Menu Item | Add-on | Status | Notes |
@@ -147,7 +165,6 @@ The order of menu items within each group follows these principles:
 
 As more report groups are documented, they will be added to this structure:
 
-- Geographic Reports
 - Device & Browser Reports
 
 ---
@@ -160,4 +177,4 @@ As more report groups are documented, they will be added to this structure:
 
 ---
 
-*Last Updated: 2025-12-10*
+*Last Updated: 2025-12-13*

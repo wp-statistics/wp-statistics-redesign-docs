@@ -6,6 +6,7 @@ used_in_widgets:
   - "404-pages-preview"
   - "404-pages-table"
   - "campaigns-table"
+  - "countries-table"
   - "recent-pages-preview"
   - "referrers-table"
   - "source-categories-table"
@@ -32,6 +33,7 @@ This column is used in the following widgets:
 - [404 Pages Preview](../widgets/404-pages-preview.md)
 - [404 Pages Table](../widgets/404-pages-table.md)
 - [Campaigns Table](../widgets/campaigns-table.md)
+- [Countries Table](../widgets/countries-table.md)
 - [Recent Pages Preview](../widgets/recent-pages-preview.md)
 - [Referrers Table](../widgets/referrers-table.md)
 - [Source Categories Table](../widgets/source-categories-table.md)
@@ -60,4 +62,4 @@ This column is used in the following widgets:
 
 ---
 
-*Last Updated: 2025-12-10*
+*Last Updated: 2025-12-13*
