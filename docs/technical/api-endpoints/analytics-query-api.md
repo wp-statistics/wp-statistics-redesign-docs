@@ -362,7 +362,7 @@ The API supports batch requests to fetch multiple datasets in a single HTTP call
 
 ### Global Parameters
 
-Batch queries support global `date_from`, `date_to`, and `filters` parameters that apply to all child queries by default. This reduces repetition and makes batch requests more concise.
+Batch queries support global `date_from`, `date_to`, `filters`, and `compare` parameters that apply to all child queries by default. This reduces repetition and makes batch requests more concise.
 
 #### Supported Global Parameters
 
@@ -371,11 +371,13 @@ Batch queries support global `date_from`, `date_to`, and `filters` parameters th
 | `date_from` | string | Default start date for all queries |
 | `date_to` | string | Default end date for all queries |
 | `filters` | object | Default filters for all queries |
+| `compare` | boolean | Default comparison flag for all queries |
 
 #### Inheritance Behavior
 
 - **Filters**: Child filters **merge** with global filters. Child values override matching keys, and keys not specified in child are inherited from global.
 - **Dates**: If child specifies dates, it must provide both `date_from` and `date_to` (complete override). If neither specified, inherit from global.
+- **Compare**: Child compare value overrides global compare. If not specified in child, inherits from global (defaults to `false`).
 
 #### Example: Filter Merging
 
@@ -405,6 +407,7 @@ Send an array of queries with optional global parameters:
 {
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
+  "compare": true,
   "filters": {
     "country": "US"
   },
@@ -412,8 +415,7 @@ Send an array of queries with optional global parameters:
     {
       "id": "traffic_trends",
       "sources": ["visitors", "views"],
-      "group_by": ["date"],
-      "compare": true
+      "group_by": ["date"]
     },
     {
       "id": "top_countries",
@@ -439,9 +441,9 @@ Send an array of queries with optional global parameters:
 ```
 
 In this example:
-- `traffic_trends` and `top_countries` inherit global dates and filters
-- `mobile_stats` inherits global dates, merges filters to `{ "country": "US", "device_type": "mobile" }`
-- `yesterday` overrides dates, inherits global filters
+- `traffic_trends` and `top_countries` inherit global dates, filters, and `compare: true`
+- `mobile_stats` inherits global dates and compare, merges filters to `{ "country": "US", "device_type": "mobile" }`
+- `yesterday` overrides dates, inherits global filters and compare
 
 ### Batch Response Format
 
@@ -508,6 +510,35 @@ In this example:
 }
 ```
 
+### Example: Override Global Compare
+
+You can override the global `compare` setting for individual queries:
+
+```json
+{
+  "date_from": "2024-11-01",
+  "date_to": "2024-11-30",
+  "compare": true,
+  "queries": [
+    {
+      "id": "with_comparison",
+      "sources": ["visitors"],
+      "group_by": []
+    },
+    {
+      "id": "without_comparison",
+      "sources": ["visitors"],
+      "group_by": [],
+      "compare": false
+    }
+  ]
+}
+```
+
+In this example:
+- `with_comparison` inherits global `compare: true` and will include comparison data
+- `without_comparison` explicitly sets `compare: false` to override global and will NOT include comparison data
+
 ### Partial Failure Handling
 
 If some queries succeed and others fail, the response includes both:
@@ -552,11 +583,12 @@ async function fetchDashboardBatch() {
     // Global parameters apply to all queries
     date_from: '2024-11-01',
     date_to: '2024-11-30',
+    compare: true,
     filters: { country: 'US' },
     queries: [
-      { id: 'trends', sources: ['visitors', 'views'], group_by: ['date'], compare: true },
+      { id: 'trends', sources: ['visitors', 'views'], group_by: ['date'] },
       { id: 'countries', sources: ['visitors'], group_by: ['country'], per_page: 10 },
-      { id: 'overview', sources: ['visitors', 'views', 'sessions', 'bounce_rate'], group_by: [], compare: true },
+      { id: 'overview', sources: ['visitors', 'views', 'sessions', 'bounce_rate'], group_by: [] },
       // Override filters for this query (merges with global)
       { id: 'mobile', sources: ['sessions'], group_by: ['device_type'], filters: { device_type: 'mobile' } }
     ]
@@ -1051,4 +1083,4 @@ React patterns for consuming the API.
 
 ---
 
-*Last Updated: 2025-12-10*
+*Last Updated: 2025-12-13*

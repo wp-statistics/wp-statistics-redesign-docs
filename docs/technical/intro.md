@@ -32,6 +32,9 @@ This section contains technical documentation for WP Statistics v15, including d
 - [Device Detection](architecture/device-detection.md) - User Agent parsing for device, browser, and OS identification
 - [Engagement Tracking](architecture/engagement-tracking.md) - Client-side user engagement measurement and session duration tracking
 
+### Testing
+- [Unit Testing](testing/unit-testing.md) - Guide for writing and running PHPUnit tests with WordPress test library
+
 ## About This Documentation
 
 This technical documentation provides:
@@ -42,4 +45,4 @@ This technical documentation provides:
 
 ---
 
-*Last Updated: 2025-12-10*
+*Last Updated: 2025-12-13*
