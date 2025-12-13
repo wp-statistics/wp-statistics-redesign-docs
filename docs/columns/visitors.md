@@ -7,6 +7,7 @@ used_in_widgets:
   - "author-pages-table"
   - "campaigns-table"
   - "category-pages-table"
+  - "cities-table"
   - "countries-table"
   - "exit-pages-table"
   - "top-authors-table"
@@ -32,6 +33,7 @@ This column is used in the following widgets:
 - [Author Pages Table](../widgets/author-pages-table.md)
 - [Campaigns Table](../widgets/campaigns-table.md)
 - [Category Pages Table](../widgets/category-pages-table.md)
+- [Cities Table](../widgets/cities-table.md)
 - [Countries Table](../widgets/countries-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)
 - [Top Authors Table](../widgets/top-authors-table.md)

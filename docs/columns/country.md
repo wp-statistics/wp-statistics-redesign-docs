@@ -4,6 +4,7 @@ type: "column"
 status: "Done"
 used_in_widgets:
   - "countries-table"
+  - "cities-table"
 ---
 
 # Country Column
@@ -21,6 +22,7 @@ Shows the country name with its flag icon.
 This column is used in the following widgets:
 
 - [Countries Table](../widgets/countries-table.md)
+- [Cities Table](../widgets/cities-table.md)
 
 ## Display
 
