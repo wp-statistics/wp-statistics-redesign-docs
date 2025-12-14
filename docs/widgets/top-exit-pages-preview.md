@@ -37,7 +37,7 @@ Preview of the top 5 pages where visitors most commonly end their sessions, with
 
 ## Used In Reports
 
-- [Page Insights Overview](../reports/page-insights/page-insights-overview.md) - Row 2, Right Column
+- [Page Insights Overview](../reports/page-insights/page-insights-overview.md)
 
 ## Table Structure
 

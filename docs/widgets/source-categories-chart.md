@@ -21,7 +21,7 @@ Displays visitor traffic trends by source category over time with breakdown by t
 
 ## Used In Reports
 
-- [Source Categories](../reports/referrals/source-categories.md) - Row 1, full width
+- [Source Categories](../reports/referrals/source-categories.md)
 
 ## Chart Configuration
 

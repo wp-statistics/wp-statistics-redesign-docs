@@ -33,9 +33,7 @@ Displays hourly traffic patterns showing visitors and views throughout the day u
 
 ## Used In Reports
 
-This widget is used in the following reports:
-
-- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 6
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
 
 ## Chart Behavior
 

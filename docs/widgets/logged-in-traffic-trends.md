@@ -36,9 +36,7 @@ Displays user visitor and anonymous visitor trends over time using an interactiv
 
 ## Used In Reports
 
-This widget is used in the following reports:
-
-- [Logged-in Users](../reports/visitor-insights/logged-in-users.md) - Row 1, full width
+- [Logged-in Users](../reports/visitor-insights/logged-in-users.md)
 
 ## Empty State
 

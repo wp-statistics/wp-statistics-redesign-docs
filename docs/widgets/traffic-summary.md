@@ -33,9 +33,9 @@ Displays a quick overview of traffic across different time periods with previous
 
 ## Used In Reports
 
-- [Individual Content](../reports/content-analytics/individual-content.md) - Row 2
-- [Individual Category](../reports/content-analytics/individual-category.md) - Row 2
-- [Individual Author](../reports/content-analytics/individual-author.md) - Row 2
+- [Individual Content](../reports/content-analytics/individual-content.md)
+- [Individual Category](../reports/content-analytics/individual-category.md)
+- [Individual Author](../reports/content-analytics/individual-author.md)
 
 ## Table Structure
 

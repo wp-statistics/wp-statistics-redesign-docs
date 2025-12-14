@@ -53,9 +53,7 @@ Displays top taxonomy terms in a tabbed interface, showing terms ranked by views
 
 ## Used In Reports
 
-This widget is used in the following reports:
-
-- [Categories](../reports/content-analytics/categories.md) - Row 3, full width
+- [Categories](../reports/content-analytics/categories.md)
 
 ## Empty State
 

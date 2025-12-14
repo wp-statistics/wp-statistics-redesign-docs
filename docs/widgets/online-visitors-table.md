@@ -33,8 +33,6 @@ Displays visitors currently browsing your website in a comprehensive data table.
 
 ## Used In Reports
 
-This widget is used in the following reports:
-
 - [Online Visitors](../reports/visitor-insights/online-visitors.md)
 
 ## Table Structure

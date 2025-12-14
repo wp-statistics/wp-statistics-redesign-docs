@@ -22,8 +22,8 @@ Displays visitor traffic trends from a specific source category over time with b
 
 ## Used In Reports
 
-- [Search Engines](../reports/referrals/search-engines.md) - Row 1, full width (filtered to search engine sources)
-- [Social Media](../reports/referrals/social-media.md) - Row 1, full width (filtered to social media sources)
+- [Search Engines](../reports/referrals/search-engines.md)
+- [Social Media](../reports/referrals/social-media.md)
 
 ## Chart Configuration
 

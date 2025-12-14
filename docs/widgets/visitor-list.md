@@ -33,9 +33,7 @@ Comprehensive data table showing detailed information about individual visitors.
 
 ## Used In Reports
 
-This widget appears in the following report pages:
-
-- [Visitors](../reports/visitor-insights/visitors.md) - Row 3, full width
+- [Visitors](../reports/visitor-insights/visitors.md)
 
 ## Columns Displayed
 

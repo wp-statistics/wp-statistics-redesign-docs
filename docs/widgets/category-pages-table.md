@@ -33,9 +33,7 @@ A data table showing category performance with visitor metrics and published con
 
 ## Used In Reports
 
-This widget appears in the following report pages:
-
-- [Category Pages](../reports/page-insights/category-pages.md) - Row 1, full width
+- [Category Pages](../reports/page-insights/category-pages.md)
 
 ## Table Structure
 

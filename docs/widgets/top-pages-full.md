@@ -33,9 +33,7 @@ A comprehensive data table showing the most visited pages with traffic volume an
 
 ## Used In Reports
 
-This widget appears in the following report pages:
-
-- [Top Pages](../reports/page-insights/top-pages.md) - Row 1, full width
+- [Top Pages](../reports/page-insights/top-pages.md)
 
 ## Table Structure
 

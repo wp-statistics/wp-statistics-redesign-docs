@@ -33,7 +33,7 @@ Displays campaign performance data in a paginated table with UTM parameter break
 
 ## Used In Reports
 
-- [Campaigns](../reports/referrals/campaigns.md) - Row 2, full width
+- [Campaigns](../reports/referrals/campaigns.md)
 
 ## Table Structure
 

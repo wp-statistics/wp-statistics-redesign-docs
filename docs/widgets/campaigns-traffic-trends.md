@@ -21,7 +21,7 @@ Displays traffic trends for visitors referred from UTM campaign URLs over time.
 
 ## Used In Reports
 
-- [Campaigns](../reports/referrals/campaigns.md) - Row 1, full width
+- [Campaigns](../reports/referrals/campaigns.md)
 
 ## Chart Configuration
 

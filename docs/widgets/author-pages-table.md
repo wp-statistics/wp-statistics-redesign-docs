@@ -33,9 +33,7 @@ A data table showing author performance with visitor metrics and published conte
 
 ## Used In Reports
 
-This widget appears in the following report pages:
-
-- [Author Pages](../reports/page-insights/author-pages.md) - Row 1, full width
+- [Author Pages](../reports/page-insights/author-pages.md)
 
 ## Table Structure
 

@@ -34,10 +34,8 @@ A data table showing all regions of the detected country with visitor metrics an
 
 ## Used In Reports
 
-This widget appears in the following report pages:
-
-- [Regions of \{Country\}](../reports/geographic/regions-of-country.md) - Row 1, full width
-- [US States](../reports/geographic/us-states.md) - Row 1, full width
+- [Regions of \{Country\}](../reports/geographic/regions-of-country.md)
+- [US States](../reports/geographic/us-states.md)
 
 ## Table Structure
 

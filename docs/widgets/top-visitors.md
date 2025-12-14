@@ -36,7 +36,7 @@ Displays the top 10 most active visitors in a simplified table format showing ke
 
 ## Used In Reports
 
-- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 5
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
 
 ## Table Structure
 

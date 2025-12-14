@@ -39,12 +39,10 @@ Displays visitor and view trends over time using an interactive line chart with 
 
 ## Used In Reports
 
-This widget is used in the following reports:
-
-- [Individual Content](../reports/content-analytics/individual-content.md) - Row 2, full width (filtered to specific content)
-- [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 2, full width (filtered to referred visitors)
-- [Single Country](../reports/geographic/single-country.md) - Row 2, full width (filtered to specific country)
-- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 2, full width
+- [Individual Content](../reports/content-analytics/individual-content.md)
+- [Referrals Overview](../reports/referrals/referrals-overview.md)
+- [Single Country](../reports/geographic/single-country.md)
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
 
 ## Chart Behavior
 

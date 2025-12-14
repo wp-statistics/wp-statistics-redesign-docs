@@ -81,11 +81,9 @@ Displays top authors in a tabbed interface, showing authors ranked by views, pub
 
 ## Used In Reports
 
-This widget is used in the following reports:
-
-- [Authors](../reports/content-analytics/authors.md) - Row 2
-- [Categories](../reports/content-analytics/categories.md) - Row 5 (only authors within selected taxonomy)
-- [Individual Category](../reports/content-analytics/individual-category.md) - Row 4 (authors within this term)
+- [Authors](../reports/content-analytics/authors.md)
+- [Categories](../reports/content-analytics/categories.md)
+- [Individual Category](../reports/content-analytics/individual-category.md)
 
 ## Empty State
 

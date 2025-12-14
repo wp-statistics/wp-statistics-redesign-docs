@@ -35,9 +35,9 @@ Displays the top referring domains in a paginated table sorted by referral count
 
 ## Used In Reports
 
-- [Referrers](../reports/referrals/referrers.md) - Row 1, full width
-- [Search Engines](../reports/referrals/search-engines.md) - Row 2, full width (filtered to show only search engine referrers)
-- [Social Media](../reports/referrals/social-media.md) - Row 2, full width (filtered to show only social media referrers)
+- [Referrers](../reports/referrals/referrers.md)
+- [Search Engines](../reports/referrals/search-engines.md)
+- [Social Media](../reports/referrals/social-media.md)
 
 ## Table Structure
 

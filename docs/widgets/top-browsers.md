@@ -36,14 +36,12 @@ Displays the top 5 browsers by visitor count in a horizontal bar list format wit
 
 ## Used In Reports
 
-This widget is used in the following reports:
-
-- [Content](../reports/content-analytics/content.md) - Row 5 (no "See all" link)
-- [Categories](../reports/content-analytics/categories.md) - Row 7 (no "See all" link)
-- [Individual Content](../reports/content-analytics/individual-content.md) - Row 4
-- [Individual Category](../reports/content-analytics/individual-category.md) - Row 6 (no "See all" link)
-- [Individual Author](../reports/content-analytics/individual-author.md) - Row 5
-- [Single Country](../reports/geographic/single-country.md) - Row 4
+- [Content](../reports/content-analytics/content.md)
+- [Categories](../reports/content-analytics/categories.md)
+- [Individual Content](../reports/content-analytics/individual-content.md)
+- [Individual Category](../reports/content-analytics/individual-category.md)
+- [Individual Author](../reports/content-analytics/individual-author.md)
+- [Single Country](../reports/geographic/single-country.md)
 
 ## Empty State
 

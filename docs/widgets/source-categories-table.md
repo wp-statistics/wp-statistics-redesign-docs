@@ -33,7 +33,7 @@ Displays traffic by source category in a paginated table sorted by referral coun
 
 ## Used In Reports
 
-- [Source Categories](../reports/referrals/source-categories.md) - Row 2, full width
+- [Source Categories](../reports/referrals/source-categories.md)
 
 ## Table Structure
 

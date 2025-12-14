@@ -33,9 +33,7 @@ A data table showing authors with their content performance metrics including vi
 
 ## Used In Reports
 
-This widget appears in the following report pages:
-
-- [Top Authors](../reports/content-analytics/top-authors.md) - Row 1, full width
+- [Top Authors](../reports/content-analytics/top-authors.md)
 
 ## Table Structure
 

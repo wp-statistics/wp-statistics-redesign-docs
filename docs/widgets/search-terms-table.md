@@ -34,7 +34,7 @@ Displays search terms entered by visitors using the site search functionality, r
 
 ## Used In Reports
 
-- [Search Terms](../reports/visitor-insights/search-terms.md) - Row 1
+- [Search Terms](../reports/visitor-insights/search-terms.md)
 
 ## Table Structure
 

@@ -21,7 +21,7 @@ Displays detailed information about the selected visit. All fields show data spe
 
 ## Used In Reports
 
-- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md) - Row 2
+- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 
 ## Fields
 

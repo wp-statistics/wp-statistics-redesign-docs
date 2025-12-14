@@ -33,9 +33,7 @@ A data table showing pages where visitor sessions end, with exit counts and enga
 
 ## Used In Reports
 
-This widget appears in the following report pages:
-
-- [Exit Pages](../reports/page-insights/exit-pages.md) - Row 1, full width
+- [Exit Pages](../reports/page-insights/exit-pages.md)
 
 ## Table Structure
 

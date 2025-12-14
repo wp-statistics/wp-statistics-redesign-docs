@@ -38,9 +38,9 @@ Displays the top 5 entry pages based on unique entrances count in a simplified t
 
 ## Used In Reports
 
-- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 3, left column (only shown when Data Plus add-on is activated)
-- [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 3, left column (only shown when Data Plus add-on is activated)
-- [Single Country](../reports/geographic/single-country.md) - Row 3
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
+- [Referrals Overview](../reports/referrals/referrals-overview.md)
+- [Single Country](../reports/geographic/single-country.md)
 
 ## Table Structure
 

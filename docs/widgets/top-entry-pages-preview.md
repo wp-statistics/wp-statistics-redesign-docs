@@ -37,7 +37,7 @@ Preview of the top 5 pages where visitors most commonly start their sessions, wi
 
 ## Used In Reports
 
-- [Page Insights Overview](../reports/page-insights/page-insights-overview.md) - Row 2, Left Column
+- [Page Insights Overview](../reports/page-insights/page-insights-overview.md)
 
 ## Table Structure
 

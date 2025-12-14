@@ -34,7 +34,7 @@ Displays a chronological list of all pages viewed by the visitor.
 
 ## Used In Reports
 
-- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md) - Row 2
+- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 
 ## Table Structure
 

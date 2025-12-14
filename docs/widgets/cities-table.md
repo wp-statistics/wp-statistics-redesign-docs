@@ -33,9 +33,7 @@ A data table showing all cities with visitor metrics and traffic share.
 
 ## Used In Reports
 
-This widget appears in the following report pages:
-
-- [Cities](../reports/geographic/cities.md) - Row 1, full width
+- [Cities](../reports/geographic/cities.md)
 
 ## Table Structure
 

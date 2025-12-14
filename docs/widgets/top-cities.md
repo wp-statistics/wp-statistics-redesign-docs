@@ -34,9 +34,7 @@ Displays the top 10 cities within the selected country with visitor metrics.
 
 ## Used In Reports
 
-This widget appears in the following report pages:
-
-- [Single Country](../reports/geographic/single-country.md) - Row 3
+- [Single Country](../reports/geographic/single-country.md)
 
 ## Table Structure
 

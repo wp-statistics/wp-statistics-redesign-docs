@@ -33,9 +33,7 @@ A data table showing taxonomy terms with their content performance metrics inclu
 
 ## Used In Reports
 
-This widget appears in the following report pages:
-
-- [Top Categories](../reports/content-analytics/top-categories.md) - Row 1, full width
+- [Top Categories](../reports/content-analytics/top-categories.md)
 
 ## Table Structure
 

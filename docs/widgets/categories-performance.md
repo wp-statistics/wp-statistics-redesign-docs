@@ -37,10 +37,8 @@ Displays visitor, view, and term publishing trends over time for the selected ta
 
 ## Used In Reports
 
-This widget is used in the following reports:
-
-- [Categories](../reports/content-analytics/categories.md) - Row 2, full width
-- [Individual Category](../reports/content-analytics/individual-category.md) - Row 2, full width (filtered to specific term)
+- [Categories](../reports/content-analytics/categories.md)
+- [Individual Category](../reports/content-analytics/individual-category.md)
 
 ## Empty State
 

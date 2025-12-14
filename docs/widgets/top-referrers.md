@@ -38,16 +38,14 @@ Displays the top 5 referrer domains in a horizontal bar list format with previou
 
 ## Used In Reports
 
-This widget is used in the following reports:
-
-- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 3, right column (expands to full width when Data Plus is not activated)
-- [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 3, right column (expands to full width when Data Plus is not activated)
-- [Content](../reports/content-analytics/content.md) - Row 4 (no "See all" link)
-- [Categories](../reports/content-analytics/categories.md) - Row 6 (no "See all" link)
-- [Individual Content](../reports/content-analytics/individual-content.md) - Row 3 (with "See all" link passing Resource ID filter)
-- [Individual Category](../reports/content-analytics/individual-category.md) - Row 5 (no "See all" link)
-- [Individual Author](../reports/content-analytics/individual-author.md) - Row 4
-- [Single Country](../reports/geographic/single-country.md) - Row 3
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
+- [Referrals Overview](../reports/referrals/referrals-overview.md)
+- [Content](../reports/content-analytics/content.md)
+- [Categories](../reports/content-analytics/categories.md)
+- [Individual Content](../reports/content-analytics/individual-content.md)
+- [Individual Category](../reports/content-analytics/individual-category.md)
+- [Individual Author](../reports/content-analytics/individual-author.md)
+- [Single Country](../reports/geographic/single-country.md)
 
 ## Empty State
 

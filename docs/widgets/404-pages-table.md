@@ -34,7 +34,7 @@ A table showing 404 error pages with their view counts.
 
 ## Used In Reports
 
-- [404 Pages](../reports/page-insights/404-pages.md) - Row 1, full width
+- [404 Pages](../reports/page-insights/404-pages.md)
 
 ## Table Structure
 

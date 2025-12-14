@@ -37,7 +37,7 @@ Preview of the top 5 authors by page views with a link to the full Author Pages 
 
 ## Used In Reports
 
-- [Page Insights Overview](../reports/page-insights/page-insights-overview.md) - Row 3, Right Column
+- [Page Insights Overview](../reports/page-insights/page-insights-overview.md)
 
 ## Table Structure
 

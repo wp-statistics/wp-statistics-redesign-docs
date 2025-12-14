@@ -34,10 +34,8 @@ A data table showing all countries with visitor metrics, engagement data, and tr
 
 ## Used In Reports
 
-This widget appears in the following report pages:
-
-- [Countries](../reports/geographic/countries.md) - Row 1, full width
-- [European Countries](../reports/geographic/european-countries.md) - Row 1, full width
+- [Countries](../reports/geographic/countries.md)
+- [European Countries](../reports/geographic/european-countries.md)
 
 ## Table Structure
 

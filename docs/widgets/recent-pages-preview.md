@@ -37,7 +37,7 @@ Preview of the 5 most recently published pages with a link to the Top Pages repo
 
 ## Used In Reports
 
-- [Page Insights Overview](../reports/page-insights/page-insights-overview.md) - Row 1, Right Column
+- [Page Insights Overview](../reports/page-insights/page-insights-overview.md)
 
 ## Table Structure
 

@@ -38,15 +38,13 @@ Displays the top 5 countries by visitor count in a horizontal bar list format wi
 
 ## Used In Reports
 
-This widget is used in the following reports:
-
-- [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 4
-- [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 4
-- [Content](../reports/content-analytics/content.md) - Row 4 (no "See all" link)
-- [Categories](../reports/content-analytics/categories.md) - Row 6 (no "See all" link)
-- [Individual Content](../reports/content-analytics/individual-content.md) - Row 4 (no "See all" link)
-- [Individual Category](../reports/content-analytics/individual-category.md) - Row 5 (no "See all" link)
-- [Individual Author](../reports/content-analytics/individual-author.md) - Row 4
+- [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
+- [Referrals Overview](../reports/referrals/referrals-overview.md)
+- [Content](../reports/content-analytics/content.md)
+- [Categories](../reports/content-analytics/categories.md)
+- [Individual Content](../reports/content-analytics/individual-content.md)
+- [Individual Category](../reports/content-analytics/individual-category.md)
+- [Individual Author](../reports/content-analytics/individual-author.md)
 
 ## Empty State
 

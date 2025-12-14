@@ -31,9 +31,7 @@ Displays the top 5 source categories by referral count in a horizontal bar list 
 
 ## Used In Reports
 
-This widget is used in the following reports:
-
-- [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 5, left column
+- [Referrals Overview](../reports/referrals/referrals-overview.md)
 
 ## Empty State
 

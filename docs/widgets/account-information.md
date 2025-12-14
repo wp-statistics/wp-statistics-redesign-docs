@@ -25,7 +25,7 @@ Displays WordPress account details for logged-in visitors.
 
 ## Used In Reports
 
-- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md) - Row 1
+- [Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)
 
 ## Fields
 

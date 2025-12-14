@@ -37,7 +37,7 @@ Preview of the top 5 most viewed pages with a link to the full Top Pages report.
 
 ## Used In Reports
 
-- [Page Insights Overview](../reports/page-insights/page-insights-overview.md) - Row 1, Left Column
+- [Page Insights Overview](../reports/page-insights/page-insights-overview.md)
 
 ## Table Structure
 
