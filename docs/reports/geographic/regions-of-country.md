@@ -49,7 +49,7 @@ This report applies a predefined filter based on the detected country:
 
 | Filter | Value |
 |--------|-------|
-| `country_code` | {detected_country_code} |
+| `country_code` | \{detected_country_code\} |
 
 This filter is applied automatically based on the WordPress timezone setting and cannot be changed by the user.
 
