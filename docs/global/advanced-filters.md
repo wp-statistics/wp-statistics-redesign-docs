@@ -122,6 +122,17 @@ Filter Groups define which filters are bundled together for specific use cases a
 - [Views](../reports/visitor-insights/views.md)
 - [Top Visitors](../reports/visitor-insights/top-visitors.md)
 - [Logged-in Users](../reports/visitor-insights/logged-in-users.md)
+- [Countries](../reports/geographic/countries.md)
+- [European Countries](../reports/geographic/european-countries.md)
+
+---
+
+### Geographic Detail Filters
+
+**Includes**: City, Region, Browser, OS, Device Type, Referrer, Source Category, Login Status, Visitor Type
+
+**Used In Reports**:
+- [Single Country](../reports/geographic/single-country.md)
 
 ---
 
@@ -222,4 +233,4 @@ In the "Available Interactions" section, list the specific filters available for
 
 ---
 
-*Last Updated: 2025-12-10*
+*Last Updated: 2025-12-14*

@@ -7,6 +7,7 @@ add_on: "Free"
 status: "Done"
 interactions:
   - "Date Picker"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["countries-table"]
@@ -28,6 +29,7 @@ Shows all countries with visitor metrics, engagement data, and traffic distribut
 ## Available Interactions
 
 - **Date Picker**: Select time period for data
+- **[Advanced Filters](../../global/advanced-filters.md)**: Visitor Analysis Filters group
 
 ## Widget Layout
 
@@ -45,4 +47,4 @@ Shows all countries with visitor metrics, engagement data, and traffic distribut
 
 ---
 
-*Last Updated: 2025-12-13*
+*Last Updated: 2025-12-14*

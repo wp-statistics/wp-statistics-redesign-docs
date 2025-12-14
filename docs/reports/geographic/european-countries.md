@@ -7,6 +7,7 @@ add_on: "Free"
 status: "Done"
 interactions:
   - "Date Picker"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["countries-table"]
@@ -38,6 +39,7 @@ This filter is applied automatically and cannot be changed by the user.
 ## Available Interactions
 
 - **Date Picker**: Select time period for data
+- **[Advanced Filters](../../global/advanced-filters.md)**: Visitor Analysis Filters group
 
 ## Widget Layout
 
@@ -53,4 +55,4 @@ This filter is applied automatically and cannot be changed by the user.
 
 ---
 
-*Last Updated: 2025-12-13*
+*Last Updated: 2025-12-14*

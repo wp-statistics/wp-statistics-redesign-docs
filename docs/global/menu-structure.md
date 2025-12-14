@@ -45,7 +45,7 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 
 Some pages are not shown in the menu because they are accessed via drill-down navigation:
 
-- **[Single Country Report](../reports/geographic/single-country.md)**: (Not Started, Data Plus) Accessed by clicking on a country in the Countries report
+- **[Single Country Report](../reports/geographic/single-country.md)**: (Done, Data Plus) Accessed by clicking on a country in the Countries report
 
 ---
 
