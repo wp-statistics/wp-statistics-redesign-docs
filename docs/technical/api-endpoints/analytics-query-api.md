@@ -16,6 +16,7 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
   - [Available Sources](#available-sources)
   - [Available Group By](#available-group-by)
   - [Available Filters](#available-filters)
+  - [Response Formats](#response-formats)
 - [Request Example](#request-example)
 - [Response Structure](#response-structure)
 - [Error Codes](#error-codes)
@@ -67,6 +68,7 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
 | `date_to` | string | today | End date/time. Formats: `YYYY-MM-DD`, `YYYY-MM-DD HH:mm:ss`, or `YYYY-MM-DDTHH:mm:ss`. Defaults to `23:59:59` if time omitted. |
 | `compare` | boolean | `false` | Include previous period comparison |
 | `filters` | object | `{}` | Filter criteria. [See available filters](#available-filters) |
+| `format` | string | `standard` | Response format. [See response formats](#response-formats) |
 | `page` | integer | `1` | Page number for pagination |
 | `per_page` | integer | `10` | Results per page (max: 100) |
 | `order_by` | string | first source | Column to sort by |
@@ -189,6 +191,257 @@ For advanced filtering, use operator syntax:
 
 ---
 
+## Response Formats
+
+The `format` parameter controls the structure of the API response. Different formats are optimized for different use cases.
+
+### Available Formats
+
+| Format | Use Case | Description |
+|--------|----------|-------------|
+| `standard` | Default, backward compatible | Nested structure with `data.rows`, `data.totals`, and `meta` |
+| `flat` | Simple widgets, mobile apps | Flattened structure with `items[]` array at top level |
+| `chart` | Chart.js, Recharts, ApexCharts | Chart-ready with `labels[]` and `datasets[]` |
+| `export` | CSV/Excel exports, PDF reports | Tabular format with `headers[]` and `rows[][]` |
+
+### Standard Format (Default)
+
+The default format maintains backward compatibility. Best for data tables and complex widgets.
+
+**Request:**
+```json
+{
+  "sources": ["visitors", "views"],
+  "group_by": ["country"],
+  "format": "standard"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "rows": [
+      { "country": "United States", "country_code": "US", "visitors": 12500, "views": 35000 },
+      { "country": "United Kingdom", "country_code": "GB", "visitors": 4500, "views": 12000 }
+    ],
+    "totals": {
+      "visitors": 35000,
+      "views": 98000
+    }
+  },
+  "meta": {
+    "date_from": "2024-11-01 00:00:00",
+    "date_to": "2024-11-30 23:59:59",
+    "total_rows": 145,
+    "page": 1,
+    "per_page": 10,
+    "total_pages": 15
+  }
+}
+```
+
+### Flat Format
+
+Simplified structure for easy iteration. Best for simple widgets, lists, and mobile apps.
+
+**Request:**
+```json
+{
+  "sources": ["visitors", "views"],
+  "group_by": ["country"],
+  "format": "flat"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "items": [
+    { "country": "United States", "country_code": "US", "visitors": 12500, "views": 35000 },
+    { "country": "United Kingdom", "country_code": "GB", "visitors": 4500, "views": 12000 }
+  ],
+  "totals": {
+    "visitors": 35000,
+    "views": 98000
+  },
+  "meta": {
+    "date_from": "2024-11-01 00:00:00",
+    "date_to": "2024-11-30 23:59:59"
+  }
+}
+```
+
+### Chart Format
+
+Optimized for chart libraries. Requires at least one `group_by` field to generate labels.
+
+**Request:**
+```json
+{
+  "sources": ["visitors", "views"],
+  "group_by": ["date"],
+  "format": "chart"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "labels": ["2024-11-01", "2024-11-02", "2024-11-03"],
+  "datasets": [
+    {
+      "label": "Visitors",
+      "key": "visitors",
+      "data": [1234, 1456, 1389]
+    },
+    {
+      "label": "Views",
+      "key": "views",
+      "data": [3456, 4012, 3890]
+    }
+  ],
+  "meta": {
+    "date_from": "2024-11-01 00:00:00",
+    "date_to": "2024-11-03 23:59:59"
+  }
+}
+```
+
+**Chart Format with Comparison:**
+```json
+{
+  "success": true,
+  "labels": ["2024-11-01", "2024-11-02", "2024-11-03"],
+  "datasets": [
+    {
+      "label": "Visitors",
+      "key": "visitors",
+      "data": [1234, 1456, 1389]
+    },
+    {
+      "label": "Visitors (Previous)",
+      "key": "visitors_previous",
+      "data": [1100, 1250, 1180],
+      "comparison": true
+    },
+    {
+      "label": "Views",
+      "key": "views",
+      "data": [3456, 4012, 3890]
+    },
+    {
+      "label": "Views (Previous)",
+      "key": "views_previous",
+      "data": [3200, 3600, 3400],
+      "comparison": true
+    }
+  ],
+  "meta": {
+    "date_from": "2024-11-01 00:00:00",
+    "date_to": "2024-11-03 23:59:59",
+    "compare_from": "2024-10-29 00:00:00",
+    "compare_to": "2024-10-31 23:59:59"
+  }
+}
+```
+
+**Error when no group_by:**
+```json
+{
+  "success": false,
+  "error": {
+    "code": "chart_requires_group_by",
+    "message": "Chart format requires at least one group_by field to generate labels."
+  }
+}
+```
+
+### Export Format
+
+CSV-ready format with headers and row arrays. Best for data exports and reports.
+
+**Request:**
+```json
+{
+  "sources": ["visitors", "views"],
+  "group_by": ["country"],
+  "format": "export"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "headers": ["Country", "Visitors", "Views"],
+  "rows": [
+    ["United States", 12500, 35000],
+    ["United Kingdom", 4500, 12000],
+    ["Germany", 3200, 8500]
+  ],
+  "meta": {
+    "date_from": "2024-11-01 00:00:00",
+    "date_to": "2024-11-30 23:59:59"
+  }
+}
+```
+
+**Export Format with Comparison:**
+```json
+{
+  "success": true,
+  "headers": ["Country", "Visitors", "Visitors (Previous)", "Change %", "Views", "Views (Previous)", "Change %"],
+  "rows": [
+    ["United States", 12500, 11200, "+11.6%", 35000, 32000, "+9.4%"],
+    ["United Kingdom", 4500, 4200, "+7.1%", 12000, 11000, "+9.1%"]
+  ],
+  "meta": {
+    "date_from": "2024-11-01 00:00:00",
+    "date_to": "2024-11-30 23:59:59",
+    "compare_from": "2024-10-02 00:00:00",
+    "compare_to": "2024-10-31 23:59:59"
+  }
+}
+```
+
+### Format in Batch Queries
+
+Each query in a batch can specify its own format:
+
+```json
+{
+  "date_from": "2024-11-01",
+  "date_to": "2024-11-30",
+  "queries": [
+    {
+      "id": "traffic_chart",
+      "sources": ["visitors", "views"],
+      "group_by": ["date"],
+      "format": "chart"
+    },
+    {
+      "id": "top_countries",
+      "sources": ["visitors"],
+      "group_by": ["country"],
+      "format": "flat",
+      "per_page": 5
+    },
+    {
+      "id": "countries_table",
+      "sources": ["visitors", "views", "sessions"],
+      "group_by": ["country"],
+      "format": "standard"
+    }
+  ]
+}
+```
+
+---
+
 ## Request Example
 
 A complete request showcasing all available parameters:
@@ -205,6 +458,7 @@ A complete request showcasing all available parameters:
     "browser": { "in": ["Chrome", "Firefox", "Safari"] },
     "referrer": { "contains": "google" }
   },
+  "format": "standard",
   "page": 1,
   "per_page": 10,
   "order_by": "visitors",
@@ -222,6 +476,7 @@ A complete request showcasing all available parameters:
 | `date_to` | `"2024-11-30 17:30:00"` | End of date range (5:30 PM) |
 | `compare` | `true` | Include comparison with previous period |
 | `filters` | `{...}` | Filter by desktop devices, specific browsers, and Google referrers |
+| `format` | `"standard"` | Response format (standard, flat, chart, export) |
 | `page` | `1` | First page of results |
 | `per_page` | `10` | Return 10 results per page |
 | `order_by` | `"visitors"` | Sort by visitors source |
@@ -389,6 +644,7 @@ Batch queries support global `date_from`, `date_to`, `filters`, and `compare` pa
       "id": "mobile_users",
       "sources": ["visitors"],
       "group_by": ["country"],
+      "format": "flat",
       "filters": { "device_type": "mobile" }
     }
   ]
@@ -415,24 +671,28 @@ Send an array of queries with optional global parameters:
     {
       "id": "traffic_trends",
       "sources": ["visitors", "views"],
-      "group_by": ["date"]
+      "group_by": ["date"],
+      "format": "chart"
     },
     {
       "id": "top_countries",
       "sources": ["visitors"],
       "group_by": ["country"],
+      "format": "flat",
       "per_page": 10
     },
     {
       "id": "mobile_stats",
       "sources": ["visitors", "sessions"],
       "group_by": [],
+      "format": "standard",
       "filters": { "device_type": "mobile" }
     },
     {
       "id": "yesterday",
       "sources": ["visitors"],
       "group_by": [],
+      "format": "standard",
       "date_from": "2024-10-31",
       "date_to": "2024-10-31"
     }
@@ -447,63 +707,43 @@ In this example:
 
 ### Batch Response Format
 
+Each query result uses its specified format structure:
+
 ```json
 {
   "success": true,
-  "data": {
+  "items": {
     "traffic_trends": {
-      "rows": [...],
-      "totals": {...}
+      "success": true,
+      "labels": ["2024-11-01", "2024-11-02", "..."],
+      "datasets": [
+        { "label": "Visitors", "key": "visitors", "data": [1234, 1456, "..."] },
+        { "label": "Views", "key": "views", "data": [3456, 4012, "..."] }
+      ],
+      "meta": { "date_from": "2024-11-01 00:00:00", "date_to": "2024-11-30 23:59:59" }
     },
     "top_countries": {
-      "rows": [...],
-      "totals": {...}
+      "success": true,
+      "items": [
+        { "country": "United States", "country_code": "US", "visitors": 12500 },
+        { "country": "United Kingdom", "country_code": "GB", "visitors": 4500 }
+      ],
+      "totals": { "visitors": 35000 },
+      "meta": { "date_from": "2024-11-01 00:00:00", "date_to": "2024-11-30 23:59:59" }
     },
     "mobile_stats": {
-      "totals": {...}
+      "success": true,
+      "data": {
+        "totals": { "visitors": 8500, "sessions": 10200 }
+      },
+      "meta": { "date_from": "2024-11-01 00:00:00", "date_to": "2024-11-30 23:59:59" }
     },
     "yesterday": {
-      "totals": {...}
-    }
-  },
-  "meta": {
-    "query_count": 4,
-    "success_count": 4,
-    "error_count": 0,
-    "total_time": 0.342,
-    "global": {
-      "date_from": "2024-11-01",
-      "date_to": "2024-11-30",
-      "filters": { "country": "US" }
-    },
-    "queries": {
-      "traffic_trends": {
-        "date_from": "2024-11-01",
-        "date_to": "2024-11-30",
-        "filters": { "country": "US" },
-        "cached": true
+      "success": true,
+      "data": {
+        "totals": { "visitors": 1200 }
       },
-      "top_countries": {
-        "date_from": "2024-11-01",
-        "date_to": "2024-11-30",
-        "filters": { "country": "US" },
-        "total_rows": 145,
-        "page": 1,
-        "per_page": 10,
-        "total_pages": 15
-      },
-      "mobile_stats": {
-        "date_from": "2024-11-01",
-        "date_to": "2024-11-30",
-        "filters": { "country": "US", "device_type": "mobile" },
-        "cached": true
-      },
-      "yesterday": {
-        "date_from": "2024-10-31",
-        "date_to": "2024-10-31",
-        "filters": { "country": "US" },
-        "cached": false
-      }
+      "meta": { "date_from": "2024-10-31 00:00:00", "date_to": "2024-10-31 23:59:59" }
     }
   },
   "errors": {}
@@ -523,12 +763,14 @@ You can override the global `compare` setting for individual queries:
     {
       "id": "with_comparison",
       "sources": ["visitors"],
-      "group_by": []
+      "group_by": [],
+      "format": "standard"
     },
     {
       "id": "without_comparison",
       "sources": ["visitors"],
       "group_by": [],
+      "format": "standard",
       "compare": false
     }
   ]
@@ -586,11 +828,11 @@ async function fetchDashboardBatch() {
     compare: true,
     filters: { country: 'US' },
     queries: [
-      { id: 'trends', sources: ['visitors', 'views'], group_by: ['date'] },
-      { id: 'countries', sources: ['visitors'], group_by: ['country'], per_page: 10 },
-      { id: 'overview', sources: ['visitors', 'views', 'sessions', 'bounce_rate'], group_by: [] },
+      { id: 'trends', sources: ['visitors', 'views'], group_by: ['date'], format: 'chart' },
+      { id: 'countries', sources: ['visitors'], group_by: ['country'], format: 'flat', per_page: 10 },
+      { id: 'overview', sources: ['visitors', 'views', 'sessions', 'bounce_rate'], group_by: [], format: 'standard' },
       // Override filters for this query (merges with global)
-      { id: 'mobile', sources: ['sessions'], group_by: ['device_type'], filters: { device_type: 'mobile' } }
+      { id: 'mobile', sources: ['sessions'], group_by: ['device_type'], format: 'flat', filters: { device_type: 'mobile' } }
     ]
   }));
 
@@ -625,7 +867,8 @@ async function fetchDashboardBatch() {
   "group_by": ["date"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
-  "compare": true
+  "compare": true,
+  "format": "chart"
 }
 ```
 
@@ -633,37 +876,36 @@ async function fetchDashboardBatch() {
 ```json
 {
   "success": true,
-  "data": {
-    "rows": [
-      {
-        "date": "2024-11-01",
-        "visitors": 1234,
-        "views": 3456,
-        "previous": { "visitors": 1100, "views": 3200 },
-        "change": { "visitors": 12.2, "views": 8.0 }
-      },
-      {
-        "date": "2024-11-02",
-        "visitors": 1456,
-        "views": 4012,
-        "previous": { "visitors": 1250, "views": 3600 },
-        "change": { "visitors": 16.5, "views": 11.4 }
-      }
-    ],
-    "totals": {
-      "visitors": 35000,
-      "views": 98000,
-      "previous": { "visitors": 32000, "views": 90000 },
-      "change": { "visitors": 9.4, "views": 8.9 }
+  "labels": ["2024-11-01", "2024-11-02", "2024-11-03", "..."],
+  "datasets": [
+    {
+      "label": "Visitors",
+      "key": "visitors",
+      "data": [1234, 1456, 1389, "..."]
+    },
+    {
+      "label": "Visitors (Previous)",
+      "key": "visitors_previous",
+      "data": [1100, 1250, 1180, "..."],
+      "comparison": true
+    },
+    {
+      "label": "Views",
+      "key": "views",
+      "data": [3456, 4012, 3890, "..."]
+    },
+    {
+      "label": "Views (Previous)",
+      "key": "views_previous",
+      "data": [3200, 3600, 3400, "..."],
+      "comparison": true
     }
-  },
+  ],
   "meta": {
-    "date_from": "2024-11-01",
-    "date_to": "2024-11-30",
-    "compare_from": "2024-10-02",
-    "compare_to": "2024-10-31",
-    "total_rows": 30,
-    "cached": true
+    "date_from": "2024-11-01 00:00:00",
+    "date_to": "2024-11-30 23:59:59",
+    "compare_from": "2024-10-02 00:00:00",
+    "compare_to": "2024-10-31 23:59:59"
   }
 }
 ```
@@ -678,6 +920,7 @@ async function fetchDashboardBatch() {
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,
+  "format": "flat",
   "per_page": 10,
   "order_by": "visitors",
   "order": "DESC"
@@ -688,41 +931,37 @@ async function fetchDashboardBatch() {
 ```json
 {
   "success": true,
-  "data": {
-    "rows": [
-      {
-        "country": "United States",
-        "country_code": "US",
-        "flag": "us",
-        "visitors": 12500,
-        "sessions": 15200,
-        "percentage": 35.7,
-        "previous": { "visitors": 11200, "sessions": 13800 },
-        "change": { "visitors": 11.6, "sessions": 10.1 }
-      },
-      {
-        "country": "United Kingdom",
-        "country_code": "GB",
-        "flag": "gb",
-        "visitors": 4500,
-        "sessions": 5100,
-        "percentage": 12.9,
-        "previous": { "visitors": 4200, "sessions": 4800 },
-        "change": { "visitors": 7.1, "sessions": 6.3 }
-      }
-    ],
-    "totals": {
-      "visitors": 35000,
-      "sessions": 42000
+  "items": [
+    {
+      "country": "United States",
+      "country_code": "US",
+      "flag": "us",
+      "visitors": 12500,
+      "sessions": 15200,
+      "percentage": 35.7,
+      "previous": { "visitors": 11200, "sessions": 13800 },
+      "change": { "visitors": 11.6, "sessions": 10.1 }
+    },
+    {
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "flag": "gb",
+      "visitors": 4500,
+      "sessions": 5100,
+      "percentage": 12.9,
+      "previous": { "visitors": 4200, "sessions": 4800 },
+      "change": { "visitors": 7.1, "sessions": 6.3 }
     }
+  ],
+  "totals": {
+    "visitors": 35000,
+    "sessions": 42000
   },
   "meta": {
-    "date_from": "2024-11-01",
-    "date_to": "2024-11-30",
-    "total_rows": 145,
-    "page": 1,
-    "per_page": 10,
-    "total_pages": 15
+    "date_from": "2024-11-01 00:00:00",
+    "date_to": "2024-11-30 23:59:59",
+    "compare_from": "2024-10-02 00:00:00",
+    "compare_to": "2024-10-31 23:59:59"
   }
 }
 ```
@@ -735,7 +974,8 @@ async function fetchDashboardBatch() {
   "sources": ["sessions"],
   "group_by": ["device_type"],
   "date_from": "2024-11-01",
-  "date_to": "2024-11-30"
+  "date_to": "2024-11-30",
+  "format": "flat"
 }
 ```
 
@@ -743,20 +983,17 @@ async function fetchDashboardBatch() {
 ```json
 {
   "success": true,
-  "data": {
-    "rows": [
-      { "device_type": "desktop", "sessions": 25200, "percentage": 60.0 },
-      { "device_type": "mobile", "sessions": 14280, "percentage": 34.0 },
-      { "device_type": "tablet", "sessions": 2520, "percentage": 6.0 }
-    ],
-    "totals": {
-      "sessions": 42000
-    }
+  "items": [
+    { "device_type": "desktop", "sessions": 25200, "percentage": 60.0 },
+    { "device_type": "mobile", "sessions": 14280, "percentage": 34.0 },
+    { "device_type": "tablet", "sessions": 2520, "percentage": 6.0 }
+  ],
+  "totals": {
+    "sessions": 42000
   },
   "meta": {
-    "date_from": "2024-11-01",
-    "date_to": "2024-11-30",
-    "total_rows": 3
+    "date_from": "2024-11-01 00:00:00",
+    "date_to": "2024-11-30 23:59:59"
   }
 }
 ```
@@ -771,6 +1008,7 @@ async function fetchDashboardBatch() {
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,
+  "format": "standard",
   "page": 1,
   "per_page": 10,
   "order_by": "views",
@@ -841,7 +1079,8 @@ async function fetchDashboardBatch() {
   "group_by": [],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
-  "compare": true
+  "compare": true,
+  "format": "standard"
 }
 ```
 
@@ -913,6 +1152,7 @@ async function fetchDashboardBatch() {
   "group_by": ["country"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
+  "format": "flat",
   "per_page": 250
 }
 ```
@@ -921,24 +1161,17 @@ async function fetchDashboardBatch() {
 ```json
 {
   "success": true,
-  "data": {
-    "rows": [
-      { "country": "United States", "country_code": "US", "flag": "us", "lat": 37.0902, "lng": -95.7129, "visitors": 12500 },
-      { "country": "United Kingdom", "country_code": "GB", "flag": "gb", "lat": 55.3781, "lng": -3.4360, "visitors": 4500 },
-      { "country": "Germany", "country_code": "DE", "flag": "de", "lat": 51.1657, "lng": 10.4515, "visitors": 3200 }
-    ],
-    "totals": {
-      "visitors": 35000
-    },
-    "scale": {
-      "min": 0,
-      "max": 12500
-    }
+  "items": [
+    { "country": "United States", "country_code": "US", "flag": "us", "lat": 37.0902, "lng": -95.7129, "visitors": 12500 },
+    { "country": "United Kingdom", "country_code": "GB", "flag": "gb", "lat": 55.3781, "lng": -3.4360, "visitors": 4500 },
+    { "country": "Germany", "country_code": "DE", "flag": "de", "lat": 51.1657, "lng": 10.4515, "visitors": 3200 }
+  ],
+  "totals": {
+    "visitors": 35000
   },
   "meta": {
-    "date_from": "2024-11-01",
-    "date_to": "2024-11-30",
-    "total_rows": 145
+    "date_from": "2024-11-01 00:00:00",
+    "date_to": "2024-11-30 23:59:59"
   }
 }
 ```
@@ -950,6 +1183,7 @@ async function fetchDashboardBatch() {
 {
   "sources": ["online_visitors"],
   "group_by": ["visitor"],
+  "format": "flat",
   "per_page": 50
 }
 ```
@@ -958,31 +1192,28 @@ async function fetchDashboardBatch() {
 ```json
 {
   "success": true,
-  "data": {
-    "rows": [
-      {
-        "visitor_id": 12345,
-        "visitor_hash": "abc123",
-        "user_id": 5,
-        "user_name": "John Doe",
-        "current_page": "/pricing/",
-        "page_title": "Pricing Plans",
-        "last_activity": "2024-11-30 14:32:10",
-        "seconds_ago": 15,
-        "ip_address": "192.168.1.xxx",
-        "country": "United States",
-        "country_code": "US",
-        "browser": "Chrome",
-        "os": "Windows",
-        "device_type": "desktop"
-      }
-    ],
-    "totals": {
-      "online_visitors": 127
+  "items": [
+    {
+      "visitor_id": 12345,
+      "visitor_hash": "abc123",
+      "user_id": 5,
+      "user_name": "John Doe",
+      "current_page": "/pricing/",
+      "page_title": "Pricing Plans",
+      "last_activity": "2024-11-30 14:32:10",
+      "seconds_ago": 15,
+      "ip_address": "192.168.1.xxx",
+      "country": "United States",
+      "country_code": "US",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device_type": "desktop"
     }
+  ],
+  "totals": {
+    "online_visitors": 127
   },
   "meta": {
-    "total_rows": 127,
     "cache_ttl": 60
   }
 }
@@ -998,6 +1229,7 @@ async function fetchDashboardBatch() {
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,
+  "format": "flat",
   "per_page": 10
 }
 ```
@@ -1006,37 +1238,36 @@ async function fetchDashboardBatch() {
 ```json
 {
   "success": true,
-  "data": {
-    "rows": [
-      {
-        "referrer": "google.com",
-        "referrer_type": "search",
-        "visitors": 8500,
-        "sessions": 10200,
-        "bounce_rate": 42.3,
-        "previous": { "visitors": 7800, "sessions": 9400, "bounce_rate": 44.1 },
-        "change": { "visitors": 9.0, "sessions": 8.5, "bounce_rate": -4.1 }
-      },
-      {
-        "referrer": "(direct)",
-        "referrer_type": "direct",
-        "visitors": 6200,
-        "sessions": 7500,
-        "bounce_rate": 35.8,
-        "previous": { "visitors": 5800, "sessions": 7000, "bounce_rate": 37.2 },
-        "change": { "visitors": 6.9, "sessions": 7.1, "bounce_rate": -3.8 }
-      }
-    ],
-    "totals": {
-      "visitors": 35000,
-      "sessions": 42000,
-      "bounce_rate": 45.2
+  "items": [
+    {
+      "referrer": "google.com",
+      "referrer_type": "search",
+      "visitors": 8500,
+      "sessions": 10200,
+      "bounce_rate": 42.3,
+      "previous": { "visitors": 7800, "sessions": 9400, "bounce_rate": 44.1 },
+      "change": { "visitors": 9.0, "sessions": 8.5, "bounce_rate": -4.1 }
+    },
+    {
+      "referrer": "(direct)",
+      "referrer_type": "direct",
+      "visitors": 6200,
+      "sessions": 7500,
+      "bounce_rate": 35.8,
+      "previous": { "visitors": 5800, "sessions": 7000, "bounce_rate": 37.2 },
+      "change": { "visitors": 6.9, "sessions": 7.1, "bounce_rate": -3.8 }
     }
+  ],
+  "totals": {
+    "visitors": 35000,
+    "sessions": 42000,
+    "bounce_rate": 45.2
   },
   "meta": {
-    "date_from": "2024-11-01",
-    "date_to": "2024-11-30",
-    "total_rows": 89
+    "date_from": "2024-11-01 00:00:00",
+    "date_to": "2024-11-30 23:59:59",
+    "compare_from": "2024-10-02 00:00:00",
+    "compare_to": "2024-10-31 23:59:59"
   }
 }
 ```
@@ -1083,4 +1314,4 @@ React patterns for consuming the API.
 
 ---
 
-*Last Updated: 2025-12-13*
+*Last Updated: 2025-12-14*
