@@ -6,6 +6,7 @@ add_on: "Free"
 status: "Done"
 used_in_reports:
   - "visitors-overview"
+  - "geographic-overview"
 ---
 
 # Global Visitor Distribution Widget
@@ -32,6 +33,7 @@ Visualizes visitor distribution across countries using an interactive global map
 ## Used In Reports
 
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
+- [Geographic Overview](../reports/geographic/geographic-overview.md)
 
 ## Map Behavior
 
@@ -61,7 +63,8 @@ When no visitor data is available for the selected period:
 
 - [Global Map Component](../components/global-map.md)
 - [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
+- [Geographic Overview Report](../reports/geographic/geographic-overview.md)
 
 ---
 
-*Last Updated: 2025-11-11*
+*Last Updated: 2025-12-14*
