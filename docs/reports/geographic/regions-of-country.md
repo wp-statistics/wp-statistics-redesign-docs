@@ -36,11 +36,12 @@ The report title displays "Regions of \{Country\}" where `{Country}` is replaced
 
 ## Visibility Condition
 
-This report is **only shown in the menu** when the country can be detected from the WordPress timezone setting.
+This report is **only shown in the menu** when the country can be detected from the WordPress timezone setting, **except for the United States** (which has a dedicated [US States](us-states.md) report).
 
 | Condition | Menu Visibility |
 |-----------|-----------------|
-| Country detected from WP timezone | Shown |
+| Country detected from WP timezone (non-US) | Shown |
+| Country is United States | Hidden (use [US States](us-states.md) instead) |
 | Country cannot be detected | Hidden |
 
 ## Predefined Filter

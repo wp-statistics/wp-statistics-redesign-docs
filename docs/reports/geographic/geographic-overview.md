@@ -92,13 +92,15 @@ Uses the [Metrics](../../components/metrics.md) component to display 3 key geogr
 ### Row 4 (Three Columns) - Regional Breakdown
 
 **Left Column:**
-- [Top Regions of \{Country\}](../../widgets/top-regions-overview.md) - Top 5 regions of detected country
+- [Top Regions of \{Country\}](../../widgets/top-regions-overview.md) - Top 5 regions of detected country (hidden if country is US)
 
 **Middle Column:**
 - [Top US States](../../widgets/top-us-states.md) - Top 5 US states
 
 **Right Column:**
-- [Visitors by Continent](../../widgets/visitors-by-continent.md) - Top 5 continents
+- [Visitors by Continent](../../widgets/visitors-by-continent.md) - All continents with data
+
+> **Note:** The "Top Regions of \{Country\}" widget is hidden when the detected country is United States, since the "Top US States" widget already displays US state data.
 
 ---
 

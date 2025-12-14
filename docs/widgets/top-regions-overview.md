@@ -38,6 +38,16 @@ The widget title displays "Top Regions of \{Country\}" where `{Country}` is repl
 - "Top Regions of France"
 - "Top Regions of Canada"
 
+## Visibility Condition
+
+This widget is **hidden** when the detected country is United States, since the [Top US States](top-us-states.md) widget already provides US state data on the same page.
+
+| Condition | Widget Visibility |
+|-----------|-------------------|
+| Country detected (non-US) | Shown |
+| Country is United States | Hidden |
+| Country cannot be detected | Hidden |
+
 ## Used In Reports
 
 - [Geographic Overview](../reports/geographic/geographic-overview.md)
