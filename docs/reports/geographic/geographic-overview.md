@@ -4,10 +4,9 @@ type: "report"
 group: "Geographic"
 show_in_menu: true
 add_on: "Free"
-status: "In Progress"
+status: "Done"
 interactions:
   - "Date Picker"
-  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["geographic-metrics"]
@@ -15,6 +14,8 @@ widgets:
     columns: ["global-visitor-distribution"]
   - row: 3
     columns: ["top-countries", "top-cities-overview", "top-european-countries"]
+  - row: 4
+    columns: ["top-regions-overview", "top-us-states", "visitors-by-continent"]
 ---
 
 # Geographic Overview
@@ -25,13 +26,12 @@ Comprehensive snapshot of your website's geographic visitor distribution.
 
 - **Menu Visibility**: Shown in main menu
 - **Add-on**: Free (included in base plugin)
-- **Status**: In Progress
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Available Interactions
 
-- **Date Picker**
-- **[Advanced Filters](../../global/advanced-filters.md)**: Geographic filter group
+- **Date Picker**: Select time period for data
 
 ## Widget Layout
 
@@ -48,6 +48,11 @@ Comprehensive snapshot of your website's geographic visitor distribution.
     <WidgetCell>Top Countries</WidgetCell>
     <WidgetCell>Top Cities</WidgetCell>
     <WidgetCell>Top European Countries</WidgetCell>
+  </WidgetRow>
+  <WidgetRow>
+    <WidgetCell>Top Regions of \{Country\}</WidgetCell>
+    <WidgetCell>Top US States</WidgetCell>
+    <WidgetCell>Visitors by Continent</WidgetCell>
   </WidgetRow>
 </WidgetLayout>
 
@@ -83,6 +88,17 @@ Uses the [Metrics](../../components/metrics.md) component to display 3 key geogr
 
 **Right Column:**
 - [Top European Countries](../../widgets/top-european-countries.md) - Top 5 European countries with flags
+
+### Row 4 (Three Columns) - Regional Breakdown
+
+**Left Column:**
+- [Top Regions of \{Country\}](../../widgets/top-regions-overview.md) - Top 5 regions of detected country
+
+**Middle Column:**
+- [Top US States](../../widgets/top-us-states.md) - Top 5 US states
+
+**Right Column:**
+- [Visitors by Continent](../../widgets/visitors-by-continent.md) - Top 5 continents
 
 ---
 

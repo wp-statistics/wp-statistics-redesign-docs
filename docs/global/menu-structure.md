@@ -34,7 +34,7 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 
 | Sort | Menu Item | Add-on | Status | Notes |
 |------|-----------|--------|--------|-------|
-| 1 | [Overview](../reports/geographic/overview.md) | Free | Not Started | High-level summary (entry point) |
+| 1 | [Geographic Overview](../reports/geographic/geographic-overview.md) | Free | Done | High-level summary (entry point) |
 | 2 | [Countries](../reports/geographic/countries.md) | Free | Done | Country-level visitor data |
 | 3 | [Cities](../reports/geographic/cities.md) | Free | Done | City-level visitor data |
 | 4 | [European Countries](../reports/geographic/european-countries.md) | Free | Done | EU country breakdown |
