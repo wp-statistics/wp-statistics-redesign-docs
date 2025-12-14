@@ -14,7 +14,6 @@ used_in_widgets:
   - "top-authors-table"
   - "top-categories-table"
   - "top-pages-full"
-  - "us-states-table"
 ---
 
 # Visitors Column
@@ -42,7 +41,6 @@ This column is used in the following widgets:
 - [Top Authors Table](../widgets/top-authors-table.md)
 - [Top Categories Table](../widgets/top-categories-table.md)
 - [Top Pages Full](../widgets/top-pages-full.md)
-- [US States Table](../widgets/us-states-table.md)
 
 ## Display
 

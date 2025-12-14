@@ -9,7 +9,7 @@ interactions:
   - "Date Picker"
 widgets:
   - row: 1
-    columns: ["us-states-table"]
+    columns: ["regions-table"]
 ---
 
 # US States
@@ -43,14 +43,14 @@ This filter is applied automatically and cannot be changed by the user.
 
 ### Row 1 (Full Width)
 
-- [US States Table](../../widgets/us-states-table.md)
+- [Regions Table](../../widgets/regions-table.md)
 
 ## Related Documentation
 
 - [Countries Report](countries.md)
 - [Cities Report](cities.md)
-- [US States Table Widget](../../widgets/us-states-table.md)
+- [Regions Table Widget](../../widgets/regions-table.md)
 
 ---
 
-*Last Updated: 2025-12-13*
+*Last Updated: 2025-12-14*

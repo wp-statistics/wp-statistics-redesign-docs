@@ -8,6 +8,7 @@ default_sort: "visitors"
 row_limit: 20
 used_in_reports:
   - "regions-of-country"
+  - "us-states"
 ---
 
 # Regions Table
@@ -36,6 +37,7 @@ A data table showing all regions of the detected country with visitor metrics an
 This widget appears in the following report pages:
 
 - [Regions of {Country}](../reports/geographic/regions-of-country.md) - Row 1, full width
+- [US States](../reports/geographic/us-states.md) - Row 1, full width
 
 ## Table Structure
 

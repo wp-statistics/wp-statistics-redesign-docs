@@ -16,7 +16,6 @@ used_in_widgets:
   - "top-categories-table"
   - "top-pages-full"
   - "top-pages-preview"
-  - "us-states-table"
 ---
 
 # Views Column
@@ -46,7 +45,6 @@ This column is used in the following widgets:
 - [Top Categories Table](../widgets/top-categories-table.md)
 - [Top Pages Full](../widgets/top-pages-full.md)
 - [Top Pages Preview](../widgets/top-pages-preview.md)
-- [US States Table](../widgets/us-states-table.md)
 
 ## Display
 
