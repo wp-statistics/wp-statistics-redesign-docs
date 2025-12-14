@@ -31,7 +31,7 @@ Detailed drill-down view for analyzing traffic and visitor behavior from a speci
 - **Menu Group**: Geographic
 - **Show in Menu**: No
 - **Add-on**: Data Plus
-- **Status**: In Progress
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Dynamic Page Title
