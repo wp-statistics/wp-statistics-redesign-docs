@@ -13,6 +13,7 @@ used_in_reports:
   - "individual-category"
   - "individual-author"
   - "countries"
+  - "geographic-overview"
 ---
 
 # Top Countries Widget
@@ -45,6 +46,7 @@ Displays the top 5 countries by visitor count in a horizontal bar list format wi
 - [Individual Content](../reports/content-analytics/individual-content.md)
 - [Individual Category](../reports/content-analytics/individual-category.md)
 - [Individual Author](../reports/content-analytics/individual-author.md)
+- [Geographic Overview](../reports/geographic/geographic-overview.md)
 
 ## Empty State
 
@@ -55,9 +57,10 @@ When no country data is available for the selected period:
 
 - [Horizontal Bar List Component](../components/horizontal-bar-list.md)
 - [Visitors Overview Report](../reports/visitor-insights/visitors-overview.md)
+- [Geographic Overview Report](../reports/geographic/geographic-overview.md)
 - [Countries Report](../reports/geographic/countries.md)
 - [Countries Table Widget](countries-table.md)
 
 ---
 
-*Last Updated: 2025-12-13*
+*Last Updated: 2025-12-14*

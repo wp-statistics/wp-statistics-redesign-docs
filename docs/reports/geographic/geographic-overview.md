@@ -13,6 +13,8 @@ widgets:
     columns: ["geographic-metrics"]
   - row: 2
     columns: ["global-visitor-distribution"]
+  - row: 3
+    columns: ["top-countries", "top-cities-overview", "top-european-countries"]
 ---
 
 # Geographic Overview
@@ -42,6 +44,11 @@ Comprehensive snapshot of your website's geographic visitor distribution.
   <WidgetRow>
     <WidgetCell fullWidth>Global Visitor Distribution</WidgetCell>
   </WidgetRow>
+  <WidgetRow>
+    <WidgetCell>Top Countries</WidgetCell>
+    <WidgetCell>Top Cities</WidgetCell>
+    <WidgetCell>Top European Countries</WidgetCell>
+  </WidgetRow>
 </WidgetLayout>
 
 ### Row 1 (Full Width) - Geographic Metrics
@@ -65,6 +72,17 @@ Uses the [Metrics](../../components/metrics.md) component to display 3 key geogr
 ### Row 2 (Full Width) - Global Visitor Distribution
 
 - [Global Visitor Distribution](../../widgets/global-visitor-distribution.md) - Interactive world map showing visitor distribution by country
+
+### Row 3 (Three Columns) - Geographic Breakdown
+
+**Left Column:**
+- [Top Countries](../../widgets/top-countries.md) - Top 5 countries with flags
+
+**Middle Column:**
+- [Top Cities](../../widgets/top-cities-overview.md) - Top 5 cities globally
+
+**Right Column:**
+- [Top European Countries](../../widgets/top-european-countries.md) - Top 5 European countries with flags
 
 ---
 
