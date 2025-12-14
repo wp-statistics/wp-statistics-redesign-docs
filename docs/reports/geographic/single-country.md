@@ -4,13 +4,15 @@ type: "report"
 group: "Geographic"
 show_in_menu: false
 add_on: "Data Plus"
-status: "Done"
+status: "In Progress"
 interactions:
   - "Date Picker"
   - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["country-metrics"]
+  - row: 2
+    columns: ["traffic-trends"]
 ---
 
 # Single Country
@@ -23,7 +25,7 @@ Detailed drill-down view for analyzing traffic and visitor behavior from a speci
 - **Menu Group**: Geographic
 - **Show in Menu**: No
 - **Add-on**: Data Plus
-- **Status**: Done
+- **Status**: In Progress
 - **Figma Design**: [Add link when available]
 
 ## Dynamic Page Title
@@ -77,6 +79,10 @@ Uses the [Metrics](../../components/metrics.md) component to display 10 key perf
 | **Top Referrer** | Domain (e.g., google.com) | No |
 | **Top Browser** | Browser name | No |
 | **Top OS** | OS name | No |
+
+### Row 2 (Full Width) - Traffic Trends
+
+- [Traffic Trends](../../widgets/traffic-trends.md) - Line chart displaying visitor and view trends over time for this country
 
 ## Related Documentation
 
