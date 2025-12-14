@@ -5,9 +5,14 @@ sidebar_position: 1
 
 # Technical Documentation
 
-This section contains technical documentation for WP Statistics v15, including database schema, API specifications, system architecture, and data flow documentation.
+This section contains technical documentation for WP Statistics v15, including frontend components, database schema, API specifications, system architecture, and testing guidelines.
 
 ## Documentation Sections
+
+### Frontend
+- [Frontend Overview](frontend/intro.md) - React component library, hooks, and UI patterns
+- [UI Components](frontend/ui/button.md) - shadcn/ui base components (Button, Input, Card, etc.)
+- [Custom Components](frontend/custom/metrics.md) - WP Statistics components (Metrics, DataTable, etc.)
 
 ### Database
 - [Database Overview](database/overview.md) - Complete database schema and table structure
@@ -41,11 +46,13 @@ This section contains technical documentation for WP Statistics v15, including d
 ## About This Documentation
 
 This technical documentation provides:
+- Frontend component library and React patterns
 - Database schema and table structures
 - API endpoints and specifications
 - System architecture and design patterns
+- Testing guidelines and best practices
 - Developer-focused implementation details
 
 ---
 
-*Last Updated: 2025-12-13*
+*Last Updated: 2025-12-14*

@@ -50,12 +50,15 @@ wp-statistics-new-design/
 │   ├── components/        # Base UI components (6 active, 1 deprecated)
 │   ├── columns/           # Table column definitions (29 files)
 │   ├── settings/          # Settings pages and configuration options
-│   └── technical/         # Technical documentation (database, API, architecture)
+│   └── technical/         # Technical documentation (database, API, architecture, frontend)
 │       ├── intro.md       # Technical documentation overview
+│       ├── frontend/      # React dashboard documentation (resources/react/)
+│       │   ├── intro.md   # Frontend overview and structure
+│       │   └── ui/        # UI components (Button, Input, etc.)
 │       ├── database/      # Database schema and tables
 │       ├── api/           # API specifications
 │       ├── architecture/  # System architecture
-│       └── data-flow/     # Data flow diagrams
+│       └── testing/       # Testing documentation
 ├── src/
 │   ├── components/        # Custom React components
 │   │   ├── StatusBadge.tsx
@@ -70,6 +73,7 @@ wp-statistics-new-design/
 ├── package.json          # Dependencies and scripts
 ├── DOCUMENTATION-GUIDE.md # Product documentation writing guidelines
 ├── TECHNICAL-GUIDE.md    # Technical documentation writing guidelines
+├── FRONTEND-GUIDE.md     # Frontend component documentation guidelines
 └── CLAUDE.md             # Project instructions for Claude Code
 ```
 
@@ -180,6 +184,7 @@ wrangler pages deploy build
 For detailed writing guidelines, templates, and best practices, see:
 - [DOCUMENTATION-GUIDE.md](DOCUMENTATION-GUIDE.md) - Product documentation writing guide
 - [TECHNICAL-GUIDE.md](TECHNICAL-GUIDE.md) - Technical documentation writing guide
+- [FRONTEND-GUIDE.md](FRONTEND-GUIDE.md) - Frontend component documentation guide
 - [CLAUDE.md](CLAUDE.md) - Project instructions for AI assistance
 
 ### Product Documentation Principles

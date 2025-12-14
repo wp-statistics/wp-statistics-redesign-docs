@@ -72,6 +72,14 @@ This is a **product documentation project** for the WP Statistics v15 redesign, 
 3. **Architecture** - System architecture, component relationships, design patterns
 4. **Data Flow** - Data processing pipelines, flow diagrams, integration points
 
+### Frontend Documentation Types
+
+1. **UI Components** - Base reusable React components (Button, Input, Card, etc.)
+2. **Custom Components** - Domain-specific composite components (DataTable, FilterButton, etc.)
+3. **Hooks** - Custom React hooks for shared logic
+4. **Utilities** - Helper functions and utilities
+5. **Patterns** - Development patterns and best practices
+
 ## YAML Frontmatter
 
 All documentation files use YAML frontmatter for structured metadata:
@@ -99,6 +107,20 @@ category: "database" | "api" | "architecture" | "data-flow"
 status: "Not Started" | "In Progress" | "Done"
 sidebar_position: 1
 # Additional fields vary by category (see TECHNICAL-GUIDE.md)
+---
+```
+
+### Frontend Documentation Frontmatter
+
+```yaml
+---
+title: "Component Name"
+type: "frontend-component" | "frontend-hook" | "frontend-utility" | "frontend-pattern"
+category: "ui" | "custom" | "hooks" | "lib" | "patterns"
+status: "Not Started" | "In Progress" | "Done"
+component_path: "src/components/ui/component-name.tsx"  # Path to source file
+storybook: true | false  # Whether component has Storybook stories
+# Additional fields vary by category (see FRONTEND-GUIDE.md)
 ---
 ```
 
@@ -224,14 +246,29 @@ Before considering documentation complete:
 
 5. **Consult the Guide** - When in doubt, check [TECHNICAL-GUIDE.md](TECHNICAL-GUIDE.md) for templates, rules, and examples.
 
+### For Frontend Documentation
+
+1. **Code-Heavy** - Frontend docs MUST include comprehensive code examples with TypeScript types.
+
+2. **Practical Focus** - Document how developers will actually use the component, not internal implementation.
+
+3. **Accessibility Required** - Always include accessibility features and ARIA attributes.
+
+4. **Storybook Integration** - Link to Storybook stories when available for interactive examples.
+
+5. **Real-World Usage** - Include examples from the actual WP Statistics codebase.
+
+6. **Consult the Guide** - When in doubt, check [FRONTEND-GUIDE.md](FRONTEND-GUIDE.md) for templates, rules, and examples.
+
 ## Getting Started
 
 1. Read [README.md](README.md) for project overview and navigation
 2. Review [DOCUMENTATION-GUIDE.md](DOCUMENTATION-GUIDE.md) for product documentation writing guidelines
 3. Review [TECHNICAL-GUIDE.md](TECHNICAL-GUIDE.md) for technical documentation writing guidelines
-4. Explore existing documentation to understand the patterns
-5. Use templates when creating new documentation
-6. Always maintain cross-references when making changes (product docs only)
+4. Review [FRONTEND-GUIDE.md](FRONTEND-GUIDE.md) for frontend component documentation guidelines
+5. Explore existing documentation to understand the patterns
+6. Use templates when creating new documentation
+7. Always maintain cross-references when making changes (product docs only)
 
 ---
 

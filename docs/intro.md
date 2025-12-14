@@ -63,6 +63,15 @@ Base UI components that power the widgets:
 
 Reusable table column definitions used across data table widgets. Each column has specific sortable behavior, data formatting, and interactions.
 
+### 🔧 Technical Documentation
+
+Technical documentation for developers:
+- **Frontend** - React components, hooks, and UI patterns
+- **Database** - Schema, tables, and relationships
+- **API** - REST and Admin-Ajax endpoints
+- **Architecture** - System design and patterns
+- **Testing** - Unit tests and testing guidelines
+
 ---
 
 ## Project Purpose
