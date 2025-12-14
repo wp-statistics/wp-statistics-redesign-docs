@@ -4,7 +4,7 @@ type: "report"
 group: "Geographic"
 show_in_menu: false
 add_on: "Data Plus"
-status: "In Progress"
+status: "Done"
 interactions:
   - "Date Picker"
   - "Advanced Filters"

@@ -30,7 +30,7 @@ Displays the top 10 regions within the selected country with visitor metrics.
 | **Row Limit** | 10 |
 | **Column Management** | No |
 | **Pagination** | Yes |
-| **Link to Full Report** | Yes - [Regions of {Country}](../reports/geographic/regions-of-country.md) |
+| **Link to Full Report** | Yes - [Regions of \{Country\}](../reports/geographic/regions-of-country.md) |
 
 ## Used In Reports
 
