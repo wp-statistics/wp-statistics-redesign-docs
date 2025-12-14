@@ -10,6 +10,7 @@ used_in_widgets:
   - "countries-table"
   - "recent-pages-preview"
   - "referrers-table"
+  - "regions-table"
   - "source-categories-table"
   - "top-authors-table"
   - "top-categories-table"
@@ -39,6 +40,7 @@ This column is used in the following widgets:
 - [Countries Table](../widgets/countries-table.md)
 - [Recent Pages Preview](../widgets/recent-pages-preview.md)
 - [Referrers Table](../widgets/referrers-table.md)
+- [Regions Table](../widgets/regions-table.md)
 - [Source Categories Table](../widgets/source-categories-table.md)
 - [Top Authors Table](../widgets/top-authors-table.md)
 - [Top Categories Table](../widgets/top-categories-table.md)
