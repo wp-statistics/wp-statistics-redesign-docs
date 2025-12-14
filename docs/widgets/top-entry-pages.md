@@ -12,6 +12,7 @@ link_to_full_report: true
 used_in_reports:
   - "visitors-overview"
   - "referrals-overview"
+  - "single-country"
 ---
 
 # Top Entry Pages Widget
@@ -39,6 +40,7 @@ Displays the top 5 entry pages based on unique entrances count in a simplified t
 
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md) - Row 3, left column (only shown when Data Plus add-on is activated)
 - [Referrals Overview](../reports/referrals/referrals-overview.md) - Row 3, left column (only shown when Data Plus add-on is activated)
+- [Single Country](../reports/geographic/single-country.md) - Row 3
 
 ## Table Structure
 
@@ -54,4 +56,4 @@ Displays the top 5 entry pages based on unique entrances count in a simplified t
 
 ---
 
-*Last Updated: 2025-12-08*
+*Last Updated: 2025-12-14*

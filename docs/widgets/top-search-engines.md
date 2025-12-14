@@ -11,6 +11,7 @@ used_in_reports:
   - "individual-content"
   - "individual-category"
   - "individual-author"
+  - "single-country"
 ---
 
 # Top Search Engines Widget
@@ -44,6 +45,7 @@ This widget is used in the following reports:
 - [Individual Content](../reports/content-analytics/individual-content.md) - Row 3 (with "See all" link passing Resource ID filter)
 - [Individual Category](../reports/content-analytics/individual-category.md) - Row 5 (no "See all" link)
 - [Individual Author](../reports/content-analytics/individual-author.md) - Row 4
+- [Single Country](../reports/geographic/single-country.md) - Row 3
 
 ## Empty State
 

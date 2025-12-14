@@ -13,6 +13,10 @@ widgets:
     columns: ["country-metrics"]
   - row: 2
     columns: ["traffic-trends"]
+  - row: 3
+    columns: ["top-entry-pages", "top-referrers", "top-search-engines"]
+  - row: 4
+    columns: ["top-browsers", "top-operating-systems", "top-device-categories"]
 ---
 
 # Single Country
@@ -83,6 +87,18 @@ Uses the [Metrics](../../components/metrics.md) component to display 10 key perf
 ### Row 2 (Full Width) - Traffic Trends
 
 - [Traffic Trends](../../widgets/traffic-trends.md) - Line chart displaying visitor and view trends over time for this country
+
+### Row 3 (Three Columns) - Traffic Sources
+
+- [Top Entry Pages](../../widgets/top-entry-pages.md)
+- [Top Referrers](../../widgets/top-referrers.md)
+- [Top Search Engines](../../widgets/top-search-engines.md)
+
+### Row 4 (Three Columns) - Device Analytics
+
+- [Top Browsers](../../widgets/top-browsers.md)
+- [Top Operating Systems](../../widgets/top-operating-systems.md)
+- [Top Device Categories](../../widgets/top-device-categories.md)
 
 ## Related Documentation
 

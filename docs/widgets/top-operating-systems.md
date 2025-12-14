@@ -12,6 +12,7 @@ used_in_reports:
   - "individual-content"
   - "individual-category"
   - "individual-author"
+  - "single-country"
 ---
 
 # Top Operating Systems Widget
@@ -46,6 +47,7 @@ This widget is used in the following reports:
 - [Individual Content](../reports/content-analytics/individual-content.md) - Row 5 (no "See all" link)
 - [Individual Category](../reports/content-analytics/individual-category.md) - Row 6 (no "See all" link)
 - [Individual Author](../reports/content-analytics/individual-author.md) - Row 5
+- [Single Country](../reports/geographic/single-country.md) - Row 4
 
 ## Empty State
 
@@ -59,4 +61,4 @@ When no operating system data is available for the selected period:
 
 ---
 
-*Last Updated: 2025-12-08*
+*Last Updated: 2025-12-14*
