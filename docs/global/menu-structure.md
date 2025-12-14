@@ -39,7 +39,7 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 | 3 | [Cities](../reports/geographic/cities.md) | Free | Done | City-level visitor data |
 | 4 | [European Countries](../reports/geographic/european-countries.md) | Free | Done | EU country breakdown |
 | 5 | [US States](../reports/geographic/us-states.md) | Free | Done | US state-level data |
-| 6 | [Regions of {Country}](../reports/geographic/regions-of-country.md) | Free | Done | Region-level data (only shown if country detected from WP timezone) |
+| 6 | [Regions of \{Country\}](../reports/geographic/regions-of-country.md) | Free | Done | Region-level data (only shown if country detected from WP timezone) |
 
 ### Hidden Pages
 

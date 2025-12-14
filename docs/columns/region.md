@@ -45,7 +45,7 @@ This column is used in the following widgets:
 - [Cities Table Widget](../widgets/cities-table.md)
 - [Regions Table Widget](../widgets/regions-table.md)
 - [Cities Report](../reports/geographic/cities.md)
-- [Regions of {Country} Report](../reports/geographic/regions-of-country.md)
+- [Regions of \{Country\} Report](../reports/geographic/regions-of-country.md)
 - [US States Report](../reports/geographic/us-states.md)
 - [City Column](city.md)
 - [Country Column](country.md)

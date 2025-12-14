@@ -1,5 +1,5 @@
 ---
-title: "Regions of {Country}"
+title: "Regions of Country"
 type: "report"
 group: "Geographic"
 show_in_menu: true
@@ -12,7 +12,7 @@ widgets:
     columns: ["regions-table"]
 ---
 
-# Regions of {Country}
+# Regions of \{Country\}
 
 Shows all regions/states/provinces of the detected country with visitor metrics, engagement data, and traffic distribution in a data table format.
 
@@ -27,7 +27,7 @@ Shows all regions/states/provinces of the detected country with visitor metrics,
 
 ## Dynamic Title
 
-The report title displays "Regions of {Country}" where `{Country}` is replaced with the detected country name.
+The report title displays "Regions of \{Country\}" where `{Country}` is replaced with the detected country name.
 
 **Examples:**
 - "Regions of Germany"
