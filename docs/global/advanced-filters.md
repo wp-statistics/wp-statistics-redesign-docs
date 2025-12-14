@@ -154,6 +154,18 @@ Filter Groups define which filters are bundled together for specific use cases a
 
 ---
 
+### Referrer Analysis Filters
+
+**Includes**: Resource ID, Page URL, Source Category, Country, Browser, OS, Device Type
+
+**Used In Reports**:
+- [Referrers](../reports/referrals/referrers.md)
+- [Search Engines](../reports/referrals/search-engines.md)
+- [Social Media](../reports/referrals/social-media.md)
+- [Source Categories](../reports/referrals/source-categories.md)
+
+---
+
 ### Content Filters
 
 **Includes**: Page URL, Page Title, Page Term, Resource Type, Resource ID, Cached Date, Language (future), Author, Post Type

@@ -8,6 +8,7 @@ status: "Done"
 figma: ""
 interactions:
   - "Date Picker"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["referrers-table"]
@@ -27,6 +28,7 @@ Shows top referring domains driving traffic to your website.
 ## Available Interactions
 
 - **Date Picker**
+- **[Advanced Filters](../../global/advanced-filters.md#referrer-analysis-filters)**: Referrer Analysis Filters
 
 ## Widget Layout
 
@@ -35,4 +37,4 @@ Shows top referring domains driving traffic to your website.
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-12-14*

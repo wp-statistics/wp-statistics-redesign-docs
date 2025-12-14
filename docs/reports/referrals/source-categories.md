@@ -7,6 +7,7 @@ add_on: "Free"
 status: "Done"
 interactions:
   - "Date Picker"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["source-categories-chart"]
@@ -28,6 +29,7 @@ Shows traffic breakdown by source category (traffic channel), with trend analysi
 ## Available Interactions
 
 - **Date Picker**: Select date range for analysis
+- **[Advanced Filters](../../global/advanced-filters.md#referrer-analysis-filters)**: Referrer Analysis Filters
 
 ## Widget Layout
 
@@ -41,4 +43,4 @@ Shows traffic breakdown by source category (traffic channel), with trend analysi
 
 ---
 
-*Last Updated: 2025-11-15*
+*Last Updated: 2025-12-14*

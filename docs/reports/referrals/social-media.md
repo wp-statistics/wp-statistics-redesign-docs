@@ -7,7 +7,7 @@ add_on: "Free"
 status: "Done"
 interactions:
   - "Date Picker"
-  - "Filters"
+  - "Advanced Filters"
 widgets:
   - row: 1
     columns: ["traffic-source-chart"]
@@ -33,6 +33,7 @@ Shows social media traffic driving visitors to your website, with trend analysis
   - All: Shows both organic and paid social media traffic
   - Organic Social: Shows only organic social media traffic
   - Paid Social: Shows only paid social media traffic
+- **[Advanced Filters](../../global/advanced-filters.md#referrer-analysis-filters)**: Referrer Analysis Filters
 
 ## Widget Layout
 
@@ -48,4 +49,4 @@ Shows social media traffic driving visitors to your website, with trend analysis
 
 ---
 
-*Last Updated: 2025-12-08*
+*Last Updated: 2025-12-14*
