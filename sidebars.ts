@@ -262,6 +262,11 @@ const sidebars: SidebarsConfig = {
               id: 'technical/api-endpoints/analytics-query-api',
               label: 'Analytics Query API',
             },
+            {
+              type: 'doc',
+              id: 'technical/api-endpoints/user-preferences',
+              label: 'User Preferences',
+            },
           ],
         },
         {

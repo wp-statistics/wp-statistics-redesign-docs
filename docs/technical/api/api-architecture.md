@@ -28,6 +28,7 @@ All Admin AJAX actions are prefixed with `wp_statistics_` and use the `X-WP-Nonc
 
 - [Get Filter Options](../api-endpoints/get-filter-options.md) - Filter options for dropdowns
 - [Analytics Query API](../api-endpoints/analytics-query-api.md) - Flexible metrics + dimensions based query API
+- [User Preferences](../api-endpoints/user-preferences.md) - Save/reset user dashboard preferences
 
 ### REST API
 

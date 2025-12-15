@@ -43,6 +43,7 @@ Content-Type: application/x-www-form-urlencoded
 |----------|-------------|
 | [Get Filter Options](../api-endpoints/get-filter-options.md) | Filter options for dropdowns (countries, browsers, etc.) |
 | [Analytics Query API](../api-endpoints/analytics-query-api.md) | Flexible metrics + dimensions based query API |
+| [User Preferences](../api-endpoints/user-preferences.md) | Save/reset user dashboard preferences (columns, widget order) |
 
 ---
 
