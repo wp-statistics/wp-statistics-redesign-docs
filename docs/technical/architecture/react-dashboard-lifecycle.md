@@ -145,16 +145,16 @@ The lifecycle flow varies based on the [Request Strategy](#request-strategies) u
           • Enable background refetch
                               ↓
         [Transform Data for Visualization]
-          • Line charts → labels + datasets
-          • Bar charts → items + percentages
           • Tables → rows + sorting
           • Metrics → formatted values + trends
+          • Maps → geographic data + markers
+          • Lists → items + percentages
                               ↓
         [Render Widgets]
-          • Charts (Chart.js)
           • Tables (sortable)
           • Metrics cards
           • Maps
+          • Lists
 
 ┌──────────────────────────────────────────────────────────────────┐
 │                PHASE 5: USER INTERACTIONS                        │
@@ -252,8 +252,8 @@ React Query receives responses, caches data, and triggers widget rendering.
 
 **Key actions:**
 - Cache responses with configurable stale time
-- Transform data for visualization (charts, tables, cards)
-- Render widgets with Chart.js, tables, metrics cards
+- Transform data for visualization (tables, maps, lists, cards)
+- Render widgets with tables, metrics cards, maps, and lists
 
 **📚 See:** **[Analytics Query Frontend](/technical/architecture/analytics-query-frontend)** for React patterns and hooks.
 
