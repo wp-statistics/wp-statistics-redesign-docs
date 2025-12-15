@@ -151,7 +151,7 @@ The lifecycle flow varies based on the [Request Strategy](#request-strategies) u
           • Metrics → formatted values + trends
                               ↓
         [Render Widgets]
-          • Charts (Chart.js)
+          • Charts
           • Tables (sortable)
           • Metrics cards
           • Maps
@@ -253,7 +253,7 @@ React Query receives responses, caches data, and triggers widget rendering.
 **Key actions:**
 - Cache responses with configurable stale time
 - Transform data for visualization (charts, tables, cards)
-- Render widgets with Chart.js, tables, metrics cards
+- Render widgets with charts, tables, metrics cards, and maps
 
 **📚 See:** **[Analytics Query Frontend](/technical/architecture/analytics-query-frontend)** for React patterns and hooks.
 
