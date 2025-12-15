@@ -69,7 +69,7 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
 | `date_to` | string | today | End date/time. Formats: `YYYY-MM-DD`, `YYYY-MM-DD HH:mm:ss`, or `YYYY-MM-DDTHH:mm:ss`. Defaults to `23:59:59` if time omitted. |
 | `compare` | boolean | `false` | Include previous period comparison |
 | `filters` | object | `{}` | Filter criteria. [See available filters](#available-filters) |
-| `format` | string | `standard` | Response format. [See response formats](#response-formats) |
+| `format` | string | `table` | Response format. [See response formats](#response-formats) |
 | `columns` | array | `null` | Columns to include in response. [See column filtering](#column-filtering) |
 | `page` | integer | `1` | Page number for pagination |
 | `per_page` | integer | `10` | Results per page (max: 100) |
@@ -295,21 +295,21 @@ The `format` parameter controls the structure of the API response. Different for
 
 | Format | Use Case | Description |
 |--------|----------|-------------|
-| `standard` | Default, backward compatible | Nested structure with `data.rows`, `data.totals`, and `meta` |
+| `table` | Data tables, grids, complex widgets | Nested structure with `data.rows`, `data.totals`, and `meta` |
 | `flat` | Simple widgets, mobile apps | Flattened structure with `items[]` array at top level |
 | `chart` | Chart.js, Recharts, ApexCharts | Chart-ready with `labels[]` and `datasets[]` |
 | `export` | CSV/Excel exports, PDF reports | Tabular format with `headers[]` and `rows[][]` |
 
-### Standard Format (Default)
+### Table Format (Default)
 
-The default format maintains backward compatibility. Best for data tables and complex widgets.
+The default format optimized for data tables, grids, and complex widgets. Provides a nested structure with comprehensive metadata for pagination and sorting.
 
 **Request:**
 ```json
 {
   "sources": ["visitors", "views"],
   "group_by": ["country"],
-  "format": "standard"
+  "format": "table"
 }
 ```
 
@@ -530,7 +530,7 @@ Each query in a batch can specify its own format:
       "id": "countries_table",
       "sources": ["visitors", "views", "sessions"],
       "group_by": ["country"],
-      "format": "standard"
+      "format": "table"
     }
   ]
 }
@@ -554,7 +554,7 @@ A complete request showcasing all available parameters:
     "browser": { "in": ["Chrome", "Firefox", "Safari"] },
     "referrer": { "contains": "google" }
   },
-  "format": "standard",
+  "format": "table",
   "page": 1,
   "per_page": 10,
   "order_by": "visitors",
@@ -572,7 +572,7 @@ A complete request showcasing all available parameters:
 | `date_to` | `"2024-11-30 17:30:00"` | End of date range (5:30 PM) |
 | `compare` | `true` | Include comparison with previous period |
 | `filters` | `{...}` | Filter by desktop devices, specific browsers, and Google referrers |
-| `format` | `"standard"` | Response format (standard, flat, chart, export) |
+| `format` | `"table"` | Response format (table, flat, chart, export) |
 | `page` | `1` | First page of results |
 | `per_page` | `10` | Return 10 results per page |
 | `order_by` | `"visitors"` | Sort by visitors source |
@@ -783,14 +783,14 @@ Send an array of queries with optional global parameters:
       "id": "mobile_stats",
       "sources": ["visitors", "sessions"],
       "group_by": [],
-      "format": "standard",
+      "format": "table",
       "filters": { "device_type": "mobile" }
     },
     {
       "id": "yesterday",
       "sources": ["visitors"],
       "group_by": [],
-      "format": "standard",
+      "format": "table",
       "date_from": "2024-10-31",
       "date_to": "2024-10-31"
     }
@@ -862,13 +862,13 @@ You can override the global `compare` setting for individual queries:
       "id": "with_comparison",
       "sources": ["visitors"],
       "group_by": [],
-      "format": "standard"
+      "format": "table"
     },
     {
       "id": "without_comparison",
       "sources": ["visitors"],
       "group_by": [],
-      "format": "standard",
+      "format": "table",
       "compare": false
     }
   ]
@@ -928,7 +928,7 @@ async function fetchDashboardBatch() {
     queries: [
       { id: 'trends', sources: ['visitors', 'views'], group_by: ['date'], format: 'chart' },
       { id: 'countries', sources: ['visitors'], group_by: ['country'], format: 'flat', per_page: 10 },
-      { id: 'overview', sources: ['visitors', 'views', 'sessions', 'bounce_rate'], group_by: [], format: 'standard' },
+      { id: 'overview', sources: ['visitors', 'views', 'sessions', 'bounce_rate'], group_by: [], format: 'table' },
       // Override filters for this query (merges with global)
       { id: 'mobile', sources: ['sessions'], group_by: ['device_type'], format: 'flat', filters: { device_type: 'mobile' } }
     ]
@@ -1105,7 +1105,7 @@ async function fetchDashboardBatch() {
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,
-  "format": "standard",
+  "format": "table",
   "page": 1,
   "per_page": 10,
   "order_by": "views",
@@ -1173,7 +1173,7 @@ async function fetchDashboardBatch() {
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,
-  "format": "standard"
+  "format": "table"
 }
 ```
 
