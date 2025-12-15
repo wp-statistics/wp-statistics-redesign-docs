@@ -16,6 +16,7 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
   - [Available Sources](#available-sources)
   - [Available Group By](#available-group-by)
   - [Available Filters](#available-filters)
+  - [Column Filtering](#column-filtering)
   - [Response Formats](#response-formats)
 - [Request Example](#request-example)
 - [Response Structure](#response-structure)
@@ -69,6 +70,7 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
 | `compare` | boolean | `false` | Include previous period comparison |
 | `filters` | object | `{}` | Filter criteria. [See available filters](#available-filters) |
 | `format` | string | `standard` | Response format. [See response formats](#response-formats) |
+| `columns` | array | `null` | Columns to include in response. [See column filtering](#column-filtering) |
 | `page` | integer | `1` | Page number for pagination |
 | `per_page` | integer | `10` | Results per page (max: 100) |
 | `order_by` | string | first source | Column to sort by |
@@ -123,24 +125,27 @@ Query only business hours (9 AM to 5 PM):
 
 ## Available Group By
 
-| Group By | Description | Extra Fields in Response |
-|-----------|-------------|-------------------------|
-| `date` | Daily breakdown | - |
-| `week` | Weekly breakdown | `week_start`, `week_end` |
-| `month` | Monthly breakdown | `month_name` |
-| `hour` | Hourly breakdown | `hour_label` |
-| `country` | By country | `country_code`, `flag` |
-| `city` | By city | `country_code`, `region` |
-| `browser` | By browser | `browser_version` |
-| `os` | By operating system | `os_version` |
-| `device_type` | By device category | - |
-| `referrer` | By referrer source | `referrer_type` (search/social/direct/other) |
-| `page` | By page URI | `page_title`, `post_id`, `post_type` |
-| `post_type` | By content type | - |
-| `author` | By author | `author_name`, `author_id` |
-| `search_engine` | By search engine | - |
-| `search_query` | By search term | - |
-| `visitor` | By individual visitor | Full visitor details |
+| Group By | Primary Column | Extra Columns in Response |
+|-----------|----------------|---------------------------|
+| `date` | `date` | - |
+| `week` | `week` | `week_start`, `week_end` |
+| `month` | `month` | `month_name` |
+| `hour` | `hour` | `hour_label` |
+| `country` | `country_name` | `country_id`, `country_code`, `country_continent`, `country_continent_code` |
+| `city` | `city_name` | `city_id`, `city_region_code`, `city_region_name`, `city_country_id`, `country_code`, `country_name` |
+| `continent` | `continent_name` | `continent_code` |
+| `browser` | `browser_name` | `browser_id`, `browser_version`, `browser_version_id` |
+| `os` | `os_name` | `os_id` |
+| `device_type` | `device_type_name` | `device_type_id` |
+| `referrer` | `referrer_domain` | `referrer_id`, `referrer_channel`, `referrer_name` |
+| `language` | `language_name` | `language_id`, `language_code`, `language_region` |
+| `resolution` | `resolution` | `resolution_id`, `resolution_width`, `resolution_height` |
+| `page` | `page_uri` | `page_uri_id`, `resource_id`, `page_title`, `page_wp_id`, `page_type` |
+| `post_type` | `post_type` | - |
+| `author` | `author_name` | `author_id` |
+| `search_engine` | `search_engine` | - |
+| `search_query` | `search_query` | - |
+| `visitor` | `visitor_id` | Full visitor details |
 
 ---
 
@@ -191,6 +196,97 @@ For advanced filtering, use operator syntax:
 
 ---
 
+## Column Filtering
+
+The `columns` parameter allows you to filter the response to include only specific columns. This is useful for reducing response size and selecting only the data you need.
+
+### How It Works
+
+- **Default behavior**: When `columns` is not provided (or `null`), all available columns from sources and group_by are returned
+- **Filtered response**: When `columns` is provided, only the specified columns appear in rows and totals
+- **Column order**: The order of columns in the response matches the order specified in the `columns` array
+
+### Available Columns
+
+Valid column names include:
+- All source names (e.g., `visitors`, `views`, `sessions`, `bounce_rate`)
+- Primary column from group_by (e.g., `country_name`, `device_type_name`, `os_name`)
+- Extra columns from group_by (e.g., `country_code`, `browser_id`, `referrer_channel`)
+
+### Example: Select Specific Columns
+
+**Request:**
+```json
+{
+  "sources": ["visitors", "views", "sessions", "bounce_rate"],
+  "group_by": ["country"],
+  "columns": ["country_name", "country_code", "visitors"],
+  "date_from": "2024-11-01",
+  "date_to": "2024-11-30"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "rows": [
+      { "country_name": "United States", "country_code": "US", "visitors": 12500 },
+      { "country_name": "United Kingdom", "country_code": "GB", "visitors": 4500 }
+    ],
+    "totals": {
+      "visitors": 35000
+    }
+  }
+}
+```
+
+Note: Even though `views`, `sessions`, and `bounce_rate` are in sources, they're excluded from the response because they're not in `columns`.
+
+### Column Filtering in Batch Queries
+
+Each query in a batch can specify its own `columns` parameter:
+
+```json
+{
+  "date_from": "2024-11-01",
+  "date_to": "2024-11-30",
+  "queries": [
+    {
+      "id": "top_countries",
+      "sources": ["visitors"],
+      "group_by": ["country"],
+      "columns": ["country_name", "country_code", "visitors"],
+      "per_page": 5
+    },
+    {
+      "id": "top_devices",
+      "sources": ["visitors"],
+      "group_by": ["device_type"],
+      "columns": ["device_type_name", "visitors"],
+      "per_page": 5
+    }
+  ]
+}
+```
+
+### Error Handling
+
+Invalid column names result in an error:
+
+```json
+{
+  "success": false,
+  "error": {
+    "code": "invalid_column",
+    "message": "Invalid column: 'invalid_column'. Column must be from sources or group_by fields."
+  }
+}
+```
+
+---
+
 ## Response Formats
 
 The `format` parameter controls the structure of the API response. Different formats are optimized for different use cases.
@@ -223,8 +319,8 @@ The default format maintains backward compatibility. Best for data tables and co
   "success": true,
   "data": {
     "rows": [
-      { "country": "United States", "country_code": "US", "visitors": 12500, "views": 35000 },
-      { "country": "United Kingdom", "country_code": "GB", "visitors": 4500, "views": 12000 }
+      { "country_name": "United States", "country_code": "US", "visitors": 12500, "views": 35000 },
+      { "country_name": "United Kingdom", "country_code": "GB", "visitors": 4500, "views": 12000 }
     ],
     "totals": {
       "visitors": 35000,
@@ -260,8 +356,8 @@ Simplified structure for easy iteration. Best for simple widgets, lists, and mob
 {
   "success": true,
   "items": [
-    { "country": "United States", "country_code": "US", "visitors": 12500, "views": 35000 },
-    { "country": "United Kingdom", "country_code": "GB", "visitors": 4500, "views": 12000 }
+    { "country_name": "United States", "country_code": "US", "visitors": 12500, "views": 35000 },
+    { "country_name": "United Kingdom", "country_code": "GB", "visitors": 4500, "views": 12000 }
   ],
   "totals": {
     "visitors": 35000,
@@ -496,9 +592,11 @@ Response for the [Request Example](#request-example) above:
   "data": {
     "rows": [
       {
-        "country": "United States",
+        "country_name": "United States",
+        "country_id": 1,
         "country_code": "US",
-        "flag": "us",
+        "country_continent": "North America",
+        "country_continent_code": "NA",
         "visitors": 12500,
         "views": 35000,
         "sessions": 15200,
@@ -725,8 +823,8 @@ Each query result uses its specified format structure:
     "top_countries": {
       "success": true,
       "items": [
-        { "country": "United States", "country_code": "US", "visitors": 12500 },
-        { "country": "United Kingdom", "country_code": "GB", "visitors": 4500 }
+        { "country_name": "United States", "country_code": "US", "visitors": 12500 },
+        { "country_name": "United Kingdom", "country_code": "GB", "visitors": 4500 }
       ],
       "totals": { "visitors": 35000 },
       "meta": { "date_from": "2024-11-01 00:00:00", "date_to": "2024-11-30 23:59:59" }
@@ -865,6 +963,7 @@ async function fetchDashboardBatch() {
 {
   "sources": ["visitors", "views"],
   "group_by": ["date"],
+  "columns": ["date", "visitors", "views"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,
@@ -917,6 +1016,7 @@ async function fetchDashboardBatch() {
 {
   "sources": ["visitors", "sessions"],
   "group_by": ["country"],
+  "columns": ["country_name", "country_code", "visitors"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,
@@ -933,29 +1033,24 @@ async function fetchDashboardBatch() {
   "success": true,
   "items": [
     {
-      "country": "United States",
+      "country_name": "United States",
       "country_code": "US",
-      "flag": "us",
       "visitors": 12500,
-      "sessions": 15200,
       "percentage": 35.7,
-      "previous": { "visitors": 11200, "sessions": 13800 },
-      "change": { "visitors": 11.6, "sessions": 10.1 }
+      "previous": { "visitors": 11200 },
+      "change": { "visitors": 11.6 }
     },
     {
-      "country": "United Kingdom",
+      "country_name": "United Kingdom",
       "country_code": "GB",
-      "flag": "gb",
       "visitors": 4500,
-      "sessions": 5100,
       "percentage": 12.9,
-      "previous": { "visitors": 4200, "sessions": 4800 },
-      "change": { "visitors": 7.1, "sessions": 6.3 }
+      "previous": { "visitors": 4200 },
+      "change": { "visitors": 7.1 }
     }
   ],
   "totals": {
-    "visitors": 35000,
-    "sessions": 42000
+    "visitors": 35000
   },
   "meta": {
     "date_from": "2024-11-01 00:00:00",
@@ -973,6 +1068,7 @@ async function fetchDashboardBatch() {
 {
   "sources": ["sessions"],
   "group_by": ["device_type"],
+  "columns": ["device_type_name", "sessions"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "format": "flat"
@@ -984,9 +1080,9 @@ async function fetchDashboardBatch() {
 {
   "success": true,
   "items": [
-    { "device_type": "desktop", "sessions": 25200, "percentage": 60.0 },
-    { "device_type": "mobile", "sessions": 14280, "percentage": 34.0 },
-    { "device_type": "tablet", "sessions": 2520, "percentage": 6.0 }
+    { "device_type_name": "desktop", "sessions": 25200, "percentage": 60.0 },
+    { "device_type_name": "mobile", "sessions": 14280, "percentage": 34.0 },
+    { "device_type_name": "tablet", "sessions": 2520, "percentage": 6.0 }
   ],
   "totals": {
     "sessions": 42000
@@ -1005,6 +1101,7 @@ async function fetchDashboardBatch() {
 {
   "sources": ["views", "visitors", "avg_time_on_page", "bounce_rate"],
   "group_by": ["page"],
+  "columns": ["page_uri", "page_title", "page_type", "views", "visitors", "bounce_rate"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,
@@ -1023,24 +1120,20 @@ async function fetchDashboardBatch() {
   "data": {
     "rows": [
       {
-        "page": "/getting-started/",
+        "page_uri": "/getting-started/",
         "page_title": "Getting Started Guide",
-        "post_id": 123,
-        "post_type": "page",
+        "page_type": "page",
         "views": 5420,
         "visitors": 3200,
-        "avg_time_on_page": 245,
         "bounce_rate": 32.5,
         "previous": {
           "views": 4800,
           "visitors": 2900,
-          "avg_time_on_page": 230,
           "bounce_rate": 35.2
         },
         "change": {
           "views": 12.9,
           "visitors": 10.3,
-          "avg_time_on_page": 6.5,
           "bounce_rate": -7.7
         }
       }
@@ -1048,7 +1141,6 @@ async function fetchDashboardBatch() {
     "totals": {
       "views": 98000,
       "visitors": 35000,
-      "avg_time_on_page": 185,
       "bounce_rate": 42.5
     }
   },
@@ -1077,6 +1169,7 @@ async function fetchDashboardBatch() {
     "pages_per_session"
   ],
   "group_by": [],
+  "columns": ["visitors", "views", "sessions", "bounce_rate"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,
@@ -1117,20 +1210,6 @@ async function fetchDashboardBatch() {
         "previous": 47.8,
         "change": -5.4,
         "trend": "down"
-      },
-      "avg_session_duration": {
-        "value": 185,
-        "formatted": "3m 5s",
-        "previous": 172,
-        "change": 7.6,
-        "trend": "up"
-      },
-      "pages_per_session": {
-        "value": 2.3,
-        "formatted": "2.3",
-        "previous": 2.1,
-        "change": 9.5,
-        "trend": "up"
       }
     }
   },
@@ -1162,9 +1241,9 @@ async function fetchDashboardBatch() {
 {
   "success": true,
   "items": [
-    { "country": "United States", "country_code": "US", "flag": "us", "lat": 37.0902, "lng": -95.7129, "visitors": 12500 },
-    { "country": "United Kingdom", "country_code": "GB", "flag": "gb", "lat": 55.3781, "lng": -3.4360, "visitors": 4500 },
-    { "country": "Germany", "country_code": "DE", "flag": "de", "lat": 51.1657, "lng": 10.4515, "visitors": 3200 }
+    { "country_name": "United States", "country_id": 1, "country_code": "US", "country_continent": "North America", "country_continent_code": "NA", "flag": "us", "lat": 37.0902, "lng": -95.7129, "visitors": 12500 },
+    { "country_name": "United Kingdom", "country_id": 2, "country_code": "GB", "country_continent": "Europe", "country_continent_code": "EU", "flag": "gb", "lat": 55.3781, "lng": -3.4360, "visitors": 4500 },
+    { "country_name": "Germany", "country_id": 3, "country_code": "DE", "country_continent": "Europe", "country_continent_code": "EU", "flag": "de", "lat": 51.1657, "lng": 10.4515, "visitors": 3200 }
   ],
   "totals": {
     "visitors": 35000
@@ -1203,11 +1282,11 @@ async function fetchDashboardBatch() {
       "last_activity": "2024-11-30 14:32:10",
       "seconds_ago": 15,
       "ip_address": "192.168.1.xxx",
-      "country": "United States",
+      "country_name": "United States",
       "country_code": "US",
-      "browser": "Chrome",
-      "os": "Windows",
-      "device_type": "desktop"
+      "browser_name": "Chrome",
+      "os_name": "Windows",
+      "device_type_name": "desktop"
     }
   ],
   "totals": {
@@ -1226,6 +1305,7 @@ async function fetchDashboardBatch() {
 {
   "sources": ["visitors", "sessions", "bounce_rate"],
   "group_by": ["referrer"],
+  "columns": ["referrer_domain", "referrer_channel", "visitors", "sessions", "bounce_rate"],
   "date_from": "2024-11-01",
   "date_to": "2024-11-30",
   "compare": true,
@@ -1240,8 +1320,8 @@ async function fetchDashboardBatch() {
   "success": true,
   "items": [
     {
-      "referrer": "google.com",
-      "referrer_type": "search",
+      "referrer_domain": "google.com",
+      "referrer_channel": "search",
       "visitors": 8500,
       "sessions": 10200,
       "bounce_rate": 42.3,
@@ -1249,8 +1329,8 @@ async function fetchDashboardBatch() {
       "change": { "visitors": 9.0, "sessions": 8.5, "bounce_rate": -4.1 }
     },
     {
-      "referrer": "(direct)",
-      "referrer_type": "direct",
+      "referrer_domain": "(direct)",
+      "referrer_channel": "direct",
       "visitors": 6200,
       "sessions": 7500,
       "bounce_rate": 35.8,
@@ -1314,4 +1394,4 @@ React patterns for consuming the API.
 
 ---
 
-*Last Updated: 2025-12-14*
+*Last Updated: 2025-12-15*
