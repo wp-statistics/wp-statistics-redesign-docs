@@ -64,10 +64,12 @@ public/
 - **TailwindCSS** - Utility-first CSS framework
 
 ### UI Components
-- **Radix UI** - Accessible, unstyled component primitives
-- **shadcn/ui** - Beautiful, customizable component library
+- **shadcn/ui (Radix UI edition)** - We install only the required components from shadcn/ui as needed
+- **Radix UI** - Accessible, unstyled component primitives (shadcn/ui's foundation)
 - **Lucide React** - Icon library
 - **Recharts** - Chart and data visualization
+
+> **Note**: shadcn/ui offers two editions: one built on **Radix UI** (our choice) and one on **Base UI**. We use the Radix UI edition for its mature accessibility features and wider community adoption. Components are installed on-demand using the CLI (`npx shadcn@latest add <component>`) rather than installing the entire library.
 
 ### State Management & Data
 - **TanStack Query** - Async state management and data fetching
@@ -119,13 +121,15 @@ resources/react/src/
 ### Component Organization
 
 **UI Components** (`components/ui/`)
-- shadcn/ui components copied into the project
+- Only required components are installed from shadcn/ui using the CLI (`npx shadcn@latest add <component>`)
+- Uses the **Radix UI edition** of shadcn/ui (not Base UI)
+- Components are copied into the project for full ownership and customization
 - Built on Radix UI primitives (Dialog, Popover, Select, etc.)
 - Styled with Tailwind CSS utility classes
 - Customizable and themeable via CSS variables
 - Fully accessible (WCAG 2.1 AA compliant)
 - Type-safe with TypeScript
-- Documented with Storybook
+- Documented with [Storybook](https://ui.wp-statistics.com)
 
 **Custom Components** (`components/custom/`)
 - Domain-specific WP Statistics components
@@ -138,13 +142,19 @@ resources/react/src/
 
 ### UI Components
 Base component library documentation (shadcn/ui):
+- [Avatar](ui/avatar.md) - User profile image with fallback support
+- [Badge](ui/badge.md) - Status labels and metadata indicators
 - [Button](ui/button.md) - Primary interactive element with variants and sizes
-- More UI components coming soon...
+- [Card](ui/card.md) - Container for grouping related content
+- [Checkbox](ui/checkbox.md) - Accessible checkbox input
+- [Input](ui/input.md) - Text input with validation support
+- [Separator](ui/separator.md) - Visual divider for content
+- [Skeleton](ui/skeleton.md) - Loading placeholder animation
+- [Tooltip](ui/tooltip.md) - Contextual information on hover
 
 ### Custom Components
 WP Statistics domain-specific components:
 - [Metrics](custom/metrics.md) - Grid-based KPI display with trend indicators
-- More custom components coming soon...
 
 ### Patterns & Guidelines
 Development patterns and best practices:
@@ -214,11 +224,14 @@ The frontend uses **Tailwind CSS** with **shadcn/ui** components as the foundati
 - **JIT Compiler** - Just-in-time compilation for optimal performance
 
 ### shadcn/ui Components
+- **Radix UI Edition** - We use shadcn/ui built on Radix UI (not Base UI)
+- **On-Demand Installation** - Only required components are installed via `npx shadcn@latest add <component>`
 - **Accessible** - Built on Radix UI primitives (WCAG 2.1 AA)
-- **Customizable** - Copy components into your project and modify
+- **Customizable** - Components are copied into your project for full ownership
 - **Themeable** - CSS variables for colors and styling
 - **Type-Safe** - Full TypeScript support
 - **Composable** - Build complex UIs from simple primitives
+- **Storybook** - Interactive documentation at [ui.wp-statistics.com](https://ui.wp-statistics.com)
 
 ### Design Tokens
 - **Colors** - CSS variables in `globals.css` (e.g., `--primary`, `--secondary`)
@@ -238,4 +251,4 @@ All components are built with accessibility in mind:
 
 ---
 
-*Last Updated: 2025-12-14*
+*Last Updated: 2025-12-16*
