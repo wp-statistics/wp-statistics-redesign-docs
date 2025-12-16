@@ -106,11 +106,15 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 - [Top Search Engines](../../widgets/top-search-engines.md)
 - [Top Countries](../../widgets/top-countries.md)
 
+**Note:** These widgets display data without "See all" links in this context.
+
 ### Row 5 (Three Columns) - Device Analytics
 
 - [Top Browsers](../../widgets/top-browsers.md)
 - [Top Operating Systems](../../widgets/top-operating-systems.md)
 - [Top Device Categories](../../widgets/top-device-categories.md)
+
+**Note:** These widgets display data without "See all" links in this context (device reports don't support author filtering).
 
 ## Related Documentation
 

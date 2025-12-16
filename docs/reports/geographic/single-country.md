@@ -107,6 +107,8 @@ Uses the [Metrics](../../components/metrics.md) component to display 10 key perf
 - [Top Operating Systems](../../widgets/top-operating-systems.md)
 - [Top Device Categories](../../widgets/top-device-categories.md)
 
+**Note:** These widgets display data without "See all" links in this context (device reports don't support country filtering).
+
 ## Related Documentation
 
 - [Countries Report](countries.md)

@@ -35,7 +35,7 @@ Displays the top 5 operating systems by visitor count in a horizontal bar list f
 | **Show Previous Period** | ✅ Yes |
 | **Show Icons** | ✅ Yes (OS icons) |
 | **Enable Other Item** | ❌ No |
-| **Link to Full Report** | ✅ Yes ("View Full OS Report") |
+| **Link to Full Report** | ✅ Yes (links to Operating Systems report) |
 
 ## Used In Reports
 

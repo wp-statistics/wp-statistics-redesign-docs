@@ -104,9 +104,9 @@ Uses the [Metrics](../../components/metrics.md) component to display key perform
 
 ### Row 4 (Three Columns) - Device Analytics
 
-- [Top Browsers](../../widgets/top-browsers.md) - With Link to Full Report
-- [Top Operating Systems](../../widgets/top-operating-systems.md) - With Link to Full Report
-- [Top Device Categories](../../widgets/top-device-categories.md) - With Link to Full Report
+- [Top Browsers](../../widgets/top-browsers.md) - No Link to Full Report (device reports don't support resource_id filtering)
+- [Top Operating Systems](../../widgets/top-operating-systems.md) - No Link to Full Report
+- [Top Device Categories](../../widgets/top-device-categories.md) - No Link to Full Report
 
 ## Related Documentation
 
