@@ -3,6 +3,7 @@ title: "Views per Visitor"
 type: "column"
 status: "Done"
 used_in_widgets:
+  - "browsers-table"
   - "countries-table"
   - "device-categories-table"
   - "os-table"
@@ -23,6 +24,7 @@ Shows the average number of page views per unique visitor.
 
 This column is used in the following widgets:
 
+- [Browsers Table](../widgets/browsers-table.md)
 - [Countries Table](../widgets/countries-table.md)
 - [Device Categories Table](../widgets/device-categories-table.md)
 - [OS Table](../widgets/os-table.md)

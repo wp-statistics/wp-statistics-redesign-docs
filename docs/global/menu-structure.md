@@ -98,7 +98,7 @@ Content Analytics focuses on **content performance** (how posts/articles perform
 | Sort | Menu Item | Add-on | Status | Notes |
 |------|-----------|--------|--------|-------|
 | 1 | [Devices Overview](../reports/devices/devices-overview.md) | Free | Not Started | High-level summary (entry point) |
-| 2 | [Browsers](../reports/devices/browsers.md) | Free | Not Started | Browser breakdown |
+| 2 | [Browsers](../reports/devices/browsers.md) | Free | Done | Browser breakdown |
 | 3 | [Operating Systems](../reports/devices/operating-systems.md) | Free | Done | OS breakdown |
 | 4 | [Device Categories](../reports/devices/device-categories.md) | Free | Done | Device type breakdown |
 | 5 | [Screen Resolutions](../reports/devices/screen-resolutions.md) | Free | Not Started | Responsive design insights |

@@ -4,16 +4,18 @@ type: "report"
 group: "Devices"
 show_in_menu: true
 add_on: "Free"
-status: "Not Started"
+status: "Done"
 interactions:
   - "Date Picker"
   - "Advanced Filters"
-widgets: []
+widgets:
+  - row: 1
+    columns: ["browsers-table"]
 ---
 
 # Browsers
 
-Shows all browsers with visitor metrics and traffic distribution.
+Shows all browsers with visitor metrics and expandable rows for version breakdown.
 
 ## Report Configuration
 
@@ -21,7 +23,7 @@ Shows all browsers with visitor metrics and traffic distribution.
 - **Menu Group**: Devices
 - **Show in Menu**: Yes
 - **Add-on**: Free
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Available Interactions
@@ -31,13 +33,25 @@ Shows all browsers with visitor metrics and traffic distribution.
 
 ## Widget Layout
 
-*To be defined*
+### Row 1 (Full Width)
+
+- [Browsers Table](../../widgets/browsers-table.md)
+
+## Key Features
+
+### Expandable Rows
+
+Each browser row can be expanded to show version breakdown:
+- Click the expand icon or row to reveal versions
+- Child rows show: Version, Visitors, % of Total
+- Helps identify which browser versions are most common
 
 ## Related Documentation
 
 - [Devices Overview](devices-overview.md)
 - [Operating Systems Report](operating-systems.md)
 - [Device Categories Report](device-categories.md)
+- [Browsers Table Widget](../../widgets/browsers-table.md)
 - [Device Detection](../../technical/architecture/device-detection.md)
 
 ---

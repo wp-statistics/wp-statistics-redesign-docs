@@ -3,6 +3,7 @@ title: "Session Duration Column"
 type: "column"
 status: "Done"
 used_in_widgets:
+  - "browsers-table"
   - "countries-table"
   - "device-categories-table"
   - "os-table"
@@ -25,6 +26,7 @@ Shows the average time visitors spend during their sessions within the active da
 
 This column is used in the following widgets:
 
+- [Browsers Table](../widgets/browsers-table.md)
 - [Countries Table](../widgets/countries-table.md)
 - [Device Categories Table](../widgets/device-categories-table.md)
 - [OS Table](../widgets/os-table.md)

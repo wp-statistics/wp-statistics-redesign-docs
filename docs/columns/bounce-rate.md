@@ -3,6 +3,7 @@ title: "Bounce Rate Column"
 type: "column"
 status: "Done"
 used_in_widgets:
+  - "browsers-table"
   - "countries-table"
   - "device-categories-table"
   - "os-table"
@@ -25,6 +26,7 @@ Shows the percentage of sessions where the visitor viewed only one page within t
 
 This column is used in the following widgets:
 
+- [Browsers Table](../widgets/browsers-table.md)
 - [Countries Table](../widgets/countries-table.md)
 - [Device Categories Table](../widgets/device-categories-table.md)
 - [OS Table](../widgets/os-table.md)

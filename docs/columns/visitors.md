@@ -5,6 +5,7 @@ status: "Done"
 used_in_widgets:
   - "author-pages-preview"
   - "author-pages-table"
+  - "browsers-table"
   - "campaigns-table"
   - "category-pages-table"
   - "cities-table"
@@ -34,6 +35,7 @@ This column is used in the following widgets:
 
 - [Author Pages Preview](../widgets/author-pages-preview.md)
 - [Author Pages Table](../widgets/author-pages-table.md)
+- [Browsers Table](../widgets/browsers-table.md)
 - [Campaigns Table](../widgets/campaigns-table.md)
 - [Category Pages Table](../widgets/category-pages-table.md)
 - [Cities Table](../widgets/cities-table.md)

@@ -94,6 +94,7 @@ Widgets using this component can configure the following options:
 | **Column Management Mode** | String | Column control level: "none", "visibility", or "full" | "full" |
 | **Pagination** | Boolean | Enable/disable pagination controls | true |
 | **Link to Full Report** | Object/Boolean | Link configuration \{text, url\} or true for default pattern | null |
+| **Expandable Rows** | Boolean | Enable expandable rows with nested child data | false |
 
 ## Column Management Modes
 
@@ -120,6 +121,25 @@ When configured, a link appears below the table:
 - First/Previous/Next/Last page buttons
 - Current range and total count display
 
+## Expandable Rows
+
+When enabled, rows can be expanded to reveal nested child data:
+
+- **Expand Icon**: Chevron icon appears on the left side of expandable rows
+- **Toggle Behavior**: Click row or icon to expand/collapse
+- **Visual Hierarchy**:
+  - Parent rows show aggregated/summary data
+  - Child rows are indented and styled differently
+  - Child rows can have a simplified column set
+- **Use Cases**: Browser → Browser Versions, etc.
+
+### Expandable Row Configuration
+
+Widgets using expandable rows should define:
+- Which rows are expandable (have children)
+- Column structure for child rows (can differ from parent)
+- How child data relates to parent data
+
 ## Empty State
 
 When table has no data:
@@ -134,4 +154,4 @@ When table has no data:
 
 ---
 
-*Last Updated: 2025-12-13*
+*Last Updated: 2025-12-16*
