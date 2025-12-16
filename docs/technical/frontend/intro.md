@@ -81,6 +81,81 @@ public/
 - **class-variance-authority** - Type-safe variant styles
 - **tailwind-merge & clsx** - Conditional class name utilities
 
+## Libraries & Versions
+
+Key dependencies used in the React dashboard with their versions and repositories:
+
+### Core
+
+| Library | Version | Repository |
+|---------|---------|------------|
+| React | ^19.2.0 | [facebook/react](https://github.com/facebook/react) |
+| TypeScript | ~5.8.3 | [microsoft/TypeScript](https://github.com/microsoft/TypeScript) |
+| Tailwind CSS | ^4.1.14 | [tailwindlabs/tailwindcss](https://github.com/tailwindlabs/tailwindcss) |
+
+### Routing & State
+
+| Library | Version | Repository |
+|---------|---------|------------|
+| TanStack Router | ^1.133.28 | [TanStack/router](https://github.com/TanStack/router) |
+| TanStack Query | ^5.90.5 | [TanStack/query](https://github.com/TanStack/query) |
+| TanStack Table | ^8.21.3 | [TanStack/table](https://github.com/TanStack/table) |
+
+### UI Components
+
+| Library | Version | Repository |
+|---------|---------|------------|
+| shadcn/ui (CLI) | ^3.4.2 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui) |
+| Radix UI Avatar | ^1.1.10 | [radix-ui/primitives](https://github.com/radix-ui/primitives) |
+| Radix UI Checkbox | ^1.3.3 | [radix-ui/primitives](https://github.com/radix-ui/primitives) |
+| Radix UI Dialog | ^1.1.15 | [radix-ui/primitives](https://github.com/radix-ui/primitives) |
+| Radix UI Dropdown Menu | ^2.1.16 | [radix-ui/primitives](https://github.com/radix-ui/primitives) |
+| Radix UI Popover | ^1.1.15 | [radix-ui/primitives](https://github.com/radix-ui/primitives) |
+| Radix UI Select | ^2.2.6 | [radix-ui/primitives](https://github.com/radix-ui/primitives) |
+| Radix UI Tooltip | ^1.2.8 | [radix-ui/primitives](https://github.com/radix-ui/primitives) |
+| Lucide React | ^0.544.0 | [lucide-icons/lucide](https://github.com/lucide-icons/lucide) |
+
+### Charts & Visualization
+
+| Library | Version | Repository |
+|---------|---------|------------|
+| Recharts | 2.15.4 | [recharts/recharts](https://github.com/recharts/recharts) |
+| Chart.js | ^4.4.3 | [chartjs/Chart.js](https://github.com/chartjs/Chart.js) |
+| react-chartjs-2 | ^5.2.0 | [reactchartjs/react-chartjs-2](https://github.com/reactchartjs/react-chartjs-2) |
+| react-simple-maps | ^3.0.0 | [zcreativelabs/react-simple-maps](https://github.com/zcreativelabs/react-simple-maps) |
+
+### Utilities
+
+| Library | Version | Repository |
+|---------|---------|------------|
+| class-variance-authority | ^0.7.1 | [joe-bell/cva](https://github.com/joe-bell/cva) |
+| clsx | ^2.1.1 | [lukeed/clsx](https://github.com/lukeed/clsx) |
+| tailwind-merge | ^3.3.1 | [dcastil/tailwind-merge](https://github.com/dcastil/tailwind-merge) |
+| date-fns | ^3.6.0 | [date-fns/date-fns](https://github.com/date-fns/date-fns) |
+| axios | ^1.12.2 | [axios/axios](https://github.com/axios/axios) |
+
+### Drag & Drop
+
+| Library | Version | Repository |
+|---------|---------|------------|
+| @dnd-kit/core | ^6.3.1 | [clauderic/dnd-kit](https://github.com/clauderic/dnd-kit) |
+| @dnd-kit/sortable | ^10.0.0 | [clauderic/dnd-kit](https://github.com/clauderic/dnd-kit) |
+
+### Development
+
+| Library | Version | Repository |
+|---------|---------|------------|
+| Vite (rolldown-vite) | 7.1.12 | [rolldown/rolldown](https://github.com/rolldown/rolldown) |
+| Storybook | ^10.0.3 | [storybookjs/storybook](https://github.com/storybookjs/storybook) |
+| ESLint | ^9.36.0 | [eslint/eslint](https://github.com/eslint/eslint) |
+| Prettier | ^3.6.2 | [prettier/prettier](https://github.com/prettier/prettier) |
+
+### WordPress
+
+| Library | Version | Repository |
+|---------|---------|------------|
+| @wordpress/i18n | ^6.7.0 | [WordPress/gutenberg](https://github.com/WordPress/gutenberg) |
+
 ## Architecture
 
 ### React Application Structure (`resources/react/src/`)
