@@ -15,6 +15,7 @@ This document tracks all settings changes in WP Statistics v15 compared to previ
 | Setting | Page | Description |
 |---------|------|-------------|
 | [Hash Rotation Interval](#hash-rotation-interval) | Privacy | Controls how often the daily salt rotates for visitor hash generation |
+| [Screen Resolution Tracker](#screen-resolution-tracker) | Data Plus | Enables collection of visitor screen resolution data |
 
 ### Modified Settings
 
@@ -58,6 +59,24 @@ This document tracks all settings changes in WP Statistics v15 compared to previ
 
 ---
 
+### Screen Resolution Tracker
+
+**Display Label**: Screen Resolution Tracker
+
+**Setting Key**: `wps_addon_settings[data_plus][screen_resolution_tracker]`
+
+**Type**: Checkbox
+
+**Default Value**: `0` (disabled)
+
+**Description**: Collect visitor screen resolution data for responsive design insights.
+
+**Location**: Data Plus Settings > Device Tracking
+
+**Related Documentation**: [Screen Resolutions Report](../reports/devices/screen-resolutions.md)
+
+---
+
 ## Removed Settings Details
 
 ### Country Code for Private IPs
@@ -98,4 +117,4 @@ This document tracks all settings changes in WP Statistics v15 compared to previ
 
 ---
 
-*Last Updated: 2025-11-27*
+*Last Updated: 2025-12-16*

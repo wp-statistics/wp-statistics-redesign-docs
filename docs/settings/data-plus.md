@@ -3,7 +3,7 @@ title: "Data Plus Settings"
 type: "settings"
 add_on: "Data Plus"
 status: "Not Started"
-settings_count: 3
+settings_count: 4
 ---
 
 # Data Plus Settings
@@ -15,7 +15,7 @@ Event tracking configuration for outbound links, downloads, and content editor e
 - **Add-on**: Data Plus
 - **Status**: Not Started
 - **Figma Design**: [Add link when available]
-- **Settings Count**: 3
+- **Settings Count**: 4
 
 ## Event Tracking
 
@@ -63,4 +63,20 @@ Event tracking configuration for outbound links, downloads, and content editor e
 
 ---
 
-*Last Updated: 2025-11-16*
+## Device Tracking
+
+### Screen Resolution Tracker
+
+**Display Label**: Screen Resolution Tracker
+
+**Setting Key**: `wps_addon_settings[data_plus][screen_resolution_tracker]`
+
+**Type**: Checkbox
+
+**Default Value**: `0` (disabled)
+
+**Description**: Collect visitor screen resolution data for responsive design insights.
+
+---
+
+*Last Updated: 2025-12-16*
