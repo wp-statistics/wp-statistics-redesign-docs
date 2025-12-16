@@ -117,6 +117,11 @@ The lifecycle flow varies based on the [Request Strategy](#request-strategies) u
         │                        │      │  • Filters               │
         │                        │      │  • Date range            │
         │                        │      │         ↓                │
+        │                        │      │  Check preferences:      │
+        │                        │      │  • Read context          │
+        │                        │      │  • Get from user meta    │
+        │                        │      │  • Match context prefs   │
+        │                        │      │         ↓                │
         │                        │      │  Build SQL Query:        │
         │                        │      │  • SELECT sources        │
         │                        │      │  • JOIN tables           │
@@ -130,8 +135,10 @@ The lifecycle flow varies based on the [Request Strategy](#request-strategies) u
         │                        │      │  • Calculate totals      │
         │                        │      │  • Add comparison data   │
         │                        │      │  • Apply format type     │
+        │                        │      │  • Include preferences   │
         │                        │      │         ↓                │
         │  Receive Response      │←─────│─ Return JSON            │
+        │  (data + preferences)  │      │  (data + preferences)    │
         │                        │      │                          │
         └────────────────────────┘      └──────────────────────────┘
 
@@ -140,9 +147,14 @@ The lifecycle flow varies based on the [Request Strategy](#request-strategies) u
 └──────────────────────────────────────────────────────────────────┘
                               ↓
         [React Query Caches Response]
-          • Cache by query key
+          • Cache by query key (data + preferences)
           • Set stale time (5 min)
           • Enable background refetch
+                              ↓
+        [Apply User Preferences]
+          • Filter visible columns (tables)
+          • Filter visible widgets (overview pages)
+          • Apply column order
                               ↓
         [Transform Data for Visualization]
           • Line charts → labels + datasets
@@ -152,7 +164,7 @@ The lifecycle flow varies based on the [Request Strategy](#request-strategies) u
                               ↓
         [Render Widgets]
           • Charts
-          • Tables (sortable)
+          • Tables (with customized columns)
           • Metrics cards
           • Maps
 
@@ -166,8 +178,14 @@ The lifecycle flow varies based on the [Request Strategy](#request-strategies) u
           • Sort table column
           • Change page
           • Toggle comparison
+          • Customize columns (show/hide/reorder)
+          • Toggle widget visibility
                               ↓
         [Update Application State]
+                              ↓
+        [Save Preferences (if customization)]
+          • POST to wp_statistics_user_preferences
+          • Store in user meta
                               ↓
         [Invalidate Affected Queries]
                               ↓
@@ -177,6 +195,7 @@ The lifecycle flow varies based on the [Request Strategy](#request-strategies) u
 
         Note: For batch requests, all widgets re-fetch together.
         For individual requests, only affected widget(s) re-fetch.
+        Preference changes invalidate queries to re-render with new settings.
 ```
 
 ### Key Points by Request Strategy
@@ -240,9 +259,10 @@ Backend receives requests, validates, builds SQL, executes queries, and formats 
 
 **Key actions:**
 - Validate sources, group_by, filters, permissions
+- Check user preferences (read context, get from user meta, match preferences)
 - Generate SQL using QueryBuilder
 - Execute via `$wpdb`
-- Format response with totals and comparison data
+- Format response with totals, comparison data, and preferences
 
 **📚 See:** **[Analytics Query Backend](/technical/architecture/analytics-query-backend)** for detailed query processing logic.
 
@@ -251,7 +271,8 @@ Backend receives requests, validates, builds SQL, executes queries, and formats 
 React Query receives responses, caches data, and triggers widget rendering.
 
 **Key actions:**
-- Cache responses with configurable stale time
+- Cache responses (data + preferences) with configurable stale time
+- Apply user preferences (column visibility/order, widget visibility)
 - Transform data for visualization (charts, tables, cards)
 - Render widgets with charts, tables, metrics cards, and maps
 
@@ -268,6 +289,8 @@ User actions trigger state updates and data re-fetching.
 | **Sort table** | Update local component state → Re-fetch with new `order_by` | New query with different ORDER BY clause |
 | **Paginate** | Update local component state → Re-fetch with new `page` | New query with updated OFFSET |
 | **Toggle comparison** | Update global state → Invalidate queries → Re-fetch with `compare: true` | Dual queries (current + previous period) |
+| **Customize columns** | Update local state → Save to `wp_statistics_user_preferences` → Invalidate queries → Re-render | Preferences saved to user meta, included in next response |
+| **Toggle widget visibility** | Update local state → Save to `wp_statistics_user_preferences` → Invalidate queries → Re-render | Preferences saved to user meta, included in next response |
 
 React Query manages the entire fetch lifecycle:
 - Optimistic UI updates where applicable
@@ -428,4 +451,4 @@ For large datasets (e.g., all pages, all countries):
 
 ---
 
-*Last Updated: 2024-12-14*
+*Last Updated: 2024-12-16*
