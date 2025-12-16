@@ -3,7 +3,7 @@ title: "Screen Resolutions"
 type: "report"
 group: "Devices"
 show_in_menu: true
-add_on: "Free"
+add_on: "Data Plus"
 status: "Done"
 interactions:
   - "Date Picker"
@@ -21,7 +21,7 @@ Shows visitor screen resolution distribution with metrics for responsive design 
 - **Type**: Report Page
 - **Menu Group**: Devices
 - **Show in Menu**: Yes
-- **Add-on**: Free
+- **Add-on**: Data Plus
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 

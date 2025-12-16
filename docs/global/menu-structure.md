@@ -101,7 +101,7 @@ Content Analytics focuses on **content performance** (how posts/articles perform
 | 2 | [Browsers](../reports/devices/browsers.md) | Free | Done | Browser breakdown |
 | 3 | [Operating Systems](../reports/devices/operating-systems.md) | Free | Done | OS breakdown |
 | 4 | [Device Categories](../reports/devices/device-categories.md) | Free | Done | Device type breakdown |
-| 5 | [Screen Resolutions](../reports/devices/screen-resolutions.md) | Free | Done | Responsive design insights |
+| 5 | [Screen Resolutions](../reports/devices/screen-resolutions.md) | Data Plus | Done | Responsive design insights |
 
 ---
 

@@ -47,7 +47,7 @@ High-level summary of device, browser, and operating system analytics.
   </WidgetRow>
   <WidgetRow>
     <WidgetCell>Top Device Categories</WidgetCell>
-    <WidgetCell>Top Screen Resolutions</WidgetCell>
+    <WidgetCell addon="Data Plus">Top Screen Resolutions</WidgetCell>
   </WidgetRow>
 </WidgetLayout>
 
@@ -80,11 +80,15 @@ Uses the [Metrics](../../components/metrics.md) component to display 4 key devic
 
 ### Row 3 (Two Columns) - Device Category & Resolution Breakdown
 
-**Left Column:**
+**Left Column (Free):**
 - [Top Device Categories](../../widgets/top-device-categories.md) - Top 5 device types with icons
 
-**Right Column:**
+**Right Column (Data Plus Premium):**
 - [Top Screen Resolutions](../../widgets/top-screen-resolutions.md) - Top 5 screen resolutions
+
+**Conditional Display:**
+- When Data Plus add-on is **activated**: Both widgets displayed side-by-side
+- When Data Plus add-on is **not activated**: Only Top Device Categories widget displayed (full width)
 
 ## Related Documentation
 

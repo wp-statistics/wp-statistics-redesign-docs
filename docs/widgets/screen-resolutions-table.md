@@ -2,7 +2,7 @@
 title: "Screen Resolutions Table"
 type: "widget"
 component: "data-table"
-add_on: "Free"
+add_on: "Data Plus"
 status: "Done"
 default_sort: "visitors"
 row_limit: 20
@@ -17,7 +17,7 @@ A data table showing all screen resolutions with visitor metrics, engagement dat
 ## Widget Configuration
 
 - **Component**: [Data Table](../components/data-table.md)
-- **Add-on**: Free
+- **Add-on**: Data Plus
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 

@@ -2,7 +2,7 @@
 title: "Top Screen Resolutions"
 type: "widget"
 component: "horizontal-bar-list"
-add_on: "Free"
+add_on: "Data Plus"
 status: "Done"
 used_in_reports:
   - "devices-overview"
@@ -15,7 +15,7 @@ Displays the top 5 screen resolutions by visitor count in a horizontal bar list 
 ## Widget Configuration
 
 - **Component**: [Horizontal Bar List](../components/horizontal-bar-list.md)
-- **Add-on**: Free (included in base plugin)
+- **Add-on**: Data Plus
 - **Status**: Done
 - **Figma Design**: [Add link when available]
 
