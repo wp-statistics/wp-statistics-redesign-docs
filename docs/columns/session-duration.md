@@ -8,6 +8,7 @@ used_in_widgets:
   - "device-categories-table"
   - "os-table"
   - "regions-table"
+  - "screen-resolutions-table"
   - "top-visitors-table"
   - "visitors-table"
 ---
@@ -31,6 +32,7 @@ This column is used in the following widgets:
 - [Device Categories Table](../widgets/device-categories-table.md)
 - [OS Table](../widgets/os-table.md)
 - [Regions Table](../widgets/regions-table.md)
+- [Screen Resolutions Table](../widgets/screen-resolutions-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)
 - [Visitors Table](../widgets/visitors-table.md)
 

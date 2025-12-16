@@ -7,6 +7,7 @@ used_in_widgets:
   - "countries-table"
   - "device-categories-table"
   - "os-table"
+  - "screen-resolutions-table"
 ---
 
 # Percentage of Total Column
@@ -27,6 +28,7 @@ This column is used in the following widgets:
 - [Countries Table](../widgets/countries-table.md)
 - [Device Categories Table](../widgets/device-categories-table.md)
 - [OS Table](../widgets/os-table.md)
+- [Screen Resolutions Table](../widgets/screen-resolutions-table.md)
 
 ## Display
 

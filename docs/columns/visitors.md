@@ -14,6 +14,7 @@ used_in_widgets:
   - "exit-pages-table"
   - "os-table"
   - "regions-table"
+  - "screen-resolutions-table"
   - "top-authors-table"
   - "top-categories-table"
   - "top-pages-full"
@@ -44,6 +45,7 @@ This column is used in the following widgets:
 - [Exit Pages Table](../widgets/exit-pages-table.md)
 - [OS Table](../widgets/os-table.md)
 - [Regions Table](../widgets/regions-table.md)
+- [Screen Resolutions Table](../widgets/screen-resolutions-table.md)
 - [Top Authors Table](../widgets/top-authors-table.md)
 - [Top Categories Table](../widgets/top-categories-table.md)
 - [Top Pages Full](../widgets/top-pages-full.md)

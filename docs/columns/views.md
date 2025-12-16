@@ -14,6 +14,7 @@ used_in_widgets:
   - "recent-pages-preview"
   - "referrers-table"
   - "regions-table"
+  - "screen-resolutions-table"
   - "source-categories-table"
   - "top-authors-table"
   - "top-categories-table"
@@ -46,6 +47,7 @@ This column is used in the following widgets:
 - [Recent Pages Preview](../widgets/recent-pages-preview.md)
 - [Referrers Table](../widgets/referrers-table.md)
 - [Regions Table](../widgets/regions-table.md)
+- [Screen Resolutions Table](../widgets/screen-resolutions-table.md)
 - [Source Categories Table](../widgets/source-categories-table.md)
 - [Top Authors Table](../widgets/top-authors-table.md)
 - [Top Categories Table](../widgets/top-categories-table.md)

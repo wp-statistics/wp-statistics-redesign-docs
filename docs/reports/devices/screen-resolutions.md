@@ -4,11 +4,12 @@ type: "report"
 group: "Devices"
 show_in_menu: true
 add_on: "Free"
-status: "Not Started"
+status: "Done"
 interactions:
   - "Date Picker"
   - "Advanced Filters"
-widgets: []
+widgets:
+  - "screen-resolutions-table"
 ---
 
 # Screen Resolutions
@@ -21,7 +22,7 @@ Shows visitor screen resolution distribution with metrics for responsive design 
 - **Menu Group**: Devices
 - **Show in Menu**: Yes
 - **Add-on**: Free
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Available Interactions
@@ -31,7 +32,8 @@ Shows visitor screen resolution distribution with metrics for responsive design 
 
 ## Widget Layout
 
-*To be defined*
+### Row 1
+- [Screen Resolutions Table](../../widgets/screen-resolutions-table.md) - Full width data table showing all screen resolutions with visitor metrics
 
 ## Related Documentation
 
@@ -39,6 +41,7 @@ Shows visitor screen resolution distribution with metrics for responsive design 
 - [Browsers Report](browsers.md)
 - [Operating Systems Report](operating-systems.md)
 - [Device Categories Report](device-categories.md)
+- [Screen Resolutions Table Widget](../../widgets/screen-resolutions-table.md)
 
 ---
 
