@@ -5,6 +5,7 @@ component: "horizontal-bar-list"
 add_on: "Free"
 status: "Done"
 used_in_reports:
+  - "devices-overview"
   - "visitors-overview"
   - "referrals-overview"
   - "content"
@@ -38,6 +39,7 @@ Displays the top 5 operating systems by visitor count in a horizontal bar list f
 
 ## Used In Reports
 
+- [Devices Overview](../reports/devices/devices-overview.md)
 - [Visitors Overview](../reports/visitor-insights/visitors-overview.md)
 - [Referrals Overview](../reports/referrals/referrals-overview.md)
 - [Content](../reports/content-analytics/content.md)

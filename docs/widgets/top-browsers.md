@@ -5,6 +5,7 @@ component: "horizontal-bar-list"
 add_on: "Free"
 status: "Done"
 used_in_reports:
+  - "devices-overview"
   - "content"
   - "categories"
   - "individual-content"
@@ -36,6 +37,7 @@ Displays the top 5 browsers by visitor count in a horizontal bar list format wit
 
 ## Used In Reports
 
+- [Devices Overview](../reports/devices/devices-overview.md)
 - [Content](../reports/content-analytics/content.md)
 - [Categories](../reports/content-analytics/categories.md)
 - [Individual Content](../reports/content-analytics/individual-content.md)
