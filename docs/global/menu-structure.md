@@ -26,7 +26,7 @@ The WP Statistics menu is organized into logical groups, with the Visitor Insigh
 
 Some pages are not shown in the menu because they are accessed via drill-down navigation:
 
-- **[Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)**: (Not Started) Accessed by clicking on individual visitor rows in the Visitors, Top Visitors, or Online Visitors reports
+- **[Single Visitor Report](../reports/visitor-insights/single-visitor-report.md)**: (Done) Accessed by clicking on individual visitor rows in the Visitors, Top Visitors, or Online Visitors reports
 
 ---
 
@@ -77,9 +77,9 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 
 Some pages are not shown in the menu because they are accessed via drill-down navigation:
 
-- **[Individual Content](../reports/content-analytics/individual-content.md)**: (Not Started) Accessed by clicking on a content item in the Content report
-- **[Individual Author](../reports/content-analytics/individual-author.md)**: (Not Started, Data Plus) Accessed by clicking on an author in the Authors report
-- **[Individual Category](../reports/content-analytics/individual-category.md)**: (Not Started) Accessed by clicking on a category/taxonomy in the Categories report
+- **[Individual Content](../reports/content-analytics/individual-content.md)**: (Done) Accessed by clicking on a content item in the Content report
+- **[Individual Author](../reports/content-analytics/individual-author.md)**: (Done, Data Plus) Accessed by clicking on an author in the Authors report
+- **[Individual Category](../reports/content-analytics/individual-category.md)**: (Done) Accessed by clicking on a category/taxonomy in the Categories report
 - **[Top Categories](../reports/content-analytics/top-categories.md)**: (Done) Accessed from "See all" link in Top Terms widget on Categories report
 
 ### Content Analytics vs Page Insights
