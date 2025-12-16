@@ -10,6 +10,7 @@ used_in_widgets:
   - "cities-table"
   - "countries-table"
   - "exit-pages-table"
+  - "os-table"
   - "regions-table"
   - "top-authors-table"
   - "top-categories-table"
@@ -37,6 +38,7 @@ This column is used in the following widgets:
 - [Cities Table](../widgets/cities-table.md)
 - [Countries Table](../widgets/countries-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)
+- [OS Table](../widgets/os-table.md)
 - [Regions Table](../widgets/regions-table.md)
 - [Top Authors Table](../widgets/top-authors-table.md)
 - [Top Categories Table](../widgets/top-categories-table.md)
@@ -62,4 +64,4 @@ This column is used in the following widgets:
 
 ---
 
-*Last Updated: 2025-12-13*
+*Last Updated: 2025-12-16*

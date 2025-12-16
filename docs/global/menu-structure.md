@@ -91,6 +91,17 @@ Content Analytics focuses on **content performance** (how posts/articles perform
 
 ---
 
+## Devices Menu Group
+
+| Sort | Menu Item | Add-on | Status | Notes |
+|------|-----------|--------|--------|-------|
+| 1 | [Devices Overview](../reports/devices/devices-overview.md) | Free | Not Started | High-level summary (entry point) |
+| 2 | [Browsers](../reports/devices/browsers.md) | Free | Not Started | Browser breakdown |
+| 3 | [Operating Systems](../reports/devices/operating-systems.md) | Free | Done | OS breakdown |
+| 4 | [Device Categories](../reports/devices/device-categories.md) | Free | Not Started | Device type breakdown |
+
+---
+
 ## Referrals Menu Group
 
 | Sort | Menu Item | Add-on | Status | Notes |
@@ -162,14 +173,6 @@ The order of menu items within each group follows these principles:
 
 ---
 
-## Future Menu Groups
-
-As more report groups are documented, they will be added to this structure:
-
-- Device & Browser Reports
-
----
-
 ## Related Documentation
 
 - [Global Rules](global-rules.md)
@@ -178,4 +181,4 @@ As more report groups are documented, they will be added to this structure:
 
 ---
 
-*Last Updated: 2025-12-14*
+*Last Updated: 2025-12-16*

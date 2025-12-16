@@ -4,6 +4,7 @@ type: "column"
 status: "Done"
 used_in_widgets:
   - "countries-table"
+  - "os-table"
   - "regions-table"
 ---
 
@@ -22,6 +23,7 @@ Shows the average number of page views per unique visitor.
 This column is used in the following widgets:
 
 - [Countries Table](../widgets/countries-table.md)
+- [OS Table](../widgets/os-table.md)
 - [Regions Table](../widgets/regions-table.md)
 
 ## Display
@@ -51,11 +53,13 @@ This column is used in the following widgets:
 ## Related Documentation
 
 - [Countries Table Widget](../widgets/countries-table.md)
+- [OS Table Widget](../widgets/os-table.md)
 - [Countries Report](../reports/geographic/countries.md)
+- [Operating Systems Report](../reports/devices/operating-systems.md)
 - [Visitors Column](visitors.md)
 - [Views Column](views.md)
 - [Data Table Component](../components/data-table.md)
 
 ---
 
-*Last Updated: 2025-12-13*
+*Last Updated: 2025-12-16*

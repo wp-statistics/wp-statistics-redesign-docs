@@ -194,6 +194,17 @@ Filter Groups define which filters are bundled together for specific use cases a
 - [Individual Content](../reports/content-analytics/individual-content.md)
 - [Individual Author](../reports/content-analytics/individual-author.md)
 
+---
+
+### Device Analysis Filters
+
+**Includes**: Country, City, Browser, OS, Device Type, Referrer, Source Category, Login Status, Visitor Type
+
+**Used In Reports**:
+- [Operating Systems](../reports/devices/operating-systems.md)
+- [Browsers](../reports/devices/browsers.md)
+- [Device Categories](../reports/devices/device-categories.md)
+
 ## Implementation Notes
 
 Reports that support Advanced Filters should include this in their YAML frontmatter:
@@ -245,4 +256,4 @@ In the "Available Interactions" section, list the specific filters available for
 
 ---
 
-*Last Updated: 2025-12-14*
+*Last Updated: 2025-12-16*
