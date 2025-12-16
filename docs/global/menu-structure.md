@@ -40,6 +40,7 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 | 4 | [European Countries](../reports/geographic/european-countries.md) | Free | Done | EU country breakdown |
 | 5 | [US States](../reports/geographic/us-states.md) | Free | Done | US state-level data |
 | 6 | [Regions of \{Country\}](../reports/geographic/regions-of-country.md) | Free | Done | Region-level data (only shown if country detected from WP timezone) |
+| 7 | [Timezones](../reports/geographic/timezones.md) | Free | Not Started | Visitor timezone distribution |
 
 ### Hidden Pages
 
@@ -99,6 +100,7 @@ Content Analytics focuses on **content performance** (how posts/articles perform
 | 2 | [Browsers](../reports/devices/browsers.md) | Free | Not Started | Browser breakdown |
 | 3 | [Operating Systems](../reports/devices/operating-systems.md) | Free | Done | OS breakdown |
 | 4 | [Device Categories](../reports/devices/device-categories.md) | Free | Not Started | Device type breakdown |
+| 5 | [Screen Resolutions](../reports/devices/screen-resolutions.md) | Free | Not Started | Responsive design insights |
 
 ---
 
