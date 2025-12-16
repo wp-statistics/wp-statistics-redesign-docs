@@ -42,6 +42,7 @@ A powerful, flexible data table component for displaying structured data with co
 
 - **Type**: Component (Base UI element)
 - **Status**: Done
+- **React Component**: [`data-table.tsx`](../technical/frontend/custom/data-table.md)
 - **Figma Design**: [Add link when available]
 
 ## Used In Widgets
@@ -151,6 +152,7 @@ When table has no data:
 - [Visitor List Widget](../widgets/visitor-list.md)
 - [Top Pages Widget](../widgets/top-pages.md)
 - [Global Rules](../global/global-rules.md)
+- [Frontend Implementation](../technical/frontend/custom/data-table.md) - Technical implementation details for developers
 
 ---
 

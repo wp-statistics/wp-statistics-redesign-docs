@@ -14,6 +14,7 @@ Visualizes country-level distribution for a selected metric, helping users ident
 
 - **Type**: Component
 - **Status**: Done
+- **React Component**: [`global-map.tsx`](../technical/frontend/custom/global-map.md)
 - **Figma Design**: [Add link when available]
 
 ## Used In Widgets
@@ -111,7 +112,8 @@ When no country data is available for the selected period:
 ## Related Documentation
 
 - [Components Overview](../intro.md)
+- [Frontend Implementation](../technical/frontend/custom/global-map.md) - Technical implementation details for developers
 
 ---
 
-*Last Updated: 2025-11-11*
+*Last Updated: 2025-12-16*

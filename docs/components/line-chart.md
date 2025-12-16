@@ -20,6 +20,7 @@ A versatile line chart component for displaying time-series data and trends acro
 
 - **Type**: Component (Base UI element)
 - **Status**: Done
+- **React Component**: [`line-chart.tsx`](../technical/frontend/custom/line-chart.md)
 - **Figma Design**: [Add link when available]
 
 ## Used In Widgets
@@ -138,6 +139,7 @@ When no data is available for the selected period:
 ## Related Documentation
 
 - [Global Rules](../global/global-rules.md)
+- [Frontend Implementation](../technical/frontend/custom/line-chart.md) - Technical implementation details for developers
 
 ---
 

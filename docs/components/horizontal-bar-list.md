@@ -21,6 +21,7 @@ Displays ranked data in a vertical list format with horizontal bars representing
 
 - **Type**: Component
 - **Status**: Done
+- **React Component**: [`horizontal-bar-list.tsx`](../technical/frontend/custom/horizontal-bar-list.md)
 - **Figma Design**: [Add link when available]
 
 ## Used In Widgets
@@ -133,6 +134,7 @@ When no data is available for the selected period:
 ## Related Documentation
 
 - [Components Overview](../intro.md)
+- [Frontend Implementation](../technical/frontend/custom/horizontal-bar-list.md) - Technical implementation details for developers
 
 ---
 
