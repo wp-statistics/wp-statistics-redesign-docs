@@ -57,9 +57,11 @@ When a browser row is expanded, child rows show version breakdown with simplifie
 
 | Column | Sortable | Notes |
 |--------|----------|-------|
-| [Browser Version](../columns/browser-version.md) | Yes | Indented, shows version number |
-| [Visitors](../columns/visitors.md) | Yes | Visitors for this version |
-| [% of Total](../columns/percentage-of-total.md) | Yes | Percentage of browser's total |
+| [Browser Version](../columns/browser-version.md) | No | Indented, shows version number |
+| [Visitors](../columns/visitors.md) | No | Visitors for this version |
+| [% of Total](../columns/percentage-of-total.md) | No | Percentage of browser's total |
+
+**Note:** Child rows are not sortable to keep the interface simple.
 
 ## Expandable Row Behavior
 
