@@ -41,6 +41,7 @@ Some pages are not shown in the menu because they are accessed via drill-down na
 | 5 | [US States](../reports/geographic/us-states.md) | Free | Done | US state-level data |
 | 6 | [Regions of \{Country\}](../reports/geographic/regions-of-country.md) | Free | Done | Region-level data (only shown if country detected from WP timezone) |
 | 7 | [Timezones](../reports/geographic/timezones.md) | Free | Not Started | Visitor timezone distribution |
+| 8 | [Languages](../reports/geographic/languages.md) | Free | Not Started | Browser language distribution |
 
 ### Hidden Pages
 
