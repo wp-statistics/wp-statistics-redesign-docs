@@ -4,6 +4,7 @@ type: "column"
 status: "Done"
 used_in_widgets:
   - "countries-table"
+  - "device-categories-table"
   - "os-table"
   - "regions-table"
   - "top-visitors-table"
@@ -25,6 +26,7 @@ Shows the percentage of sessions where the visitor viewed only one page within t
 This column is used in the following widgets:
 
 - [Countries Table](../widgets/countries-table.md)
+- [Device Categories Table](../widgets/device-categories-table.md)
 - [OS Table](../widgets/os-table.md)
 - [Regions Table](../widgets/regions-table.md)
 - [Top Visitors Table](../widgets/top-visitors-table.md)

@@ -4,16 +4,18 @@ type: "report"
 group: "Devices"
 show_in_menu: true
 add_on: "Free"
-status: "Not Started"
+status: "Done"
 interactions:
   - "Date Picker"
   - "Advanced Filters"
-widgets: []
+widgets:
+  - row: 1
+    columns: ["device-categories-table"]
 ---
 
 # Device Categories
 
-Shows device type breakdown (desktop, smartphone, tablet, etc.) with visitor metrics and traffic distribution.
+Shows all device categories with visitor metrics and traffic distribution in a data table format.
 
 ## Report Configuration
 
@@ -21,7 +23,7 @@ Shows device type breakdown (desktop, smartphone, tablet, etc.) with visitor met
 - **Menu Group**: Devices
 - **Show in Menu**: Yes
 - **Add-on**: Free
-- **Status**: Not Started
+- **Status**: Done
 - **Figma Design**: [Add link when available]
 
 ## Available Interactions
@@ -31,13 +33,16 @@ Shows device type breakdown (desktop, smartphone, tablet, etc.) with visitor met
 
 ## Widget Layout
 
-*To be defined*
+### Row 1 (Full Width)
+
+- [Device Categories Table](../../widgets/device-categories-table.md)
 
 ## Related Documentation
 
 - [Devices Overview](devices-overview.md)
 - [Browsers Report](browsers.md)
 - [Operating Systems Report](operating-systems.md)
+- [Device Categories Table Widget](../../widgets/device-categories-table.md)
 - [Device Detection](../../technical/architecture/device-detection.md)
 
 ---

@@ -4,6 +4,7 @@ type: "column"
 status: "Done"
 used_in_widgets:
   - "countries-table"
+  - "device-categories-table"
   - "os-table"
 ---
 
@@ -22,6 +23,7 @@ Shows the percentage share of total visitors for this item.
 This column is used in the following widgets:
 
 - [Countries Table](../widgets/countries-table.md)
+- [Device Categories Table](../widgets/device-categories-table.md)
 - [OS Table](../widgets/os-table.md)
 
 ## Display

@@ -9,6 +9,7 @@ used_in_widgets:
   - "category-pages-table"
   - "cities-table"
   - "countries-table"
+  - "device-categories-table"
   - "exit-pages-table"
   - "os-table"
   - "regions-table"
@@ -37,6 +38,7 @@ This column is used in the following widgets:
 - [Category Pages Table](../widgets/category-pages-table.md)
 - [Cities Table](../widgets/cities-table.md)
 - [Countries Table](../widgets/countries-table.md)
+- [Device Categories Table](../widgets/device-categories-table.md)
 - [Exit Pages Table](../widgets/exit-pages-table.md)
 - [OS Table](../widgets/os-table.md)
 - [Regions Table](../widgets/regions-table.md)

@@ -8,6 +8,7 @@ used_in_widgets:
   - "campaigns-table"
   - "cities-table"
   - "countries-table"
+  - "device-categories-table"
   - "os-table"
   - "recent-pages-preview"
   - "referrers-table"
@@ -38,6 +39,7 @@ This column is used in the following widgets:
 - [Campaigns Table](../widgets/campaigns-table.md)
 - [Cities Table](../widgets/cities-table.md)
 - [Countries Table](../widgets/countries-table.md)
+- [Device Categories Table](../widgets/device-categories-table.md)
 - [OS Table](../widgets/os-table.md)
 - [Recent Pages Preview](../widgets/recent-pages-preview.md)
 - [Referrers Table](../widgets/referrers-table.md)
