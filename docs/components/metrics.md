@@ -13,6 +13,7 @@ Displays key performance indicators in a responsive grid layout with each metric
 
 - **Type**: Component
 - **Status**: Done
+- **React Component**: [`metrics.tsx`](../technical/frontend/custom/metrics.md)
 - **Figma Design**: [Add link when available]
 
 ## Used In Widgets
@@ -98,7 +99,8 @@ When no metrics are configured, the component is not displayed.
 ## Related Documentation
 
 - [Components Overview](../intro.md)
+- [Frontend Implementation](../technical/frontend/custom/metrics.md) - Technical implementation details for developers
 
 ---
 
-*Last Updated: 2025-11-08*
+*Last Updated: 2025-12-16*
