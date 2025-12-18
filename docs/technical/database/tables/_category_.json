@@ -1,0 +1,9 @@
+{
+  "label": "Tables",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "Database Tables",
+    "description": "Individual table schemas and column definitions."
+  }
+}
