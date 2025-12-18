@@ -200,23 +200,29 @@ function TopCountriesChart() {
     group_by: ['country'],
     per_page: 10,
     order_by: 'visitors',
-    order: 'DESC'
+    order: 'DESC',
+    compare: true
   });
 
   if (isLoading) return <BarChartSkeleton />;
 
   return (
     <div className="space-y-2">
-      {data.data.rows.map(row => (
-        <div key={row.country_code} className="flex items-center gap-3">
-          <img src={`/flags/${row.flag}.svg`} className="w-5 h-4" />
-          <span className="flex-1">{row.country}</span>
-          <span className="font-medium">{row.visitors.toLocaleString()}</span>
-          {row.change && (
-            <ChangeIndicator value={row.change.visitors} />
-          )}
-        </div>
-      ))}
+      {data.data.rows.map(row => {
+        // Calculate change percentage on frontend
+        const change = row.previous
+          ? calculateChange(row.visitors, row.previous.visitors)
+          : null;
+
+        return (
+          <div key={row.country_code} className="flex items-center gap-3">
+            <img src={`/flags/${row.flag}.svg`} className="w-5 h-4" />
+            <span className="flex-1">{row.country}</span>
+            <span className="font-medium">{row.visitors.toLocaleString()}</span>
+            {change && <ChangeIndicator value={change} />}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -236,33 +242,40 @@ function MetricsOverview() {
 
   const { totals } = data.data;
 
+  // Calculate frontend values for each metric
+  const metrics = [
+    {
+      label: 'Visitors',
+      value: formatNumber(totals.visitors),
+      change: calculateChange(totals.visitors, totals.previous.visitors),
+      trend: getTrend(calculateChange(totals.visitors, totals.previous.visitors))
+    },
+    {
+      label: 'Page Views',
+      value: formatNumber(totals.views),
+      change: calculateChange(totals.views, totals.previous.views),
+      trend: getTrend(calculateChange(totals.views, totals.previous.views))
+    },
+    {
+      label: 'Sessions',
+      value: formatNumber(totals.sessions),
+      change: calculateChange(totals.sessions, totals.previous.sessions),
+      trend: getTrend(calculateChange(totals.sessions, totals.previous.sessions))
+    },
+    {
+      label: 'Bounce Rate',
+      value: `${totals.bounce_rate.toFixed(1)}%`,
+      change: calculateChange(totals.bounce_rate, totals.previous.bounce_rate),
+      trend: getTrend(calculateChange(totals.bounce_rate, totals.previous.bounce_rate)),
+      invertTrend: true // Lower is better
+    }
+  ];
+
   return (
     <div className="grid grid-cols-4 gap-4">
-      <MetricCard
-        label="Visitors"
-        value={totals.visitors.formatted}
-        change={totals.visitors.change}
-        trend={totals.visitors.trend}
-      />
-      <MetricCard
-        label="Page Views"
-        value={totals.views.formatted}
-        change={totals.views.change}
-        trend={totals.views.trend}
-      />
-      <MetricCard
-        label="Sessions"
-        value={totals.sessions.formatted}
-        change={totals.sessions.change}
-        trend={totals.sessions.trend}
-      />
-      <MetricCard
-        label="Bounce Rate"
-        value={totals.bounce_rate.formatted}
-        change={totals.bounce_rate.change}
-        trend={totals.bounce_rate.trend}
-        invertTrend // Lower is better
-      />
+      {metrics.map(metric => (
+        <MetricCard key={metric.label} {...metric} />
+      ))}
     </div>
   );
 }
@@ -666,6 +679,127 @@ function WidgetWithErrorHandling() {
 
 ---
 
+## Data Transformations
+
+The API returns raw metric values and `previous` period data for comparison. The frontend is responsible for calculating derived values like percentages, formatted strings, and trend indicators.
+
+### Frontend-Calculated Fields
+
+| Field | Description | Formula | Example |
+|-------|-------------|---------|---------|
+| **change** | Percentage change from previous period | `((current - previous) / previous) * 100` | `11.6` (11.6% increase) |
+| **percentage** | Proportion of item relative to total | `(item_value / total_value) * 100` | `35.7` (35.7% of total) |
+| **formatted** | Human-readable number formatting | Abbreviated with K/M/B suffixes | `35000` → `"35K"` |
+| **trend** | Visual trend direction | `"up"` for positive, `"down"` for negative | `"up"` |
+
+### Why Frontend Calculations?
+
+**Performance**: Reduces API response payload size by ~30-40%
+
+**Flexibility**: Allows formatting based on user locale and preferences without API changes
+
+**Real-time**: Enables dynamic recalculation (e.g., filtering data) without additional API calls
+
+**Consistency**: Centralizes formatting logic in reusable frontend utilities
+
+### Utility Functions
+
+```typescript
+/**
+ * Format number with K/M/B abbreviations
+ */
+function formatNumber(value: number): string {
+  if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(1)}B`;
+  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M`;
+  if (value >= 1_000) return `${(value / 1_000).toFixed(1)}K`;
+  return value.toLocaleString();
+}
+
+/**
+ * Calculate percentage change from current and previous values
+ */
+function calculateChange(current: number, previous: number): number {
+  if (previous === 0) return current > 0 ? 100 : 0;
+  return ((current - previous) / previous) * 100;
+}
+
+/**
+ * Calculate percentage of total
+ */
+function calculatePercentage(value: number, total: number): number {
+  if (total === 0) return 0;
+  return (value / total) * 100;
+}
+
+/**
+ * Determine trend direction
+ */
+function getTrend(change: number): 'up' | 'down' | 'neutral' {
+  if (change > 0) return 'up';
+  if (change < 0) return 'down';
+  return 'neutral';
+}
+```
+
+### Usage Example
+
+Transform API response data in components:
+
+```typescript
+function MetricsCard() {
+  const { data } = useAnalytics({
+    sources: ['visitors', 'views'],
+    group_by: [],
+    compare: true
+  });
+
+  const { totals } = data.data;
+
+  // Calculate frontend-only fields
+  const visitorsChange = calculateChange(totals.visitors, totals.previous.visitors);
+  const visitorsFormatted = formatNumber(totals.visitors);
+  const visitorsTrend = getTrend(visitorsChange);
+
+  return (
+    <MetricCard
+      label="Visitors"
+      value={visitorsFormatted}
+      change={visitorsChange}
+      trend={visitorsTrend}
+    />
+  );
+}
+```
+
+For grouped data (tables, charts):
+
+```typescript
+function TopCountries() {
+  const { data } = useAnalytics({
+    sources: ['visitors'],
+    group_by: ['country'],
+    compare: true
+  });
+
+  const { rows, totals } = data.data;
+
+  // Transform rows with calculated fields
+  const transformedRows = rows.map(row => ({
+    ...row,
+    change: calculateChange(row.visitors, row.previous.visitors),
+    percentage: calculatePercentage(row.visitors, totals.visitors),
+    formatted: formatNumber(row.visitors),
+    trend: getTrend(calculateChange(row.visitors, row.previous.visitors))
+  }));
+
+  return (
+    <BarChart data={transformedRows} />
+  );
+}
+```
+
+---
+
 ## Utility Components
 
 ### Change Indicator
@@ -729,4 +863,4 @@ function SortableHeader({
 
 ---
 
-*Last Updated: 2025-12-08*
+*Last Updated: 2025-12-18*

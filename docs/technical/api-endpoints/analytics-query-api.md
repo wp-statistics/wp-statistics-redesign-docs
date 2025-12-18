@@ -606,12 +606,6 @@ Response for the [Request Example](#request-example) above:
           "views": 32000,
           "sessions": 13800,
           "bounce_rate": 44.1
-        },
-        "change": {
-          "visitors": 11.6,
-          "views": 9.4,
-          "sessions": 10.1,
-          "bounce_rate": -4.1
         }
       }
     ],
@@ -625,12 +619,6 @@ Response for the [Request Example](#request-example) above:
         "views": 90000,
         "sessions": 38000,
         "bounce_rate": 47.8
-      },
-      "change": {
-        "visitors": 9.4,
-        "views": 8.9,
-        "sessions": 10.5,
-        "bounce_rate": -5.4
       }
     }
   },
@@ -667,12 +655,6 @@ When `group_by` is empty, you get aggregate totals:
         "views": 90000,
         "sessions": 38000,
         "bounce_rate": 47.8
-      },
-      "change": {
-        "visitors": 9.4,
-        "views": 8.9,
-        "sessions": 10.5,
-        "bounce_rate": -5.4
       }
     }
   },
@@ -1036,7 +1018,6 @@ async function fetchDashboardBatch() {
       "country_name": "United States",
       "country_code": "US",
       "visitors": 12500,
-      "percentage": 35.7,
       "previous": { "visitors": 11200 },
       "change": { "visitors": 11.6 }
     },
@@ -1044,7 +1025,6 @@ async function fetchDashboardBatch() {
       "country_name": "United Kingdom",
       "country_code": "GB",
       "visitors": 4500,
-      "percentage": 12.9,
       "previous": { "visitors": 4200 },
       "change": { "visitors": 7.1 }
     }
@@ -1080,9 +1060,9 @@ async function fetchDashboardBatch() {
 {
   "success": true,
   "items": [
-    { "device_type_name": "desktop", "sessions": 25200, "percentage": 60.0 },
-    { "device_type_name": "mobile", "sessions": 14280, "percentage": 34.0 },
-    { "device_type_name": "tablet", "sessions": 2520, "percentage": 6.0 }
+    { "device_type_name": "desktop", "sessions": 25200 },
+    { "device_type_name": "mobile", "sessions": 14280 },
+    { "device_type_name": "tablet", "sessions": 2520 }
   ],
   "totals": {
     "sessions": 42000
@@ -1130,18 +1110,18 @@ async function fetchDashboardBatch() {
           "views": 4800,
           "visitors": 2900,
           "bounce_rate": 35.2
-        },
-        "change": {
-          "views": 12.9,
-          "visitors": 10.3,
-          "bounce_rate": -7.7
         }
       }
     ],
     "totals": {
       "views": 98000,
       "visitors": 35000,
-      "bounce_rate": 42.5
+      "bounce_rate": 42.5,
+      "previous": {
+        "views": 89000,
+        "visitors": 32000,
+        "bounce_rate": 45.1
+      }
     }
   },
   "meta": {
@@ -1183,33 +1163,21 @@ async function fetchDashboardBatch() {
   "success": true,
   "data": {
     "totals": {
-      "visitors": {
-        "value": 35000,
-        "formatted": "35K",
-        "previous": 32000,
-        "change": 9.4,
-        "trend": "up"
+      "visitors": 35000,
+      "views": 98000,
+      "sessions": 42000,
+      "bounce_rate": 45.2,
+      "previous": {
+        "visitors": 32000,
+        "views": 90000,
+        "sessions": 38000,
+        "bounce_rate": 47.8
       },
-      "views": {
-        "value": 98000,
-        "formatted": "98K",
-        "previous": 90000,
-        "change": 8.9,
-        "trend": "up"
-      },
-      "sessions": {
-        "value": 42000,
-        "formatted": "42K",
-        "previous": 38000,
-        "change": 10.5,
-        "trend": "up"
-      },
-      "bounce_rate": {
-        "value": 45.2,
-        "formatted": "45.2%",
-        "previous": 47.8,
-        "change": -5.4,
-        "trend": "down"
+      "change": {
+        "visitors": 9.4,
+        "views": 8.9,
+        "sessions": 10.5,
+        "bounce_rate": -5.4
       }
     }
   },
@@ -1325,8 +1293,7 @@ async function fetchDashboardBatch() {
       "visitors": 8500,
       "sessions": 10200,
       "bounce_rate": 42.3,
-      "previous": { "visitors": 7800, "sessions": 9400, "bounce_rate": 44.1 },
-      "change": { "visitors": 9.0, "sessions": 8.5, "bounce_rate": -4.1 }
+      "previous": { "visitors": 7800, "sessions": 9400, "bounce_rate": 44.1 }
     },
     {
       "referrer_domain": "(direct)",
@@ -1334,14 +1301,18 @@ async function fetchDashboardBatch() {
       "visitors": 6200,
       "sessions": 7500,
       "bounce_rate": 35.8,
-      "previous": { "visitors": 5800, "sessions": 7000, "bounce_rate": 37.2 },
-      "change": { "visitors": 6.9, "sessions": 7.1, "bounce_rate": -3.8 }
+      "previous": { "visitors": 5800, "sessions": 7000, "bounce_rate": 37.2 }
     }
   ],
   "totals": {
     "visitors": 35000,
     "sessions": 42000,
-    "bounce_rate": 45.2
+    "bounce_rate": 45.2,
+    "previous": {
+      "visitors": 32000,
+      "sessions": 38000,
+      "bounce_rate": 47.8
+    }
   },
   "meta": {
     "date_from": "2024-11-01 00:00:00",
@@ -1394,4 +1365,4 @@ React patterns for consuming the API.
 
 ---
 
-*Last Updated: 2025-12-15*
+*Last Updated: 2025-12-18*
