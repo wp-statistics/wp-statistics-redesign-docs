@@ -2,8 +2,8 @@
 title: "DataTable Component"
 type: "frontend-component"
 category: "components"
-status: "In Progress"
-component_path: "resources/react/src/components/DataTable.tsx"
+status: "Done"
+component_path: "resources/react/src/components/custom/data-table.tsx"
 storybook: true
 ---
 
@@ -14,10 +14,12 @@ The most important and widely-used component in WP Statistics v15. Displays anal
 ## Component Information
 
 - **Type**: Custom Component (Domain-specific)
-- **Status**: In Progress
-- **Location**: `resources/react/src/components/DataTable.tsx`
+- **Status**: Done
+- **Location**: `resources/react/src/components/custom/data-table.tsx`
 - **Used In**: Most reports (Visitors, Pages, Referrers, Search Terms, etc.)
-- **Storybook**: Available at `Components/DataTable`
+- **Storybook**: [View in Storybook](https://ui.wp-statistics.com?path=/story/custom-datatable--default)
+- **Product Docs**: [Data Table Component](../../../components/data-table.md) - Configuration options and widget usage
+- **Dependencies**: `@tanstack/react-table`, `lucide-react`, `@wordpress/i18n`, UI components
 
 ## Overview
 
@@ -34,8 +36,8 @@ The DataTable component is the core data display component used across all list-
 ## Import
 
 ```typescript
-import { DataTable } from '@/components/DataTable'
-import type { DataTableProps, Column } from '@/components/DataTable/types'
+import { DataTable } from '@/components/custom/data-table'
+import type { ColumnDef } from '@tanstack/react-table'
 ```
 
 ## Basic Usage
@@ -43,225 +45,101 @@ import type { DataTableProps, Column } from '@/components/DataTable/types'
 ### Simple Table
 
 ```tsx
-import { DataTable } from '@/components/DataTable'
+import { DataTable } from '@/components/custom/data-table'
 
-function VisitorsReport() {
-  const columns = [
-    { id: 'visitor_id', header: 'Visitor ID', sortable: true },
-    { id: 'visits', header: 'Visits', sortable: true },
-    { id: 'last_visit', header: 'Last Visit', sortable: false }
-  ]
-
-  const data = [
-    { visitor_id: 'abc123', visits: 15, last_visit: '2024-12-17' },
-    { visitor_id: 'def456', visits: 8, last_visit: '2024-12-16' }
-  ]
-
-  return (
-    <DataTable
-      columns={columns}
-      data={data}
-      rowsPerPage={10}
-    />
-  )
+interface VisitorData {
+  visitor_id: string
+  visits: number
+  last_visit: string
 }
+
+const columns: ColumnDef<VisitorData>[] = [
+  { accessorKey: 'visitor_id', header: 'Visitor ID' },
+  { accessorKey: 'visits', header: 'Visits' },
+  { accessorKey: 'last_visit', header: 'Last Visit' }
+]
+
+const data: VisitorData[] = [
+  { visitor_id: 'abc123', visits: 15, last_visit: '2024-12-17' },
+  { visitor_id: 'def456', visits: 8, last_visit: '2024-12-16' }
+]
+
+<DataTable columns={columns} data={data} title="Visitors" />
 ```
 
-### With Analytics Query API
+### With Sorting and Pagination
 
 ```tsx
-import { DataTable } from '@/components/DataTable'
-import { useAnalyticsQuery } from '@/hooks/useAnalyticsQuery'
-
-function TopPagesTable() {
-  const { data, loading, error } = useAnalyticsQuery({
-    sources: ['visitors', 'views'],
-    group_by: ['page'],
-    date_from: '2024-01-01',
-    date_to: '2024-01-31'
-  })
-
-  const columns = [
-    {
-      id: 'page_uri',
-      header: 'Page',
-      sortable: true,
-      cell: (row) => <a href={row.page_uri}>{row.page_title || row.page_uri}</a>
-    },
-    {
-      id: 'visitors',
-      header: 'Visitors',
-      sortable: true,
-      align: 'right'
-    },
-    {
-      id: 'views',
-      header: 'Views',
-      sortable: true,
-      align: 'right'
-    }
-  ]
-
-  if (loading) return <DataTable.Skeleton columns={columns} rows={10} />
-  if (error) return <DataTable.Error error={error} />
-
-  return (
-    <DataTable
-      columns={columns}
-      data={data.results}
-      totalRows={data.meta.total}
-      serverSide
-      onPageChange={(page) => {/* handle pagination */}}
-      onSortChange={(column, order) => {/* handle sorting */}}
-    />
-  )
-}
+<DataTable
+  columns={columns}
+  data={data}
+  title="Top Pages"
+  defaultSort="visits"
+  rowLimit={10}
+  showPagination={true}
+  showColumnManagement={true}
+/>
 ```
 
-## Props API
+### With Full Report Link
+
+```tsx
+<DataTable
+  columns={columns}
+  data={data}
+  title="Recent Visitors"
+  fullReportLink={{
+    text: 'View All Visitors',
+    action: () => navigate('/visitors'),
+  }}
+/>
+```
+
+## API
 
 ### DataTableProps
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `columns` | `Column[]` | Required | Array of column definitions |
-| `data` | `any[]` | Required | Array of data rows |
-| `rowsPerPage` | `number` | `10` | Number of rows per page |
-| `totalRows` | `number` | `data.length` | Total rows (for server-side pagination) |
-| `serverSide` | `boolean` | `false` | Enable server-side sorting/pagination |
-| `loading` | `boolean` | `false` | Show loading state |
-| `sortable` | `boolean` | `true` | Enable sorting |
-| `searchable` | `boolean` | `true` | Enable search |
-| `exportable` | `boolean` | `true` | Enable export functionality |
-| `columnManagement` | `boolean` | `true` | Enable column visibility management |
-| `emptyMessage` | `string` | `'No data found'` | Message when no data |
-| `defaultSort` | `{ column: string, order: 'asc' \| 'desc' }` | `null` | Initial sort |
-| `onPageChange` | `(page: number) => void` | - | Page change callback |
-| `onSortChange` | `(column: string, order: string) => void` | - | Sort change callback |
-| `onSearchChange` | `(query: string) => void` | - | Search change callback |
-| `onExport` | `(format: 'csv' \| 'excel') => void` | - | Export callback |
+| `columns` | `ColumnDef<TData, TValue>[]` | *required* | TanStack Table column definitions |
+| `data` | `TData[]` | *required* | Array of data rows |
+| `title` | `string` | - | Table title in card header |
+| `defaultSort` | `string` | - | Column key for initial sort (descending) |
+| `rowLimit` | `number` | `50` | Rows per page |
+| `showColumnManagement` | `boolean` | `true` | Show column visibility toggle |
+| `showPagination` | `boolean` | `true` | Show pagination controls |
+| `fullReportLink` | `FullReportLink` | - | Link to full report page |
+| `hiddenColumns` | `string[]` | `[]` | Initially hidden column keys |
+| `emptyStateMessage` | `string` | `'No data available'` | Empty state message |
 
-### Column Definition
+### FullReportLink
 
-```typescript
-interface Column {
-  id: string                           // Column identifier (matches data key)
-  header: string | React.ReactNode     // Column header text/component
-  sortable?: boolean                   // Enable sorting (default: true)
-  searchable?: boolean                 // Include in search (default: true)
-  visible?: boolean                    // Initially visible (default: true)
-  width?: string | number              // Column width (CSS value)
-  align?: 'left' | 'center' | 'right' // Text alignment (default: 'left')
-  cell?: (row: any, index: number) => React.ReactNode  // Custom cell renderer
-  headerCell?: () => React.ReactNode   // Custom header renderer
-  accessor?: string | ((row: any) => any)  // Data accessor function
-}
-```
+| Property | Type | Description |
+|----------|------|-------------|
+| `text` | `string` | Link text |
+| `action` | `() => void` | Click handler |
 
 ## Features
 
 ### Column Management
 
-Users can show/hide columns via dropdown menu:
+Users can show/hide columns via the column toggle dropdown in the header.
 
-```tsx
-<DataTable
-  columns={columns}
-  data={data}
-  columnManagement={true}
-  defaultHiddenColumns={['bounce_rate', 'exit_rate']}
-/>
-```
+### Sorting
 
-### Server-Side Operations
+Click column headers to sort. Default sort is descending when `defaultSort` is provided.
 
-For large datasets, use server-side pagination and sorting:
+### Pagination
 
-```tsx
-function ServerSideTable() {
-  const [page, setPage] = useState(1)
-  const [sort, setSort] = useState({ column: 'visits', order: 'desc' })
+- First/Last page buttons
+- Previous/Next navigation
+- Page number buttons with ellipsis for many pages
+- Direct page input with "Go" button
+- Shows "X-Y of Z Items" count
 
-  const { data, loading } = useAnalyticsQuery({
-    sources: ['visitors', 'views'],
-    group_by: ['page'],
-    page: page,
-    per_page: 50,
-    order_by: sort.column,
-    order: sort.order
-  })
+### Alternating Rows
 
-  return (
-    <DataTable
-      columns={columns}
-      data={data.results}
-      totalRows={data.meta.total}
-      rowsPerPage={50}
-      serverSide={true}
-      loading={loading}
-      onPageChange={setPage}
-      onSortChange={(column, order) => setSort({ column, order })}
-    />
-  )
-}
-```
-
-### Custom Cell Rendering
-
-Customize how cells are displayed:
-
-```tsx
-const columns = [
-  {
-    id: 'country',
-    header: 'Country',
-    cell: (row) => (
-      <div className="flex items-center gap-2">
-        <CountryFlag code={row.country_code} />
-        <span>{row.country_name}</span>
-      </div>
-    )
-  },
-  {
-    id: 'visitors',
-    header: 'Visitors',
-    align: 'right',
-    cell: (row) => (
-      <span className="font-mono">
-        {formatNumber(row.visitors)}
-      </span>
-    )
-  },
-  {
-    id: 'trend',
-    header: 'Trend',
-    sortable: false,
-    cell: (row) => (
-      <TrendIndicator
-        value={row.visitors}
-        previous={row.previous_visitors}
-      />
-    )
-  }
-]
-```
-
-### Export Functionality
-
-```tsx
-<DataTable
-  columns={columns}
-  data={data}
-  exportable={true}
-  onExport={(format) => {
-    if (format === 'csv') {
-      exportToCSV(data, 'report.csv')
-    } else {
-      exportToExcel(data, 'report.xlsx')
-    }
-  }}
-/>
-```
+Rows alternate between white and slate-50 backgrounds for readability.
 
 ### Empty States
 
@@ -269,39 +147,7 @@ const columns = [
 <DataTable
   columns={columns}
   data={[]}
-  emptyMessage="No visitors found for the selected period"
-  emptyAction={
-    <Button onClick={clearFilters}>
-      Clear Filters
-    </Button>
-  }
-/>
-```
-
-### Loading States
-
-```tsx
-// Skeleton loader while fetching data
-{loading ? (
-  <DataTable.Skeleton columns={columns} rows={10} />
-) : (
-  <DataTable columns={columns} data={data} />
-)}
-```
-
-## Styling & Theming
-
-The DataTable uses Tailwind CSS classes and respects the global theme:
-
-```tsx
-<DataTable
-  columns={columns}
-  data={data}
-  className="custom-table"
-  rowClassName={(row, index) =>
-    index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
-  }
-  headerClassName="bg-blue-600 text-white"
+  emptyStateMessage="No visitors found for the selected period"
 />
 ```
 
@@ -324,111 +170,12 @@ The DataTable uses Tailwind CSS classes and respects the global theme:
 - Logical tab order
 - Focus trap in modals
 
-## Performance Optimization
-
-### Virtualization
-For tables with 100+ rows, use virtualization:
-
-```tsx
-import { VirtualizedDataTable } from '@/components/DataTable'
-
-<VirtualizedDataTable
-  columns={columns}
-  data={largeDataset}
-  rowHeight={48}
-  overscan={5}
-/>
-```
-
-### Memoization
-The component uses React.memo and useMemo internally for performance.
-
-### Lazy Loading
-Enable lazy loading for server-side tables:
-
-```tsx
-<DataTable
-  columns={columns}
-  data={data}
-  serverSide
-  lazyLoad
-  onLoadMore={(page) => fetchNextPage(page)}
-/>
-```
-
-## TypeScript Support
-
-```typescript
-import type {
-  DataTableProps,
-  Column,
-  SortConfig,
-  PaginationConfig
-} from '@/components/DataTable/types'
-
-// Typed column definitions
-const columns: Column<VisitorData>[] = [
-  {
-    id: 'visitor_id',
-    header: 'Visitor ID',
-    accessor: (row) => row.visitor_id,
-    cell: (row) => <VisitorLink id={row.visitor_id} />
-  }
-]
-
-// Typed component
-const MyTable: React.FC = () => {
-  const data: VisitorData[] = useVisitorData()
-
-  return <DataTable<VisitorData> columns={columns} data={data} />
-}
-```
-
-## Used In Reports
-
-The DataTable component is used in:
-- [Visitors Report](../../reports/visitor-insights/visitors.md)
-- [Top Visitors Report](../../reports/visitor-insights/top-visitors.md)
-- [Pages Report](../../reports/page-insights/pages.md)
-- [Referrers Report](../../reports/referrals/referrers.md)
-- [Search Terms Report](../../reports/referrals/search-terms.md)
-- And many more...
-
 ## Related Components
 
-- [Pagination Component](pagination.md) - Used internally
-- [ColumnManager Component](column-manager.md) - Column visibility UI
-- [TableSearch Component](table-search.md) - Search functionality
-- [ExportButton Component](export-button.md) - Export functionality
-
-## Best Practices
-
-### Do's ✅
-- Use server-side pagination for datasets > 100 rows
-- Provide meaningful empty states
-- Use proper data types for sorting (numbers, dates)
-- Implement loading states
-- Memoize cell renderers if complex
-- Use column management for tables with 10+ columns
-
-### Don'ts ❌
-- Don't disable sorting without good reason
-- Don't render heavy components in every cell
-- Don't use client-side pagination for large datasets
-- Don't forget accessibility attributes
-- Don't make all columns visible by default if > 10 columns
-
-## Troubleshooting
-
-### Issue: "Table not sorting correctly"
-**Solution:** Ensure data types are correct. Numbers stored as strings won't sort numerically.
-
-### Issue: "Performance degradation with large datasets"
-**Solution:** Enable server-side operations or use VirtualizedDataTable.
-
-### Issue: "Column widths not working"
-**Solution:** Ensure table has explicit width or use `width` prop on columns.
+- [Card](../ui-primitives/card.md) - Container wrapper
+- [Button](../ui-primitives/button.md) - Pagination controls
+- [Table](../ui-primitives/table.md) - Base table styling
 
 ---
 
-*Last Updated: 2024-12-17*
+*Last Updated: 2025-12-18*

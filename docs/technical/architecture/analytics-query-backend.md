@@ -914,7 +914,7 @@ LIMIT 50
 ## Related Documentation
 
 - [Analytics Query API](../api/analytics-query-api.md)
-- [Analytics Query Frontend Integration](./analytics-query-frontend.md)
+- [Analytics Query Frontend Integration](../frontend/architecture/analytics-query-frontend.md)
 
 ---
 

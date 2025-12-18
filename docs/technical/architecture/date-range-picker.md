@@ -382,7 +382,7 @@ components/
 
 ## Related Documentation
 
-- [Analytics Query Frontend](./analytics-query-frontend.md)
+- [Analytics Query Frontend](../frontend/architecture/analytics-query-frontend.md)
 - [Analytics Query Backend](./analytics-query-backend.md)
 - [Analytics Query API](../api-endpoints/analytics-query-api.md)
 

@@ -276,7 +276,7 @@ React Query receives responses, caches data, and triggers widget rendering.
 - Transform data for visualization (charts, tables, cards)
 - Render widgets with charts, tables, metrics cards, and maps
 
-**📚 See:** **[Analytics Query Frontend](/technical/architecture/analytics-query-frontend)** for React patterns and hooks.
+**📚 See:** **[Analytics Query Frontend](./analytics-query-frontend.md)** for React patterns and hooks.
 
 ### Phase 6: User Interactions & Updates
 
@@ -447,7 +447,7 @@ For large datasets (e.g., all pages, all countries):
 - [Localize Data Overview](/technical/localize-data/overview) - Initial configuration data structure
 - [Analytics Query API](/technical/api-endpoints/analytics-query-api) - Complete API specification
 - [Analytics Query Backend](/technical/architecture/analytics-query-backend) - Backend query processing architecture
-- [Analytics Query Frontend](/technical/architecture/analytics-query-frontend) - React integration patterns and hooks
+- [Analytics Query Frontend](./analytics-query-frontend.md) - React integration patterns and hooks
 
 ---
 

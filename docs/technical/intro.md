@@ -29,7 +29,7 @@ This section contains technical documentation for WP Statistics v15, including f
 
 **Query System:**
 - [Backend Architecture](architecture/analytics-query-backend.md) - Query building, MetricRegistry, DimensionRegistry, and SQL generation
-- [Frontend Integration](architecture/analytics-query-frontend.md) - React hooks, TypeScript interfaces, and component patterns
+- [Frontend Integration](frontend/architecture/analytics-query-frontend.md) - React hooks, TypeScript interfaces, and component patterns
 
 **Core Systems:**
 - [Visitor Hash Mechanism](architecture/visitor-hash-mechanism.md) - Privacy-focused visitor identification using hashed IPs
@@ -38,7 +38,7 @@ This section contains technical documentation for WP Statistics v15, including f
 - [Engagement Tracking](architecture/engagement-tracking.md) - Client-side user engagement measurement and session duration tracking
 
 **Data Flow:**
-- [React Dashboard Lifecycle](architecture/react-dashboard-lifecycle.md) - Complete data flow from page load to widget rendering
+- [React Dashboard Lifecycle](frontend/architecture/react-dashboard-lifecycle.md) - Complete data flow from page load to widget rendering
 
 ### Testing
 - [Unit Testing](testing/unit-testing.md) - Guide for writing and running PHPUnit tests with WordPress test library

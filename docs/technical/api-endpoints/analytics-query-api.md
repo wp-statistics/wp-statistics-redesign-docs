@@ -1377,7 +1377,7 @@ How the backend processes queries and generates SQL.
 - FilterBuilder - Filter to WHERE clause conversion
 - QueryBuilder - SQL query assembly
 
-### [Frontend Integration](../architecture/analytics-query-frontend.md)
+### [Frontend Integration](../frontend/architecture/analytics-query-frontend.md)
 
 React patterns for consuming the API.
 
