@@ -142,11 +142,11 @@ const data = {
 
 The component uses `calculateZoomForBounds` to automatically determine optimal zoom levels based on country's geographic size (bounding box dimensions):
 
-- **Very large countries** (>60° dimension): 3.5x zoom - Russia, Canada
-- **Large countries** (40-60° dimension): 4.5x zoom - China, USA
-- **Medium countries** (25-40° dimension): 6x zoom - Iran, Mexico
-- **Small countries** (10-25° dimension): 8x zoom - Germany, UK, Netherlands
-- **Very small countries** (<5° dimension): 14x zoom - Singapore, Luxembourg
+- **Very large countries** (`>60°` dimension): 3.5x zoom - Russia, Canada
+- **Large countries** (`40-60°` dimension): 4.5x zoom - China, USA
+- **Medium countries** (`25-40°` dimension): 6x zoom - Iran, Mexico
+- **Small countries** (`10-25°` dimension): 8x zoom - Germany, UK, Netherlands
+- **Very small countries** (`<5°` dimension): 14x zoom - Singapore, Luxembourg
 
 This eliminates hardcoded country IDs and ensures every country displays at an appropriate zoom level.
 
