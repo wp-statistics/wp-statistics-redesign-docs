@@ -35,6 +35,20 @@ const config: Config = {
     locales: ['en'],
   },
 
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        docsRouteBasePath: '/',
+        indexBlog: false,
+        highlightSearchTermsOnTargetPage: true,
+        searchResultLimits: 10,
+        searchBarShortcutHint: true,
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
