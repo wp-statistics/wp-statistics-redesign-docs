@@ -68,6 +68,8 @@ A flexible, secure analytics query system for the WP Statistics v15 React dashbo
 | `date_from` | string | 30 days ago | Start date/time. Formats: `YYYY-MM-DD`, `YYYY-MM-DD HH:mm:ss`, or `YYYY-MM-DDTHH:mm:ss`. Defaults to `00:00:00` if time omitted. |
 | `date_to` | string | today | End date/time. Formats: `YYYY-MM-DD`, `YYYY-MM-DD HH:mm:ss`, or `YYYY-MM-DDTHH:mm:ss`. Defaults to `23:59:59` if time omitted. |
 | `compare` | boolean | `false` | Include previous period comparison |
+| `previous_date_from` | string | auto | Optional. Custom comparison period start. Only used when `compare` is `true`. If not set, auto-calculated based on main date range. |
+| `previous_date_to` | string | auto | Optional. Custom comparison period end. Only used when `compare` is `true`. If not set, auto-calculated based on main date range. |
 | `filters` | object | `{}` | Filter criteria. [See available filters](#available-filters) |
 | `format` | string | `table` | Response format. [See response formats](#response-formats) |
 | `columns` | array | `null` | Columns to include in response. [See column filtering](#column-filtering) |
@@ -104,26 +106,50 @@ Query only business hours (9 AM to 5 PM):
 }
 ```
 
+**Example - Custom Comparison Period:**
+
+Compare November 2024 with November 2023 (year-over-year):
+
+```json
+{
+  "sources": ["visitors", "views"],
+  "group_by": ["date"],
+  "date_from": "2024-11-01",
+  "date_to": "2024-11-30",
+  "compare": true,
+  "previous_date_from": "2023-11-01",
+  "previous_date_to": "2023-11-30"
+}
+```
+
+**Note:** When `previous_date_from` and `previous_date_to` are not provided but `compare` is `true`, the previous period is auto-calculated to match the same duration as the main date range (e.g., if querying the last 30 days, comparison uses the 30 days before that).
+
 ---
 
 ## Available Sources
 
-| Source | Description | Data Type |
-|--------|-------------|-----------|
-| `visitors` | Unique visitors count | integer |
-| `views` | Total page views | integer |
-| `sessions` | Total sessions | integer |
-| `bounce_rate` | Bounce rate percentage | float |
-| `avg_session_duration` | Average session duration (seconds) | integer |
-| `pages_per_session` | Average pages viewed per session | float |
-| `new_visitors` | First-time visitors | integer |
-| `returning_visitors` | Returning visitors | integer |
-| `online_visitors` | Currently online visitors | integer |
-| `avg_time_on_page` | Average time spent on page (seconds) | integer |
+| Source | Description | Data Type | Format |
+|--------|-------------|-----------|--------|
+| `visitors` | Unique visitors count | integer | number |
+| `views` | Total page views | integer | number |
+| `sessions` | Total sessions | integer | number |
+| `bounce_rate` | Bounce rate percentage | float | percent |
+| `avg_session_duration` | Average session duration (seconds) | integer | duration |
+| `pages_per_session` | Average pages viewed per session | float | number |
+| `avg_time_on_page` | Average time spent on page (seconds) | integer | duration |
+| `total_duration` | Total time spent (seconds) | integer | duration |
+| `visitor_status` | Visitor status ('new' or 'returning') | string | text |
+| `searches` | Search count | integer | number |
+
+**Notes:**
+- `visitor_status` requires the `visitor` group_by to function properly, as it needs access to visitor lifetime session data
+- For new/returning visitor counts, use `visitor_status` source with `visitor` group_by and aggregate the results
 
 ---
 
 ## Available Group By
+
+### Time Dimensions
 
 | Group By | Primary Column | Extra Columns in Response |
 |-----------|----------------|---------------------------|
@@ -131,40 +157,111 @@ Query only business hours (9 AM to 5 PM):
 | `week` | `week` | `week_start`, `week_end` |
 | `month` | `month` | `month_name` |
 | `hour` | `hour` | `hour_label` |
-| `country` | `country_name` | `country_id`, `country_code`, `country_continent`, `country_continent_code` |
+
+### Geographic Dimensions
+
+| Group By | Primary Column | Extra Columns in Response |
+|-----------|----------------|---------------------------|
+| `country` | `country_name` | `country_id`, `country_code`, `country_continent`, `country_continent_code`, `total_views` |
 | `city` | `city_name` | `city_id`, `city_region_code`, `city_region_name`, `city_country_id`, `country_code`, `country_name` |
+| `region` | `region_name` | `region_code`, `country_id`, `country_code`, `country_name`, `total_views` |
 | `continent` | `continent_name` | `continent_code` |
+
+### Device Dimensions
+
+| Group By | Primary Column | Extra Columns in Response |
+|-----------|----------------|---------------------------|
 | `browser` | `browser_name` | `browser_id`, `browser_version`, `browser_version_id` |
 | `os` | `os_name` | `os_id` |
 | `device_type` | `device_type_name` | `device_type_id` |
+| `resolution` | `resolution` | `resolution_id`, `resolution_width`, `resolution_height` |
+
+### Content Dimensions
+
+| Group By | Primary Column | Extra Columns in Response |
+|-----------|----------------|---------------------------|
+| `page` | `page_uri` | `page_uri_id`, `resource_id`, `page_title`, `page_wp_id`, `page_type` |
+| `search_term` | `search_term` | - |
 | `referrer` | `referrer_domain` | `referrer_id`, `referrer_channel`, `referrer_name` |
 | `language` | `language_name` | `language_id`, `language_code`, `language_region` |
-| `resolution` | `resolution` | `resolution_id`, `resolution_width`, `resolution_height` |
-| `page` | `page_uri` | `page_uri_id`, `resource_id`, `page_title`, `page_wp_id`, `page_type` |
-| `post_type` | `post_type` | - |
-| `author` | `author_name` | `author_id` |
-| `search_engine` | `search_engine` | - |
-| `search_query` | `search_query` | - |
-| `visitor` | `visitor_id` | Full visitor details |
+
+### Visitor Dimensions
+
+| Group By | Primary Column | Extra Columns in Response |
+|-----------|----------------|---------------------------|
+| `visitor` | `visitor_id` | `visitor_hash`, `first_visit`, `last_visit`, `total_sessions`, `total_views`, `user_id`, `user_login`, `ip_address`, `country_code`, `country_name`, `city_name`, `region_name`, `device_type_name`, `os_name`, `browser_name`, `browser_version`, `referrer_domain`, `referrer_channel`, `entry_page`, `entry_page_title`, `exit_page`, `exit_page_title` |
+| `online_visitor` | `visitor_id` | Same as `visitor`, but `last_visit` uses `ended_at` for real-time tracking |
+
+**Notes:**
+- `visitor` group_by supports attribution models (`first_touch` or `last_touch`) for session-level attributes
+- `online_visitor` is optimized for real-time visitor tracking with more accurate last activity timestamps
+- `search_term` requires views table and filters results to pages with `/?s=` URLs
 
 ---
 
 ## Available Filters
 
-| Filter | Type | Description |
-|--------|------|-------------|
-| `country` | string | Country code (e.g., `"US"`, `"GB"`) |
-| `city` | string | City name |
-| `browser` | string | Browser name (e.g., `"Chrome"`, `"Safari"`) |
-| `os` | string | Operating system (e.g., `"Windows"`, `"macOS"`) |
-| `device_type` | string | `"desktop"`, `"mobile"`, or `"tablet"` |
-| `referrer` | string | Referrer domain (e.g., `"google.com"`) |
-| `post_type` | string/array | WordPress post type(s) |
-| `author_id` | integer | WordPress author ID |
-| `user_id` | integer | WordPress user ID |
-| `logged_in` | boolean | Only logged-in visitors |
-| `page` | string | Page URI path |
-| `search_query` | string | Search term used |
+### Geographic Filters
+
+| Filter | Type | Input Type | Description |
+|--------|------|------------|-------------|
+| `country` | integer | searchable | Country (by ID, searchable by name/code) |
+| `continent` | string | dropdown | Continent code (e.g., `"NA"`, `"EU"`) |
+| `city` | integer | searchable | City (by ID, searchable by name) |
+| `region` | string | searchable | Region/state name |
+
+### Device Filters
+
+| Filter | Type | Input Type | Description |
+|--------|------|------------|-------------|
+| `browser` | integer | searchable | Browser (by ID, searchable by name) |
+| `browser_version` | string | text | Browser version string |
+| `os` | integer | searchable | Operating system (by ID, searchable by name) |
+| `device_type` | integer | dropdown | Device type (desktop, mobile, tablet) |
+| `resolution` | integer | searchable | Screen resolution (by ID, searchable by WxH) |
+
+### Referrer Filters
+
+| Filter | Type | Input Type | Description |
+|--------|------|------------|-------------|
+| `referrer` | string | text | Referrer URL |
+| `referrer_type` | string | text | Referrer type/channel |
+| `referrer_channel` | string | dropdown | Traffic channel (direct, search, social, referral, email, paid) |
+| `referrer_domain` | string | searchable | Referrer domain |
+| `referrer_name` | string | text | Referrer name (e.g., Google, Facebook) |
+
+### Content Filters
+
+| Filter | Type | Input Type | Description |
+|--------|------|------------|-------------|
+| `post_type` | string | dropdown | WordPress post type |
+| `author` | integer | searchable | WordPress author ID |
+| `page` | string | searchable | Page URI path |
+| `resource_id` | integer | text | WordPress resource ID |
+
+### Visitor/Session Filters
+
+| Filter | Type | Input Type | Description |
+|--------|------|------------|-------------|
+| `user_id` | integer | text | WordPress user ID |
+| `logged_in` | boolean | dropdown | Login status (Logged-in/Anonymous) |
+| `ip` | string | text | IP address or hash |
+| `user_role` | string | dropdown | WordPress user role |
+| `visitor_type` | integer | dropdown | Visitor type (0=New, 1=Returning) |
+| `session_duration` | integer | number | Session duration in seconds |
+| `views_per_session` | integer | number | Views per session count |
+| `total_views` | integer | number | Total views count |
+| `total_sessions` | integer | number | Total sessions count |
+| `first_seen` | date | date | First visit date |
+| `last_seen` | date | date | Last activity date |
+| `bounce` | integer | dropdown | Bounce status (1=Bounced, 0=Engaged) |
+
+### User Preference Filters
+
+| Filter | Type | Input Type | Description |
+|--------|------|------------|-------------|
+| `language` | integer | searchable | Browser language (by ID, searchable by name/code) |
+| `timezone` | string | text | Visitor timezone |
 
 ### Filter Operators
 
@@ -174,25 +271,55 @@ For advanced filtering, use operator syntax:
 {
   "filters": {
     "country": { "in": ["US", "GB", "CA"] },
-    "referrer": { "contains": "google" },
-    "visitors": { "gt": 100 },
-    "page": { "starts_with": "/blog/" }
+    "referrer_domain": { "contains": "google" },
+    "session_duration": { "gt": 100 },
+    "page": { "starts_with": "/blog/" },
+    "first_seen": { "between": ["2024-11-01", "2024-11-30"] }
   }
 }
 ```
 
+#### String/Equality Operators
+
 | Operator | Description | Example |
 |----------|-------------|---------|
-| `is` / (direct value) | Equals | `"country": "US"` |
-| `is_not` | Not equals | `"country": { "is_not": "US" }` |
-| `in` | In list | `"country": { "in": ["US", "GB"] }` |
-| `not_in` | Not in list | `"country": { "not_in": ["CN", "RU"] }` |
-| `contains` | Contains substring | `"referrer": { "contains": "google" }` |
+| `is` / (direct value) | Equals | `"country": 1` or `"country": { "is": 1 }` |
+| `is_not` | Not equals | `"country": { "is_not": 1 }` |
+| `in` | In list | `"country": { "in": [1, 2, 3] }` |
+| `not_in` | Not in list | `"country": { "not_in": [1, 2] }` |
+| `contains` | Contains substring | `"referrer_domain": { "contains": "google" }` |
 | `starts_with` | Starts with | `"page": { "starts_with": "/blog/" }` |
-| `gt` | Greater than | `"visitors": { "gt": 100 }` |
-| `gte` | Greater than or equal | `"visitors": { "gte": 100 }` |
-| `lt` | Less than | `"bounce_rate": { "lt": 50 }` |
-| `lte` | Less than or equal | `"bounce_rate": { "lte": 50 }` |
+| `ends_with` | Ends with | `"page": { "ends_with": ".html" }` |
+
+#### Numeric Operators
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `gt` | Greater than | `"session_duration": { "gt": 100 }` |
+| `gte` | Greater than or equal | `"session_duration": { "gte": 100 }` |
+| `lt` | Less than | `"session_duration": { "lt": 300 }` |
+| `lte` | Less than or equal | `"session_duration": { "lte": 300 }` |
+| `between` | Between two values | `"session_duration": { "between": [60, 300] }` |
+
+#### Date Operators
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `between` | Between two dates | `"first_seen": { "between": ["2024-11-01", "2024-11-30"] }` |
+| `before` | Before a date | `"last_seen": { "before": "2024-11-01" }` |
+| `after` | After a date | `"first_seen": { "after": "2024-10-01" }` |
+
+**Operator Availability by Filter:**
+
+Different filters support different operators:
+
+| Filter Category | Typical Operators |
+|-----------------|-------------------|
+| ID-based (country, city, browser) | `is`, `is_not` |
+| String (referrer_domain, page) | `is`, `is_not`, `in`, `not_in`, `contains`, `starts_with`, `ends_with` |
+| Numeric (session_duration, views_per_session) | `gt`, `lt`, `between` |
+| Date (first_seen, last_seen) | `between`, `before`, `after` |
+| Boolean (logged_in, bounce) | `is` |
 
 ---
 
@@ -697,7 +824,7 @@ The API supports batch requests to fetch multiple datasets in a single HTTP call
 
 ### Global Parameters
 
-Batch queries support global `date_from`, `date_to`, `filters`, and `compare` parameters that apply to all child queries by default. This reduces repetition and makes batch requests more concise.
+Batch queries support global `date_from`, `date_to`, `filters`, `compare`, `previous_date_from`, and `previous_date_to` parameters that apply to all child queries by default. This reduces repetition and makes batch requests more concise.
 
 #### Supported Global Parameters
 
@@ -707,12 +834,15 @@ Batch queries support global `date_from`, `date_to`, `filters`, and `compare` pa
 | `date_to` | string | Default end date for all queries |
 | `filters` | object | Default filters for all queries |
 | `compare` | boolean | Default comparison flag for all queries |
+| `previous_date_from` | string | Default custom comparison period start for all queries |
+| `previous_date_to` | string | Default custom comparison period end for all queries |
 
 #### Inheritance Behavior
 
 - **Filters**: Child filters **merge** with global filters. Child values override matching keys, and keys not specified in child are inherited from global.
 - **Dates**: If child specifies dates, it must provide both `date_from` and `date_to` (complete override). If neither specified, inherit from global.
 - **Compare**: Child compare value overrides global compare. If not specified in child, inherits from global (defaults to `false`).
+- **Previous Dates**: If child specifies custom comparison dates, it must provide both `previous_date_from` and `previous_date_to` (complete override). If neither specified, inherit from global.
 
 #### Example: Filter Merging
 
@@ -1228,8 +1358,8 @@ async function fetchDashboardBatch() {
 **Request:**
 ```json
 {
-  "sources": ["online_visitors"],
-  "group_by": ["visitor"],
+  "sources": ["visitors"],
+  "group_by": ["online_visitor"],
   "format": "flat",
   "per_page": 50
 }
@@ -1243,25 +1373,35 @@ async function fetchDashboardBatch() {
     {
       "visitor_id": 12345,
       "visitor_hash": "abc123",
+      "first_visit": "2024-10-15 09:23:45",
+      "last_visit": "2024-11-30 14:32:10",
+      "total_sessions": 15,
+      "total_views": 87,
       "user_id": 5,
-      "user_name": "John Doe",
-      "current_page": "/pricing/",
-      "page_title": "Pricing Plans",
-      "last_activity": "2024-11-30 14:32:10",
-      "seconds_ago": 15,
+      "user_login": "johndoe",
       "ip_address": "192.168.1.xxx",
-      "country_name": "United States",
       "country_code": "US",
-      "browser_name": "Chrome",
+      "country_name": "United States",
+      "city_name": "New York",
+      "region_name": "New York",
+      "device_type_name": "desktop",
       "os_name": "Windows",
-      "device_type_name": "desktop"
+      "browser_name": "Chrome",
+      "browser_version": "120.0",
+      "referrer_domain": "google.com",
+      "referrer_channel": "search",
+      "entry_page": "/pricing/",
+      "entry_page_title": "Pricing Plans",
+      "exit_page": "/pricing/",
+      "exit_page_title": "Pricing Plans"
     }
   ],
   "totals": {
-    "online_visitors": 127
+    "visitors": 127
   },
   "meta": {
-    "cache_ttl": 60
+    "date_from": "2024-11-30 00:00:00",
+    "date_to": "2024-11-30 23:59:59"
   }
 }
 ```
@@ -1365,4 +1505,4 @@ React patterns for consuming the API.
 
 ---
 
-*Last Updated: 2025-12-18*
+*Last Updated: 2025-12-25*
