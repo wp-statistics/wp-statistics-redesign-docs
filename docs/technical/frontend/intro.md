@@ -259,19 +259,162 @@ All React source code is in:
 
 ### Local Development
 
+#### 1. Install Dependencies
+
 ```bash
-# Navigate to react directory
-cd wp-content/plugins/wp-statistics/resources/react
+# Navigate to plugin root directory
+cd wp-content/plugins/wp-statistics
 
 # Install dependencies
 pnpm install
+```
 
-# Start development server
+#### 2. Environment Setup
+
+Before starting the development server, configure your environment:
+
+**Create your environment file:**
+```bash
+cp .env.react.example .env.react
+```
+
+**Configure `VITE_DEV_SERVER_URL`** in `.env.react` to match your local WordPress setup:
+
+<details>
+<summary><strong>For Laravel Valet</strong> (recommended for macOS)</summary>
+
+```bash
+NODE_ENV=development
+VITE_DEV_SERVER_URL=https://wordpress.test
+```
+Replace `wordpress.test` with your actual Valet domain.
+</details>
+
+<details>
+<summary><strong>For MAMP</strong> (default port 8888)</summary>
+
+```bash
+NODE_ENV=development
+VITE_DEV_SERVER_URL=http://localhost:8888
+```
+</details>
+
+<details>
+<summary><strong>For Local WP / Traditional localhost</strong></summary>
+
+```bash
+NODE_ENV=development
+VITE_DEV_SERVER_URL=http://localhost
+```
+</details>
+
+<details>
+<summary><strong>For Custom Port</strong></summary>
+
+```bash
+NODE_ENV=development
+VITE_DEV_SERVER_URL=http://localhost:3000
+```
+</details>
+
+:::info Important Notes
+- The `VITE_DEV_SERVER_URL` **must match your WordPress site URL** (protocol + domain)
+- The Vite dev server will run on **port 5173** (or port extracted from URL)
+- The `.env.react` file is **gitignored** - safe to customize locally
+- For team-specific overrides, create `.env.react.local` (also gitignored)
+:::
+
+#### 3. Start Development Server
+
+```bash
+# Start the Vite dev server
+pnpm dev:react
+
+# Or use the shorthand:
 pnpm dev
 
-# Build for production
-pnpm build
+# You should see:
+# ➜  Local:   https://wordpress.test:5173/ (or your configured URL)
 ```
+
+#### 4. Access the React Dashboard
+
+:::warning Important
+The Vite dev server (port 5173) **only serves assets** - it's NOT a standalone app.
+**Do not** try to access `https://wordpress.test:5173/` directly.
+:::
+
+**Access the dashboard through WordPress admin:**
+
+1. Open your WordPress admin: `https://wordpress.test/wp-admin/`
+2. Navigate to **Statistics** in the left sidebar, or directly visit:
+   ```
+   https://wordpress.test/wp-admin/admin.php?page=wps_overview_page
+   ```
+
+#### 5. Auto-Detection
+
+The WordPress plugin automatically detects when the Vite dev server is running:
+
+- **Dev mode ON** (server running): Assets load from Vite dev server with Hot Module Replacement (HMR)
+- **Dev mode OFF** (server stopped): Assets load from built files in `public/react/`
+
+:::tip No Configuration Needed
+The plugin automatically checks `http://localhost:5173/@vite/client` to detect the dev server.
+No wp-config.php changes required!
+:::
+
+#### Development Scripts
+
+- **`pnpm dev` or `pnpm dev:react`**: Start Vite dev server with hot reload
+- **`pnpm watch:react`**: Build and watch mode (creates files, no dev server)
+- **`pnpm build`**: Production build for both legacy and React
+- **`pnpm build:react`**: Build React only
+- **`pnpm build:legacy`**: Build legacy assets only
+
+#### Troubleshooting
+
+<details>
+<summary><strong>Problem: "This localhost page can't be found" at localhost:5173</strong></summary>
+
+✅ **This is expected!** Port 5173 only serves assets, not HTML.
+
+**Solution:** Access the app through WordPress admin instead:
+```
+https://wordpress.test/wp-admin/admin.php?page=wps_overview_page
+```
+</details>
+
+<details>
+<summary><strong>Problem: Assets not loading / 404 errors</strong></summary>
+
+**Check these:**
+- Verify `VITE_DEV_SERVER_URL` in `.env.react` matches your WordPress site URL exactly
+- Confirm dev server is running: `pnpm dev:react`
+- Ensure no proxy settings are blocking localhost connections (check System Preferences > Network > Proxies)
+- Clear browser cache and hard reload (Cmd+Shift+R or Ctrl+Shift+R)
+</details>
+
+<details>
+<summary><strong>Problem: CORS errors in browser console</strong></summary>
+
+**Cause:** The `VITE_DEV_SERVER_URL` domain doesn't match your WordPress domain.
+
+**Solution:** Ensure they match exactly:
+- If WordPress is at `https://wordpress.test`, use `VITE_DEV_SERVER_URL=https://wordpress.test`
+- If WordPress is at `http://localhost:8888`, use `VITE_DEV_SERVER_URL=http://localhost:8888`
+- Protocol (http/https) must also match
+</details>
+
+<details>
+<summary><strong>Problem: Hot reload not working</strong></summary>
+
+**Check these:**
+- Dev server is still running (not stopped or crashed)
+- Browser console for HMR connection messages
+- File changes are being saved properly
+- No syntax errors in your code (check terminal output)
+</details>
 
 ### Storybook
 
