@@ -217,36 +217,36 @@ resources/react/src/
 
 ### UI Components
 Base component library documentation (shadcn/ui):
-- [Avatar](ui/avatar.md) - User profile image with fallback support
-- [Badge](ui/badge.md) - Status labels and metadata indicators
-- [Breadcrumb](ui/breadcrumb.md) - Navigation trail for page hierarchy
-- [Button](ui/button.md) - Primary interactive element with variants and sizes
-- [Card](ui/card.md) - Container for grouping related content
-- [Chart](ui/chart.md) - Recharts wrapper with theming and configuration
-- [Checkbox](ui/checkbox.md) - Accessible checkbox input
-- [Collapsible](ui/collapsible.md) - Expandable/collapsible content sections
-- [Dropdown Menu](ui/dropdown-menu.md) - Action menus with items, checkboxes, and submenus
-- [Input](ui/input.md) - Text input with validation support
-- [Logo](ui/logo.md) - WP Statistics brand logo
-- [Popover](ui/popover.md) - Floating content panel
-- [Select](ui/select.md) - Form select dropdown
-- [Separator](ui/separator.md) - Visual divider for content
-- [Sheet](ui/sheet.md) - Slide-out panel from screen edges
-- [Sidebar](ui/sidebar.md) - Navigation sidebar with collapsible states
-- [Skeleton](ui/skeleton.md) - Loading placeholder animation
-- [Table](ui/table.md) - Base table primitives
-- [Tooltip](ui/tooltip.md) - Contextual information on hover
+- [Avatar](ui-primitives/avatar.md) - User profile image with fallback support
+- [Badge](ui-primitives/badge.md) - Status labels and metadata indicators
+- [Breadcrumb](ui-primitives/breadcrumb.md) - Navigation trail for page hierarchy
+- [Button](ui-primitives/button.md) - Primary interactive element with variants and sizes
+- [Card](ui-primitives/card.md) - Container for grouping related content
+- [Chart](ui-primitives/chart.md) - Recharts wrapper with theming and configuration
+- [Checkbox](ui-primitives/checkbox.md) - Accessible checkbox input
+- [Collapsible](ui-primitives/collapsible.md) - Expandable/collapsible content sections
+- [Dropdown Menu](ui-primitives/dropdown-menu.md) - Action menus with items, checkboxes, and submenus
+- [Input](ui-primitives/input.md) - Text input with validation support
+- [Logo](ui-primitives/logo.md) - WP Statistics brand logo
+- [Popover](ui-primitives/popover.md) - Floating content panel
+- [Select](ui-primitives/select.md) - Form select dropdown
+- [Separator](ui-primitives/separator.md) - Visual divider for content
+- [Sheet](ui-primitives/sheet.md) - Slide-out panel from screen edges
+- [Sidebar](ui-primitives/sidebar.md) - Navigation sidebar with collapsible states
+- [Skeleton](ui-primitives/skeleton.md) - Loading placeholder animation
+- [Table](ui-primitives/table.md) - Base table primitives
+- [Tooltip](ui-primitives/tooltip.md) - Contextual information on hover
 
 ### Custom Components
 WP Statistics domain-specific components:
-- [DataTable](custom/data-table.md) - Feature-rich data table with sorting, pagination, column management
-- [FilterBar](custom/filter-bar.md) - Active filters display with removable chips
-- [FilterChip](custom/filter-chip.md) - Single removable filter tag
-- [GlobalMap](custom/global-map.md) - Interactive world map with country data visualization
-- [HorizontalBar](custom/horizontal-bar.md) - Single bar item with percentage fill and trend
-- [HorizontalBarList](custom/horizontal-bar-list.md) - Card-based list of horizontal bars
-- [LineChart](custom/line-chart.md) - Time-series chart with multiple metrics and comparison
-- [Metrics](custom/metrics.md) - Grid-based KPI display with trend indicators
+- [DataTable](components/data-table.md) - Feature-rich data table with sorting, pagination, column management
+- [FilterBar](components/filter-bar.md) - Active filters display with removable chips
+- [FilterChip](components/filter-chip.md) - Single removable filter tag
+- [GlobalMap](components/global-map.md) - Interactive world map with country data visualization
+- [HorizontalBar](components/horizontal-bar.md) - Single bar item with percentage fill and trend
+- [HorizontalBarList](components/horizontal-bar-list.md) - Card-based list of horizontal bars
+- [LineChart](components/line-chart.md) - Time-series chart with multiple metrics and comparison
+- [Metrics](components/metrics.md) - Grid-based KPI display with trend indicators
 
 ## Getting Started
 
