@@ -119,8 +119,8 @@ When configured, a link appears below the table:
 
 ## Pagination
 
-- First/Previous/Next/Last page buttons
-- Current range and total count display
+- Previous/Next navigation buttons
+- Page indicator showing current page and total pages (e.g., "1 of 5")
 
 ## Expandable Rows
 
