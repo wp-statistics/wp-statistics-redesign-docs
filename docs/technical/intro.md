@@ -23,6 +23,7 @@ This section contains technical documentation for WP Statistics v15, including f
   - [Get Filter Options](api-endpoints/get-filter-options.md) - Filter options for dropdowns
   - [Analytics Query API](api-endpoints/analytics-query-api.md) - Flexible metrics + dimensions based query API
 - [Localize Data](localize-data/overview.md) - Initial configuration data passed to the React dashboard
+- [MCP Integration](api/mcp/overview.md) - AI assistant integration via Model Context Protocol
 - REST API - *Coming soon*
 
 ### Architecture
@@ -55,4 +56,4 @@ This technical documentation provides:
 
 ---
 
-*Last Updated: 2025-12-14*
+*Last Updated: 2025-12-29*

@@ -34,6 +34,21 @@ All Admin AJAX actions are prefixed with `wp_statistics_` and use the `X-WP-Nonc
 
 *Coming soon* - External REST API for third-party integrations. Will be refactored during the v15 add-ons update.
 
+### [MCP Integration](./mcp/overview.md)
+
+WP Statistics integrates with the **Model Context Protocol (MCP)**, enabling AI assistants like Claude and ChatGPT to query analytics data on behalf of authenticated users.
+
+- Leverages WordPress's official [MCP Adapter](https://github.com/WordPress/mcp-adapter)
+- Read-only access respecting WordPress user capabilities
+- Natural language analytics queries
+
+**MCP Documentation:**
+
+- [MCP Overview](./mcp/overview.md) - Introduction to MCP integration
+- [Getting Started](./mcp/getting-started.md) - Setup guide
+- [Abilities Reference](./mcp/abilities/summary.md) - Available abilities
+- [Examples](./mcp/examples.md) - Usage examples
+
 ### [Localize Data](../localize-data/overview.md)
 
 The dashboard receives initial configuration and data via WordPress localize script. This provides essential data like nonce, AJAX URL, filter definitions, menu structure, and header configuration without requiring additional HTTP requests.
@@ -47,4 +62,4 @@ The dashboard receives initial configuration and data via WordPress localize scr
 
 ---
 
-*Last Updated: 2025-12-11*
+*Last Updated: 2025-12-29*

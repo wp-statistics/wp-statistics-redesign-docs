@@ -1,0 +1,8 @@
+{
+  "label": "MCP Integration",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "technical/api/mcp/overview"
+  }
+}
