@@ -175,6 +175,73 @@ All MCP abilities are thin wrappers around the existing [Analytics Query API](..
 
 ---
 
+## Context Overhead & Token Usage
+
+When MCP abilities are registered, their definitions (names, descriptions, schemas) are loaded into the AI's context window. Understanding this overhead helps with capacity planning.
+
+### Ability Definition Cost
+
+Each ability adds approximately **150-300 tokens** to the context:
+
+| Component | Tokens |
+|-----------|--------|
+| Name + description | 30-50 |
+| Input schema (parameters) | 50-100 |
+| Output schema (response) | 50-100 |
+| Metadata (permissions) | 20-50 |
+
+### Total Context Overhead
+
+| Category | Abilities | Est. Tokens |
+|----------|-----------|-------------|
+| Summary | 2 | 400-600 |
+| Visitors | 5 | 1,000-1,500 |
+| Geographic | 3 | 600-900 |
+| Content | 5 | 1,000-1,500 |
+| Traffic | 4 | 800-1,200 |
+| Devices | 3 | 600-900 |
+| **Total** | **21** | **4,500-6,500** |
+
+### Impact on AI Context Windows
+
+| AI Model | Context Size | MCP Overhead |
+|----------|--------------|--------------|
+| Claude | 200K tokens | ~2-3% |
+| GPT-4 | 128K tokens | ~4-5% |
+| GPT-4o | 128K tokens | ~4-5% |
+
+### Response Token Estimates
+
+Ability responses are structured JSON and relatively compact:
+
+| Ability | Typical Response |
+|---------|------------------|
+| `get-summary` | 50-200 tokens |
+| `get-top-pages` (10 results) | 400-600 tokens |
+| `get-countries` (10 results) | 300-500 tokens |
+| `get-online-visitors` (50 results) | 1,000-1,500 tokens |
+
+### Optimization Strategies
+
+1. **Phased rollout** - Start with core abilities only (~1,500 tokens for 4-5 abilities)
+2. **Concise descriptions** - Keep ability descriptions brief but clear
+3. **Limit defaults** - Use `per_page: 10` instead of 100
+4. **Skip comparison** - Only use `compare: true` when needed (doubles response size)
+5. **Column filtering** - Return only required fields with `columns` parameter
+
+### Recommended Minimal Set
+
+For minimal context overhead (~1,000-1,500 tokens), start with:
+
+- `get-summary` - Dashboard overview
+- `get-visitors` - Visitor counts
+- `get-top-pages` - Page performance
+- `get-countries` - Geographic overview
+
+This covers most common analytics questions while keeping overhead low.
+
+---
+
 ## Next Steps
 
 - [Getting Started](./getting-started.md) - Set up MCP for your site
