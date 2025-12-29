@@ -175,9 +175,77 @@ If no preferences are saved for the context, `preferences` will be `null`.
 
 ---
 
-## Storage
+## Data Storage Format
 
 Preferences are stored in `wp_usermeta` table under the key `wp_statistics_dashboard_preferences` as a serialized PHP array containing all user preferences keyed by context.
+
+### Meta Key
+
+```php
+wp_statistics_dashboard_preferences
+```
+
+### Data Structure Schema
+
+All preferences are stored in a single user meta entry as a nested associative array, keyed by context identifiers:
+
+```php
+[
+    'context_identifier_1' => [
+        // Column preferences (for table widgets)
+        'columns' => ['column1', 'column2', 'column3'],
+
+        // Widget preferences (for page widget layout)
+        'visibleWidgets' => ['widget1', 'widget2'],
+        'widgetOrder' => ['widget1', 'widget2'],
+
+        // Auto-added timestamp
+        'updated_at' => '2024-12-15 10:30:00'
+    ],
+    'context_identifier_2' => [
+        // ...
+    ]
+]
+```
+
+### Example Stored Data
+
+```php
+[
+    'visitors_visitors_table' => [
+        'columns' => ['visitorInfo', 'views', 'location', 'referrer'],
+        'updated_at' => '2024-12-15 10:30:00'
+    ],
+    'visitors_overview_widgets' => [
+        'visibleWidgets' => ['traffic_trends', 'top_entry_pages', 'top_countries'],
+        'widgetOrder' => ['traffic_trends', 'top_entry_pages', 'top_countries'],
+        'updated_at' => '2024-12-15 11:45:00'
+    ],
+    'content_pages_table' => [
+        'columns' => ['page', 'views', 'visitors'],
+        'updated_at' => '2024-12-16 09:00:00'
+    ]
+]
+```
+
+### Serialized Format in Database
+
+> **Note:** WordPress automatically serializes arrays when saving to `wp_usermeta`. The data is stored as a PHP serialized string in the `meta_value` column.
+
+**Example serialized value:**
+
+```
+a:2:{s:22:"visitors_visitors_table";a:2:{s:7:"columns";a:3:{i:0;s:11:"visitorInfo";i:1;s:5:"views";i:2;s:8:"location";}s:10:"updated_at";s:19:"2024-12-15 10:30:00";}s:24:"visitors_overview_widgets";a:3:{s:14:"visibleWidgets";a:2:{i:0;s:13:"traffic_trends";i:1;s:15:"top_entry_pages";}s:11:"widgetOrder";a:2:{i:0;s:13:"traffic_trends";i:1;s:15:"top_entry_pages";}s:10:"updated_at";s:19:"2024-12-15 11:45:00";}}
+```
+
+### Data Types
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `columns` | `string[]` | Array of visible column identifiers (array order determines display order) |
+| `visibleWidgets` | `string[]` | Array of visible widget identifiers |
+| `widgetOrder` | `string[]` | Array of widget identifiers in display order |
+| `updated_at` | `string` | MySQL datetime format (`Y-m-d H:i:s`) |
 
 ---
 
@@ -188,4 +256,4 @@ Preferences are stored in `wp_usermeta` table under the key `wp_statistics_dashb
 
 ---
 
-*Last Updated: 2025-12-15*
+*Last Updated: 2025-12-29*
