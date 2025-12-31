@@ -83,4 +83,154 @@ All endpoints return standardized error responses:
 
 ---
 
-*Last Updated: 2025-12-10*
+## Tracker Request (Hit Recording)
+
+The tracker endpoint records page views via AJAX when ad-blocker bypass is enabled. This is a **public endpoint** that doesn't require WordPress authentication.
+
+### Action
+
+```
+wp_statistics_hit_record
+```
+
+### When Active
+
+This endpoint is only registered when both settings are enabled:
+- Client-side tracking (`use_cache_plugin`)
+- Ad-blocker bypass (`bypass_ad_blockers`)
+
+### Authentication
+
+Unlike dashboard endpoints, the tracker uses **signature-based validation** instead of nonce:
+- `signature` parameter validates request authenticity
+- Generated from `resource_type` and `resource_id` using HMAC
+
+### Request Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `action` | string | Yes | Must be `wp_statistics_hit_record` |
+| `resource_id` | number | Yes | WordPress post/page ID |
+| `resource_type` | string | No | Content type (e.g., `post`, `page`, `category`) |
+| `resourceUriId` | number | Yes | URI identifier for the resource |
+| `resourceUri` | string | Yes* | Base64-encoded page URI (nullable) |
+| `timezone` | string | Yes | Visitor's timezone |
+| `language` | string | Yes | Browser language code |
+| `languageFullName` | string | Yes | Full language name |
+| `screenWidth` | string | Yes | Screen width in pixels |
+| `screenHeight` | string | Yes | Screen height in pixels |
+| `referred` | string | Yes* | Base64-encoded referrer URL (nullable) |
+| `signature` | string | Conditional | HMAC signature (required when signature validation is enabled) |
+
+*Nullable fields can be empty but must be present in the request.
+
+### Success Response
+
+```json
+{
+  "status": true
+}
+```
+
+### Error Response
+
+```json
+{
+  "status": false,
+  "data": "Error message"
+}
+```
+
+### Error Codes
+
+| HTTP | Description |
+|------|-------------|
+| 403 | Invalid signature |
+| 400 | Invalid hit request (validation failed) |
+
+---
+
+## Batch Tracking
+
+The batch endpoint handles engagement tracking and custom events in a single request. This reduces HTTP overhead and ensures reliable data delivery during page exits (e.g., using `navigator.sendBeacon`).
+
+### Action
+
+```
+wp_statistics_batch
+```
+
+### When Active
+
+This endpoint is registered when client-side tracking is enabled:
+- Client-side tracking (`use_cache_plugin`)
+
+### Authentication
+
+This is a **public endpoint** - no nonce or signature required. The session is identified server-side using the visitor's IP hash.
+
+### Request Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `action` | string | Yes | Must be `wp_statistics_batch` |
+| `batch_data` | string | Yes | JSON-encoded payload (see structure below) |
+
+### Payload Structure
+
+```json
+{
+  "engagement_time": 5000,
+  "events": [
+    {
+      "type": "custom_event",
+      "data": {
+        "event_name": "click",
+        "event_data": {}
+      }
+    }
+  ]
+}
+```
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `engagement_time` | number | Time spent on page in milliseconds |
+| `events` | array | Array of event objects to process |
+| `events[].type` | string | Event type (currently supports `custom_event`) |
+| `events[].data` | object | Event-specific data |
+
+### Success Response
+
+```json
+{
+  "status": true,
+  "processed": 2,
+  "errors": []
+}
+```
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `status` | boolean | `true` if request was processed |
+| `processed` | number | Count of successfully processed items |
+| `errors` | array | Array of error messages for failed items |
+
+### Error Response
+
+```json
+{
+  "status": false,
+  "data": "Missing batch data"
+}
+```
+
+### Error Codes
+
+| HTTP | Description |
+|------|-------------|
+| 400 | Missing batch data or invalid JSON payload |
+
+---
+
+*Last Updated: 2025-12-31*
