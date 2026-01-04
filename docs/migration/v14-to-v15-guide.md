@@ -1,7 +1,7 @@
 ---
 title: "WP Statistics v14 to v15 Migration Guide"
 type: "migration"
-status: "In Progress"
+status: "Complete"
 sidebar_position: 1
 ---
 
@@ -84,6 +84,35 @@ After migration, verify:
 - [ ] Add-ons are functioning
 
 ## Breaking Changes
+
+### Models Deprecation
+
+All Model classes (`VisitorsModel`, `ViewsModel`, `SessionModel`, etc.) are now deprecated in favor of the AnalyticsQuery system.
+
+**v14 (Old - Deprecated):**
+```php
+use WP_Statistics\Models\VisitorsModel;
+
+$model = new VisitorsModel();
+$visitors = $model->countVisitors(['date' => $dateRange]);
+```
+
+**v15 (New - Recommended):**
+```php
+use WP_Statistics\Service\AnalyticsQuery\AnalyticsQueryHandler;
+
+$handler = new AnalyticsQueryHandler();
+$result = $handler->handle([
+    'sources' => ['visitors'],
+    'date_from' => $from,
+    'date_to' => $to,
+    'format' => 'flat'
+]);
+```
+
+**Note:** Models will continue to work in v15 for backward compatibility but are scheduled for removal in v16. Add-ons should migrate to AnalyticsQuery.
+
+See [Models vs AnalyticsQuery](../technical/architecture/models-vs-analyticsquery.md) for detailed migration guide.
 
 ### API Changes
 
@@ -289,4 +318,4 @@ After successful migration:
 
 **Migration completed?** Mark the checklist items as you go!
 
-*Last Updated: 2024-12-17*
+*Last Updated: 2025-01-04*
